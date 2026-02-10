@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.ecfrontiers.org
+
+# Sitemaps
+Sitemap: https://www.ecfrontiers.org/sitemap.xml
+Sitemap: https://www.ecfrontiers.org/server-sitemap.xml

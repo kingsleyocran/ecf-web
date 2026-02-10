@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20vw;
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
+
+
+.lineMask{
+  overflow: hidden;
+}

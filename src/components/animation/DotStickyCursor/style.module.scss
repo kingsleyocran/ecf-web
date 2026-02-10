@@ -1,0 +1,29 @@
+.cursor{
+  position: fixed;
+  z-index: 99;
+  width: 30px;
+  height: 30px;
+  background-color: #7750AD;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cursorOnPointer{
+  position: fixed;
+  z-index: 99;
+  width: 10px;
+  height: 10px;
+  background-color: #7750AD;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cursorOnText{
+  position: fixed;
+  z-index: 99;
+  width: 4px;
+  height: 20px;
+  background-color: #7750AD;
+  border-radius: 30%;
+  pointer-events: none;
+}
