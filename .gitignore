@@ -30,6 +30,15 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Firebase and local deployment cache
+.firebase
+.firebase/**
+
+# Ignore any function build artifacts inside firebase functions
+.firebase/**/functions/node_modules
+.firebase/**/functions/.next
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.firebase/
