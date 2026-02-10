@@ -17,7 +17,7 @@ const achievementsData = {
       number: "20",
       label: "Professionals Trained In",
       description: "carbon accounting and decarbonization",
-      position: { x: 50, y: 50 },
+      position: { x: 14, y: 3 },
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const achievementsData = {
       label: "University Short Courses",
       description:
         "Partnered with universities in Ghana, Kenya, and South Africa",
-      position: { x: 500, y: 120 },
+      position: { x: 55, y: 28 },
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const achievementsData = {
       label: "Strategically Placed",
       description:
         "In industries and public institutions including Ghana's carbon market office",
-      position: { x: 180, y: 450 },
+      position: { x: 18, y: 47 },
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ const achievementsData = {
       label: "ACIFER Fellowship",
       description:
         "Africa's first fellowship for early-career climate intervention researchers",
-      position: { x: 550, y: 650 },
+      position: { x: 45, y: 67 },
     },
   ],
   images: [
@@ -49,28 +49,28 @@ const achievementsData = {
       id: 1,
       src: "/assets/images/test-image.png",
       alt: "ECF professionals",
-      position: { x: 100, y: 80 },
+      position: { x: 38, y: 2 },
       size: { width: 280, height: 320 },
     },
     {
       id: 2,
       src: "/assets/images/test-image.png",
       alt: "ECF team members",
-      position: { x: 600, y: 200 },
+      position: { x: 8, y: 23 },
       size: { width: 280, height: 320 },
     },
     {
       id: 3,
       src: "/assets/images/test-image.png",
       alt: "ECF conference",
-      position: { x: 300, y: 450 },
+      position: { x: 58, y: 50 },
       size: { width: 280, height: 320 },
     },
     {
       id: 4,
       src: "/assets/images/test-image.png",
       alt: "ECF team",
-      position: { x: 750, y: 600 },
+      position: { x: 22, y: 70 },
       size: { width: 280, height: 320 },
     },
   ],
@@ -161,7 +161,7 @@ function HomeAchievementsSection() {
           </div>
         ) : (
           // Desktop/Tablet: Draggable layout with sticky marquee
-          <div ref={constraintsRef} className="relative h-[1500px]">
+          <div ref={constraintsRef} className="relative h-[1300px]">
             {/* Layer 1: Draggable Images - Bottom layer (z-5) */}
             {images.map((image, index) => (
               <DraggableImage

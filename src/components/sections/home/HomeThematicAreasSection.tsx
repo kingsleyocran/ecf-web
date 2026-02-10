@@ -58,10 +58,10 @@ function HomeThematicAreasSection() {
   return (
     <div className="relative">
       {/* Background */}
-      <div className="h-[600px] md:h-[100vh] w-full sticky top-0 z-0 bg-[#C7B14E]" />
+      <div className="h-[600px] md:h-[100vh] w-full sticky top-0 z-20 bg-[#C7B14E]" />
 
       {/* Content */}
-      <div className="relative w-full flex flex-col gap-8 max-w-[1920px] 2xl:mx-auto py-12 md:py-24 px-4 md:px-8 lg:px-16 z-10">
+      <div className="relative w-full flex flex-col gap-8 max-w-[1920px] 2xl:mx-auto py-12 md:py-24 px-4 md:px-8 lg:px-16 z-20">
         <div className="w-full flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Left - Title Section (Sticky) */}
           <div className="md:sticky md:top-[100px] -mt-[600px] md:-mt-[800px] md:basis-1/2 h-full flex flex-col items-start gap-6 z-20">

@@ -1,25 +1,42 @@
 import PrimaryButton from "@/components/button/PrimaryButton";
-import { homeContent } from "@/utils/content";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import HomeAboutSection from "./HomeAboutSection";
 
 function HomeHeroSectrion() {
+  const aboutRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
-  const isTablet = useMediaQuery({
-    query: "(min-width: 640px) and (max-width: 1024px)",
-  });
-  const isDesktop = useMediaQuery({
-    query: "(min-width: 1024px) and (max-width: 1280px)",
+
+  const { scrollYProgress: aboutProgress } = useScroll({
+    target: aboutRef,
+    offset: ["start end", "start start"],
   });
 
+  const springConfig = { stiffness: 400, damping: 30 };
+
+  // About section: starts scaling at ~20% in view, fills by ~70%
+  const aboutScale = useSpring(
+    useTransform(
+      aboutProgress,
+      [0.1, 0.3],
+      [isMobile ? 0.92 : 0.9, 1]
+    ),
+    springConfig
+  );
+  const aboutRadius = useSpring(
+    useTransform(aboutProgress, [0.2, 0.3], [40, 0]),
+    springConfig
+  );
+
   return (
-    <section className="flex flex-col  w-full">
-      <div className="h-[110vh] relative">
-        {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-[110vh]">
+    <section className="relative">
+      {/* Sticky hero — background + content stay pinned in viewport */}
+      <div className="sticky top-0 h-[120vh] w-full overflow-hidden">
+        {/* Background image — static */}
+        <div className="absolute inset-0">
           <Image
             src="/assets/images/hero.png"
             alt="Home Hero Background"
@@ -32,8 +49,8 @@ function HomeHeroSectrion() {
           />
         </div>
 
-        {/* Content */}
-        <div className="absolute flex flex-col justify-center items-center w-full h-[92vh] max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
+        {/* Content — static */}
+        <div className="absolute inset-0 z-10 h-[92vh] flex flex-col justify-center items-center w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
           <div className="pt-6">
             <h1 className="text-bold-3xl text-white flex flex-col items-center gap-2">
               <span>Empowering Africa</span>
@@ -44,7 +61,7 @@ function HomeHeroSectrion() {
                 <div className="h-[70px] w-[70px] relative">
                   <Image
                     src="/assets/images/globe.png"
-                    alt="Home Hero Background"
+                    alt="Globe icon"
                     fill
                     style={{
                       objectFit: "cover",
@@ -79,12 +96,15 @@ function HomeHeroSectrion() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Overlay */}
-        <div className="absolute bottom-0 left-0 w-full h-[28vh]">
+      {/* Scrolling layer — overlay + about section scroll over the sticky hero */}
+      <div className="relative z-10 -mt-[35vh]">
+        {/* Overlay image — scrolls up naturally over the hero */}
+        <div className="h-[35vh] relative w-full">
           <Image
             src="/assets/images/hero-overlay.png"
-            alt="Home Hero Background"
+            alt=""
             fill
             style={{
               objectFit: "cover",
@@ -93,10 +113,19 @@ function HomeHeroSectrion() {
             priority
           />
         </div>
-      </div>
 
-      <div>
-        <HomeAboutSection />
+        {/* About section — scales in from small to fill */}
+        <motion.div
+          ref={aboutRef}
+          style={{
+            scale: aboutScale,
+            borderRadius: aboutRadius,
+            transformOrigin: "top center",
+          }}
+          className="relative overflow-hidden -mt-[15vh]"
+        >
+          <HomeAboutSection />
+        </motion.div>
       </div>
     </section>
   );

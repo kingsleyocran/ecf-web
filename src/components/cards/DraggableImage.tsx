@@ -39,8 +39,8 @@ export default function DraggableImage({
       whileDrag={{ scale: 1.05, cursor: "grabbing" }}
       style={{
         position: "absolute",
-        left: position.x,
-        top: position.y,
+        left: `${position.x}%`,
+        top: `${position.y}%`,
         width: size.width,
         height: size.height,
         zIndex: 5,

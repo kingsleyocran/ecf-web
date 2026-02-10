@@ -39,8 +39,8 @@ export default function DraggableAchievementCard({
       whileDrag={{ scale: 1.05, cursor: "grabbing" }}
       style={{
         position: "absolute",
-        left: position.x,
-        top: position.y,
+        left: `${position.x}%`,
+        top: `${position.y}%`,
         zIndex: 20,
       }}
       className={`${
@@ -49,7 +49,7 @@ export default function DraggableAchievementCard({
           : "cursor-default"
       } touch-none`}
     >
-      <div className="bg-[#025C7F] rounded-3xl p-6 md:p-8 shadow-lg min-w-[280px] max-w-[320px]">
+      <div className="bg-[#056F99] rounded-3xl p-6 md:p-8 shadow-lg min-w-[280px] max-w-[320px]">
         <div className="text-[#E0C759] text-5xl md:text-6xl font-bold mb-2">
           {number}
         </div>

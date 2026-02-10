@@ -56,7 +56,7 @@ const featuredProjects = [
 
 function HomeFeaturedProjects() {
   return (
-    <section className="w-full flex flex-col py-12 md:py-24 bg-[#034D6B]">
+    <section className="w-full flex flex-col py-12 md:py-24 bg-[#034D6B] z-20 relative">
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
         {/* Header */}
         <div className="mb-8 md:mb-12">
