@@ -119,6 +119,10 @@
     @apply h-[100vh] w-[100vw];
   }
 
+  .text-bold-3xl {
+    @apply secondarybold mb-0 text-[28px] leading-8 md:text-4xl lg:text-5xl tracking-[0.5px];
+  }
+
   .text-bold-2xl {
     @apply secondarybold mb-0 text-[28px] leading-8 md:text-4xl lg:text-4xl tracking-[0.5px];
   }

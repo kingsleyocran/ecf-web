@@ -4,14 +4,12 @@ import Lenis from "lenis";
 import { NextPage } from "next";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import HomeHeroSection from "@/components/sections/pre-release/PreHomeHeroSection";
 import HomeHeroSectrion from "@/components/sections/home/HomeHeroSectrion";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 import ResourcesSection from "@/components/sections/resources/ResourcesSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import FeaturedProjects from "@/components/sections/home/HomeFeaturedProjects";
 import HomeThematicAreasSection from "@/components/sections/home/HomeThematicAreasSection";
-import HomeAboutSection from "@/components/sections/home/HomeAboutSection";
 import HomeAchievementsSection from "@/components/sections/home/HomeAchievementsSection";
 
 interface Props {
@@ -190,8 +188,6 @@ const Page: NextPage<Props> = ({ metaDataTag, jsonLd }) => {
       <Header />
 
       <HomeHeroSectrion />
-
-      <HomeAboutSection />
 
       <HomeThematicAreasSection />
 
