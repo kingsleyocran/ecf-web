@@ -8,14 +8,16 @@ import React, {
 } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import LangIcon from "../../../../public/assets/icons/lang.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { navCTAButton, navLinks } from "@/utils/content";
+import { navLinks } from "@/utils/content";
 import DesktopMenu from "./DesktopMenu";
 import PrimaryButton from "@/components/button/PrimaryButton";
 
 function NavBar() {
+  const router = useRouter();
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -74,8 +76,13 @@ function NavBar() {
                 ) : (
                   <Link
                     key={idx}
-                    className="flex flex-row primarybold text-white paragraph-text-small tracking-[0px]
-                  rounded-full items-center gap-2 px-4 lg:px-5 py-2  hover:bg-white/20 outline-none"
+                    className={`flex flex-row primarybold paragraph-text-small tracking-[0px]
+                  rounded-full items-center gap-2 px-4 lg:px-5 py-2 outline-none transition-all duration-200
+                  ${
+                    router.pathname === navlink.href
+                      ? "text-[#E0C759] hover:text-[#E0C759]"
+                      : "text-white hover:bg-white/20"
+                  }`}
                     href={navlink.href}
                     passHref
                   >
@@ -88,10 +95,10 @@ function NavBar() {
             <Link
               className="flex flex-row primarybold text-white paragraph-text-small tracking-[0px]
                   rounded-full items-center gap-2 px-4 lg:px-5 py-2  bg-[#0182B5] hover:bg-[#4BB0D9]/90 outline-none"
-              href={"/get-involved"}
+              href={"/donate"}
               passHref
             >
-              <p className="line-clamp-1">Join the Movement</p>
+              <p className="line-clamp-1">Donate</p>
             </Link>
 
             <button

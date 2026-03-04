@@ -90,8 +90,8 @@ function HomeHeroSectrion() {
                 <PrimaryButton title="Access Resources" variant="white" />
               </Link>
 
-              <Link href="/get-involved" passHref>
-                <PrimaryButton title="Join the Movement" variant="blue-light" />
+              <Link href="/donate" passHref>
+                <PrimaryButton title="Donate" variant="blue-light" />
               </Link>
             </div>
           </div>

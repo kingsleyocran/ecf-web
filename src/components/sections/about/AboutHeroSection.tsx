@@ -44,7 +44,7 @@ function AboutHeroSection() {
           {paragraphs.map((text, index) => (
             <div
               key={index}
-              className="max-w-[520px] mb-[50px] last:mb-[20vh]"
+              className="max-w-[420px] mb-[50px] last:mb-[20vh]"
             >
               <OpacityMoveYInViewAnimation
                 positionFrom={40}
@@ -53,7 +53,7 @@ function AboutHeroSection() {
                 triggerOnce={false}
                 extraClassNames="text-right"
               >
-                <span className="text-white text-base md:text-lg leading-relaxed">
+                <span className="text-white text-normal-base leading-relaxed">
                   {text}
                 </span>
               </OpacityMoveYInViewAnimation>

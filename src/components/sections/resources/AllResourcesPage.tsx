@@ -13,50 +13,59 @@ import {
   SortingFilterSchema,
 } from "@/backend/models/_shared";
 
-type ProgramData = {
+type ResourceData = {
   id: string;
   name: string;
   description: string;
-  types: string[];
   imgUrl?: string | null;
 };
 
-const dummyPrograms: ProgramData[] = [
+const dummyResources: ResourceData[] = [
   {
     id: "1",
-    name: "ACIEFR Fellowship",
+    name: "ACIFER Fellowship",
     description:
-      "The African Climate Intervention Fellowship for Early-Career Researchers (ACIEFR) grows the ecosystem of researchers with both physical and social science backgrounds, increasing African-led research that informs local and regional decisions on FCT governance.",
-    types: ["AI", "CDR", "SRM"],
+      "The African Climate Intervention Fellowship for Early-Career Researchers provides funding and mentorship to support locally-led research projects.",
     imgUrl: "/assets/images/test-image.png",
   },
   {
     id: "2",
-    name: "Climate Technology Policy Lab",
+    name: "ACIFER Fellowship",
     description:
-      "A collaborative space for African policymakers, researchers, and civil society to co-develop governance frameworks for frontier climate technologies that center equity and local context.",
-    types: ["AI", "SRM"],
+      "The African Climate Intervention Fellowship for Early-Career Researchers provides funding and mentorship to support locally-led research projects.",
     imgUrl: "/assets/images/test-image.png",
   },
   {
     id: "3",
-    name: "CDR Innovation Hub",
+    name: "ACIFER Fellowship",
     description:
-      "Supporting African entrepreneurs and researchers in developing and scaling nature-based and technological carbon dioxide removal solutions tailored to the continent's diverse ecosystems.",
-    types: ["CDR"],
+      "The African Climate Intervention Fellowship for Early-Career Researchers provides funding and mentorship to support locally-led research projects.",
     imgUrl: "/assets/images/test-image.png",
   },
   {
     id: "4",
-    name: "SRM Governance Dialogue Series",
+    name: "ACIFER Fellowship",
     description:
-      "A series of multi-stakeholder dialogues bringing together African scientists, policymakers, and communities to shape informed positions on Solar Radiation Management research and governance.",
-    types: ["SRM", "AI"],
+      "The African Climate Intervention Fellowship for Early-Career Researchers provides funding and mentorship to support locally-led research projects.",
+    imgUrl: "/assets/images/test-image.png",
+  },
+  {
+    id: "5",
+    name: "ACIFER Fellowship",
+    description:
+      "The African Climate Intervention Fellowship for Early-Career Researchers provides funding and mentorship to support locally-led research projects.",
+    imgUrl: "/assets/images/test-image.png",
+  },
+  {
+    id: "6",
+    name: "ACIFER Fellowship",
+    description:
+      "The African Climate Intervention Fellowship for Early-Career Researchers provides funding and mentorship to support locally-led research projects.",
     imgUrl: "/assets/images/test-image.png",
   },
 ];
 
-function AllProgramsPage() {
+function AllResourcesPage() {
   const [selectedType, setSelectedType] = useState<number>(0);
 
   const dispatch = useAppDispatch();
@@ -114,15 +123,12 @@ function AllProgramsPage() {
     setSelectedType(idx);
   }
 
-  // Effect to track component mount
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
-  // Create a ref for the div you want to scroll to
   const targetDivRef = useRef<HTMLDivElement>(null);
 
-  // Function to trigger the smooth scroll
   const scrollToDiv = useCallback(async () => {
     if (targetDivRef!.current) {
       targetDivRef.current.scrollIntoView({
@@ -132,20 +138,22 @@ function AllProgramsPage() {
     }
   }, []);
 
-  const fetchTableData = useCallback(async (fetchNew: boolean) => {
-    if (fetchNew) {
-      await scrollToDiv();
-      dispatch(blogRedux.actions.fetchPageBlogWithFilters());
-    } else {
-      dispatch(blogRedux.actions.checkBeforeFilterPageBlog());
-    }
-  }, [dispatch, scrollToDiv]);
+  const fetchTableData = useCallback(
+    async (fetchNew: boolean) => {
+      if (fetchNew) {
+        await scrollToDiv();
+        dispatch(blogRedux.actions.fetchPageBlogWithFilters());
+      } else {
+        dispatch(blogRedux.actions.checkBeforeFilterPageBlog());
+      }
+    },
+    [dispatch, scrollToDiv]
+  );
 
   useEffect(() => {
     fetchTableData(false);
   }, [fetchTableData]);
 
-  // Search query logic
   useEffect(() => {
     if (hasMounted) {
       let tableFilterOptions = {
@@ -162,68 +170,36 @@ function AllProgramsPage() {
   }, [searchQuery, hasMounted, dispatch, fetchTableData]);
 
   return (
-    <section ref={targetDivRef} className="w-full pb-[100px] pt-[40px]">
+    <section ref={targetDivRef} className="w-full bg-[#034D6B] pb-[100px] -mb-[20px] flex flex-col">
       {/* Hero Section */}
-      <div  className="w-full bg-white pt-[40px]">
-        <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-8 ">
-          <div className="relative w-full h-[500px] md:h-[500px] rounded-2xl md:rounded-[20px] overflow-hidden">
-            <Image
-              src="/assets/images/test-image.png"
-              alt="Our Programs"
-              fill
-              style={{ objectFit: "cover", objectPosition: "center" }}
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#034D6B]/80 via-[#034D6B]/40 to-[#034D6B]/20" />
-            <div className="relative z-10 h-full flex flex-col justify-start items-start gap-4 px-6 md:px-12 pt-10 md:pt-16">
-              <h1 className="text-bold-2xl md:text-bold-3xl text-[#E0C759]">
-                Our Programs
-              </h1>
-              <p className="text-normal-base text-white/80 max-w-[300px]">
-                See how ECF&apos;s work is transforming climate technology
-                capacity across Africa
-              </p>
-            </div>
-          </div>
+      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[180px]">
+        <div className="flex flex-col items-center text-center gap-4">
+          <p className="text-white/80 text-sm md:text-base font-medium tracking-widest uppercase">
+            Resources
+          </p>
+          <h1 className="text-bold-2xl md:text-bold-3xl text-[#E0C759]">
+            ECF Knowledge Hub
+          </h1>
+          <p className="text-normal-base text-white/80 max-w-lg">
+            AI, Carbon Dioxide Removal, and Solar Radiation Management;
+            explored through an African lens.
+          </p>
         </div>
       </div>
 
-      {/* Content */}
-      <div
-        className="z-20 relative flex flex-col max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 pt-12 md:pt-16"
-      >
-        {/* Filters */}
-        <div className="flex flex-wrap md:flex-row items-center justify-center gap-2 mb-12">
-          {menuList.map((type, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                onMenuFilterChange(type, index);
-              }}
-              className={`text-bold-lg px-6 py-2 rounded-full ${
-                selectedType === index
-                  ? "bg-[#E0C759] text-white"
-                  : "bg-[#E0C759]/20 text-[#E0C759]"
-              } transition-all duration-200`}
-            >
-              {type.replace(/-/g, " ").toUpperCase()}
-            </button>
-          ))}
-        </div>
-
-        {/* Program Cards Grid */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-14">
+      {/* Resource Cards */}
+      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
+        <div className="flex flex-col gap-10 max-w-[800px] mx-auto">
           {(tableDataStored.data.length > 0
             ? tableDataStored.data.map((d) => ({
                 id: d.id,
                 name: d.name,
                 description: d.description,
-                types: d.type ? [d.type] : [],
                 imgUrl: d.imgUrl,
               }))
-            : dummyPrograms
+            : dummyResources
           ).map((data) => (
-            <ProgramCard key={data.id} program={data} />
+            <ResourceCard key={data.id} resource={data} />
           ))}
         </div>
 
@@ -236,7 +212,7 @@ function AllProgramsPage() {
           tableDataStored.data.length < tableFilterOptions.limit! &&
           Boolean(tableDataStored.lastDoc)
         ) ? (
-          <div className="bg-[#FFF0D7] p-5 w-full mt-24 mb-12 rounded-full flex flex-row items-center justify-between">
+          <div className="bg-white/10 p-5 w-full max-w-[800px] mx-auto mt-16 mb-12 rounded-full flex flex-row items-center justify-between">
             {!(
               tableFilterOptions.startAfterDocQueue &&
               tableFilterOptions.startAfterDocQueue!.length === 0
@@ -254,7 +230,7 @@ function AllProgramsPage() {
                   }}
                   icon={<LeftIcon width="11" height="22" viewBox="0 0 13 25" />}
                 />
-                <span className="text-bold-lg">Previous</span>
+                <span className="text-bold-lg text-white">Previous</span>
               </div>
             ) : (
               <div></div>
@@ -265,7 +241,7 @@ function AllProgramsPage() {
               Boolean(tableDataStored.lastDoc)
             ) || tableDataStored.data.length === 0 ? (
               <div className="flex flex-row items-center justify-center gap-4">
-                <span className="text-bold-lg">Next</span>
+                <span className="text-bold-lg text-white">Next</span>
                 <PrimaryButton
                   onClick={() => {
                     onPaginationChange({
@@ -283,75 +259,43 @@ function AllProgramsPage() {
               <div></div>
             )}
           </div>
-        ) : (
-          <div className="p-5 w-full mt-24 mb-12 rounded-full flex flex-row items-center justify-between" />
-        )}
+        ) : null}
       </div>
     </section>
   );
 }
 
-function ProgramCard({ program }: { program: ProgramData }) {
+function ResourceCard({ resource }: { resource: ResourceData }) {
   return (
     <Link
-      href={`/blogs/${program.id}`}
-      className="group flex flex-col gap-5"
+      href={`/resources/${resource.id}`}
+      className="group flex flex-col md:flex-row gap-6 items-center bg-transparent hover:bg-white/10
+      transition-colors duration-200 p-4 rounded-lg"
     >
-      {/* Image with dashed border */}
-      <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-100">
-        {program.imgUrl && (
+      {/* Image */}
+      <div className="relative shrink-0 w-full md:w-[180px] aspect-square rounded-xl overflow-hidden bg-[#C7B14E]">
+        {resource.imgUrl && (
           <Image
-            src={program.imgUrl}
-            alt={program.name}
+            src={resource.imgUrl}
+            alt={resource.name}
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             className="group-hover:scale-105 transition-transform duration-300"
           />
         )}
-
-        {/* Arrow icon top-right */}
-        <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center transition-colors duration-200">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 12L12 4M12 4H5M12 4V11"
-              stroke="black"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
       </div>
 
-      {/* Text Content */}
-      <div className="flex flex-col gap-3">
-        <h3 className="text-bold-xl text-[#024D6B] group-hover:text-[#0182B5] transition-colors duration-200">
-          {program.name}
+      {/* Text */}
+      <div className="flex flex-col gap-2 pt-1">
+        <h3 className="text-bold-xl text-[#E0C759] group-hover:text-[#E0C759]/80 transition-colors duration-200">
+          {resource.name}
         </h3>
-        {program.types.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {program.types.map((type) => (
-              <span
-                key={type}
-                className="px-3 py-1 rounded-full text-xs font-medium bg-[#E0C759]/20 text-[#E0C759]"
-              >
-                {type}
-              </span>
-            ))}
-          </div>
-        )}
-        <p className="text-normal-base text-[#535353] line-clamp-3">
-          {program.description}
+        <p className="text-normal-base text-white/70 line-clamp-3">
+          {resource.description}
         </p>
       </div>
     </Link>
   );
 }
 
-export default AllProgramsPage;
+export default AllResourcesPage;

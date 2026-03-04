@@ -5,6 +5,7 @@ import { NextPage } from "next";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import AllBlogsSection from "@/components/sections/blogs/AllBlogsSection";
+import AllResourcesPage from "@/components/sections/resources/AllResourcesPage";
 
 interface Props {
   metaDataTag: any;
@@ -147,7 +148,7 @@ const Page: NextPage<Props> = ({ metaDataTag, jsonLd }) => {
 
       <Header />
 
-      <AllBlogsSection />
+      <AllResourcesPage />
 
       <Footer />
     </>

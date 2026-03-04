@@ -1,4 +1,9 @@
-import { Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  Transition,
+} from "@headlessui/react";
 import { Fragment, useRef, useState } from "react";
 import ArrowDownIcon from "../../../../public/assets/icons/menu_arrow_down.svg";
 import ArrowRightIcon from "../../../../public/assets/icons/menu_arrow_right.svg";
@@ -9,6 +14,8 @@ export default function DesktopMenu({ navlink }: { navlink: NavLink }) {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const router = useRouter();
+
+  const isActive = router.pathname.startsWith(navlink.href);
 
   const handleMouseEnter = () => {
     if (closeTimeoutRef.current) {
@@ -34,9 +41,16 @@ export default function DesktopMenu({ navlink }: { navlink: NavLink }) {
         {({ open }) => (
           <>
             <PopoverButton
-              className={`${!isPopoverOpen ? "" : "bg-[#FFB12B]/20"}
-                flex flex-row secondarybold text-th-text-primary paragraph-text-small tracking-[0px]
-                  rounded-full items-center gap-2 px-6 py-2 ring-transparent border-0 outline-none`}
+              className={`${
+                isActive
+                  ? "text-[E0C759]"
+                  : isPopoverOpen
+                    ? "bg-white/20 text-white"
+                    : "text-white"
+              }
+                flex flex-row secondarybold paragraph-text-small tracking-[0px]
+                  rounded-full items-center gap-2 px-6 py-2 ring-transparent border-0 outline-none
+                  transition-all duration-200`}
               onClick={() => router.push(navlink.href)}
             >
               <p className="line-clamp-1">{navlink.title}</p>
@@ -68,7 +82,7 @@ export default function DesktopMenu({ navlink }: { navlink: NavLink }) {
                         link={link}
                       />
                     );
-                  }
+                  },
                 )}
               </PopoverPanel>
             </Transition>
@@ -88,16 +102,25 @@ function DesktopMenuLinkButton({
   navlink: NavLink;
   link: { href: string; title: string };
 }) {
+  const router = useRouter();
+  const subpagePath = `${navlink.href}/${link.href}`;
+  const isActive = router.pathname === subpagePath;
+
   const navigateToPage = () => {
-    window.location.href = `${navlink.href}/${link.href}`;
+    window.location.href = subpagePath;
   };
 
   return (
     <button key={idx} type="button" onClick={() => navigateToPage()}>
       <div
-        className={`secondarybold text-normal-base transition-all duration-200 text-black
-          hover:text-white fill-[#FFB12B] hover:fill-white flex flex-row items-center
-          justify-between  tracking-[0px] px-4 py-4 hover:bg-[#D64D27]`}
+        className={`secondarybold text-normal-base transition-all duration-200
+          ${
+            isActive
+              ? "text-[#E0C759] fill-[#E0C759]"
+              : "text-black hover:text-white fill-[#E0C759] hover:fill-white hover:bg-[#D64D27]"
+          }
+          flex flex-row items-center
+          justify-between tracking-[0px] px-4 py-4`}
       >
         {link.title}
         <ArrowRightIcon width="13" height="10" viewBox="0 0 13 25" />
