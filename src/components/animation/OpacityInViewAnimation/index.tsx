@@ -5,15 +5,19 @@ import { useInView } from "react-intersection-observer";
 export default function MaskText({
   children,
   extraClassNames = "text-start",
+  outerClassName = "",
   animationDelay = 0.075,
   duration = 0.75,
   triggerOnce = false,
+  div = false,
 }: {
   children: ReactNode;
   extraClassNames?: string;
+  outerClassName?: string;
   animationDelay?: number;
   duration?: number;
   triggerOnce?: boolean;
+  div?: boolean;
 }) {
   const animation = {
     initial: { opacity: "0" },
@@ -32,17 +36,19 @@ export default function MaskText({
     triggerOnce: triggerOnce,
   });
 
+  const MotionTag = div ? motion.div : motion.p;
+
   return (
-    <div ref={ref}>
+    <div ref={ref} className={outerClassName}>
       <div key={1} className={extraClassNames + " " + "m-0"}>
-        <motion.p
+        <MotionTag
           custom={1}
           variants={animation}
           initial="initial"
           animate={inView ? "enter" : ""}
         >
           {children}
-        </motion.p>
+        </MotionTag>
       </div>
     </div>
   );

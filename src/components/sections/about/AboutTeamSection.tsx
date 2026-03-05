@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+// motion is still needed for the hover overlay inside TeamCard
+import MaskText from "@/components/animation/OpacityMoveYInViewAnimation";
 
 const teamMembers = [
   {
@@ -68,7 +70,15 @@ const teamMembers = [
     role: "Research & Scientific Director",
     country: "gh",
     image: "/assets/images/test-image.png",
-    bio: "",
+    bio: (
+      <>
+        A climate research scientist with experience in climate & solar
+        geoengineering impact modeling to understand its potential benefits and
+        broad risks. Kwesi has consulted for UNEP through the Ghana National
+        Adaptation Project, World Meteorological Organization, The World Academy
+        of Sciences, and ICLEI - Local Governments for Sustainability.
+      </>
+    ),
     linkedin: "https://linkedin.com",
   },
   {
@@ -78,8 +88,8 @@ const teamMembers = [
     image: "/assets/images/test-image.png",
     bio: (
       <>
-        A core member of Ghana’s first Climate Literacy Por tal, expanding
-        access to climate knowledge nationwide. With the Climate and Development
+        A core member of Ghana’s first Climate Literacy Portal, expanding access
+        to climate knowledge nationwide. With the Climate and Development
         Knowledge Network (CDKN), he has designed innovative climate literacy
         games that make complex issues engaging and accessible.
       </>
@@ -117,7 +127,7 @@ function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
             width={28}
             height={20}
             className="rounded-sm"
-            style={{borderRadius: "5px"}}
+            style={{ borderRadius: "5px" }}
           />
         </div>
 
@@ -187,21 +197,29 @@ function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
 
 function AboutTeamSection() {
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <section id="our-team" className="w-full bg-white py-16 md:py-24">
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-bold-2xl text-black mb-4">Meet Our Team</h2>
-          <p className="text-normal-base text-black/70 max-w-lg mx-auto">
-            A dedicated team of African climate advocates, researchers, and
-            organizers.
-          </p>
+          <MaskText positionFrom={24} triggerOnce={true} animationDelay={0} extraClassNames="text-bold-2xl text-black mb-4 text-center">
+            Meet Our Team
+          </MaskText>
+          <MaskText
+            positionFrom={20}
+            triggerOnce={true}
+            animationDelay={0.1}
+            extraClassNames="text-normal-base text-black/70 max-w-lg mx-auto text-center"
+          >
+            A dedicated team of African climate advocates, researchers, and organizers.
+          </MaskText>
         </div>
 
         {/* Team grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 max-w-[900px] mx-auto">
-          {teamMembers.map((member) => (
-            <TeamCard key={member.name} member={member} />
+          {teamMembers.map((member, index) => (
+            <MaskText key={member.name} div positionFrom={32} triggerOnce={true} animationDelay={0.07 * index} extraClassNames="">
+              <TeamCard member={member} />
+            </MaskText>
           ))}
         </div>
       </div>

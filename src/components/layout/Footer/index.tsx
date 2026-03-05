@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { navLinks, socialLinks, termPrivacyList } from "@/utils/content";
+import { navLinks, socialLinks, termPrivacyList, footerExtraLinks } from "@/utils/content";
 import LogoSvg from "../../../../public/assets/brand/logo-1.svg";
 import EmailIcon from "../../../../public/assets/icons/email.svg";
 
@@ -33,6 +33,15 @@ function Footer() {
               {navLinks.map((link, index) => (
                 <Link
                   key={index}
+                  href={link.href}
+                  className="text-normal-base text-white hover:bg-white/10 px-2 py-1 rounded-2xl duration-150 transition-colors"
+                >
+                  {link.title}
+                </Link>
+              ))}
+              {footerExtraLinks.map((link, index) => (
+                <Link
+                  key={`extra-${index}`}
                   href={link.href}
                   className="text-normal-base text-white hover:bg-white/10 px-2 py-1 rounded-2xl duration-150 transition-colors"
                 >

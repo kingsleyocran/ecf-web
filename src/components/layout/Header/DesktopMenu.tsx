@@ -41,20 +41,23 @@ export default function DesktopMenu({ navlink }: { navlink: NavLink }) {
         {({ open }) => (
           <>
             <PopoverButton
-              className={`${
-                isActive
-                  ? "text-[E0C759]"
-                  : isPopoverOpen
-                    ? "bg-white/20 text-white"
-                    : "text-white"
-              }
-                flex flex-row secondarybold paragraph-text-small tracking-[0px]
-                  rounded-full items-center gap-2 px-6 py-2 ring-transparent border-0 outline-none
-                  transition-all duration-200`}
-              onClick={() => router.push(navlink.href)}
+              className={`flex flex-row primarybold paragraph-text-small tracking-[0px]
+                rounded-full items-center gap-2 px-4 lg:px-5 py-2 outline-none ring-transparent border-0 transition-all duration-200
+                ${navlink.subPages?.length && !navlink.clickable ? "cursor-default" : "cursor-pointer"}
+                ${
+                  isActive
+                    ? "text-[#E0C759] hover:text-[#E0C759]"
+                    : "text-white hover:bg-white/20"
+                }`}
+              onClick={() => { if (!navlink.subPages?.length || navlink.clickable) router.push(navlink.href); }}
             >
-              <p className="line-clamp-1">{navlink.title}</p>
-              <ArrowDownIcon width="13" height="7" viewBox="0 0 13 7" />
+              <p className="line-clamp-1 ">{navlink.title}</p>
+              <ArrowDownIcon
+                width="13"
+                height="7"
+                fill="#E0C759"
+                viewBox="0 0 13 7"
+              />
             </PopoverButton>
 
             <Transition
@@ -68,9 +71,8 @@ export default function DesktopMenu({ navlink }: { navlink: NavLink }) {
               leaveTo="opacity-0 translate-y-1"
             >
               <PopoverPanel
-                className="border-2 border-b-[6px] border-l-[6px] border-[#5C382B]
-              rounded-2xl absolute left-1/2 z-10 mt-3 w-500 grid grid-cols-1 bg-[#FCFAF4]
-              -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl overflow-hidden"
+                className="rounded-2xl absolute left-1/2 z-10 mt-3 w-max min-w-[220px] grid grid-cols-1 bg-[#a69442]
+              -translate-x-1/2 transform overflow-hidden shadow-lg"
               >
                 {navlink.subPages?.map(
                   (link: { href: string; title: string }, idx: number) => {
@@ -102,27 +104,16 @@ function DesktopMenuLinkButton({
   navlink: NavLink;
   link: { href: string; title: string };
 }) {
-  const router = useRouter();
-  const subpagePath = `${navlink.href}/${link.href}`;
-  const isActive = router.pathname === subpagePath;
-
   const navigateToPage = () => {
-    window.location.href = subpagePath;
+    window.location.href = link.href;
   };
 
   return (
     <button key={idx} type="button" onClick={() => navigateToPage()}>
       <div
-        className={`secondarybold text-normal-base transition-all duration-200
-          ${
-            isActive
-              ? "text-[#E0C759] fill-[#E0C759]"
-              : "text-black hover:text-white fill-[#E0C759] hover:fill-white hover:bg-[#D64D27]"
-          }
-          flex flex-row items-center
-          justify-between tracking-[0px] px-4 py-4`}
+        className="secondarybold text-normal-base transition-all duration-200 text-white fill-white hover:bg-[#034D6B]/80 flex flex-row items-center justify-between tracking-[0px] px-4 py-4"
       >
-        {link.title}
+        <span className="whitespace-nowrap">{link.title}</span>
         <ArrowRightIcon width="13" height="10" viewBox="0 0 13 25" />
       </div>
     </button>

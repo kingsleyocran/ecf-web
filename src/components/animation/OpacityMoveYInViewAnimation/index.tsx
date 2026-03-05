@@ -9,13 +9,15 @@ export default function MaskText({
   duration = 0.75,
   triggerOnce = false,
   positionFrom = 50,
+  div = false,
 }: {
   children: ReactNode;
   extraClassNames?: string;
   animationDelay?: number;
   duration?: number;
-    triggerOnce?: boolean;
-    positionFrom: number;
+  triggerOnce?: boolean;
+  positionFrom: number;
+  div?: boolean;
 }) {
   const animation = {
     initial: { opacity: "0", y: positionFrom },
@@ -30,22 +32,24 @@ export default function MaskText({
     }),
   };
 
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.25,
     triggerOnce: triggerOnce,
   });
 
+  const MotionTag = div ? motion.div : motion.p;
+
   return (
     <div ref={ref}>
       <div key={1} className={extraClassNames + " " + "m-0"}>
-        <motion.p
+        <MotionTag
           custom={1}
           variants={animation}
           initial="initial"
           animate={inView ? "enter" : ""}
         >
           {children}
-        </motion.p>
+        </MotionTag>
       </div>
     </div>
   );

@@ -2,24 +2,48 @@ export type NavLink = {
   title: string;
   href: string;
   subPages?: Array<{ title: string; href: string }>;
+  clickable?: boolean;
 };
 
 export const navLinks: NavLink[] = [
   {
     title: "Who We Are",
     href: "/about",
+    clickable: true,
+    subPages: [
+      { title: "Mission & Vision", href: "/about#mission-vision" },
+      { title: "How We Work", href: "/about#how-we-work" },
+      { title: "Milestones", href: "/about#milestones" },
+      { title: "Our Team", href: "/about#our-team" },
+    ],
   },
   {
-    title: "Technologies",
+    title: "Programs",
     href: "/technologies",
-  },
-  {
-    title: "Our Programs",
-    href: "/programs",
+    subPages: [
+      { title: "Solar Radiation Management", href: "/technologies/srm" },
+      { title: "Artificial Intelligence", href: "/technologies/ai" },
+      { title: "Carbon Dioxide Removal", href: "/technologies/cdr" },
+    ],
   },
   {
     title: "Resources",
     href: "/resources",
+    subPages: [
+      { title: "Reports", href: "/resources/reports" },
+      { title: "Articles", href: "/resources/articles" },
+      { title: "Newsletters", href: "/resources/newsletters" },
+      { title: "Op-eds", href: "/resources/opeds" },
+    ],
+  },
+  {
+    title: "News & Events",
+    href: "/news-and-events",
+    subPages: [
+      { title: "Latest News", href: "/news-and-events/latest-news" },
+      { title: "Videos & Podcasts", href: "/news-and-events/videos-podcasts" },
+      { title: "Events", href: "/news-and-events/events" },
+    ],
   },
   // {
   //   title: "Apply",
@@ -43,6 +67,10 @@ export const navLinks: NavLink[] = [
   //   title: "What’s new",
   //   href: "/blogs",
   // },
+];
+
+export const footerExtraLinks = [
+  { title: "Careers", href: "/careers" },
 ];
 
 export const termPrivacyList = [

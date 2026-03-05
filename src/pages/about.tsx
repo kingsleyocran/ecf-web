@@ -184,7 +184,14 @@ const Page: NextPage<Props> = ({ metaDataTag, jsonLd }) => {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-  });
+
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        lenis.scrollTo(hash, { offset: -80 });
+      }, 300);
+    }
+  }, []);
 
   return (
     <>

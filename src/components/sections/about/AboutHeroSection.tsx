@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import OpacityMoveYInViewAnimation from "@/components/animation/OpacityMoveYInViewAnimation";
 
 const paragraphs = [
@@ -27,12 +28,22 @@ function AboutHeroSection() {
 
             {/* Left-side heading — inside the image container */}
             <div className="relative z-10 h-full flex flex-col justify-start px-4 md:px-8 lg:px-16 pt-16 md:pt-24">
-              <p className="text-white/80 text-sm md:text-base font-medium tracking-widest uppercase mb-4">
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1], delay: 0.2 }}
+                className="text-white/80 text-sm md:text-base font-medium tracking-widest uppercase mb-4"
+              >
                 About Us
-              </p>
-              <h1 className="text-bold-2xl md:text-bold-3xl text-[#E0C759]">
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.35 }}
+                className="text-bold-2xl md:text-bold-3xl text-[#E0C759]"
+              >
                 Shaping Africa&apos;s <br /> Climate Future
-              </h1>
+              </motion.h1>
             </div>
           </div>
         </div>

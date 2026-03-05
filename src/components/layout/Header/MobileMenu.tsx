@@ -90,20 +90,42 @@ export default function MobileMenu() {
                     </button>
 
                     {/* Navigation Links */}
-                    {navLinks.slice(0).map((navlink, idx) => (
-                      <button key={idx} onClick={closeModal} type="button">
-                        <Link
-                          className="flex flex-row items-center justify-between text-xl
-                          md:text-base lg:text-base tracking-[0px] px-8 py-5 active:scale-95
-                          active:bg-th-menu-highlight-secondary  hover:border-th-stroke-primary"
-                          href={navlink.href}
-                          passHref
-                        >
-                          {navlink.title}
-                          {arrow}
-                        </Link>
-                      </button>
-                    ))}
+                    {navLinks.slice(0).map((navlink, idx) =>
+                      navlink.subPages ? (
+                        <div key={idx}>
+                          <div className="px-8 pt-5 pb-2 text-xs tracking-[4px] uppercase text-[#61270A]/40 font-semibold">
+                            {navlink.title}
+                          </div>
+                          {navlink.subPages.map((subPage, subIdx) => (
+                            <button key={subIdx} onClick={closeModal} type="button" className="w-full">
+                              <Link
+                                className="flex flex-row items-center justify-between text-base
+                                tracking-[0px] pl-12 pr-8 py-4 active:scale-95
+                                active:bg-th-menu-highlight-secondary"
+                                href={subPage.href}
+                                passHref
+                              >
+                                {subPage.title}
+                                {arrow}
+                              </Link>
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <button key={idx} onClick={closeModal} type="button">
+                          <Link
+                            className="flex flex-row items-center justify-between text-xl
+                            md:text-base lg:text-base tracking-[0px] px-8 py-5 active:scale-95
+                            active:bg-th-menu-highlight-secondary  hover:border-th-stroke-primary"
+                            href={navlink.href}
+                            passHref
+                          >
+                            {navlink.title}
+                            {arrow}
+                          </Link>
+                        </button>
+                      )
+                    )}
 
                     {/* CTA Button */}
                     {/* <Link

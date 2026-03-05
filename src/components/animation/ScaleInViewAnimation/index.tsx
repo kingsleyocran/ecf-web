@@ -5,15 +5,19 @@ import { useInView } from "react-intersection-observer";
 export default function Animation({
   children,
   extraClassNames = "text-start",
+  outerClassName = "",
   animationDelay = 0.075,
   duration = 0.75,
   triggerOnce = false,
+  div = false,
 }: {
   children: ReactNode;
   extraClassNames?: string;
+  outerClassName?: string;
   animationDelay?: number;
   duration?: number;
   triggerOnce?: boolean;
+  div?: boolean;
 }) {
   const animation = {
     initial: { scale: "80%" },
@@ -27,22 +31,24 @@ export default function Animation({
     }),
   };
 
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.25,
     triggerOnce: triggerOnce,
   });
 
+  const MotionTag = div ? motion.div : motion.p;
+
   return (
-    <div ref={ref}>
-      <div key={1} className={extraClassNames + " " + "m-0 overflow-hidden"}>
-        <motion.p
+    <div ref={ref} className={outerClassName}>
+      <div key={1} className={extraClassNames + " m-0 overflow-hidden"}>
+        <MotionTag
           custom={1}
           variants={animation}
           initial="initial"
           animate={inView ? "enter" : ""}
         >
           {children}
-        </motion.p>
+        </MotionTag>
       </div>
     </div>
   );
