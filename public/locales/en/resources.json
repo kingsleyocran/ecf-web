@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "label": "Resources",
+    "heading": "ECF Knowledge Hub",
+    "description": "AI, Carbon Dioxide Removal, and Solar Radiation Management; explored through an African lens."
+  },
+  "latest": {
+    "heading": "Latest Resources & Knowledge",
+    "description": "Explore cutting-edge research, training materials, and insights from Africa's growing FCT community",
+    "readMore": "Read more"
+  },
+  "newsletters": {
+    "label": "Newsletters",
+    "heading": "Stay in the Loop",
+    "description": "Monthly dispatches with programme updates, research highlights, and frontier climate news.",
+    "readCta": "READ NEWSLETTER →",
+    "badge": "Newsletter"
+  },
+  "types": {
+    "reports": "Reports",
+    "articles": "Articles",
+    "newsletters": "Newsletters",
+    "opeds": "Op-eds"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  }
+}

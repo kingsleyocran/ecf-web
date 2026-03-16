@@ -8,10 +8,12 @@ import NewslettersPage from "@/components/sections/resources/NewslettersPage";
 import { getNewslettersApi } from "@/backend/firebase/db/api/newsletters_api";
 import { NewsletterSchema, ListResponseNewslettersSchema } from "@/backend/models/newsletters";
 import { ResponseIndicator } from "@/backend/models/_shared";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props { newsletters: NewsletterSchema[]; metaDataTag: any; jsonLd: any; }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
+  const { locale } = context;
   let newsletters: NewsletterSchema[] = [];
   try {
     const [data, status] = await getNewslettersApi();
@@ -20,6 +22,7 @@ export async function getServerSideProps() {
   } catch (_) {}
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
       newsletters,
       metaDataTag: {
         title: "Newsletters | ECF",

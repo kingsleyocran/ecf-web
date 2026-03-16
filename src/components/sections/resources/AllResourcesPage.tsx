@@ -12,6 +12,7 @@ import {
   PaginationFilterSchema,
   SortingFilterSchema,
 } from "@/backend/models/_shared";
+import { useTranslation } from "next-i18next";
 
 type ResourceData = {
   id: string;
@@ -66,6 +67,7 @@ const dummyResources: ResourceData[] = [
 ];
 
 function AllResourcesPage() {
+  const { t } = useTranslation("resources");
   const [selectedType, setSelectedType] = useState<number>(0);
 
   const dispatch = useAppDispatch();
@@ -175,14 +177,13 @@ function AllResourcesPage() {
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[180px]">
         <div className="flex flex-col items-center text-center gap-4">
           <p className="text-white/80 text-sm md:text-base font-medium tracking-widest uppercase">
-            Resources
+            {t("hero.label")}
           </p>
           <h1 className="text-bold-2xl md:text-bold-3xl text-[#E0C759]">
-            ECF Knowledge Hub
+            {t("hero.heading")}
           </h1>
           <p className="text-normal-base text-white/80 max-w-lg">
-            AI, Carbon Dioxide Removal, and Solar Radiation Management;
-            explored through an African lens.
+            {t("hero.description")}
           </p>
         </div>
       </div>
@@ -230,7 +231,7 @@ function AllResourcesPage() {
                   }}
                   icon={<LeftIcon width="11" height="22" viewBox="0 0 13 25" />}
                 />
-                <span className="text-bold-lg text-white">Previous</span>
+                <span className="text-bold-lg text-white">{t("pagination.previous", { defaultValue: "Previous" })}</span>
               </div>
             ) : (
               <div></div>
@@ -241,7 +242,7 @@ function AllResourcesPage() {
               Boolean(tableDataStored.lastDoc)
             ) || tableDataStored.data.length === 0 ? (
               <div className="flex flex-row items-center justify-center gap-4">
-                <span className="text-bold-lg text-white">Next</span>
+                <span className="text-bold-lg text-white">{t("pagination.next", { defaultValue: "Next" })}</span>
                 <PrimaryButton
                   onClick={() => {
                     onPaginationChange({

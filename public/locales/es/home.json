@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "line1": "Empoderando a África",
+    "line2": "para Liderar",
+    "line3": "la Frontera de",
+    "line4": "Tecnología Climática",
+    "subtitle": "Construyendo capacidad local, fomentando la innovación y amplificando las voces africanas en la conversación global sobre Tecnologías Climáticas de Frontera",
+    "accessResources": "Acceder a Recursos",
+    "donate": "Donar"
+  },
+  "about": {
+    "heading": "De los Márgenes al Primer Plano",
+    "body": "ECF está dedicado a empoderar a las instituciones africanas y a los responsables de políticas para impulsar las TCF a través de enfoques inclusivos, basados en la ciencia y contextualmente relevantes. Fomentamos la capacidad, la colaboración y la construcción de movimientos para garantizar que las instituciones y comunidades africanas lideren los esfuerzos de TCF, moldeando una gobernanza climática global equitativa con dignidad y agencia.",
+    "cta": "Sobre Nosotros"
+  },
+  "thematic": {
+    "heading": "Nuestras Áreas Temáticas de Enfoque",
+    "description": "El trabajo de ECF abarca tres tecnologías climáticas de frontera interconectadas, cada una crítica para la resiliencia climática de África y la gobernanza climática global.",
+    "cta": "Más información",
+    "ai": {
+      "title": "Inteligencia Artificial para la Adaptación Climática",
+      "description": "Aprovechar la IA para desarrollar sistemas de datos climáticos de alta calidad, mecanismos de alerta temprana y soluciones adaptativas adaptadas a los desafíos climáticos únicos de África. Estamos construyendo infraestructura y experiencia local en IA para garantizar respuestas climáticas en tiempo real y específicas al contexto que sirvan primero a las comunidades africanas."
+    },
+    "cdr": {
+      "title": "Eliminación de Dióxido de Carbono (EDC)",
+      "description": "Explorar y escalar soluciones de eliminación de carbono basadas en la naturaleza y tecnológicas que se alineen con los ecosistemas y las realidades económicas de África. Desde iniciativas de biocarbón hasta proyectos de carbono azul costero, aseguramos que África lidere en definir cómo es una EDC responsable en el continente."
+    },
+    "srm": {
+      "title": "Gestión de la Radiación Solar (GRS)",
+      "description": "Liderar investigaciones rigurosas y éticas sobre los posibles impactos de la GRS en los sistemas climáticos africanos, la agricultura y las comunidades. Garantizamos que los científicos y responsables de políticas africanos tengan el conocimiento y las plataformas para moldear las decisiones globales de gobernanza de la GRS que podrían afectar profundamente al continente."
+    }
+  },
+  "achievements": {
+    "heading": "De Lo Que Estamos Orgullosos",
+    "subtitle": "ECF se basa en una sólida base de logros que demuestran nuestro compromiso de empoderar el liderazgo africano en tecnologías climáticas",
+    "marquee": "Empoderando a África para Liderar la Frontera de Tecnología Climática",
+    "items": {
+      "trained": {
+        "label": "Profesionales Capacitados En",
+        "description": "contabilidad de carbono y descarbonización"
+      },
+      "courses": {
+        "label": "Cursos Universitarios Cortos",
+        "description": "En asociación con universidades en Ghana, Kenia y Sudáfrica"
+      },
+      "placed": {
+        "label": "Estratégicamente Ubicados",
+        "description": "En industrias e instituciones públicas, incluida la oficina del mercado de carbono de Ghana"
+      },
+      "fellowship": {
+        "label": "Fellowship ACIFER",
+        "description": "El primer fellowship de África para investigadores en etapas tempranas de intervención climática"
+      }
+    }
+  },
+  "featuredProjects": {
+    "heading": "Proyectos Destacados",
+    "description": "Vea cómo el trabajo de ECF está transformando la capacidad tecnológica climática en toda África",
+    "items": {
+      "climateData": {
+        "title": "Infraestructura de Datos Climáticos",
+        "description": "Construcción de sistemas de monitoreo climático impulsados por IA en África Oriental"
+      },
+      "blueCarbon": {
+        "title": "Iniciativa de Carbono Azul Costero",
+        "description": "Restauración de ecosistemas de manglares para la secuestración de carbono en África Occidental"
+      },
+      "srmNetwork": {
+        "title": "Red de Investigación GRS",
+        "description": "Investigación ética sobre los impactos de la gestión de la radiación solar"
+      },
+      "biochar": {
+        "title": "Escalado de Producción de Biocarbón",
+        "description": "Escalado de soluciones sostenibles de biocarbón para la eliminación de carbono"
+      }
+    }
+  },
+  "partners": {
+    "heading": "Nuestros Socios",
+    "description": "Durante los últimos 3 años con nuestro trabajo en EDC y GRS, hemos colaborado con una red diversa de organizaciones, instituciones académicas e iniciativas para impulsar estrategias de intervención climática lideradas por africanos."
+  }
+}

@@ -8,6 +8,7 @@ import EventsPage from "@/components/sections/news-and-events/EventsPage";
 import { getEventsApi } from "@/backend/firebase/db/api/events_api";
 import { EventSchema, ListResponseEventsSchema } from "@/backend/models/events";
 import { ResponseIndicator } from "@/backend/models/_shared";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   events: EventSchema[];
@@ -15,7 +16,8 @@ interface Props {
   jsonLd: any;
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
+  const { locale } = context;
   let events: EventSchema[] = [];
 
   try {
@@ -76,7 +78,7 @@ export async function getServerSideProps() {
     },
   ];
 
-  return { props: { events, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), events, metaDataTag, jsonLd } };
 }
 
 const EventsIndexPage: NextPage<Props> = ({ events, metaDataTag, jsonLd }) => {

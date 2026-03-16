@@ -9,6 +9,7 @@ import { getCareersApi } from "@/backend/firebase/db/api/careers_api";
 import { CareerSchema } from "@/backend/models/careers";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { ListResponseCareersSchema } from "@/backend/models/careers";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   careers: CareerSchema[];
@@ -16,7 +17,8 @@ interface Props {
   jsonLd: any;
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
+  const { locale } = context;
   let careers: CareerSchema[] = [];
 
   try {
@@ -94,7 +96,7 @@ export async function getServerSideProps() {
     },
   ];
 
-  return { props: { careers, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), careers, metaDataTag, jsonLd } };
 }
 
 const CareersPage: NextPage<Props> = ({ careers, metaDataTag, jsonLd }) => {

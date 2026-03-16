@@ -8,53 +8,32 @@ import {
   useTransform,
 } from "framer-motion";
 import PrimaryButton from "../../button/PrimaryButton";
-
-const thematicAreas = [
-  {
-    id: 1,
-    title: "Artificial Intelligence for Climate Adaptation",
-    description: (
-      <>
-        Harnessing AI to develop high-quality climate data systems, early
-        warning mechanisms, and adaptive solutions tailored to Africa's unique
-        climate challenges. We're building local AI infrastructure and expertise
-        to ensure real-time, context-specific climate responses that serve
-        African communities first.
-      </>
-    ),
-    iconPath: "/assets/vector/theme-ai.svg",
-  },
-  {
-    id: 2,
-    title: "Carbon Dioxide Removal (CDR)",
-    description: (
-      <>
-        Exploring and scaling nature-based and technological carbon removal
-        solutions that align with Africa's ecosystems and economic realities.
-        From biochar initiatives to coastal blue carbon projects, we're ensuring
-        Africa leads in defining what responsible CDR looks like on the
-        continent.
-      </>
-    ),
-    iconPath: "/assets/vector/theme-cdr.svg",
-  },
-  {
-    id: 3,
-    title: "Solar Radiation Management (SRM)",
-    description: (
-      <>
-        Leading rigorous, ethical research into SRM's potential impacts on
-        African climate systems, agriculture, and communities. We ensure African
-        scientists and policymakers have the knowledge and platforms to shape
-        global SRM governance decisions that could profoundly affect the
-        continent.
-      </>
-    ),
-    iconPath: "/assets/vector/theme-srm.svg",
-  },
-];
+import { useTranslation } from "next-i18next";
 
 function HomeThematicAreasSection() {
+  const { t } = useTranslation("home");
+
+  const thematicAreas = [
+    {
+      id: 1,
+      title: t("thematic.ai.title"),
+      description: t("thematic.ai.description"),
+      iconPath: "/assets/vector/theme-ai.svg",
+    },
+    {
+      id: 2,
+      title: t("thematic.cdr.title"),
+      description: t("thematic.cdr.description"),
+      iconPath: "/assets/vector/theme-cdr.svg",
+    },
+    {
+      id: 3,
+      title: t("thematic.srm.title"),
+      description: t("thematic.srm.description"),
+      iconPath: "/assets/vector/theme-srm.svg",
+    },
+  ];
+
   return (
     <div className="relative">
       {/* Background */}
@@ -66,17 +45,15 @@ function HomeThematicAreasSection() {
           {/* Left - Title Section (Sticky) */}
           <div className="md:sticky md:top-[100px] -mt-[600px] md:-mt-[800px] md:basis-1/2 h-full flex flex-col items-start gap-6 z-20">
             <h2 className="text-bold-2xl text-white max-w-[400px] leading-tight">
-              Our Thematic <br /> Focus Areas
+              {t("thematic.heading")}
             </h2>
 
             <p className="text-normal-base text-white/90 max-w-[500px]">
-              ECF's work spans three interconnected frontier climate
-              technologies, each critical to Africa's climate resilience and
-              global climate governance.
+              {t("thematic.description")}
             </p>
 
             <PrimaryButton
-              title="Find out more"
+              title={t("thematic.cta")}
               variant="white"
               onClick={() => {
                 window.location.href = "/thematic-areas";

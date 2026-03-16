@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "whoWeAre": "Qui Sommes-Nous",
+    "programs": "Programmes",
+    "resources": "Ressources",
+    "newsEvents": "Actualités & Événements",
+    "donate": "Faire un Don",
+    "blogs": "Blogs",
+    "careers": "Carrières",
+    "subWhoWeAre": {
+      "missionVision": "Mission & Vision",
+      "howWeWork": "Comment Nous Travaillons",
+      "milestones": "Étapes Clés",
+      "ourTeam": "Notre Équipe"
+    },
+    "subPrograms": {
+      "srm": "Gestion du Rayonnement Solaire",
+      "ai": "Intelligence Artificielle",
+      "cdr": "Élimination du Dioxyde de Carbone"
+    },
+    "subResources": {
+      "reports": "Rapports",
+      "articles": "Articles",
+      "newsletters": "Bulletins",
+      "opeds": "Tribunes"
+    },
+    "subNewsEvents": {
+      "latestNews": "Dernières Nouvelles",
+      "videosPodcasts": "Vidéos & Podcasts",
+      "events": "Événements"
+    }
+  },
+  "footer": {
+    "quickLinks": "Liens Rapides",
+    "contactUs": "Nous Contacter",
+    "copyright": "© {{year}} Emerging Climate Frontiers. Tous droits réservés.",
+    "terms": "Conditions",
+    "privacy": "Confidentialité"
+  },
+  "newsletter": {
+    "heading": "Restez Connecté",
+    "description": "Recevez chaque mois des mises à jour sur les développements des technologies climatiques africaines, les opportunités de recherche, les événements et les ressources.",
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+    "email": "Votre adresse e-mail",
+    "subscribe": "S'abonner",
+    "successMessage": "Vous avez été abonné avec succès !",
+    "errorMessage": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "partners": {
+    "heading": "Nos Partenaires",
+    "description": "Au cours des 3 dernières années avec notre travail sur l'EDC et la GRS, nous avons collaboré avec un réseau diversifié d'organisations, d'institutions académiques et d'initiatives pour piloter des stratégies d'intervention climatique dirigées par des Africains."
+  },
+  "shared": {
+    "readMore": "Lire la suite",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "aboutUs": "À Propos",
+    "findOutMore": "En savoir plus",
+    "readNewsletter": "LIRE LE BULLETIN →",
+    "newsletter": "Bulletin"
+  }
+}

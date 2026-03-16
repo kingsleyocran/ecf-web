@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "label": "About Us",
+    "heading": "Shaping Africa's Climate Future",
+    "para1": "In 2022, our climate team at GAYO took a bold step: we named and challenged the glaring inequalities in the rapidly evolving field of climate technologies. We saw firsthand how African voices were being sidelined in critical global dialogues; not because of lack of will, but due to structural barriers and persistent knowledge gaps.",
+    "para2": "In response, we set out to build something fundamentally different: safe, accessible spaces where African voices can lead climate discussions, allowing local stakeholders to shape their own positions on Frontier Climate Technologies.",
+    "para3": "Now, after three years of dedicated work, we are transitioning from GAYO to become Emerging Climate Frontiers (ECF)—an independent organization ready to scale our impact, deepen our research, and meet the growing demand across the continent."
+  },
+  "mission": {
+    "title": "Our Mission",
+    "body": "ECF is dedicated to empowering African institutions and policymakers to drive FCTs through inclusive, science-driven, and contextually relevant approaches. We foster capacity, collaboration, and movement building to ensure African institutions and communities lead FCTs efforts, shaping equitable global climate governance with dignity and agency."
+  },
+  "northStar": {
+    "title": "Our North Star",
+    "body": "ECF envisions an Africa where early-career researchers, students, policymakers, and mandated institutions have a strengthened capacity to lead locally relevant FCTs, including AI for climate adaptation, contributing to inclusive global governance and local resilience."
+  },
+  "howWeWork": {
+    "heading": "How We Work",
+    "description": "Our approach to building African climate technology leadership.",
+    "pillars": {
+      "capacity": {
+        "title": "Capacity Strengthening",
+        "description": "We develop sustainable training programs for early-career researchers, students, and policymakers to build expertise in CDR, SRM, and AI governance, tailored to Africa's unique climate challenges."
+      },
+      "network": {
+        "title": "Collaborative Network Building",
+        "description": "We establish a continental coalition of stakeholders from academia, government, civil society, and communities to shape Africa's collective stance on FCTs."
+      },
+      "movement": {
+        "title": "Movement Building for Climate Justice",
+        "description": "We ignite and sustain a vibrant, Africa-led movement to advance equitable and contextually relevant FCTs, uniting diverse voices from youth, marginalized communities, and policymakers."
+      }
+    }
+  },
+  "team": {
+    "heading": "Meet Our Team",
+    "description": "A dedicated team of African climate advocates, researchers, and organizers.",
+    "roles": {
+      "coExecutiveDirector": "Co-Executive Director",
+      "programDirector": "Program Director",
+      "programOfficer": "Program Officer",
+      "researchScientificDirector": "Research & Scientific Director",
+      "programAssistant": "Program Assistant"
+    }
+  }
+}

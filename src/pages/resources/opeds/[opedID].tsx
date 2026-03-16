@@ -8,11 +8,13 @@ import ContentDetailPage from "@/components/sections/resources/ContentDetailPage
 import { getOpedApi } from "@/backend/firebase/db/api/opeds_api";
 import { OpEdSchema, ResponseOpEdSchema } from "@/backend/models/opeds";
 import { ResponseIndicator } from "@/backend/models/_shared";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props { oped: OpEdSchema; metaDataTag: any; jsonLd: any; }
 
 export async function getServerSideProps(context: any) {
   const { opedID } = context.query;
+  const { locale } = context;
   let opedData: OpEdSchema | null = null;
   try {
     const [data, status] = await getOpedApi(opedID);
@@ -24,6 +26,7 @@ export async function getServerSideProps(context: any) {
   if (!opedData) return { notFound: true };
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
       oped: opedData,
       metaDataTag: {
         title: `${opedData.title} | ECF`,

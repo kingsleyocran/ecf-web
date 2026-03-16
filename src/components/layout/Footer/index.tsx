@@ -4,9 +4,11 @@ import Image from "next/image";
 import { navLinks, socialLinks, termPrivacyList, footerExtraLinks } from "@/utils/content";
 import LogoSvg from "../../../../public/assets/brand/logo-1.svg";
 import EmailIcon from "../../../../public/assets/icons/email.svg";
+import { useTranslation } from "next-i18next";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation("common");
 
   return (
     <footer className="w-full bg-[#034D6B]">
@@ -26,7 +28,7 @@ function Footer() {
 
           <div className="">
             <p className="px-2 primarybold text-xl tracking-[7px] text-[#E0C759]">
-              QUICK LINKS
+              {t("footer.quickLinks").toUpperCase()}
             </p>
 
             <div className="flex flex-col items-start gap-4 mt-4">
@@ -36,7 +38,7 @@ function Footer() {
                   href={link.href}
                   className="text-normal-base text-white hover:bg-white/10 px-2 py-1 rounded-2xl duration-150 transition-colors"
                 >
-                  {link.title}
+                  {t(link.tKey)}
                 </Link>
               ))}
               {footerExtraLinks.map((link, index) => (
@@ -45,7 +47,7 @@ function Footer() {
                   href={link.href}
                   className="text-normal-base text-white hover:bg-white/10 px-2 py-1 rounded-2xl duration-150 transition-colors"
                 >
-                  {link.title}
+                  {t(link.tKey)}
                 </Link>
               ))}
             </div>
@@ -54,7 +56,7 @@ function Footer() {
           {/* Terms and Privacy Links */}
           <div className="flex flex-col gap-4 items-center md:items-start">
             <p className="primarybold text-xl tracking-[7px] text-[#E0C759]">
-              CONTACT US
+              {t("footer.contactUs").toUpperCase()}
             </p>
             {/* Email Contact */}
             <div className="flex flex-row items-center gap-2">
@@ -123,14 +125,14 @@ function Footer() {
                 href={termPrivacyList[0].href}
                 className="text-normal-base text-white hover:underline"
               >
-                {termPrivacyList[0].title}
+                {t(termPrivacyList[0].tKey)}
               </Link>
               <span className="text-white">|</span>
               <Link
                 href={termPrivacyList[1].href}
                 className="text-normal-base text-white hover:underline"
               >
-                {termPrivacyList[1].title}
+                {t(termPrivacyList[1].tKey)}
               </Link>
             </div>
           </div>
@@ -139,7 +141,7 @@ function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 text-center">
           <p className="text-normal-sm text-white/40">
-            © {currentYear} Emerging Climate Frontiers. All Rights Reserved.
+            {t("footer.copyright", { year: currentYear })}
           </p>
         </div>
       </div>

@@ -9,11 +9,13 @@ import ArrowDownIcon from "../../../../public/assets/icons/menu_arrow_down.svg";
 import ArrowRightIcon from "../../../../public/assets/icons/menu_arrow_right.svg";
 import { useRouter } from "next/router";
 import { NavLink } from "@/utils/content";
+import { useTranslation } from "next-i18next";
 
 export default function DesktopMenu({ navlink }: { navlink: NavLink }) {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const router = useRouter();
+  const { t } = useTranslation("common");
 
   const isActive = router.pathname.startsWith(navlink.href);
 
@@ -51,7 +53,7 @@ export default function DesktopMenu({ navlink }: { navlink: NavLink }) {
                 }`}
               onClick={() => { if (!navlink.subPages?.length || navlink.clickable) router.push(navlink.href); }}
             >
-              <p className="line-clamp-1 ">{navlink.title}</p>
+              <p className="line-clamp-1">{t(navlink.tKey)}</p>
               <ArrowDownIcon
                 width="13"
                 height="7"
@@ -75,7 +77,7 @@ export default function DesktopMenu({ navlink }: { navlink: NavLink }) {
               -translate-x-1/2 transform overflow-hidden shadow-lg"
               >
                 {navlink.subPages?.map(
-                  (link: { href: string; title: string }, idx: number) => {
+                  (link, idx: number) => {
                     return (
                       <DesktopMenuLinkButton
                         key={idx}
@@ -102,8 +104,10 @@ function DesktopMenuLinkButton({
 }: {
   idx: React.Key;
   navlink: NavLink;
-  link: { href: string; title: string };
+  link: { href: string; title: string; tKey: string };
 }) {
+  const { t } = useTranslation("common");
+
   const navigateToPage = () => {
     window.location.href = link.href;
   };
@@ -113,7 +117,7 @@ function DesktopMenuLinkButton({
       <div
         className="secondarybold text-normal-base transition-all duration-200 text-white fill-white hover:bg-[#034D6B]/80 flex flex-row items-center justify-between tracking-[0px] px-4 py-4"
       >
-        <span className="whitespace-nowrap">{link.title}</span>
+        <span className="whitespace-nowrap">{t(link.tKey)}</span>
         <ArrowRightIcon width="13" height="10" viewBox="0 0 13 25" />
       </div>
     </button>

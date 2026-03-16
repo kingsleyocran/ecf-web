@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "line1": "Empowering Africa",
+    "line2": "to Lead",
+    "line3": "Climate",
+    "line4": "Technology Frontier",
+    "subtitle": "Building local capacity, fostering innovation, and amplifying African voices in the global conversation on Frontier Climate Technologies",
+    "accessResources": "Access Resources",
+    "donate": "Donate"
+  },
+  "about": {
+    "heading": "From the Sidelines to the Forefront",
+    "body": "ECF is dedicated to empowering African institutions and policymakers to drive FCTs through inclusive, science-driven, and contextually relevant approaches. We foster capacity, collaboration, and movement building to ensure African institutions and communities lead FCTs efforts, shaping equitable global climate governance with dignity and agency.",
+    "cta": "About Us"
+  },
+  "thematic": {
+    "heading": "Our Thematic Focus Areas",
+    "description": "ECF's work spans three interconnected frontier climate technologies, each critical to Africa's climate resilience and global climate governance.",
+    "cta": "Find out more",
+    "ai": {
+      "title": "Artificial Intelligence for Climate Adaptation",
+      "description": "Harnessing AI to develop high-quality climate data systems, early warning mechanisms, and adaptive solutions tailored to Africa's unique climate challenges. We're building local AI infrastructure and expertise to ensure real-time, context-specific climate responses that serve African communities first."
+    },
+    "cdr": {
+      "title": "Carbon Dioxide Removal (CDR)",
+      "description": "Exploring and scaling nature-based and technological carbon removal solutions that align with Africa's ecosystems and economic realities. From biochar initiatives to coastal blue carbon projects, we're ensuring Africa leads in defining what responsible CDR looks like on the continent."
+    },
+    "srm": {
+      "title": "Solar Radiation Management (SRM)",
+      "description": "Leading rigorous, ethical research into SRM's potential impacts on African climate systems, agriculture, and communities. We ensure African scientists and policymakers have the knowledge and platforms to shape global SRM governance decisions that could profoundly affect the continent."
+    }
+  },
+  "achievements": {
+    "heading": "What We Are Proud Of",
+    "subtitle": "ECF builds on a strong foundation of achievements that demonstrate our commitment to empowering African leadership in climate technologies",
+    "marquee": "Empowering Africa to Lead the Climate Technology Frontier",
+    "items": {
+      "trained": {
+        "label": "Professionals Trained In",
+        "description": "carbon accounting and decarbonization"
+      },
+      "courses": {
+        "label": "University Short Courses",
+        "description": "Partnered with universities in Ghana, Kenya, and South Africa"
+      },
+      "placed": {
+        "label": "Strategically Placed",
+        "description": "In industries and public institutions including Ghana's carbon market office"
+      },
+      "fellowship": {
+        "label": "ACIFER Fellowship",
+        "description": "Africa's first fellowship for early-career climate intervention researchers"
+      }
+    }
+  },
+  "featuredProjects": {
+    "heading": "Featured Projects",
+    "description": "See how ECF's work is transforming climate technology capacity across Africa",
+    "items": {
+      "climateData": {
+        "title": "Climate Data Infrastructure",
+        "description": "Building AI-powered climate monitoring systems across East Africa"
+      },
+      "blueCarbon": {
+        "title": "Coastal Blue Carbon Initiative",
+        "description": "Restoring mangrove ecosystems for carbon sequestration in West Africa"
+      },
+      "srmNetwork": {
+        "title": "SRM Research Network",
+        "description": "Leading ethical research on solar radiation management impacts"
+      },
+      "biochar": {
+        "title": "Biochar Production Scaling",
+        "description": "Scaling sustainable biochar solutions for carbon removal"
+      }
+    }
+  },
+  "partners": {
+    "heading": "Our Partners",
+    "description": "Over the past 3 years with our work on CDR and SRM, we have collaborated with a diverse network of organizations, academic institutions, and initiatives to drive African-led climate intervention strategies."
+  }
+}

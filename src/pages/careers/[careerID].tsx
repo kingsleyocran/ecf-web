@@ -8,6 +8,7 @@ import CareerPage from "@/components/sections/careers/CareerPage";
 import { getCareerApi } from "@/backend/firebase/db/api/careers_api";
 import { CareerSchema, ResponseCareerSchema } from "@/backend/models/careers";
 import { ResponseIndicator } from "@/backend/models/_shared";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   career: CareerSchema;
@@ -17,6 +18,7 @@ interface Props {
 
 export async function getServerSideProps(context: any) {
   const { careerID } = context.query;
+  const { locale } = context;
 
   let careerData: CareerSchema | null = null;
 
@@ -79,7 +81,7 @@ export async function getServerSideProps(context: any) {
     },
   };
 
-  return { props: { career: careerData, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), career: careerData, metaDataTag, jsonLd } };
 }
 
 const CareerDetailPage: NextPage<Props> = ({ career, metaDataTag, jsonLd }) => {

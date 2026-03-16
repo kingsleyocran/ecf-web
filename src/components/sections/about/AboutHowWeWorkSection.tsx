@@ -1,33 +1,33 @@
 import MaskText from "@/components/animation/OpacityMoveYInViewAnimation";
-
-const pillars = [
-  {
-    title: "Capacity Strengthening",
-    description:
-      "We develop sustainable training programs for early-career researchers, students, and policymakers to build expertise in CDR, SRM, and AI governance, tailored to Africa's unique climate challenges.",
-  },
-  {
-    title: "Collaborative Network Building",
-    description:
-      "We establish a continental coalition of stakeholders from academia, government, civil society, and communities to shape Africa's collective stance on FCTs",
-  },
-  {
-    title: "Movement Building for Climate Justice",
-    description:
-      "We ignite and sustain a vibrant, Africa-led movement to advance equitable and contextually relevant FCTs, uniting diverse voices from youth, marginalized communities, and policymakers.",
-  },
-];
+import { useTranslation } from "next-i18next";
 
 function AboutHowWeWorkSection() {
+  const { t } = useTranslation("about");
+
+  const pillars = [
+    {
+      title: t("howWeWork.pillars.capacity.title"),
+      description: t("howWeWork.pillars.capacity.description"),
+    },
+    {
+      title: t("howWeWork.pillars.network.title"),
+      description: t("howWeWork.pillars.network.description"),
+    },
+    {
+      title: t("howWeWork.pillars.movement.title"),
+      description: t("howWeWork.pillars.movement.description"),
+    },
+  ];
+
   return (
     <section id="how-we-work" className="w-full bg-[#C7B14E] py-16 md:py-24">
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
         {/* Header */}
         <MaskText positionFrom={24} triggerOnce={true} animationDelay={0} extraClassNames="text-bold-2xl text-white mb-4">
-          How We Work
+          {t("howWeWork.heading")}
         </MaskText>
         <MaskText positionFrom={20} triggerOnce={true} animationDelay={0.1} extraClassNames="text-normal-base text-white/80 max-w-[450px] mb-12">
-          Our approach to building African climate technology leadership.
+          {t("howWeWork.description")}
         </MaskText>
       </div>
 

@@ -5,13 +5,15 @@ import CustomHead from "@/components/layout/CustomHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import LatestNewsPage from "@/components/sections/news-and-events/LatestNewsPage";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   metaDataTag: any;
   jsonLd: any;
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
+  const { locale } = context;
   const metaDataTag = {
     title: "Latest News | Emerging Climate Frontiers",
     authors: [{ name: "Emerging Climate Frontiers (ECF)" }],
@@ -58,7 +60,7 @@ export async function getServerSideProps() {
     },
   ];
 
-  return { props: { metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), metaDataTag, jsonLd } };
 }
 
 const LatestNewsPageRoute: NextPage<Props> = ({ metaDataTag, jsonLd }) => {

@@ -2,6 +2,7 @@ import LangIcon from "../../../../public/assets/icons/lang.svg";
 import PrimaryButton from "../../button/PrimaryButton";
 import { useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 // Mock data - Replace with actual data from Firebase/API
 const resourcesData = [
@@ -40,6 +41,7 @@ const resourcesData = [
 ];
 
 function ResourcesSection() {
+  const { t } = useTranslation("resources");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const targetRef = useRef<HTMLDivElement>(null);
   const [hoveredCardId, setHoveredCardId] = useState<number | null>(null);
@@ -71,18 +73,16 @@ function ResourcesSection() {
           <div className="flex w-full flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-8 mb-8 md:mb-12">
             <div className="flex flex-col item gap-3 md:gap-4 max-w-2xl">
               <h2 className="text-bold-2xl text-[#E0C759]">
-                Latest Resources
-                <br />& Knowledge
+                {t("latest.heading")}
               </h2>
               <p className="text-normal-base text-white/90">
-                Explore cutting-edge research, training materials, and insights
-                from Africa's growing FCT community
+                {t("latest.description")}
               </p>
             </div>
 
             <div className="flex-shrink-0">
               <button className="px-6 md:px-6 py-2 md:py-2 bg-white/20 hover:bg-white/30 text-white rounded-[20px] font-medium text-base md:text-lg transition-all duration-200 whitespace-nowrap">
-                Read more
+                {t("latest.readMore")}
               </button>
             </div>
           </div>
@@ -128,7 +128,7 @@ function ResourcesSection() {
 
                       {hoveredCardId === index && (
                         <PrimaryButton
-                          title="Read more"
+                          title={t("latest.readMore")}
                           isWide={false}
                           variant="yellow-light"
                           onClick={() => {
@@ -187,7 +187,7 @@ function ResourcesSection() {
 
                       {hoveredCardId === resource.id && (
                         <PrimaryButton
-                          title="Read more"
+                          title={t("latest.readMore")}
                           variant="yellow-light"
                           onClick={() => {
                             // Handle navigation to resource detail page

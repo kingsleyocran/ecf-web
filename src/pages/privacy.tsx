@@ -1,8 +1,17 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import CustomHead from "@/components/layout/CustomHead";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { NextPage } from "next";
 import React from "react";
+
+export async function getServerSideProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+  };
+}
 
 const PrivacyPolicyPage: NextPage = () => {
   const metaDataTag = {

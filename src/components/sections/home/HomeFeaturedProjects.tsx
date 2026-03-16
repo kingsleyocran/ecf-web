@@ -1,71 +1,35 @@
 import Image from "next/image";
-import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { ReactNode } from "react";
+import { useTranslation } from "next-i18next";
 
-// Dummy project data
-const featuredProjects = [
-  {
-    id: 1,
-    title: "Climate Data Infrastructure",
-    description:
-      "Building AI-powered climate monitoring systems across East Africa",
-    image: "/assets/images/test-image.png",
-    link: "/projects/1",
-    size: "small",
-    gridClass: "col-span-1 md:col-span-1 bento-card-1",
-  },
-  {
-    id: 2,
-    title: "Coastal Blue Carbon Initiative",
-    description:
-      "Restoring mangrove ecosystems for carbon sequestration in West Africa",
-    image: "/assets/images/test-image.png",
-    link: "/projects/2",
-    size: "small",
-    gridClass: "col-span-1 md:col-span-1 bento-card-2",
-  },
-  {
-    id: 3,
-    title: "Projects in Action",
-    description:
-      "See how ECF's work is transforming climate technology capacity across Africa",
-    image: "/assets/images/test-image.png",
-    link: "/projects",
-    size: "large",
-    gridClass: "col-span-1 md:col-span-2 bento-card-3",
-  },
-  {
-    id: 4,
-    title: "SRM Research Network",
-    description:
-      "Leading ethical research on solar radiation management impacts",
-    image: "/assets/images/test-image.png",
-    link: "/projects/4",
-    size: "medium",
-    gridClass: "col-span-1 md:col-span-2 bento-card-4",
-  },
-  {
-    id: 5,
-    title: "Biochar Production Scaling",
-    description: "Scaling sustainable biochar solutions for carbon removal",
-    image: "/assets/images/test-image.png",
-    link: "/projects/5",
-    size: "medium",
-    gridClass: "col-span-1 md:col-span-1 bento-card-5",
-  },
+const IMAGE_PATH = "/assets/images/test-image.png";
+
+const projectMeta = [
+  { id: 1, tKey: "climateData", image: IMAGE_PATH, gridClass: "col-span-1 md:col-span-1 bento-card-1" },
+  { id: 2, tKey: "blueCarbon", image: IMAGE_PATH, gridClass: "col-span-1 md:col-span-1 bento-card-2" },
+  { id: 3, tKey: "srmNetwork", image: IMAGE_PATH, gridClass: "col-span-1 md:col-span-2 bento-card-3" },
+  { id: 4, tKey: "biochar", image: IMAGE_PATH, gridClass: "col-span-1 md:col-span-1 bento-card-5" },
 ];
 
 function HomeFeaturedProjects() {
+  const { t } = useTranslation("home");
+
+  const featuredProjects = projectMeta.map((p) => ({
+    ...p,
+    title: t(`featuredProjects.items.${p.tKey}.title`),
+    description: t(`featuredProjects.items.${p.tKey}.description`),
+  }));
+
   return (
     <section className="w-full flex flex-col py-12 md:py-24 bg-[#034D6B] z-20 relative">
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
         {/* Header */}
         <div className="mb-8 md:mb-12">
           <h2 className="text-bold-2xl  text-[#E0C759] mb-4">
-            Featured Projects
+            {t("featuredProjects.heading")}
           </h2>
           <p className="text-normal-lg text-white/90 max-w-[500px]">
-            See how ECF's work is transforming climate technology capacity
-            across Africa
+            {t("featuredProjects.description")}
           </p>
         </div>
 

@@ -8,11 +8,13 @@ import ReportViewerPage from "@/components/sections/resources/ReportViewerPage";
 import { getReportApi } from "@/backend/firebase/db/api/reports_api";
 import { ReportSchema, ResponseReportSchema } from "@/backend/models/reports";
 import { ResponseIndicator } from "@/backend/models/_shared";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props { report: ReportSchema; metaDataTag: any; jsonLd: any; }
 
 export async function getServerSideProps(context: any) {
   const { reportID } = context.query;
+  const { locale } = context;
   let reportData: ReportSchema | null = null;
   try {
     const [data, status] = await getReportApi(reportID);
@@ -28,6 +30,7 @@ export async function getServerSideProps(context: any) {
   if (!reportData) return { notFound: true };
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
       report: reportData,
       metaDataTag: {
         title: `${reportData.title} | ECF Reports`,

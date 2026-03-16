@@ -8,11 +8,13 @@ import ContentDetailPage from "@/components/sections/resources/ContentDetailPage
 import { getArticleApi } from "@/backend/firebase/db/api/articles_api";
 import { ArticleSchema, ResponseArticleSchema } from "@/backend/models/articles";
 import { ResponseIndicator } from "@/backend/models/_shared";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props { article: ArticleSchema; metaDataTag: any; jsonLd: any; }
 
 export async function getServerSideProps(context: any) {
   const { articleID } = context.query;
+  const { locale } = context;
   let articleData: ArticleSchema | null = null;
   try {
     const [data, status] = await getArticleApi(articleID);
@@ -24,6 +26,7 @@ export async function getServerSideProps(context: any) {
   if (!articleData) return { notFound: true };
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
       article: articleData,
       metaDataTag: {
         title: `${articleData.title} | ECF`,

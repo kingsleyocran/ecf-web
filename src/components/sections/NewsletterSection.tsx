@@ -4,8 +4,10 @@ import PrimaryButton from "../button/PrimaryButton";
 import SuccessToast from "../toast/SuccessToast";
 import ErrorToast from "../toast/ErrorToast";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 function NewsletterForm() {
+  const { t } = useTranslation("common");
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -26,14 +28,14 @@ function NewsletterForm() {
     const result = await res.json();
     if (res.ok) {
       setStatus("success");
-      SuccessToast({ message: "You've been subscribed successfully!" });
+      SuccessToast({ message: t("newsletter.successMessage") });
       setEmail("");
       setFirstName("");
       setLastName("");
     } else {
       setStatus("error");
       ErrorToast({
-        message: result.error || "Something went wrong. Please try again.",
+        message: result.error || t("newsletter.errorMessage"),
       });
     }
   };
@@ -41,15 +43,14 @@ function NewsletterForm() {
   return (
     <form onSubmit={subscribe} className="space-y-2 flex flex-col items-start">
       <h6 className="secondarybold text-[#E0C759] text-bold-2xl md:text-start">
-        Stay Connected
+        {t("newsletter.heading")}
       </h6>
       <p className="text-normal-base text-white pb-[10px]">
-        Get monthly updates on African climate technology developments, research
-        opportunities, events, and resources delivered to your inbox.
+        {t("newsletter.description")}
       </p>
       <input
         type="text"
-        placeholder="First name"
+        placeholder={t("newsletter.firstName")}
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
         required
@@ -57,7 +58,7 @@ function NewsletterForm() {
       />
       <input
         type="text"
-        placeholder="Last name"
+        placeholder={t("newsletter.lastName")}
         value={lastName}
         onChange={(e) => setLastName(e.target.value)}
         required
@@ -65,7 +66,7 @@ function NewsletterForm() {
       />
       <input
         type="email"
-        placeholder="What's your email"
+        placeholder={t("newsletter.email")}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
@@ -74,7 +75,7 @@ function NewsletterForm() {
       <div className="h-[0px]"></div>
       <PrimaryButton
         isWide={false}
-        title="Subscribe"
+        title={t("newsletter.subscribe")}
         type="submit"
         isLoading={status === "loading"}
         variant="yellow-light"

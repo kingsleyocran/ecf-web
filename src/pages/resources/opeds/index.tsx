@@ -8,10 +8,12 @@ import OpedsPage from "@/components/sections/resources/OpedsPage";
 import { getOpedsApi } from "@/backend/firebase/db/api/opeds_api";
 import { OpEdSchema, ListResponseOpedsSchema } from "@/backend/models/opeds";
 import { ResponseIndicator } from "@/backend/models/_shared";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props { opeds: OpEdSchema[]; metaDataTag: any; jsonLd: any; }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
+  const { locale } = context;
   let opeds: OpEdSchema[] = [];
   try {
     const [data, status] = await getOpedsApi();
@@ -20,6 +22,7 @@ export async function getServerSideProps() {
   } catch (_) {}
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
       opeds,
       metaDataTag: {
         title: "Op-Eds | ECF",

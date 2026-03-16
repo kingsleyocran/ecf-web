@@ -4,79 +4,41 @@ import { AnimatePresence, motion } from "framer-motion";
 import ParallaxMarquee from "@/components/animation/ParallaxMarquee";
 import DraggableAchievementCard from "@/components/cards/DraggableAchievementCard";
 import DraggableImage from "@/components/cards/DraggableImage";
+import { useTranslation } from "next-i18next";
 
-// Achievement data
-const achievementsData = {
-  title: "What We Are Proud Of",
-  subtitle:
-    "ECF builds on a strong foundation of achievements that demonstrate our commitment to empowering African leadership in climate technologies",
-  marqueeText: "Empowering Africa to Lead the Climate Technology Frontier",
-  achievements: [
-    {
-      id: 1,
-      number: "20",
-      label: "Professionals Trained In",
-      description: "carbon accounting and decarbonization",
-      position: { x: 14, y: 3 },
-    },
-    {
-      id: 2,
-      number: "1ST",
-      label: "University Short Courses",
-      description:
-        "Partnered with universities in Ghana, Kenya, and South Africa",
-      position: { x: 55, y: 28 },
-    },
-    {
-      id: 3,
-      number: "10",
-      label: "Strategically Placed",
-      description:
-        "In industries and public institutions including Ghana's carbon market office",
-      position: { x: 18, y: 47 },
-    },
-    {
-      id: 4,
-      number: "1ST",
-      label: "ACIFER Fellowship",
-      description:
-        "Africa's first fellowship for early-career climate intervention researchers",
-      position: { x: 45, y: 67 },
-    },
-  ],
-  images: [
-    {
-      id: 1,
-      src: "/assets/images/test-image.png",
-      alt: "ECF professionals",
-      position: { x: 38, y: 2 },
-      size: { width: 280, height: 320 },
-    },
-    {
-      id: 2,
-      src: "/assets/images/test-image.png",
-      alt: "ECF team members",
-      position: { x: 8, y: 23 },
-      size: { width: 280, height: 320 },
-    },
-    {
-      id: 3,
-      src: "/assets/images/test-image.png",
-      alt: "ECF conference",
-      position: { x: 58, y: 50 },
-      size: { width: 280, height: 320 },
-    },
-    {
-      id: 4,
-      src: "/assets/images/test-image.png",
-      alt: "ECF team",
-      position: { x: 22, y: 70 },
-      size: { width: 280, height: 320 },
-    },
-  ],
-};
+const images = [
+  {
+    id: 1,
+    src: "/assets/images/test-image.png",
+    alt: "ECF professionals",
+    position: { x: 38, y: 2 },
+    size: { width: 280, height: 320 },
+  },
+  {
+    id: 2,
+    src: "/assets/images/test-image.png",
+    alt: "ECF team members",
+    position: { x: 8, y: 23 },
+    size: { width: 280, height: 320 },
+  },
+  {
+    id: 3,
+    src: "/assets/images/test-image.png",
+    alt: "ECF conference",
+    position: { x: 58, y: 50 },
+    size: { width: 280, height: 320 },
+  },
+  {
+    id: 4,
+    src: "/assets/images/test-image.png",
+    alt: "ECF team",
+    position: { x: 22, y: 70 },
+    size: { width: 280, height: 320 },
+  },
+];
 
 function HomeAchievementsSection() {
+  const { t } = useTranslation("home");
   const constraintsRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [isInView, setIsInView] = useState(false);
@@ -85,8 +47,40 @@ function HomeAchievementsSection() {
     query: "(min-width: 768px) and (max-width: 1023px)",
   });
 
-  const { title, subtitle, marqueeText, achievements, images } =
-    achievementsData;
+  const title = t("achievements.heading");
+  const subtitle = t("achievements.subtitle");
+  const marqueeText = t("achievements.marquee");
+
+  const achievements = [
+    {
+      id: 1,
+      number: "20",
+      label: t("achievements.items.trained.label"),
+      description: t("achievements.items.trained.description"),
+      position: { x: 14, y: 3 },
+    },
+    {
+      id: 2,
+      number: "1ST",
+      label: t("achievements.items.courses.label"),
+      description: t("achievements.items.courses.description"),
+      position: { x: 55, y: 28 },
+    },
+    {
+      id: 3,
+      number: "10",
+      label: t("achievements.items.placed.label"),
+      description: t("achievements.items.placed.description"),
+      position: { x: 18, y: 47 },
+    },
+    {
+      id: 4,
+      number: "1ST",
+      label: t("achievements.items.fellowship.label"),
+      description: t("achievements.items.fellowship.description"),
+      position: { x: 45, y: 67 },
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(

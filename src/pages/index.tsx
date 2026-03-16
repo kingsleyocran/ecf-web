@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import CustomHead from "@/components/layout/CustomHead";
 import { useEffect } from "react";
 import Lenis from "lenis";
@@ -18,6 +19,7 @@ interface Props {
 }
 
 export async function getServerSideProps(context: any) {
+  const { locale } = context;
   const metaDataTagRes = {
     title:
       "Emerging Climate Frontiers | Empowering African Leadership in Frontier Climate Technologies",
@@ -165,6 +167,7 @@ export async function getServerSideProps(context: any) {
   ];
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common", "home", "resources"])),
       metaDataTag: metaDataTagRes,
       jsonLd: jsonLdRes,
     },

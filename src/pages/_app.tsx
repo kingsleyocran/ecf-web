@@ -1,3 +1,4 @@
+import { appWithTranslation } from "next-i18next";
 import { AuthContextProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "next-themes";
 import { store } from "@/redux/app/store";
@@ -8,7 +9,7 @@ import { Toaster } from "react-hot-toast";
 import CustomHead from "@/components/layout/CustomHead";
 import { SmoothCursor } from "@/components/animation/SmoothCursor";
 
-export default function App({ Component, pageProps, router }: AppProps) {
+function App({ Component, pageProps, router }: AppProps) {
   // Define pages you want to exclude
   const excludeHeadRoutes = ["/404", "/500", "/_error"];
   const isExcluded = excludeHeadRoutes.includes(router.pathname);
@@ -35,3 +36,5 @@ export default function App({ Component, pageProps, router }: AppProps) {
     </>
   );
 }
+
+export default appWithTranslation(App);

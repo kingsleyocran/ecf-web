@@ -8,13 +8,15 @@ import NewsletterSection from "@/components/sections/NewsletterSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import DonateHeroSection from "@/components/sections/donate/DonateHeroSection";
 import DonateTiersSection from "@/components/sections/donate/DonateTiersSection";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   metaDataTag: any;
   jsonLd: any;
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
+  const { locale } = context;
   const metaDataTag = {
     title: "Donate | Emerging Climate Frontiers",
     authors: [{ name: "Emerging Climate Frontiers (ECF)" }],
@@ -75,7 +77,7 @@ export async function getServerSideProps() {
     },
   ];
 
-  return { props: { metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), metaDataTag, jsonLd } };
 }
 
 const DonatePage: NextPage<Props> = ({ metaDataTag, jsonLd }) => {

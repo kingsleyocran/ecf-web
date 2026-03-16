@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "label": "About Us",
+    "heading": "Frontier Climate Technologies",
+    "description": "AI, Carbon Dioxide Removal, and Solar Radiation Management; explored through an African lens."
+  },
+  "srm": {
+    "title": "Solar Radiation Management",
+    "description": "Solar Radiation Management refers to proposed technologies that would reflect a small amount of sunlight back into space to reduce global warming. These technologies are highly contested and carry significant risks and uncertainties—particularly for African climate systems, agriculture, and water resources.",
+    "features": {
+      "modeling": "Regional climate modeling for SRM impacts",
+      "governance": "Governance framework development",
+      "risk": "Risk assessment for African agriculture and water systems",
+      "engagement": "Public engagement and informed dialogue"
+    }
+  },
+  "ai": {
+    "title": "Artificial Intelligence for Climate Adaptation",
+    "description": "The absence of Africa-centered governance frameworks and reliance on foreign data centres risks perpetuating inequities in global climate decision-making, delaying real-time AI-supported responses. ECF advocates for local AI infrastructure and expertise to ensure context-specific climate responses that serve African communities first.",
+    "features": {
+      "data": "Developing AI for high-quality climate data in water-scarce regions",
+      "centres": "Building local data centres and processing capacity",
+      "warning": "Early warning systems for agriculture, water, and disaster response",
+      "governance": "Ethical AI governance frameworks for climate action"
+    }
+  },
+  "cdr": {
+    "title": "Carbon Dioxide Removal",
+    "description": "CDR encompasses both nature-based solutions and technological approaches to removing carbon dioxide from the atmosphere. Africa's diverse ecosystems—from forests to coastlines—offer significant potential for CDR, but solutions must be tailored to local contexts.",
+    "features": {
+      "natureBased": "Nature-based CDR solutions (biochar, afforestation, soil carbon)",
+      "ocean": "Ocean-based CDR (seaweed cultivation, mangrove restoration)",
+      "accounting": "Carbon accounting and MRV (Monitoring, Reporting, Verification)",
+      "entrepreneurship": "Local CDR entrepreneurship and job creation"
+    }
+  }
+}

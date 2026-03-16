@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "label": "Recursos",
+    "heading": "Centro de Conocimiento ECF",
+    "description": "IA, Eliminación de Dióxido de Carbono y Gestión de la Radiación Solar; explorados a través de una lente africana."
+  },
+  "latest": {
+    "heading": "Últimos Recursos & Conocimiento",
+    "description": "Explore investigación de vanguardia, materiales de capacitación y perspectivas de la creciente comunidad TCF de África",
+    "readMore": "Leer más"
+  },
+  "newsletters": {
+    "label": "Boletines",
+    "heading": "Manténgase Informado",
+    "description": "Envíos mensuales con actualizaciones de programas, aspectos destacados de investigación y noticias climáticas de frontera.",
+    "readCta": "LEER BOLETÍN →",
+    "badge": "Boletín"
+  },
+  "types": {
+    "reports": "Informes",
+    "articles": "Artículos",
+    "newsletters": "Boletines",
+    "opeds": "Artículos de Opinión"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente"
+  }
+}

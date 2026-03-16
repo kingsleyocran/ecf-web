@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "label": "Ressources",
+    "heading": "Centre de Connaissances ECF",
+    "description": "L'IA, l'élimination du dioxyde de carbone et la gestion du rayonnement solaire ; explorés à travers un prisme africain."
+  },
+  "latest": {
+    "heading": "Dernières Ressources & Connaissances",
+    "description": "Explorez les recherches de pointe, les matériaux de formation et les perspectives de la communauté TCF croissante d'Afrique",
+    "readMore": "Lire la suite"
+  },
+  "newsletters": {
+    "label": "Bulletins",
+    "heading": "Restez Informé",
+    "description": "Envois mensuels avec des mises à jour de programmes, des points saillants de recherche et des nouvelles climatiques de frontière.",
+    "readCta": "LIRE LE BULLETIN →",
+    "badge": "Bulletin"
+  },
+  "types": {
+    "reports": "Rapports",
+    "articles": "Articles",
+    "newsletters": "Bulletins",
+    "opeds": "Tribunes"
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant"
+  }
+}

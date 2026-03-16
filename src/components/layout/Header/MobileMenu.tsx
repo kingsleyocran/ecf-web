@@ -5,9 +5,11 @@ import Link from "next/link";
 import ArrowRightIcon from "../../../../public/assets/icons/menu_arrow_right.svg";
 import CloseIcon from "../../../../public/assets/icons/close.svg";
 import PrimaryButton from "@/components/button/PrimaryButton";
+import { useTranslation } from "next-i18next";
 
 export default function MobileMenu() {
   let [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation("common");
 
   function closeModal() {
     setIsOpen(false);
@@ -94,7 +96,7 @@ export default function MobileMenu() {
                       navlink.subPages ? (
                         <div key={idx}>
                           <div className="px-8 pt-5 pb-2 text-xs tracking-[4px] uppercase text-[#61270A]/40 font-semibold">
-                            {navlink.title}
+                            {t(navlink.tKey)}
                           </div>
                           {navlink.subPages.map((subPage, subIdx) => (
                             <button key={subIdx} onClick={closeModal} type="button" className="w-full">
@@ -105,7 +107,7 @@ export default function MobileMenu() {
                                 href={subPage.href}
                                 passHref
                               >
-                                {subPage.title}
+                                {t(subPage.tKey)}
                                 {arrow}
                               </Link>
                             </button>
@@ -120,7 +122,7 @@ export default function MobileMenu() {
                             href={navlink.href}
                             passHref
                           >
-                            {navlink.title}
+                            {t(navlink.tKey)}
                             {arrow}
                           </Link>
                         </button>

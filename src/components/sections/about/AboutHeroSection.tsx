@@ -1,14 +1,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import OpacityMoveYInViewAnimation from "@/components/animation/OpacityMoveYInViewAnimation";
-
-const paragraphs = [
-  "In 2022, our climate team at GAYO took a bold step: we named and challenged the glaring inequalities in the rapidly evolving field of climate technologies. We saw firsthand how African voices were being sidelined in critical global dialogues; not because of lack of will, but due to structural barriers and persistent knowledge gaps.",
-  "In response, we set out to build something fundamentally different: safe, accessible spaces where African voices can lead climate discussions, allowing local stakeholders to shape their own positions on Frontier Climate Technologies.",
-  "Now, after three years of dedicated work, we are transitioning from GAYO to become Emerging Climate Frontiers (ECF)\u2014an independent organization ready to scale our impact, deepen our research, and meet the growing demand across the continent.",
-];
+import { useTranslation } from "next-i18next";
 
 function AboutHeroSection() {
+  const { t } = useTranslation("about");
+
+  const paragraphs = [
+    t("hero.para1"),
+    t("hero.para2"),
+    t("hero.para3"),
+  ];
+
   return (
     <section className="relative bg-[#034D6B] ">
       {/* Sticky background — stays pinned while text scrolls over it */}
@@ -34,7 +37,7 @@ function AboutHeroSection() {
                 transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1], delay: 0.2 }}
                 className="text-white/80 text-sm md:text-base font-medium tracking-widest uppercase mb-4"
               >
-                About Us
+                {t("hero.label")}
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 24 }}
@@ -42,7 +45,7 @@ function AboutHeroSection() {
                 transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.35 }}
                 className="text-bold-2xl md:text-bold-3xl text-[#E0C759]"
               >
-                Shaping Africa&apos;s <br /> Climate Future
+                {t("hero.heading")}
               </motion.h1>
             </div>
           </div>

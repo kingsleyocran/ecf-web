@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "label": "Sobre Nosotros",
+    "heading": "Tecnologías Climáticas de Frontera",
+    "description": "IA, Eliminación de Dióxido de Carbono y Gestión de la Radiación Solar; exploradas a través de una lente africana."
+  },
+  "srm": {
+    "title": "Gestión de la Radiación Solar",
+    "description": "La Gestión de la Radiación Solar se refiere a las tecnologías propuestas que reflejarían una pequeña cantidad de luz solar de regreso al espacio para reducir el calentamiento global. Estas tecnologías son muy controvertidas y conllevan riesgos e incertidumbres significativos, particularmente para los sistemas climáticos africanos, la agricultura y los recursos hídricos.",
+    "features": {
+      "modeling": "Modelado climático regional para los impactos de la GRS",
+      "governance": "Desarrollo de marcos de gobernanza",
+      "risk": "Evaluación de riesgos para la agricultura y los recursos hídricos africanos",
+      "engagement": "Participación pública y diálogo informado"
+    }
+  },
+  "ai": {
+    "title": "Inteligencia Artificial para la Adaptación Climática",
+    "description": "La ausencia de marcos de gobernanza centrados en África y la dependencia de centros de datos extranjeros corre el riesgo de perpetuar las inequidades en la toma de decisiones climáticas globales, retrasando las respuestas en tiempo real apoyadas por IA. ECF aboga por infraestructura y experiencia local en IA para garantizar respuestas climáticas específicas al contexto que sirvan primero a las comunidades africanas.",
+    "features": {
+      "data": "Desarrollar IA para datos climáticos de alta calidad en regiones con escasez de agua",
+      "centres": "Construir centros de datos locales y capacidad de procesamiento",
+      "warning": "Sistemas de alerta temprana para agricultura, agua y respuesta a desastres",
+      "governance": "Marcos de gobernanza ética de IA para la acción climática"
+    }
+  },
+  "cdr": {
+    "title": "Eliminación de Dióxido de Carbono",
+    "description": "La EDC abarca tanto soluciones basadas en la naturaleza como enfoques tecnológicos para eliminar el dióxido de carbono de la atmósfera. Los diversos ecosistemas de África, desde los bosques hasta las costas, ofrecen un potencial significativo para la EDC, pero las soluciones deben adaptarse a los contextos locales.",
+    "features": {
+      "natureBased": "Soluciones de EDC basadas en la naturaleza (biocarbón, forestación, carbono del suelo)",
+      "ocean": "EDC oceánica (cultivo de algas marinas, restauración de manglares)",
+      "accounting": "Contabilidad de carbono y MRV (Medición, Reporte, Verificación)",
+      "entrepreneurship": "Emprendimiento local en EDC y creación de empleo"
+    }
+  }
+}

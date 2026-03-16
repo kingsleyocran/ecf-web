@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "heading": "Our Programs",
+    "description": "See how ECF's work is transforming climate technology capacity across Africa"
+  },
+  "filters": {
+    "all": "All",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "programs": {
+    "aciefr": {
+      "title": "ACIEFR Fellowship",
+      "description": "The African Climate Intervention Fellowship for Early-Career Researchers (ACIEFR) grows the ecosystem of researchers with both physical and social science backgrounds, increasing African-led research that informs local and regional decisions on FCT governance."
+    },
+    "policyLab": {
+      "title": "Climate Technology Policy Lab",
+      "description": "A collaborative space for African policymakers, researchers, and civil society to co-develop governance frameworks for frontier climate technologies that center equity and local context."
+    },
+    "cdrHub": {
+      "title": "CDR Innovation Hub",
+      "description": "Supporting African entrepreneurs and researchers in developing and scaling nature-based and technological carbon dioxide removal solutions tailored to the continent's diverse ecosystems."
+    },
+    "srmDialogue": {
+      "title": "SRM Governance Dialogue Series",
+      "description": "A series of multi-stakeholder dialogues bringing together African scientists, policymakers, and communities to shape informed positions on Solar Radiation Management research and governance."
+    }
+  }
+}

@@ -1,52 +1,16 @@
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
-const technologies = [
-  {
-    abbr: "SRM",
-    icon: "/assets/vector/theme-srm.svg",
-    title: "Solar Radiation Management",
-    description:
-      "Solar Radiation Management refers to proposed technologies that would reflect a small amount of sunlight back into space to reduce global warming. These technologies are highly contested and carry significant risks and uncertainties\u2014particularly for African climate systems, agriculture, and water resources.",
-    align: "left" as const,
-    features: [
-      "Regional climate modeling for SRM impacts",
-      "Governance framework development",
-      "Risk assessment for African agriculture and water systems",
-      "Public engagement and informed dialogue",
-    ],
-  },
-  {
-    abbr: "AI",
-    icon: "/assets/vector/theme-ai.svg",
-    title: "Artificial Intelligence for Climate Adaptation",
-    description:
-      "The absence of Africa-centered governance frameworks and reliance on foreign data centres risks perpetuating inequities in global climate decision-making, delaying real-time AI-supported responses. ECF advocates for local AI infrastructure and expertise to ensure context-specific climate responses that serve African communities first.",
-    align: "right" as const,
-    features: [
-      "Developing AI for high-quality climate data in water-scarce regions",
-      "Building local data centres and processing capacity",
-      "Early warning systems for agriculture, water, and disaster response",
-      "Ethical AI governance frameworks for climate action",
-    ],
-  },
-  {
-    abbr: "CDR",
-    icon: "/assets/vector/theme-cdr.svg",
-    title: "Carbon Dioxide Removal",
-    description:
-      "CDR encompasses both nature-based solutions and technological approaches to removing carbon dioxide from the atmosphere. Africa\u2019s diverse ecosystems\u2014from forests to coastlines\u2014offer significant potential for CDR, but solutions must be tailored to local contexts.",
-    align: "left" as const,
-    features: [
-      "Nature-based CDR solutions (biochar, afforestation, soil carbon)",
-      "Ocean-based CDR (seaweed cultivation, mangrove restoration)",
-      "Carbon accounting and MRV (Monitoring, Reporting, Verification)",
-      "Local CDR entrepreneurship and job creation",
-    ],
-  },
-];
+type TechEntry = {
+  abbr: string;
+  icon: string;
+  title: string;
+  description: string;
+  align: "left" | "right";
+  features: string[];
+};
 
-function TechBlock({ tech }: { tech: (typeof technologies)[number] }) {
+function TechBlock({ tech }: { tech: TechEntry }) {
   const isLeft = tech.align === "left";
 
   return (
@@ -134,6 +98,50 @@ function TechBlock({ tech }: { tech: (typeof technologies)[number] }) {
 }
 
 function TechDetailsSection() {
+  const { t } = useTranslation("technologies");
+
+  const technologies: TechEntry[] = [
+    {
+      abbr: "SRM",
+      icon: "/assets/vector/theme-srm.svg",
+      title: t("srm.title"),
+      description: t("srm.description"),
+      align: "left",
+      features: [
+        t("srm.features.modeling"),
+        t("srm.features.governance"),
+        t("srm.features.risk"),
+        t("srm.features.engagement"),
+      ],
+    },
+    {
+      abbr: "AI",
+      icon: "/assets/vector/theme-ai.svg",
+      title: t("ai.title"),
+      description: t("ai.description"),
+      align: "right",
+      features: [
+        t("ai.features.data"),
+        t("ai.features.centres"),
+        t("ai.features.warning"),
+        t("ai.features.governance"),
+      ],
+    },
+    {
+      abbr: "CDR",
+      icon: "/assets/vector/theme-cdr.svg",
+      title: t("cdr.title"),
+      description: t("cdr.description"),
+      align: "left",
+      features: [
+        t("cdr.features.natureBased"),
+        t("cdr.features.ocean"),
+        t("cdr.features.accounting"),
+        t("cdr.features.entrepreneurship"),
+      ],
+    },
+  ];
+
   return (
     <section className="w-full bg-[#025C7F] py-8 md:py-16 overflow-hidden">
       <style>{`

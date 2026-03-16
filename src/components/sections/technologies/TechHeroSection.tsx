@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 function TechHeroSection() {
+  const { t } = useTranslation("technologies");
   const imageRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -22,16 +24,13 @@ function TechHeroSection() {
         {/* Header */}
         <div className="text-center mt-16">
           <p className="text-white/80 text-sm md:text-base font-medium tracking-widest uppercase mb-4">
-            About Us
+            {t("hero.label")}
           </p>
           <h1 className="text-bold-2xl md:text-bold-3xl text-[#E0C759] mb-4">
-            Frontier Climate
-            <br />
-            Technologies
+            {t("hero.heading")}
           </h1>
           <p className="text-normal-base text-white/80 max-w-lg mx-auto mt-4">
-            AI, Carbon Dioxide Removal, and Solar Radiation Management; explored
-            through an African lens.
+            {t("hero.description")}
           </p>
         </div>
 

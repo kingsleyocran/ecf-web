@@ -3,13 +3,14 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 // motion is still needed for the hover overlay inside TeamCard
 import MaskText from "@/components/animation/OpacityMoveYInViewAnimation";
+import { useTranslation } from "next-i18next";
 
 const teamMembers = [
   {
     name: "Ernest Ofori",
     role: "Co-Executive Director",
     country: "gh",
-    image: "/assets/images/test-image.png",
+    image: "/assets/images/team/ernest.png",
     bio: (
       <>
         Member of the European Union Youth Sounding Board, former Regional Focal
@@ -24,7 +25,7 @@ const teamMembers = [
     name: "Vida Agyebeng Ayim",
     role: "Co-Executive Director",
     country: "gh",
-    image: "/assets/images/test-image.png",
+    image: "/assets/images/team/vida.png",
     bio: (
       <>
         Gender and climate science advocate. African Youth Negotiator Fellow and
@@ -39,7 +40,7 @@ const teamMembers = [
     name: "Elijah Bakari",
     role: "Program Director",
     country: "ke",
-    image: "/assets/images/test-image.png",
+    image: "/assets/images/team/elijah.png",
     bio: (
       <>
         Former Head of Research at the Policy Action Initiative, with
@@ -54,7 +55,7 @@ const teamMembers = [
     name: "Taylen Reddy",
     role: "Program Officer",
     country: "za",
-    image: "/assets/images/test-image.png",
+    image: "/assets/images/team/taylen.png",
     bio: (
       <>
         Grassroots organiser and environmental activist. Africa Focal Point for
@@ -69,7 +70,7 @@ const teamMembers = [
     name: "Kwesi Quagraine",
     role: "Research & Scientific Director",
     country: "gh",
-    image: "/assets/images/test-image.png",
+    image: "/assets/images/team/kwesi.png",
     bio: (
       <>
         A climate research scientist with experience in climate & solar
@@ -85,7 +86,7 @@ const teamMembers = [
     name: "Siisi Ansah",
     role: "Program Assistant",
     country: "gh",
-    image: "/assets/images/test-image.png",
+    image: "/assets/images/team/siisi.png",
     bio: (
       <>
         A core member of Ghana’s first Climate Literacy Portal, expanding access
@@ -196,13 +197,15 @@ function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
 }
 
 function AboutTeamSection() {
+  const { t } = useTranslation("about");
+
   return (
     <section id="our-team" className="w-full bg-white py-16 md:py-24">
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
         {/* Header */}
         <div className="text-center mb-12">
           <MaskText positionFrom={24} triggerOnce={true} animationDelay={0} extraClassNames="text-bold-2xl text-black mb-4 text-center">
-            Meet Our Team
+            {t("team.heading")}
           </MaskText>
           <MaskText
             positionFrom={20}
@@ -210,7 +213,7 @@ function AboutTeamSection() {
             animationDelay={0.1}
             extraClassNames="text-normal-base text-black/70 max-w-lg mx-auto text-center"
           >
-            A dedicated team of African climate advocates, researchers, and organizers.
+            {t("team.description")}
           </MaskText>
         </div>
 

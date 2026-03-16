@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "heading": "Nuestros Programas",
+    "description": "Vea cómo el trabajo de ECF está transformando la capacidad tecnológica climática en toda África"
+  },
+  "filters": {
+    "all": "Todos",
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
+  "programs": {
+    "aciefr": {
+      "title": "Fellowship ACIEFR",
+      "description": "El Fellowship Africano para la Intervención Climática para Investigadores en Etapas Tempranas (ACIEFR) desarrolla el ecosistema de investigadores con formación en ciencias físicas y sociales, aumentando la investigación liderada por africanos que informa las decisiones locales y regionales sobre la gobernanza de las TCF."
+    },
+    "policyLab": {
+      "title": "Laboratorio de Política de Tecnología Climática",
+      "description": "Un espacio colaborativo para responsables de políticas africanos, investigadores y sociedad civil para co-desarrollar marcos de gobernanza para tecnologías climáticas de frontera que centren la equidad y el contexto local."
+    },
+    "cdrHub": {
+      "title": "Centro de Innovación EDC",
+      "description": "Apoyo a emprendedores e investigadores africanos en el desarrollo y escalado de soluciones de eliminación de dióxido de carbono basadas en la naturaleza y tecnológicas adaptadas a los diversos ecosistemas del continente."
+    },
+    "srmDialogue": {
+      "title": "Serie de Diálogos de Gobernanza GRS",
+      "description": "Una serie de diálogos de múltiples partes interesadas que reúne a científicos, responsables de políticas y comunidades africanas para dar forma a posiciones informadas sobre la investigación y gobernanza de la Gestión de la Radiación Solar."
+    }
+  }
+}

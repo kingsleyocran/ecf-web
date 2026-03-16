@@ -553,6 +553,34 @@ function AboutMilestonesSection() {
             return null;
           })}
 
+          {/* ── Skip button ── */}
+          <button
+            onClick={() => {
+              if (!sectionRef.current) return;
+              const sectionBottom =
+                sectionRef.current.offsetTop + sectionRef.current.offsetHeight;
+              window.scrollTo({ top: sectionBottom, behavior: "smooth" });
+            }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/15 text-white/60 hover:text-white text-sm transition-all duration-300 cursor-pointer"
+          >
+            Skip section
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 1.75V12.25M7 12.25L12.25 7M7 12.25L1.75 7"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+
           {/* ── Right: timeline axis ── */}
           <div className="absolute right-8 top-0 bottom-8 z-50 flex flex-col items-end">
             <div className="pt-14 pb-6">

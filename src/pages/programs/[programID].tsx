@@ -7,6 +7,7 @@ import { BlogSchema, ResponseBlogSchema } from "@/backend/models/blogs";
 import { getBlogApi } from "@/backend/firebase/db/api/blogs_api";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import BlogArea from "@/components/sections/blogs/BlogArea";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   blog: BlogSchema;
@@ -16,6 +17,7 @@ interface Props {
 
 export async function getServerSideProps(context: any) {
   const { blogID } = context.query;
+  const { locale } = context;
 
   let blogPageContent = null;
   const [data, status] = await getBlogApi(blogID);
@@ -113,6 +115,7 @@ export async function getServerSideProps(context: any) {
 
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
       blog: {
         ...blogPageContent,
         createdAt: blogPageContent?.createdAt.toISOString() ?? "",

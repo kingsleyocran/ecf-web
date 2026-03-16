@@ -12,6 +12,7 @@ import {
   PaginationFilterSchema,
   SortingFilterSchema,
 } from "@/backend/models/_shared";
+import { useTranslation } from "next-i18next";
 
 type ProgramData = {
   id: string;
@@ -57,6 +58,7 @@ const dummyPrograms: ProgramData[] = [
 ];
 
 function AllProgramsPage() {
+  const { t } = useTranslation("programs");
   const [selectedType, setSelectedType] = useState<number>(0);
 
   const dispatch = useAppDispatch();
@@ -177,11 +179,10 @@ function AllProgramsPage() {
             <div className="absolute inset-0 bg-gradient-to-b from-[#034D6B]/80 via-[#034D6B]/40 to-[#034D6B]/20" />
             <div className="relative z-10 h-full flex flex-col justify-start items-start gap-4 px-6 md:px-12 pt-10 md:pt-16">
               <h1 className="text-bold-2xl md:text-bold-3xl text-[#E0C759]">
-                Our Programs
+                {t("hero.heading")}
               </h1>
               <p className="text-normal-base text-white/80 max-w-[300px]">
-                See how ECF&apos;s work is transforming climate technology
-                capacity across Africa
+                {t("hero.description")}
               </p>
             </div>
           </div>
@@ -206,7 +207,7 @@ function AllProgramsPage() {
                   : "bg-[#E0C759]/20 text-[#E0C759]"
               } transition-all duration-200`}
             >
-              {type.replace(/-/g, " ").toUpperCase()}
+              {index === 0 ? t("filters.all").toUpperCase() : type.replace(/-/g, " ").toUpperCase()}
             </button>
           ))}
         </div>
@@ -254,7 +255,7 @@ function AllProgramsPage() {
                   }}
                   icon={<LeftIcon width="11" height="22" viewBox="0 0 13 25" />}
                 />
-                <span className="text-bold-lg">Previous</span>
+                <span className="text-bold-lg">{t("filters.previous", { defaultValue: "Previous" })}</span>
               </div>
             ) : (
               <div></div>
@@ -265,7 +266,7 @@ function AllProgramsPage() {
               Boolean(tableDataStored.lastDoc)
             ) || tableDataStored.data.length === 0 ? (
               <div className="flex flex-row items-center justify-center gap-4">
-                <span className="text-bold-lg">Next</span>
+                <span className="text-bold-lg">{t("filters.next", { defaultValue: "Next" })}</span>
                 <PrimaryButton
                   onClick={() => {
                     onPaginationChange({

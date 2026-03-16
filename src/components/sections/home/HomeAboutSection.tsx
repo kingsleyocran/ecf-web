@@ -2,16 +2,10 @@ import Image from "next/image";
 import PrimaryButton from "../../button/PrimaryButton";
 import ParallaxMarquee from "../../animation/ParallaxMarquee";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 function HomeAboutSection() {
-  const keywords = [
-    "AFRICA",
-    "OCEAN-CLIMATE SOLUTIONS",
-    "EQUITY",
-    "JUSTICE",
-    "CAPACITY",
-    "INNOVATION",
-  ];
+  const { t } = useTranslation("home");
 
   return (
     <section className="relative w-full flex flex-col overflow-hidden">
@@ -34,22 +28,15 @@ function HomeAboutSection() {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[600px] md:min-h-[700px] px-4 md:px-8 lg:px-16 py-20 md:py-32">
         <div className="max-w-[1000px] mx-auto text-center flex flex-col items-center gap-8">
           <h2 className="text-bold-2xl text-white">
-            From the Sidelines
-            <br />
-            to the Forefront
+            {t("about.heading")}
           </h2>
 
           <p className="text-normal-base text-white/90 max-w-[600px] leading-relaxed">
-            ECF is dedicated to empowering African institutions and policymakers
-            to drive FCTs through inclusive, science-driven, and contextually
-            relevant approaches. We foster capacity, collaboration, and movement
-            building to ensure African institutions and communities lead FCTs
-            efforts, shaping equitable global climate governance with dignity
-            and agency.
+            {t("about.body")}
           </p>
 
           <Link href="/about" passHref>
-            <PrimaryButton title="About Us" variant="yellow-light" />
+            <PrimaryButton title={t("about.cta")} variant="yellow-light" />
           </Link>
         </div>
       </div>

@@ -8,10 +8,12 @@ import ReportsPage from "@/components/sections/resources/ReportsPage";
 import { getReportsApi } from "@/backend/firebase/db/api/reports_api";
 import { ReportSchema, ListResponseReportsSchema } from "@/backend/models/reports";
 import { ResponseIndicator } from "@/backend/models/_shared";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props { reports: ReportSchema[]; metaDataTag: any; jsonLd: any; }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
+  const { locale } = context;
   let reports: ReportSchema[] = [];
   try {
     const [data, status] = await getReportsApi();
@@ -26,6 +28,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
       reports,
       metaDataTag: {
         title: "Reports | ECF",

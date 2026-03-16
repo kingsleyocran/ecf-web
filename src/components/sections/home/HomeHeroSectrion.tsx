@@ -5,8 +5,10 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import HomeAboutSection from "./HomeAboutSection";
+import { useTranslation } from "next-i18next";
 
 function HomeHeroSectrion() {
+  const { t } = useTranslation("home");
   const aboutRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
 
@@ -53,10 +55,10 @@ function HomeHeroSectrion() {
         <div className="absolute inset-0 z-10 h-[92vh] flex flex-col justify-center items-center w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
           <div className="pt-6">
             <h1 className="text-bold-3xl text-white flex flex-col items-center gap-2">
-              <span>Empowering Africa</span>
+              <span>{t("hero.line1")}</span>
 
               <div className="flex flex-row gap-4 items-center">
-                <span>to Lead</span>
+                <span>{t("hero.line2")}</span>
 
                 <div className="h-[70px] w-[70px] relative">
                   <Image
@@ -71,27 +73,23 @@ function HomeHeroSectrion() {
                   />
                 </div>
 
-                <span>
-                  the <span className="text-[#E0C759]">Climate</span>
-                </span>
+                <span className="text-[#E0C759]">{t("hero.line3")}</span>
               </div>
 
-              <span className="text-[#E0C759]">Technology Frontier</span>
+              <span className="text-[#E0C759]">{t("hero.line4")}</span>
             </h1>
 
             <p className="text-white max-w-[600px] text-normal-base text-center mt-6">
-              Building local capacity, fostering innovation, and amplifying
-              African voices in the global conversation on Frontier Climate
-              Technologies
+              {t("hero.subtitle")}
             </p>
 
             <div className="flex flex-row gap-4 mt-6 justify-center">
               <Link href="/get-involved" passHref>
-                <PrimaryButton title="Access Resources" variant="white" />
+                <PrimaryButton title={t("hero.accessResources")} variant="white" />
               </Link>
 
               <Link href="/donate" passHref>
-                <PrimaryButton title="Donate" variant="blue-light" />
+                <PrimaryButton title={t("hero.donate")} variant="blue-light" />
               </Link>
             </div>
           </div>

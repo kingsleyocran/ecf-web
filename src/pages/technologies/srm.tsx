@@ -8,13 +8,15 @@ import NewsletterSection from "@/components/sections/NewsletterSection";
 import SrmHeroSection from "@/components/sections/technologies/srm/SrmHeroSection";
 import SrmTechCirclesSection from "@/components/sections/technologies/srm/SrmTechCirclesSection";
 import SrmProgramsSection from "@/components/sections/technologies/srm/SrmProgramsSection";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   metaDataTag: any;
   jsonLd: any;
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
+  const { locale } = context;
   const metaDataTag = {
     title: "Solar Radiation Management (SRM) | Emerging Climate Frontiers",
     authors: [{ name: "Emerging Climate Frontiers (ECF)" }],
@@ -78,7 +80,7 @@ export async function getServerSideProps() {
     },
   ];
 
-  return { props: { metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "technologies"])), metaDataTag, jsonLd } };
 }
 
 const SrmPage: NextPage<Props> = ({ metaDataTag, jsonLd }) => {

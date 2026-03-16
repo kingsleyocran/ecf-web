@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ParallaxMarquee from "../animation/ParallaxMarquee";
+import { useTranslation } from "next-i18next";
 
 // Generate array of partner logos
 const partnerLogos = Array.from({ length: 17 }, (_, i) => ({
@@ -9,6 +10,7 @@ const partnerLogos = Array.from({ length: 17 }, (_, i) => ({
 }));
 
 function PartnersSection() {
+  const { t } = useTranslation("common");
 
   return (
     <section className="w-full flex flex-col gap-8 my-6 md:my-20">
@@ -17,7 +19,7 @@ function PartnersSection() {
         {/* Section Title */}
         <div className="flex flex-row justify-center w-full">
           <h2 className="text-bold-2xl text-[#E0C759] text-center">
-            Our Partners
+            {t("partners.heading")}
           </h2>
         </div>
       </div>
@@ -45,7 +47,7 @@ function PartnersSection() {
         {/* Section Title */}
         <div className="flex flex-row justify-center w-full">
           <p className="text-normal-base max-w-[600px] text-black text-center">
-            Over	the	past	3	years	with	our	work	on	CDR	and	SRM,	we	have	collaborated	with	a	diverse	network	of	organizations,	academic	institutions,	and	initiatives	to	drive	African-led	climate	inter vention	strategies.
+            {t("partners.description")}
           </p>
         </div>
       </div>

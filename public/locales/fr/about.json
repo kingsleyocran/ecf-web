@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "label": "À Propos de Nous",
+    "heading": "Façonner l'Avenir Climatique de l'Afrique",
+    "para1": "En 2022, notre équipe climatique chez GAYO a pris une décision audacieuse : nous avons nommé et défié les inégalités flagrantes dans le domaine en rapide évolution des technologies climatiques. Nous avons vu de première main comment les voix africaines étaient marginalisées dans les dialogues mondiaux critiques ; non pas par manque de volonté, mais en raison de barrières structurelles et de lacunes persistantes en matière de connaissances.",
+    "para2": "En réponse, nous avons entrepris de construire quelque chose de fondamentalement différent : des espaces sûrs et accessibles où les voix africaines peuvent mener les discussions sur le climat, permettant aux parties prenantes locales de façonner leurs propres positions sur les Technologies Climatiques de Frontière.",
+    "para3": "Maintenant, après trois ans de travail dévoué, nous passons de GAYO pour devenir Emerging Climate Frontiers (ECF) — une organisation indépendante prête à développer notre impact, approfondir notre recherche et répondre à la demande croissante à travers le continent."
+  },
+  "mission": {
+    "title": "Notre Mission",
+    "body": "ECF est dédié à autonomiser les institutions africaines et les décideurs politiques pour piloter les TCF à travers des approches inclusives, fondées sur la science et contextuellement pertinentes. Nous favorisons la capacité, la collaboration et la construction de mouvements pour garantir que les institutions et communautés africaines dirigent les efforts TCF, façonnant une gouvernance climatique mondiale équitable avec dignité et agentivité."
+  },
+  "northStar": {
+    "title": "Notre Étoile du Nord",
+    "body": "ECF envisage une Afrique où les chercheurs en début de carrière, les étudiants, les décideurs politiques et les institutions mandatées ont une capacité renforcée pour diriger des TCF localement pertinentes, y compris l'IA pour l'adaptation climatique, contribuant à une gouvernance mondiale inclusive et à la résilience locale."
+  },
+  "howWeWork": {
+    "heading": "Comment Nous Travaillons",
+    "description": "Notre approche pour construire le leadership africain en matière de technologies climatiques.",
+    "pillars": {
+      "capacity": {
+        "title": "Renforcement des Capacités",
+        "description": "Nous développons des programmes de formation durables pour les chercheurs en début de carrière, les étudiants et les décideurs politiques afin de renforcer l'expertise en matière d'EDC, de GRS et de gouvernance de l'IA, adaptés aux défis climatiques uniques de l'Afrique."
+      },
+      "network": {
+        "title": "Construction d'un Réseau Collaboratif",
+        "description": "Nous établissons une coalition continentale de parties prenantes issues du monde académique, du gouvernement, de la société civile et des communautés pour façonner la position collective de l'Afrique sur les TCF."
+      },
+      "movement": {
+        "title": "Construction d'un Mouvement pour la Justice Climatique",
+        "description": "Nous alimentons et soutenons un mouvement africain dynamique pour faire progresser des TCF équitables et contextuellement pertinentes, unissant des voix diverses de la jeunesse, des communautés marginalisées et des décideurs politiques."
+      }
+    }
+  },
+  "team": {
+    "heading": "Rencontrez Notre Équipe",
+    "description": "Une équipe dévouée de défenseurs africains du climat, de chercheurs et d'organisateurs.",
+    "roles": {
+      "coExecutiveDirector": "Co-Directeur Exécutif",
+      "programDirector": "Directeur de Programme",
+      "programOfficer": "Chargé de Programme",
+      "researchScientificDirector": "Directeur de la Recherche et des Sciences",
+      "programAssistant": "Assistant de Programme"
+    }
+  }
+}

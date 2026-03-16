@@ -3,6 +3,16 @@ import NavigationAnimation from "@/components/animation/navigationAnimation/Stai
 import React from "react";
 import Header from "@/components/layout/Header";
 import PageEmptySection from "@/components/layout/PageEmptySection";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export async function getServerSideProps(context: any) {
+  const { locale } = context;
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+  };
+}
 
 export default function PageEmpty() {
   return (
