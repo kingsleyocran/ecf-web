@@ -29,14 +29,14 @@ export async function getServerSideProps(context: any) {
       ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
       oped: opedData,
       metaDataTag: {
-        title: `${opedData.title} | ECF`,
+        title: `${opedData.name} | ECF`,
         description: opedData.description,
-        keywords: `${opedData.title}, ECF op-ed, climate opinion Africa`,
+        keywords: `${opedData.name}, ECF op-ed, climate opinion Africa`,
         alternates: { canonical: `https://www.emergingclimatefrontiers.org/resources/opeds/${opedData.id}` },
-        openGraph: { type: "website", images: [{ url: opedData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: opedData.title, type: "image/png" }] },
+        openGraph: { type: "website", images: [{ url: opedData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: opedData.name, type: "image/png" }] },
         twitter: { images: [{ url: opedData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png" }] },
       },
-      jsonLd: [{ "@context": "https://schema.org", "@type": "Article", headline: opedData.title, description: opedData.description, author: { "@type": "Person", name: opedData.author }, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" }, url: `https://www.emergingclimatefrontiers.org/resources/opeds/${opedData.id}` }],
+      jsonLd: [{ "@context": "https://schema.org", "@type": "Article", headline: opedData.name, description: opedData.description, author: { "@type": "Person", name: opedData.author }, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" }, url: `https://www.emergingclimatefrontiers.org/resources/opeds/${opedData.id}` }],
     },
   };
 }
@@ -47,7 +47,7 @@ const OpEdDetailRoute: NextPage<Props> = ({ oped, metaDataTag, jsonLd }) => {
     <>
       <CustomHead jsonLd={jsonLd} metaDataTag={metaDataTag} />
       <Header />
-      <ContentDetailPage title={oped.title} author={oped.author} publishedDate={oped.publishedDate} imgUrl={oped.imgUrl} content={oped.content} badge="Op-Ed" />
+      <ContentDetailPage title={oped.name} author={oped.author} publishedDate="" imgUrl={oped.imgUrl} content={oped.content} badge="Op-Ed" />
       <Footer />
     </>
   );

@@ -3,16 +3,20 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "next-i18next";
 
 const presetAmounts = [25, 50, 100, 250, 500];
 
 function DonateTiersSection() {
+  const { t } = useTranslation("donate");
   const [selected, setSelected] = useState<number | null>(100);
   const [custom, setCustom] = useState("");
 
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const activeAmount = custom ? Number(custom) : selected;
+
+  const benefits = t("tiers.benefits", { returnObjects: true }) as string[];
 
   return (
     <section
@@ -30,23 +34,17 @@ function DonateTiersSection() {
             className="lg:basis-5/12 flex flex-col gap-6"
           >
             <p className="text-[#E0C759]/80 text-sm md:text-base font-medium tracking-widest uppercase">
-              Make a Donation
+              {t("tiers.label")}
             </p>
             <h2 className="text-bold-2xl text-white">
-              Choose Your Level of Support
+              {t("tiers.heading")}
             </h2>
             <p className="text-white/70 text-normal-base leading-relaxed">
-              Every dollar you give strengthens African capacity to lead on the
-              technologies that will define our climate future.
+              {t("tiers.description")}
             </p>
 
             <div className="flex flex-col gap-3 mt-4">
-              {[
-                "100% of donations fund programme delivery",
-                "Tax-deductible where applicable",
-                "Secure payment processing",
-                "Receive quarterly impact updates",
-              ].map((point, i) => (
+              {benefits.map((point, i) => (
                 <div key={i} className="flex flex-row items-start gap-3">
                   <span className="mt-1 h-4 w-4 flex-shrink-0 rounded-full bg-[#E0C759]" />
                   <p className="text-white/80 text-normal-base">{point}</p>
@@ -65,7 +63,7 @@ function DonateTiersSection() {
             {/* Preset amounts */}
             <div>
               <p className="text-[#025C7F] secondarybold text-sm tracking-widest uppercase mb-3">
-                Select Amount
+                {t("tiers.selectAmount")}
               </p>
               <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 md:gap-3">
                 {presetAmounts.map((amount) => (
@@ -92,7 +90,7 @@ function DonateTiersSection() {
             {/* Custom amount */}
             <div>
               <p className="text-[#025C7F] secondarybold text-sm tracking-widest uppercase mb-3">
-                Or Enter Custom Amount
+                {t("tiers.customAmount")}
               </p>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#025C7F] primarybold text-lg">
@@ -117,11 +115,11 @@ function DonateTiersSection() {
             <div className="flex flex-col gap-4 pt-2 border-t border-[#025C7F]/10">
               {activeAmount && activeAmount > 0 && (
                 <p className="text-[#025C7F]/70 text-normal-base">
-                  You&apos;re donating{" "}
+                  {t("tiers.donating")}{" "}
                   <span className="text-[#025C7F] primarybold">
                     ${activeAmount}
                   </span>{" "}
-                  as a one-time gift.
+                  {t("tiers.oneTimeGift")}
                 </p>
               )}
 
@@ -133,12 +131,12 @@ function DonateTiersSection() {
                   disabled:opacity-40 disabled:pointer-events-none shadow-md"
               >
                 {activeAmount && activeAmount > 0
-                  ? `Donate $${activeAmount}`
-                  : "Select an amount"}
+                  ? t("tiers.donateCta", { amount: activeAmount })
+                  : t("tiers.selectAnAmount")}
               </button>
 
               <p className="text-center text-black/40 text-sm">
-                Secure payment · Questions?{" "}
+                {t("tiers.securePayment")}{" "}
                 <a
                   href="mailto:hello@ecfrontiers.org"
                   className="underline hover:text-[#025C7F] transition-colors"

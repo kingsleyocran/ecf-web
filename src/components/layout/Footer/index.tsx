@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { navLinks, socialLinks, termPrivacyList, footerExtraLinks } from "@/utils/content";
 import LogoSvg from "../../../../public/assets/brand/logo-1.svg";
@@ -9,6 +9,11 @@ import { useTranslation } from "next-i18next";
 function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation("common");
+  const [openDropdowns, setOpenDropdowns] = useState<Record<number, boolean>>({});
+
+  const toggleDropdown = (index: number) => {
+    setOpenDropdowns((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
 
   return (
     <footer className="w-full bg-[#034D6B]">
@@ -32,15 +37,51 @@ function Footer() {
             </p>
 
             <div className="flex flex-col items-start gap-4 mt-4">
-              {navLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.href}
-                  className="text-normal-base text-white hover:bg-white/10 px-2 py-1 rounded-2xl duration-150 transition-colors"
-                >
-                  {t(link.tKey)}
-                </Link>
-              ))}
+              {navLinks.map((link, index) => {
+                if (link.subPages && link.subPages.length > 0) {
+                  const isOpen = openDropdowns[index] || false;
+                  return (
+                    <div key={index} className="flex flex-col items-start">
+                      <button
+                        onClick={() => toggleDropdown(index)}
+                        className="text-normal-base text-white hover:bg-white/10 px-2 py-1 rounded-2xl duration-150 transition-colors flex items-center gap-1"
+                      >
+                        {t(link.tKey)}
+                        <svg
+                          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {isOpen && (
+                        <div className="flex flex-col items-start gap-2 mt-2 pl-4">
+                          {link.subPages.map((sub, subIndex) => (
+                            <Link
+                              key={subIndex}
+                              href={sub.href}
+                              className="text-normal-sm text-white/80 hover:text-white hover:bg-white/10 px-2 py-1 rounded-2xl duration-150 transition-colors"
+                            >
+                              {t(sub.tKey)}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+                return (
+                  <Link
+                    key={index}
+                    href={link.href}
+                    className="text-normal-base text-white hover:bg-white/10 px-2 py-1 rounded-2xl duration-150 transition-colors"
+                  >
+                    {t(link.tKey)}
+                  </Link>
+                );
+              })}
               {footerExtraLinks.map((link, index) => (
                 <Link
                   key={`extra-${index}`}

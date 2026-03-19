@@ -59,5 +59,17 @@
     "findOutMore": "Find out more",
     "readNewsletter": "READ NEWSLETTER →",
     "newsletter": "Newsletter"
+  },
+  "notFound": {
+    "code": "404",
+    "message": "This page does not exist",
+    "returnHome": "Return to home"
+  },
+  "preRelease": {
+    "heading": "Empowering African Voices in Climate Technologies",
+    "description": "Empowering African institutions and policymakers to drive Frontier Climate Technologies through inclusive, science-driven approaches. Stay connected for updates on research, capacity building, and opportunities to engage with FCTs including AI, CDR, and SRM.",
+    "connectWithUs": "Connect with us:",
+    "blogs": "BLOGS",
+    "seeAll": "See all"
   }
 }

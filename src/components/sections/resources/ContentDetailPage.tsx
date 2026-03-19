@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -15,6 +16,7 @@ interface ContentDetailProps {
 }
 
 function ContentDetailPage({ title, author, publishedDate, imgUrl, content, badge }: ContentDetailProps) {
+  const { t } = useTranslation("resources");
   const turndownService = new TurndownService();
   turndownService.keep(["iframe"]);
   turndownService.addRule("codeBlock", {

@@ -1,14 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ReactNode } from "react";
 import { useTranslation } from "next-i18next";
 
-const IMAGE_PATH = "/assets/images/test-image.png";
-
 const projectMeta = [
-  { id: 1, tKey: "climateData", image: IMAGE_PATH, gridClass: "col-span-1 md:col-span-1 bento-card-1" },
-  { id: 2, tKey: "blueCarbon", image: IMAGE_PATH, gridClass: "col-span-1 md:col-span-1 bento-card-2" },
-  { id: 3, tKey: "srmNetwork", image: IMAGE_PATH, gridClass: "col-span-1 md:col-span-2 bento-card-3" },
-  { id: 4, tKey: "biochar", image: IMAGE_PATH, gridClass: "col-span-1 md:col-span-1 bento-card-5" },
+  { id: 1, tKey: "srmShortCourse", image: "/assets/images/programs/srm-short-courses.png", href: "/programs/srm#shortCourse", gridClass: "col-span-1 md:col-span-2 md:row-span-2" },
+  { id: 2, tKey: "srmBriefingSeries", image: "/assets/images/programs/srm-briefing-series.png", href: "/programs/srm#briefingSeries", gridClass: "col-span-1 md:col-span-1 md:row-span-1" },
+  { id: 3, tKey: "cdrCarbonAccounting", image: "/assets/images/programs/cdr-carbon-accounting.png", href: "/programs/cdr#carbonAccounting", gridClass: "col-span-1 md:col-span-1 md:row-span-1" },
 ];
 
 function HomeFeaturedProjects() {
@@ -43,6 +41,7 @@ function HomeFeaturedProjects() {
               description={project.description}
               gridClass={project.gridClass}
               backgroundImage={project.image}
+              href={project.href}
             />
           ))}
         </BentoGrid>
@@ -60,7 +59,7 @@ const BentoGrid = ({
   return (
     <div
       className={
-        "grid w-full auto-rows-[300pxq] md:auto-rows-[150px] grid-cols-1 md:grid-cols-3 gap-4"
+        "grid w-full auto-rows-[250px] md:auto-rows-[200px] grid-cols-1 md:grid-cols-3 gap-4"
       }
     >
       {children}
@@ -74,22 +73,24 @@ const BentoCard = ({
   description,
   gridClass,
   backgroundImage,
+  href,
 }: {
   id: string;
   name: string;
   description: string;
   backgroundImage: string;
   gridClass?: string;
+  href: string;
 }) => (
-  <a
-    href="#"
+  <Link
+    href={href}
     className={`group relative overflow-hidden rounded-xl bg-gray-900 cursor-pointer transition-all duration-300 hover:shadow-lg ${gridClass || ""}`}
   >
     {/* Background Image */}
     <div className="absolute inset-0 z-0">
       <Image
         src={backgroundImage}
-        alt={backgroundImage}
+        alt={name}
         fill
         style={{
           objectFit: "cover",
@@ -111,7 +112,7 @@ const BentoCard = ({
         {description}
       </p>
     </div>
-  </a>
+  </Link>
 );
 
 export default HomeFeaturedProjects;

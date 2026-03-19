@@ -1,12 +1,10 @@
 import React, {
   Fragment,
-  ReactNode,
   useEffect,
-  useRef,
   useState,
   useCallback,
 } from "react";
-import { Dialog, Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
+import { Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import LangIcon from "../../../../public/assets/icons/lang.svg";
@@ -14,7 +12,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { navLinks, languages } from "@/utils/content";
 import DesktopMenu from "./DesktopMenu";
-import PrimaryButton from "@/components/button/PrimaryButton";
+import MobileMenu from "./MobileMenu";
 import { useTranslation } from "next-i18next";
 
 function NavBar() {
@@ -147,10 +145,8 @@ function NavBar() {
             </Popover>
           </div>
 
-          {/* Mobile Blogs Link */}
-          <Link href={"/blogs"} passHref className="md:hidden">
-            <PrimaryButton title={t("nav.blogs")} />
-          </Link>
+          {/* Mobile Menu */}
+          <MobileMenu />
         </div>
       </div>
     </motion.nav>

@@ -1,5 +1,6 @@
 import PrimaryButton from "@/components/button/PrimaryButton";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useTranslation } from "next-i18next";
 import LeftIcon from "../../../../public/assets/icons/menu_arrow_left.svg";
 import Rightcon from "../../../../public/assets/icons/menu_arrow_right.svg";
 import { BlogEnumValues, FilterBlogsSchema } from "@/backend/models/blogs";
@@ -13,6 +14,7 @@ import {
 import BlogCard from "@/components/cards/BlogCard";
 
 function AllBlogsSection() {
+  const { t } = useTranslation(["blogs", "common"]);
   const [selectedType, setSelectedType] = useState<number>(0);
 
   const dispatch = useAppDispatch();
@@ -128,11 +130,11 @@ function AllBlogsSection() {
         {/* Hero Content */}
         <div className=" flex flex-col items-center gap-2">
           <h1 className="text-bold-2xl text-[#E0C759] text-center md:text-start">
-            What’s New?
+            {t("heading")}
           </h1>
 
           <p className="text-normal-base">
-            Read our updates and stories from the ECF!
+            {t("description")}
           </p>
 
           {/* Menus */}
@@ -189,7 +191,7 @@ function AllBlogsSection() {
                   icon={<LeftIcon width="11" height="22" viewBox="0 0 13 25" />}
                 />
 
-                <span className="text-bold-lg">Previous</span>
+                <span className="text-bold-lg">{t("shared.previous", { ns: "common" })}</span>
               </div>
             ) : (
               <div></div>
@@ -200,7 +202,7 @@ function AllBlogsSection() {
               Boolean(tableDataStored.lastDoc)
             ) || tableDataStored.data.length === 0 ? (
               <div className="flex flex-row items-center justify-center gap-4">
-                <span className="text-bold-lg">Next</span>
+                <span className="text-bold-lg">{t("shared.next", { ns: "common" })}</span>
                 <PrimaryButton
                   onClick={() => {
                     onPaginationChange({

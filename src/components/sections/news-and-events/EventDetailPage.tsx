@@ -1,17 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "next-i18next";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import TurndownService from "turndown";
 import { EventSchema } from "@/backend/models/events";
-
-const typeLabels: Record<string, string> = {
-  virtual: "Virtual",
-  "in-person": "In Person",
-  hybrid: "Hybrid",
-};
 
 const typeBadgeColors: Record<string, string> = {
   virtual: "bg-[#5b3d8a] text-[#c7a8ff]",
@@ -20,6 +15,14 @@ const typeBadgeColors: Record<string, string> = {
 };
 
 function EventDetailPage({ event }: { event: EventSchema }) {
+  const { t } = useTranslation("news-events");
+
+  const typeLabels: Record<string, string> = {
+    virtual: t("typeLabels.virtual"),
+    "in-person": t("typeLabels.in-person"),
+    hybrid: t("typeLabels.hybrid"),
+  };
+
   const turndownService = new TurndownService();
   turndownService.keep(["iframe"]);
   turndownService.addRule("codeBlock", {
@@ -115,7 +118,7 @@ function EventDetailPage({ event }: { event: EventSchema }) {
             className="px-8 py-4 rounded-full bg-[#034D6B] text-white primarybold text-normal-base
               hover:bg-[#023d57] transition-colors duration-200"
           >
-            Register Now
+            {t("events.registerNow")}
           </Link>
         </div>
       </div>

@@ -1,22 +1,48 @@
-export interface OpEdSchema {
-  id: string;
-  title: string;
+import {
+  FetchMultiDataRequest,
+  FetchMultiDataResponse,
+  FilterDataRequest,
+  SuccessMessageResponse,
+} from "./_shared";
+
+export interface CreateOpEdSchema {
+  name: string;
+  nameSearch: string;
+  content: string;
   author: string;
   description: string;
-  content: string;
   imgUrl?: string | null;
-  publishedDate: string;
-  isActive: boolean;
+}
+
+export interface CreateOpEdWithFileSchema {
+  data: CreateOpEdSchema;
+  file: File;
+}
+
+export interface OpEdSchema extends CreateOpEdSchema {
+  id: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
-export interface ResponseOpEdSchema {
-  data: OpEdSchema;
-  message: string;
+export interface GetOpedsSchema extends FetchMultiDataRequest {}
+
+export interface UpdateOpEdSchema extends Partial<CreateOpEdSchema> {}
+
+export interface UpdateOpEdWithFileSchema {
+  id: string;
+  data: UpdateOpEdSchema;
+  file: File | null;
 }
 
-export interface ListResponseOpedsSchema {
+export interface FilterOpedsSchema extends FilterDataRequest {
+  nameSearch?: string;
+}
+
+export interface ResponseOpEdSchema extends SuccessMessageResponse {
+  data: OpEdSchema;
+}
+
+export interface ListResponseOpedsSchema extends FetchMultiDataResponse {
   data: OpEdSchema[];
-  message: string;
 }

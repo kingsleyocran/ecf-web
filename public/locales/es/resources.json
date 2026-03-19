@@ -11,16 +11,44 @@
   },
   "newsletters": {
     "label": "Boletines",
-    "heading": "Manténgase Informado",
-    "description": "Envíos mensuales con actualizaciones de programas, aspectos destacados de investigación y noticias climáticas de frontera.",
+    "heading": "Manténgase al Día",
+    "description": "Despachos mensuales con actualizaciones de programas, aspectos destacados de la investigación y noticias climáticas de frontera.",
     "readCta": "LEER BOLETÍN →",
-    "badge": "Boletín"
+    "badge": "Boletín",
+    "readNewsletter": "LEER BOLETÍN →"
   },
   "types": {
     "reports": "Informes",
     "articles": "Artículos",
     "newsletters": "Boletines",
     "opeds": "Artículos de Opinión"
+  },
+  "articles": {
+    "label": "Artículos",
+    "heading": "Perspectivas & Análisis",
+    "description": "Perspectivas de investigación, análisis de políticas y comentarios sobre tecnologías climáticas de frontera."
+  },
+  "opeds": {
+    "label": "Artículos de Opinión",
+    "heading": "Voces & Perspectivas",
+    "description": "Piezas de opinión y editorial de contribuyentes de ECF y voces climáticas africanas.",
+    "badge": "Opinión"
+  },
+  "reports": {
+    "label": "Informes",
+    "heading": "Nuestras Publicaciones",
+    "description": "Informes de investigación, marcos de gobernanza y evaluaciones de programas de ECF.",
+    "viewReport": "VER INFORME →"
+  },
+  "contentDetail": {
+    "pdfFallback": "No se puede mostrar el PDF.",
+    "openPdf": "Abrir PDF directamente"
+  },
+  "reportViewer": {
+    "label": "Informe",
+    "downloadPdf": "Descargar PDF",
+    "pdfFallback": "No se puede mostrar el PDF.",
+    "openPdf": "Abrir PDF directamente"
   },
   "pagination": {
     "previous": "Anterior",

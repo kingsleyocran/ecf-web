@@ -1,50 +1,24 @@
 import React from "react";
+import { useTranslation } from "next-i18next";
 
-const thematicAreas = [
-  {
-    title: "Artificial Intelligence (AI)",
-    description:
-      "Developing AI for high-quality climate data in water-scarce regions and supporting context-specific applications.",
-    icon: "🤖",
-  },
-  {
-    title: "Carbon Dioxide Removal (CDR)",
-    description:
-      "Tailoring CDR solutions to African contexts and building local expertise in carbon accounting and decarbonization.",
-    icon: "🌱",
-  },
-  {
-    title: "Solar Radiation Management (SRM)",
-    description:
-      "Assessing SRM's regional impacts and ensuring African voices shape global governance frameworks.",
-    icon: "☀️",
-  },
-];
+const thematicKeys = ["ai", "cdr", "srm"] as const;
 
-const achievements = [
-  {
-    number: "20+",
-    label: "Professionals Trained",
-    description: "in carbon accounting and decarbonization",
-  },
-  {
-    number: "10",
-    label: "Strategic Placements",
-    description: "in industries and public institutions",
-  },
-  {
-    number: "1st",
-    label: "Public SRM Session",
-    description: "at a UN Climate Conference",
-  },
-  {
-    number: "1st",
-    label: "Open Virtual Dialogue",
-    description: "on geoengineering in Africa",
-  },
-];
+const achievementStats = [
+  { number: "20+", key: "trained" },
+  { number: "10", key: "placed" },
+  { number: "1st", key: "courses" },
+  { number: "1st", key: "fellowship" },
+] as const;
 
 function HomeECFInfoSection() {
+  const { t } = useTranslation("home");
+
+  const highlights = t("achievements.highlights", {
+    returnObjects: true,
+  }) as string[];
+
+  const roles = t("buildWithUs.roles", { returnObjects: true }) as string[];
+
   return (
     <section className="w-full bg-white py-12 md:py-24">
       <div className="w-full max-w-[1300px] mx-auto px-4 md:px-8 lg:px-16">
@@ -52,24 +26,24 @@ function HomeECFInfoSection() {
         <div className="mb-16 md:mb-24">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-section-header text-[#024D6B] mb-4">
-              Our Thematic Areas
+              {t("thematic.heading")}
             </h2>
             <p className="text-normal-base text-[#535353] max-w-[800px] mx-auto">
-              ECF focuses on three Frontier Climate Technologies (FCTs) that
-              hold transformative potential for Africa&apos;s climate future
+              {t("thematic.description")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {thematicAreas.map((area, index) => (
+            {thematicKeys.map((key) => (
               <div
-                key={index}
+                key={key}
                 className="bg-[#F5F5F5] rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:shadow-lg transition-shadow duration-300"
               >
-                {/* <div className="text-5xl mb-2">{area.icon}</div> */}
-                <h3 className="text-bold-lg text-[#024D6B]">{area.title}</h3>
+                <h3 className="text-bold-lg text-[#024D6B]">
+                  {t(`thematic.${key}.title`)}
+                </h3>
                 <p className="text-normal-base text-[#535353]">
-                  {area.description}
+                  {t(`thematic.${key}.description`)}
                 </p>
               </div>
             ))}
@@ -80,29 +54,25 @@ function HomeECFInfoSection() {
         <div className="bg-[#024D6B] rounded-3xl p-8 md:p-12">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-section-header text-white mb-4">
-              What We Are Proud Of
+              {t("achievements.heading")}
             </h2>
             <p className="text-normal-base text-white/80 max-w-[800px] mx-auto">
-              ECF builds on a strong foundation of achievements that demonstrate
-              our commitment to empowering African leadership in climate
-              technologies
+              {t("achievements.subtitle")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {achievements.map((achievement, index) => (
+            {achievementStats.map(({ number, key }) => (
               <div
-                key={index}
+                key={key}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center text-center gap-2 hover:bg-white/20 transition-all duration-300"
               >
-                <div className="text-bold-2xl text-[#E0C759]">
-                  {achievement.number}
-                </div>
+                <div className="text-bold-2xl text-[#E0C759]">{number}</div>
                 <div className="text-bold-lg text-white">
-                  {achievement.label}
+                  {t(`achievements.items.${key}.label`)}
                 </div>
                 <div className="text-normal-sm text-white/70">
-                  {achievement.description}
+                  {t(`achievements.items.${key}.description`)}
                 </div>
               </div>
             ))}
@@ -110,33 +80,15 @@ function HomeECFInfoSection() {
 
           {/* Additional Achievements List */}
           <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-start gap-3">
-              <div className="text-[#E0C759] text-xl">✓</div>
-              <p className="text-normal-base text-white/90">
-                Pioneered African Climate Intervention Fellowship for
-                Early-Career Researchers (ACIEFR)
-              </p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-start gap-3">
-              <div className="text-[#E0C759] text-xl">✓</div>
-              <p className="text-normal-base text-white/90">
-                Published baseline knowledge assessment on climate interventions
-              </p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-start gap-3">
-              <div className="text-[#E0C759] text-xl">✓</div>
-              <p className="text-normal-base text-white/90">
-                Created short courses and 101 documents in partnership with
-                major universities
-              </p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-start gap-3">
-              <div className="text-[#E0C759] text-xl">✓</div>
-              <p className="text-normal-base text-white/90">
-                Partnered with CSIR (Ghana & South Africa) and EPAs for
-                institutional strengthening
-              </p>
-            </div>
+            {highlights.map((text, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-start gap-3"
+              >
+                <div className="text-[#E0C759] text-xl">✓</div>
+                <p className="text-normal-base text-white/90">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -144,53 +96,32 @@ function HomeECFInfoSection() {
         <div className="mt-16 md:mt-24">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-section-header text-[#024D6B] mb-4">
-              Build With Us
+              {t("buildWithUs.heading")}
             </h2>
           </div>
 
           <div className="bg-[#024D6B] rounded-3xl p-8 md:p-12">
             <div className="mb-8">
-              <p
-                className="text-normal-bas
-              e text-white/80 text-center mb-6 md:mb-8"
-              >
-                If you are:
+              <p className="text-normal-base text-white/80 text-center mb-6 md:mb-8">
+                {t("buildWithUs.ifYouAre")}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-start gap-3 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-[#E0C759] text-xl font-bold">•</div>
-                  <p className="text-normal-base text-white/90">
-                    A researcher working on AI, CDR, SRM or climate data
-                  </p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-start gap-3 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-[#E0C759] text-xl font-bold">•</div>
-                  <p className="text-normal-base text-white/90">
-                    A policymaker or regulator shaping climate and technology
-                    policy
-                  </p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-start gap-3 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-[#E0C759] text-xl font-bold">•</div>
-                  <p className="text-normal-base text-white/90">
-                    A funder or institution investing in African climate
-                    innovation
-                  </p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-start gap-3 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-[#E0C759] text-xl font-bold">•</div>
-                  <p className="text-normal-base text-white/90">
-                    A community organization advancing climate justice
-                  </p>
-                </div>
+                {roles.map((role, index) => (
+                  <div
+                    key={index}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-start gap-3 hover:bg-white/20 transition-all duration-300"
+                  >
+                    <div className="text-[#E0C759] text-xl font-bold">•</div>
+                    <p className="text-normal-base text-white/90">{role}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
             <div className="text-center">
               <p className="text-normal-base md:text-normal-lg text-white font-medium max-w-[900px] mx-auto">
-                ECF is building Africa&apos;s next climate technology ecosystem
-                — and we invite you to build it with us.
+                {t("buildWithUs.cta")}
               </p>
             </div>
           </div>

@@ -5,7 +5,7 @@ import CustomHead from "@/components/layout/CustomHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import OpedsPage from "@/components/sections/resources/OpedsPage";
-import { getOpedsApi } from "@/backend/firebase/db/api/opeds_api";
+import { filterOpedsApi } from "@/backend/firebase/db/api/opeds_api";
 import { OpEdSchema, ListResponseOpedsSchema } from "@/backend/models/opeds";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -16,7 +16,7 @@ export async function getServerSideProps(context: any) {
   const { locale } = context;
   let opeds: OpEdSchema[] = [];
   try {
-    const [data, status] = await getOpedsApi();
+    const [data, status] = await filterOpedsApi({ orderBy: "createdAt", orderDirection: "desc" });
     if (status === ResponseIndicator.SUCCESS)
       opeds = (data as ListResponseOpedsSchema).data.map((o) => ({ ...o, createdAt: o.createdAt instanceof Date ? o.createdAt.toISOString() : o.createdAt, updatedAt: o.updatedAt instanceof Date ? o.updatedAt.toISOString() : o.updatedAt })) as any;
   } catch (_) {}

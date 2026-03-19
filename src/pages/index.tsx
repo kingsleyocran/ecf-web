@@ -198,7 +198,7 @@ const Page: NextPage<Props> = ({ metaDataTag, jsonLd }) => {
 
       <FeaturedProjects />
 
-      <ResourcesSection />
+      {/* <ResourcesSection /> */}
 
       <PartnersSection />
 

@@ -60,7 +60,7 @@ export async function getServerSideProps(context: any) {
     },
   ];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"])), metaDataTag, jsonLd } };
 }
 
 const VideosPodcastsPageRoute: NextPage<Props> = ({ metaDataTag, jsonLd }) => {

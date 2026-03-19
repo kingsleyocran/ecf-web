@@ -32,6 +32,54 @@
       }
     }
   },
+  "milestones": {
+    "label": "Nuestro Recorrido",
+    "heading": "Construyendo el Futuro Climático de África",
+    "sectionLabel": "Nuestro Recorrido — Hitos",
+    "skipSection": "Saltar sección",
+    "outro": {
+      "heading": "El Recorrido Continúa",
+      "description": "Construyendo un futuro donde África lidere la tecnología climática."
+    },
+    "items": {
+      "founded": {
+        "title": "ECF Fundado Dentro de GAYO",
+        "description": "Nuestro equipo climático en GAYO dio un paso audaz para desafiar las desigualdades en el campo de la tecnología climática y crear espacios para el liderazgo africano."
+      },
+      "geoDialogue": {
+        "title": "Primer Diálogo de Geoingeniería en África Lanzado",
+        "description": "Lanzamiento del primer diálogo virtual abierto del continente sobre geoingeniería para discutir estas tecnologías desde perspectivas distintivamente africanas."
+      },
+      "srmSession": {
+        "title": "Primera Sesión Pública de GRS en una Conferencia Climática de la ONU",
+        "description": "Organización de la primera sesión pública sobre Gestión de la Radiación Solar en una Conferencia Climática de la ONU, demostrando la disposición de África para participar en el escenario mundial."
+      },
+      "baseline": {
+        "title": "Evaluación de Conocimientos Base Publicada",
+        "description": "Publicación de una evaluación de conocimientos base integral sobre intervenciones climáticas, destacando las brechas entre el Sur y el Norte Global."
+      },
+      "partnerships": {
+        "title": "Alianzas Institucionales Establecidas",
+        "description": "Alianza con CSIR en Ghana y Sudáfrica, y Agencias de Protección Ambiental (APE) para fortalecer las capacidades de los organismos nacionales de investigación y regulación."
+      },
+      "acifer": {
+        "title": "Fellowship ACIFER Lanzado",
+        "description": "Pionero del Fellowship Africano de Intervención Climática para Investigadores en Etapas Tempranas en asociación con el Hub de Investigación sobre Intervenciones Climáticas Africanas."
+      },
+      "carbonAccounting": {
+        "title": "Programa de Capacitación en Contabilidad de Carbono Entregado",
+        "description": "Capacitación de 20 profesionales en contabilidad de carbono y descarbonización, con 10 estratégicamente ubicados en industrias e instituciones públicas."
+      },
+      "shortCourses": {
+        "title": "Cursos Universitarios Cortos Iniciados",
+        "description": "Alianza con universidades en Ghana, Kenia y Sudáfrica para lanzar cursos cortos dedicados sobre intervenciones climáticas."
+      },
+      "transition": {
+        "title": "Transición a Organización Independiente",
+        "description": "Inicio de la transición de GAYO para convertirse en Emerging Climate Frontiers (ECF), una organización independiente lista para escalar el impacto en todo el continente."
+      }
+    }
+  },
   "team": {
     "heading": "Conozca a Nuestro Equipo",
     "description": "Un equipo dedicado de defensores del clima africano, investigadores y organizadores.",
@@ -41,6 +89,26 @@
       "programOfficer": "Oficial de Programa",
       "researchScientificDirector": "Director de Investigación y Ciencia",
       "programAssistant": "Asistente de Programa"
+    },
+    "members": {
+      "ernest": {
+        "bio": "Miembro del Consejo Consultivo de la Juventud de la Unión Europea, ex Punto Focal Regional y oficial de Educación y Desarrollo de Capacidades de los Consejos de Juventud para el Clima. Coautor de la Declaración Nacional de la Juventud de Ghana sobre el Clima 2022 y 2023."
+      },
+      "vida": {
+        "bio": "Defensora del género y la ciencia climática. Becaria de Negociadores Jóvenes Africanos y única negociadora joven femenina del Grupo de Negociadores Africanos en el primer Balance Global (GST) en la COP28, amplificando las perspectivas de género y juventud en la diplomacia climática de alto nivel."
+      },
+      "elijah": {
+        "bio": "Ex Jefe de Investigación en la Iniciativa de Acción Política, con publicaciones sobre seguridad alimentaria y prácticas agroecológicas en Kenia. Actualmente explora cómo la Modificación de la Radiación Solar (GRS) podría impactar la agricultura y los sistemas alimentarios en África Oriental."
+      },
+      "taylen": {
+        "bio": "Organizador de base y activista ambiental. Punto Focal de África para el Grupo Principal de UNEP sobre Niños y Juventud. Fundador de Zero Waste Durban y líder en la conexión de soluciones climáticas y ambientales de base con políticas y leyes nacionales e internacionales."
+      },
+      "kwesi": {
+        "bio": "Científico investigador climático con experiencia en modelado de impacto climático y geoingeniería solar para comprender sus beneficios potenciales y riesgos amplios. Kwesi ha consultado para UNEP a través del Proyecto Nacional de Adaptación de Ghana, la Organización Meteorológica Mundial, la Academia Mundial de Ciencias e ICLEI - Gobiernos Locales para la Sostenibilidad."
+      },
+      "siisi": {
+        "bio": "Miembro central del primer Portal de Alfabetización Climática de Ghana, ampliando el acceso al conocimiento climático a nivel nacional. Con la Red de Conocimiento sobre Clima y Desarrollo (CDKN), ha diseñado juegos innovadores de alfabetización climática que hacen que temas complejos sean atractivos y accesibles."
+      }
     }
   }
 }

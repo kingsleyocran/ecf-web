@@ -28,11 +28,11 @@ export const navLinks: NavLink[] = [
   {
     title: "Programs",
     tKey: "nav.programs",
-    href: "/technologies",
+    href: "/programs",
     subPages: [
-      { title: "Solar Radiation Management", tKey: "nav.subPrograms.srm", href: "/technologies/srm" },
-      { title: "Artificial Intelligence", tKey: "nav.subPrograms.ai", href: "/technologies/ai" },
-      { title: "Carbon Dioxide Removal", tKey: "nav.subPrograms.cdr", href: "/technologies/cdr" },
+      { title: "Solar Radiation Management", tKey: "nav.subPrograms.srm", href: "/programs/srm" },
+      { title: "Artificial Intelligence", tKey: "nav.subPrograms.ai", href: "/programs/ai" },
+      { title: "Carbon Dioxide Removal", tKey: "nav.subPrograms.cdr", href: "/programs/cdr" },
     ],
   },
   {

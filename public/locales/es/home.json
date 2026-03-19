@@ -51,27 +51,48 @@
         "label": "Fellowship ACIFER",
         "description": "El primer fellowship de África para investigadores en etapas tempranas de intervención climática"
       }
-    }
+    },
+    "highlights": [
+      "Pionero del Fellowship Africano de Intervención Climática para Investigadores en Etapas Tempranas (ACIEFR)",
+      "Publicación de una evaluación de conocimientos base sobre intervenciones climáticas",
+      "Creación de cursos cortos y documentos 101 en asociación con universidades importantes",
+      "Asociación con CSIR (Ghana y Sudáfrica) y APE para el fortalecimiento institucional"
+    ]
+  },
+  "buildWithUs": {
+    "heading": "Construye Con Nosotros",
+    "ifYouAre": "Si eres:",
+    "roles": [
+      "Un investigador trabajando en IA, EDC, GRS o datos climáticos",
+      "Un responsable de políticas o regulador que da forma a la política climática y tecnológica",
+      "Un financiador o institución que invierte en innovación climática africana",
+      "Una organización comunitaria que avanza la justicia climática"
+    ],
+    "cta": "ECF está construyendo el próximo ecosistema de tecnología climática de África — y te invitamos a construirlo con nosotros."
   },
   "featuredProjects": {
     "heading": "Proyectos Destacados",
     "description": "Vea cómo el trabajo de ECF está transformando la capacidad tecnológica climática en toda África",
     "items": {
-      "climateData": {
-        "title": "Infraestructura de Datos Climáticos",
-        "description": "Construcción de sistemas de monitoreo climático impulsados por IA en África Oriental"
+      "srmShortCourse": {
+        "title": "Programa de Curso Corto GRS",
+        "description": "Cerrando la brecha de conocimiento sobre la modificación de la radiación solar en instituciones africanas"
       },
-      "blueCarbon": {
-        "title": "Iniciativa de Carbono Azul Costero",
-        "description": "Restauración de ecosistemas de manglares para la secuestración de carbono en África Occidental"
+      "srmBriefingSeries": {
+        "title": "Serie de Informes GRS",
+        "description": "Fortalecimiento del compromiso informado y centrado en la justicia sobre GRS"
       },
-      "srmNetwork": {
-        "title": "Red de Investigación GRS",
-        "description": "Investigación ética sobre los impactos de la gestión de la radiación solar"
+      "aciferSrm": {
+        "title": "Beca ACIFER GRS",
+        "description": "Investigación y gobernanza africana pionera en modificación de la radiación solar"
       },
-      "biochar": {
-        "title": "Escalado de Producción de Biocarbón",
-        "description": "Escalado de soluciones sostenibles de biocarbón para la eliminación de carbono"
+      "cdrCarbonAccounting": {
+        "title": "Capacitación en Contabilidad de Carbono",
+        "description": "Equipando a jóvenes africanos con habilidades prácticas en contabilidad de carbono"
+      },
+      "aciferCdr": {
+        "title": "Beca ACIFER EDC",
+        "description": "Fortalecimiento del liderazgo africano en investigación sobre eliminación de dióxido de carbono"
       }
     }
   },

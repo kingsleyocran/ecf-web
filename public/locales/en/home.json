@@ -45,33 +45,54 @@
       },
       "placed": {
         "label": "Strategically Placed",
-        "description": "In industries and public institutions including Ghana's carbon market office"
+        "description": "trained professionals in industries and public institutions including Ghana's carbon market office"
       },
       "fellowship": {
         "label": "ACIFER Fellowship",
         "description": "Africa's first fellowship for early-career climate intervention researchers"
       }
-    }
+    },
+    "highlights": [
+      "Pioneered African Climate Intervention Fellowship for Early-Career Researchers (ACIEFR)",
+      "Published baseline knowledge assessment on climate interventions",
+      "Created short courses and 101 documents in partnership with major universities",
+      "Partnered with CSIR (Ghana & South Africa) and EPAs for institutional strengthening"
+    ]
+  },
+  "buildWithUs": {
+    "heading": "Build With Us",
+    "ifYouAre": "If you are:",
+    "roles": [
+      "A researcher working on AI, CDR, SRM or climate data",
+      "A policymaker or regulator shaping climate and technology policy",
+      "A funder or institution investing in African climate innovation",
+      "A community organization advancing climate justice"
+    ],
+    "cta": "ECF is building Africa's next climate technology ecosystem — and we invite you to build it with us."
   },
   "featuredProjects": {
     "heading": "Featured Projects",
     "description": "See how ECF's work is transforming climate technology capacity across Africa",
     "items": {
-      "climateData": {
-        "title": "Climate Data Infrastructure",
-        "description": "Building AI-powered climate monitoring systems across East Africa"
+      "srmShortCourse": {
+        "title": "SRM Short Course Programme",
+        "description": "Closing the knowledge gap on Solar Radiation Modification within African institutions across Ghana, Kenya, and South Africa"
       },
-      "blueCarbon": {
-        "title": "Coastal Blue Carbon Initiative",
-        "description": "Restoring mangrove ecosystems for carbon sequestration in West Africa"
+      "srmBriefingSeries": {
+        "title": "SRM Briefing Series",
+        "description": "Strengthening informed, justice-centered engagement on SRM across diverse national contexts"
       },
-      "srmNetwork": {
-        "title": "SRM Research Network",
-        "description": "Leading ethical research on solar radiation management impacts"
+      "aciferSrm": {
+        "title": "ACIFER SRM Fellowship",
+        "description": "Pioneering African-led research and governance literacy in Solar Radiation Modification"
       },
-      "biochar": {
-        "title": "Biochar Production Scaling",
-        "description": "Scaling sustainable biochar solutions for carbon removal"
+      "cdrCarbonAccounting": {
+        "title": "Carbon Accounting & Decarbonization Training",
+        "description": "Equipping African youth with practical carbon accounting skills and internship placements"
+      },
+      "aciferCdr": {
+        "title": "ACIFER CDR Fellowship",
+        "description": "Strengthening African leadership in Carbon Dioxide Removal research for early-career scholars"
       }
     }
   },

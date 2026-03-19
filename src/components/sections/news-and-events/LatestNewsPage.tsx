@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 type NewsItem = {
   title: string;
@@ -82,19 +83,21 @@ const tagColors: Record<string, string> = {
 };
 
 function LatestNewsPage() {
+  const { t } = useTranslation("news-events");
+
   return (
     <section className="w-full bg-[#034D6B] pb-[100px] flex flex-col">
       {/* Hero */}
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[180px]">
         <div className="flex flex-col items-center text-center gap-4">
           <p className="text-[#E0C759]/60 text-xs primarybold tracking-[6px] uppercase">
-            Latest News
+            {t("latestNews.label")}
           </p>
           <h1 className="text-bold-2xl md:text-bold-3xl text-[#E0C759]">
-            Stay Informed
+            {t("latestNews.heading")}
           </h1>
           <p className="text-normal-base text-white/70 max-w-lg">
-            The latest coverage on frontier climate technologies, African climate governance, and global policy developments.
+            {t("latestNews.description")}
           </p>
         </div>
       </div>

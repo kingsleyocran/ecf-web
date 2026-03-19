@@ -5,7 +5,7 @@ import CustomHead from "@/components/layout/CustomHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ArticlesPage from "@/components/sections/resources/ArticlesPage";
-import { getArticlesApi } from "@/backend/firebase/db/api/articles_api";
+import { filterArticlesApi } from "@/backend/firebase/db/api/articles_api";
 import { ArticleSchema, ListResponseArticlesSchema } from "@/backend/models/articles";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -16,7 +16,7 @@ export async function getServerSideProps(context: any) {
   const { locale } = context;
   let articles: ArticleSchema[] = [];
   try {
-    const [data, status] = await getArticlesApi();
+    const [data, status] = await filterArticlesApi({ orderBy: "createdAt", orderDirection: "desc" });
     if (status === ResponseIndicator.SUCCESS)
       articles = (data as ListResponseArticlesSchema).data.map((a) => ({ ...a, createdAt: a.createdAt instanceof Date ? a.createdAt.toISOString() : a.createdAt, updatedAt: a.updatedAt instanceof Date ? a.updatedAt.toISOString() : a.updatedAt })) as any;
   } catch (_) {}

@@ -25,5 +25,257 @@
       "title": "Série de Dialogues sur la Gouvernance GRS",
       "description": "Une série de dialogues multi-parties prenantes réunissant des scientifiques, décideurs politiques et communautés africains pour façonner des positions éclairées sur la recherche et la gouvernance de la gestion du rayonnement solaire."
     }
+  },
+  "techHero": {
+    "label": "À Propos de Nous",
+    "heading": "Technologies Climatiques de Frontière",
+    "description": "L'IA, l'élimination du dioxyde de carbone et la gestion du rayonnement solaire ; explorés à travers un prisme africain."
+  },
+  "srm": {
+    "title": "Gestion du Rayonnement Solaire",
+    "description": "La gestion du rayonnement solaire fait référence aux technologies proposées qui refléteraient une petite quantité de lumière solaire dans l'espace pour réduire le réchauffement climatique. Ces technologies sont très contestées et comportent des risques et des incertitudes importants — particulièrement pour les systèmes climatiques africains, l'agriculture et les ressources en eau.",
+    "features": {
+      "modeling": "Modélisation climatique régionale pour les impacts de la GRS",
+      "governance": "Développement de cadres de gouvernance",
+      "risk": "Évaluation des risques pour l'agriculture et les ressources en eau africaines",
+      "engagement": "Engagement public et dialogue éclairé"
+    }
+  },
+  "ai": {
+    "title": "Intelligence Artificielle pour l'Adaptation Climatique",
+    "description": "L'absence de cadres de gouvernance centrés sur l'Afrique et la dépendance aux centres de données étrangers risquent de perpétuer les inégalités dans la prise de décision climatique mondiale, retardant les réponses en temps réel soutenues par l'IA. ECF plaide pour une infrastructure et une expertise locales en IA afin de garantir des réponses climatiques spécifiques au contexte qui servent en priorité les communautés africaines.",
+    "features": {
+      "data": "Développer l'IA pour des données climatiques de haute qualité dans les régions à pénurie d'eau",
+      "centres": "Construire des centres de données locaux et une capacité de traitement",
+      "warning": "Systèmes d'alerte précoce pour l'agriculture, l'eau et la réponse aux catastrophes",
+      "governance": "Cadres de gouvernance éthique de l'IA pour l'action climatique"
+    }
+  },
+  "cdr": {
+    "title": "Élimination du Dioxyde de Carbone",
+    "description": "L'EDC englobe à la fois des solutions basées sur la nature et des approches technologiques pour éliminer le dioxyde de carbone de l'atmosphère. Les écosystèmes diversifiés de l'Afrique — des forêts aux côtes — offrent un potentiel significatif pour l'EDC, mais les solutions doivent être adaptées aux contextes locaux.",
+    "features": {
+      "natureBased": "Solutions d'EDC basées sur la nature (biochar, boisement, carbone du sol)",
+      "ocean": "EDC océanique (culture d'algues, restauration de mangroves)",
+      "accounting": "Comptabilité carbone et MRV (Mesure, Rapport, Vérification)",
+      "entrepreneurship": "Entrepreneuriat local en EDC et création d'emplois"
+    }
+  },
+  "srmPage": {
+    "hero": {
+      "abbreviation": "GRS",
+      "fullName": "Gestion du Rayonnement Solaire"
+    },
+    "why": {
+      "heading": "Pourquoi la GRS ?",
+      "para1": "La Gestion du Rayonnement Solaire — l'intervention délibérée sur la lumière solaire terrestre pour refroidir la planète — n'est plus une expérience de pensée scientifique lointaine. Elle fait l'objet de recherches, de débats et est de plus en plus envisagée comme une réponse potentielle à l'accélération de la crise climatique. Et pourtant, les pays et les communautés les plus susceptibles d'être affectés par ses conséquences sont les moins représentés dans les discussions sur la question de savoir si, comment et par qui elle devrait être gouvernée.",
+      "para2": "Pour l'Afrique, les enjeux ne pourraient être plus élevés. Les interventions de GRS pourraient affecter les régimes de mousson, réduire les rendements agricoles et altérer les écosystèmes mêmes dont des millions de personnes dépendent pour leur survie. ECF estime que les institutions, les décideurs politiques et les communautés africaines ne doivent pas être des observateurs passifs de ces décisions — ils doivent en être les architectes. Nous développons les capacités de recherche, les cadres de gouvernance et les coalitions continentales nécessaires pour que l'Afrique s'engage dans la GRS selon ses propres termes, avec clarté, souveraineté et détermination."
+    },
+    "circles": {
+      "heading": "Pourquoi la Gestion du Rayonnement Solaire ?",
+      "items": [
+        "La GRS n'est plus une expérience de pensée lointaine — elle fait l'objet de recherches et de débats en tant que réponse réelle à la crise climatique.",
+        "Les nations les plus susceptibles d'être affectées sont les moins représentées dans les discussions sur comment et par qui la GRS devrait être gouvernée.",
+        "La GRS pourrait altérer les régimes de mousson en Afrique, réduire les rendements agricoles et perturber les écosystèmes mêmes dont des millions de personnes dépendent pour survivre.",
+        "Les communautés africaines doivent être des architectes — et non des observateurs passifs — de ces décisions.",
+        "ECF développe les capacités pour que l'Afrique s'engage dans la GRS selon ses propres termes, avec clarté, souveraineté et détermination."
+      ]
+    },
+    "programs": {
+      "sectionTitle": "Gestion du Rayonnement Solaire",
+      "sectionHeading": "Programmes de GRS",
+      "objectivesLabel": "Objectifs",
+      "impactsLabel": "Impacts",
+      "partnersLabel": "Universités Partenaires",
+      "items": {
+        "shortCourse": {
+          "title": "Programme de cours intensif sur la GRS",
+          "background": "L'Afrique contribue de manière minimale aux émissions mondiales de gaz à effet de serre, mais subit des impacts climatiques disproportionnés — sécheresses intensifiées, inondations, stress thermique, insécurité alimentaire et dégradation des écosystèmes. Alors que l'atténuation et l'adaptation restent essentielles, les conversations émergentes autour de la Modification du Rayonnement Solaire (GRS) s'accélèrent à l'échelle mondiale. Cependant, l'Afrique reste sous-représentée dans la production de recherche, les négociations de gouvernance et l'infrastructure technique façonnant ces Technologies Climatiques de Frontière (TCF). Ce cours intensif a été conçu comme une intervention stratégique pour combler le déficit de connaissances sur la GRS au sein des institutions africaines et équiper les décideurs politiques, les chercheurs et les acteurs de la société civile pour participer au dialogue mondial sur les interventions climatiques depuis une position d'action éclairée.",
+          "objectives": [
+            "Renforcer la compréhension académique de la GRS.",
+            "Créer un vivier de jeunes professionnels informés engagés dans les interventions climatiques.",
+            "Promouvoir des perspectives centrées sur la justice dans le dialogue sur les technologies climatiques.",
+            "Encourager l'engagement interdisciplinaire entre la science, la politique et la gouvernance.",
+            "Faire avancer l'agentivité africaine dans les discussions mondiales sur les interventions climatiques."
+          ],
+          "impacts": [
+            "Plus de 900 étudiants et jeunes professionnels touchés au Ghana, en Afrique du Sud et au Kenya.",
+            "Amélioration de la compréhension des concepts de GRS chez 85 % des participants grâce aux enquêtes post-formation.",
+            "Renforcement de l'intérêt pour les carrières science-politique et la recherche climatique dans les institutions académiques engagées.",
+            "Augmentation de la demande institutionnelle pour une éducation récurrente sur les interventions climatiques.",
+            "Renforcement du discours centré sur l'Afrique dans 10 universités."
+          ],
+          "stats": {
+            "studentsReached": { "label": "étudiants touchés" },
+            "improvedUnderstanding": { "label": "compréhension améliorée" },
+            "partnerUniversities": { "label": "universités partenaires" }
+          }
+        },
+        "briefingSeries": {
+          "title": "Série de briefings GRS",
+          "background": "À travers l'Afrique, des pays comme le Ghana, le Kenya et l'Afrique du Sud subissent des impacts climatiques de plus en plus intenses — hausse des températures, précipitations erratiques, sécheresses prolongées, inondations et vulnérabilité côtière. Pourtant, malgré ces réalités, les voix africaines restent sous-représentées dans les discussions mondiales sur la Modification du Rayonnement Solaire. Le manque de familiarité technique, une production de recherche insuffisante et une participation limitée aux plateformes internationales science-politique ont collectivement restreint la capacité des décideurs politiques, des chercheurs et des acteurs de la société civile à s'engager avec confiance dans le discours sur la GRS. La Série de briefings GRS a été convoquée au Ghana, au Kenya et en Afrique du Sud pour combler directement cette lacune en renforçant un engagement informé et centré sur la justice concernant la GRS dans divers contextes nationaux.",
+          "objectives": [
+            "Développer une littératie africaine partagée sur la science, les risques et les incertitudes de la GRS.",
+            "Examiner les implications éthiques, de gouvernance et communautaires.",
+            "Identifier les lacunes de recherche et les angles morts politiques.",
+            "Renforcer le dialogue intersectoriel entre la science, la politique et la société civile.",
+            "Soutenir la coordination précoce vers des positions nationales et régionales sur la GRS."
+          ],
+          "impacts": [
+            "Trois briefings régionaux organisés à Accra, Nairobi et Johannesburg.",
+            "105 participants engagés, dont des décideurs politiques, du personnel d'institutions mandatées et des organisations de recherche et de la société civile de plus de 35 institutions.",
+            "Renforcement de la capacité africaine à s'engager de manière critique dans le discours sur la GRS.",
+            "Clarification des priorités de gouvernance, notamment le consentement, la responsabilité et la justice.",
+            "Renforcement du leadership africain dans l'élaboration des agendas de recherche sur la GRS."
+          ],
+          "stats": {
+            "regionalBriefings": { "label": "briefings régionaux" },
+            "participantsEngaged": { "label": "participants engagés" },
+            "institutionsRepresented": { "label": "institutions représentées" }
+          }
+        },
+        "aciferFellowship": {
+          "title": "Bourse ACIFER GRS",
+          "background": "Le volet GRS de la Bourse Africaine d'Intervention Climatique pour les Chercheurs en Début de Carrière (ACIFER) est une initiative pionnière visant à renforcer la recherche dirigée par l'Afrique et la littératie en gouvernance de la Modification du Rayonnement Solaire. Alors que les dialogues mondiaux s'intensifient autour des interventions climatiques émergentes, il est essentiel que les chercheurs et décideurs politiques africains soient équipés pour évaluer de manière critique les implications scientifiques, éthiques et de gouvernance de la GRS dans les contextes environnementaux et sociopolitiques uniques du continent. Actuellement, la recherche sur la GRS est principalement concentrée dans des institutions hors d'Afrique, créant un déséquilibre des connaissances qui marginalise les perspectives africaines dans les discussions mondiales sur la gouvernance. ACIFER comble ces lacunes en renforçant les capacités de recherche, en favorisant la collaboration interdisciplinaire et en améliorant les mécanismes de traduction recherche-politique.",
+          "objectives": [
+            "Développer les capacités de recherche dirigée par l'Afrique dans le domaine de la GRS.",
+            "Équiper les boursiers de connaissances techniques, éthiques et de gouvernance.",
+            "Favoriser le mentorat et la collaboration interdisciplinaire.",
+            "Renforcer la contribution de l'Afrique à la recherche mondiale sur les interventions climatiques."
+          ],
+          "impacts": [
+            "30 boursiers formés, sélectionnés parmi plus de 45 pays africains.",
+            "3 propositions de recherche développées et présentées (en cours).",
+            "36 sessions de mentorat réalisées.",
+            "Boursiers engagés dans des collaborations de recherche inter-pays.",
+            "Création d'une communauté de recherche en début de carrière pour favoriser les collaborations interrégionales."
+          ],
+          "stats": {
+            "fellowsTrained": { "label": "boursiers formés" },
+            "africanCountries": { "label": "pays africains" },
+            "mentorshipSessions": { "label": "sessions de mentorat" }
+          }
+        }
+      }
+    }
+  },
+  "cdrPage": {
+    "hero": {
+      "abbreviation": "EDC",
+      "fullName": "Élimination du Dioxyde de Carbone"
+    },
+    "circles": {
+      "heading": "Pourquoi l'Élimination du Dioxyde de Carbone ?",
+      "items": [
+        "Le carbone déjà présent dans notre atmosphère survivra à toute promesse faite lors d'un sommet climatique. Réduire les émissions ne suffit plus — le monde doit aussi éliminer ce qui a déjà été libéré.",
+        "L'Élimination du Dioxyde de Carbone est l'une des frontières climatiques les plus déterminantes de notre époque, et pourtant les voix, institutions et écosystèmes africains restent largement absents des décisions prises à ce sujet.",
+        "L'Afrique abrite certains des puits de carbone naturels les plus importants au monde — des forêts aux océans en passant par les sols.",
+        "La science, les normes et les systèmes régissant l'EDC sont conçus ailleurs — pas par ni pour les communautés les plus touchées.",
+        "ECF développe les connaissances, les capacités et les coalitions nécessaires pour que l'Afrique dirige l'EDC selon ses propres termes — non pas comme une ressource à extraire, mais comme un continent ayant la capacité de façonner son avenir climatique."
+      ]
+    },
+    "programs": {
+      "sectionTitle": "Élimination du Dioxyde de Carbone",
+      "sectionHeading": "Programmes d'EDC",
+      "objectivesLabel": "Objectifs",
+      "impactsLabel": "Impacts",
+      "partnersLabel": "Universités Partenaires",
+      "items": {
+        "shortCourse": {
+          "title": "Programme de cours intensif sur l'EDC",
+          "background": "L'Afrique contribue de manière minimale aux émissions mondiales de gaz à effet de serre, mais subit des impacts climatiques disproportionnés ; sécheresses intensifiées, inondations, stress thermique, insécurité alimentaire et dégradation des écosystèmes. Les conversations émergentes autour de l'Élimination du Dioxyde de Carbone (EDC) s'accélèrent à l'échelle mondiale, à mesure que nous apprenons que nos efforts d'atténuation et d'adaptation pourraient ne pas suffire pour éviter l'effondrement climatique. L'Afrique reste sous-représentée dans la production de recherche, les négociations de gouvernance et l'infrastructure technique façonnant ces Technologies Climatiques de Frontière (TCF). Ce cours intensif a été conçu comme une intervention stratégique pour combler le déficit de connaissances sur l'EDC au sein des institutions africaines, renforcer la capacité scientifique et de gouvernance de l'Afrique à évaluer ces technologies de manière indépendante, équiper les décideurs politiques, les chercheurs et les acteurs de la société civile pour participer au dialogue mondial sur les interventions climatiques depuis une position d'action éclairée, et poser les bases du développement d'une position africaine coordonnée et centrée sur la justice concernant la recherche et la gouvernance des interventions climatiques.",
+          "objectives": [
+            "Renforcer la compréhension académique de l'EDC.",
+            "Créer un vivier de jeunes professionnels informés engagés dans les interventions climatiques.",
+            "Promouvoir des perspectives centrées sur la justice dans le dialogue sur les technologies climatiques.",
+            "Encourager l'engagement interdisciplinaire entre la science, la politique et la gouvernance.",
+            "Faire avancer l'agentivité africaine dans les discussions mondiales sur les interventions climatiques."
+          ],
+          "impacts": [
+            "Plus de 900 étudiants et jeunes professionnels touchés au Ghana, en Afrique du Sud et au Kenya.",
+            "Amélioration de la compréhension des concepts d'EDC chez 85 % des participants grâce aux enquêtes post-formation.",
+            "Relance de l'intérêt pour la recherche science-politique dans les institutions académiques engagées.",
+            "Augmentation de la demande institutionnelle pour une éducation récurrente sur les interventions climatiques."
+          ],
+          "stats": {
+            "studentsReached": { "label": "étudiants touchés" },
+            "improvedUnderstanding": { "label": "compréhension améliorée" },
+            "partnerUniversities": { "label": "universités partenaires" }
+          }
+        },
+        "carbonAccounting": {
+          "title": "Formation en Comptabilité Carbone et Décarbonisation",
+          "background": "Le marché du carbone en Afrique se développe rapidement, mais une lacune critique persiste : alors que les jeunes Africains sont désireux de piloter les efforts de comptabilité carbone et de décarbonisation du continent, seule une petite fraction a accès à une formation structurée. Parallèlement, les industries font face à une pression croissante pour mesurer et réduire leurs émissions mais peinent à trouver une expertise locale, créant une dépendance aux consultants étrangers qui sape l'agentivité climatique de l'Afrique. Pour y remédier, Emerging Climate Frontiers (ECF) a lancé une initiative pratique qui dote les jeunes de connaissances techniques et d'expérience pratique en comptabilité carbone et décarbonisation. En fournissant formation, mentorat et opportunités de placement, le programme habilite la prochaine génération de professionnels à répondre à la demande industrielle, faire progresser les solutions climatiques dirigées par l'Afrique et renforcer la capacité du continent à diriger la gouvernance carbone tout en créant des voies d'emploi durables pour les jeunes.",
+          "objectives": [
+            "Dispenser une formation pratique en comptabilité carbone et décarbonisation.",
+            "Fournir des parcours de stages structurés avec des partenaires corporatifs et institutionnels.",
+            "Développer une cohorte qualifiée de professionnels africains de la gestion du carbone.",
+            "Établir des voies d'emploi pour les jeunes dans les métiers de l'économie verte.",
+            "Poser les bases de l'audit carbone et du conseil en MRV."
+          ],
+          "impacts": [
+            "20 jeunes professionnels formés.",
+            "7 participants ont effectué des placements en stage."
+          ],
+          "stats": {
+            "youthTrained": { "label": "jeunes professionnels formés" },
+            "internshipPlacements": { "label": "placements en stage" }
+          }
+        },
+        "aciferFellowship": {
+          "title": "Bourse ACIFER EDC",
+          "background": "Le volet EDC de la Bourse Africaine d'Intervention Climatique pour les Chercheurs en Début de Carrière (ACIFER) est conçu pour renforcer le leadership africain dans la recherche sur l'Élimination du Dioxyde de Carbone (EDC) en dotant les chercheurs en début de carrière des connaissances, du mentorat et des réseaux collaboratifs nécessaires pour produire des données localement ancrées sur les approches émergentes d'atténuation climatique. Alors que les impacts climatiques s'intensifient en Afrique malgré la contribution minimale du continent aux émissions mondiales, le besoin pour les chercheurs africains de façonner la manière dont les technologies d'EDC sont étudiées, gouvernées et appliquées est devenu urgent. Pourtant, une grande partie de la recherche, de la modélisation et du discours politique actuels sur l'EDC provient de l'extérieur du continent, laissant des lacunes importantes dans les données spécifiques au contexte et limitant l'influence de l'Afrique dans la gouvernance climatique mondiale. À travers une formation structurée, une collaboration interdisciplinaire et un engagement politique, ACIFER forme une nouvelle génération de chercheurs africains capables d'éclairer les politiques climatiques, de renforcer la souveraineté de la recherche et de garantir que les voies d'EDC reflètent les réalités africaines, les priorités de développement et les engagements climatiques mondiaux.",
+          "objectives": [
+            "Développer les capacités de recherche dirigée par l'Afrique dans le domaine de l'EDC.",
+            "Équiper les boursiers de connaissances techniques, éthiques et de gouvernance.",
+            "Favoriser le mentorat et la collaboration interdisciplinaire.",
+            "Renforcer la contribution de l'Afrique à la recherche mondiale sur les interventions climatiques."
+          ],
+          "impacts": [
+            "30 boursiers formés à travers plus de 45 pays africains.",
+            "2 projets de recherche locaux financés (en cours).",
+            "Création d'une communauté de recherche en début de carrière pour favoriser les collaborations interrégionales."
+          ],
+          "stats": {
+            "fellowsTrained": { "label": "boursiers formés" },
+            "africanCountries": { "label": "pays africains" },
+            "fundedResearch": { "label": "recherches financées" }
+          }
+        }
+      }
+    }
+  },
+  "aiPage": {
+    "hero": {
+      "abbreviation": "IA",
+      "fullName": "Intelligence Artificielle pour l'Adaptation Climatique"
+    },
+    "why": {
+      "heading": "Pourquoi l'IA ?",
+      "para1": "L'intelligence artificielle transforme la science du climat, permettant une modélisation plus rapide, des stratégies d'adaptation plus intelligentes et des réponses en temps réel aux crises environnementales. Mais l'IA n'est aussi bonne que les données dont elle apprend, l'infrastructure sur laquelle elle fonctionne et les cadres de gouvernance qui façonnent son utilisation. Et en ce moment, ces trois éléments sont massivement contrôlés en dehors de l'Afrique.",
+      "para2": "Le continent fait face à un paradoxe dangereux : il est parmi les plus vulnérables au changement climatique, mais il a le moins d'influence sur les outils d'IA développés pour y répondre. Sans centres de données locaux, sans jeux de données générés par l'Afrique, ni cadres de gouvernance dirigés par le continent, même les outils d'IA climatiques bien intentionnés risquent de renforcer la dépendance et de marginaliser les réalités africaines. ECF comble cette lacune en formant la prochaine génération d'experts africains en IA et climat, en intégrant l'IA dans la recherche localement pertinente et en plaidant pour des structures de gouvernance qui placent l'agentivité africaine au centre de la conversation mondiale sur l'IA pour le climat."
+    },
+    "objectives": {
+      "heading": "Pourquoi l'Intelligence Artificielle ?",
+      "items": [
+        "L'IA transforme la science climatique — permettant une modélisation plus rapide, des stratégies d'adaptation plus intelligentes et des réponses en temps réel aux crises. Mais l'IA n'est efficace que si les données, l'infrastructure et la gouvernance qui la soutiennent le sont aussi.",
+        "Les données sur lesquelles l'IA apprend, l'infrastructure sur laquelle elle fonctionne et les cadres de gouvernance qui façonnent son utilisation sont massivement contrôlés en dehors de l'Afrique.",
+        "L'Afrique fait face à un paradoxe dangereux : le continent le plus vulnérable au changement climatique, mais le moins influent sur les outils d'IA construits pour y répondre.",
+        "Sans centres de données locaux, sans ensembles de données générés par l'Afrique, ni cadres de gouvernance continentaux, même les outils d'IA climatiques bien intentionnés risquent de renforcer la dépendance et de marginaliser les réalités africaines.",
+        "ECF comble cette lacune — en formant la prochaine génération d'experts africains en IA et climat, en intégrant l'IA dans la recherche localement pertinente et en plaidant pour une gouvernance qui place l'agentivité africaine au centre."
+      ]
+    },
+    "programObjectives": {
+      "sectionTitle": "Intelligence Artificielle",
+      "sectionHeading": "Objectifs",
+      "objectivesLabel": "Objectifs",
+      "items": [
+        "Renforcer la littératie en IA et climat parmi les décideurs politiques africains, les chercheurs en début de carrière et les équipes techniques.",
+        "Développer des ressources accessibles IA & Climat 101 adaptées aux contextes africains, comblant les lacunes de connaissances et promouvant une compréhension éthique.",
+        "Soutenir les institutions publiques dans l'intégration de l'IA dans les systèmes de données climatiques, la modélisation et les processus de prise de décision.",
+        "Convoquer des dialogues continentaux sur la souveraineté des données, l'utilisation éthique de l'IA et les cadres de gouvernance qui priorisent l'agentivité africaine.",
+        "Intégrer des modules axés sur l'IA dans ACIFER et d'autres programmes de bourses pour jeunes chercheurs afin de cultiver la prochaine génération de leaders africains en IA et climat."
+      ]
+    }
   }
 }

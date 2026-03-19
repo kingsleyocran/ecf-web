@@ -5,8 +5,7 @@ import Header from "@/components/layout/Header";
 import PageEmptySection from "@/components/layout/PageEmptySection";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-export async function getServerSideProps(context: any) {
-  const { locale } = context;
+export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       ...(await serverSideTranslations(locale ?? "en", ["common"])),

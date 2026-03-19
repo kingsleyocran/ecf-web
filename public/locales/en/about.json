@@ -4,7 +4,7 @@
     "heading": "Shaping Africa's Climate Future",
     "para1": "In 2022, our climate team at GAYO took a bold step: we named and challenged the glaring inequalities in the rapidly evolving field of climate technologies. We saw firsthand how African voices were being sidelined in critical global dialogues; not because of lack of will, but due to structural barriers and persistent knowledge gaps.",
     "para2": "In response, we set out to build something fundamentally different: safe, accessible spaces where African voices can lead climate discussions, allowing local stakeholders to shape their own positions on Frontier Climate Technologies.",
-    "para3": "Now, after three years of dedicated work, we are transitioning from GAYO to become Emerging Climate Frontiers (ECF)—an independent organization ready to scale our impact, deepen our research, and meet the growing demand across the continent."
+    "para3": "Now, after three years of dedicated work, we are transitioning from GAYO to become Emerging Climate Frontiers (ECF); an independent organization ready to scale our impact, deepen our research, and meet the growing demand across the continent."
   },
   "mission": {
     "title": "Our Mission",
@@ -32,6 +32,54 @@
       }
     }
   },
+  "milestones": {
+    "label": "Our Journey",
+    "heading": "Building Africa's Climate Future",
+    "sectionLabel": "Our Journey — Milestones",
+    "skipSection": "Skip section",
+    "outro": {
+      "heading": "The Journey Continues",
+      "description": "Building a future where Africa leads climate technology."
+    },
+    "items": {
+      "founded": {
+        "title": "ECF Founded Within GAYO",
+        "description": "Our climate team at GAYO took a bold step to challenge inequalities in the climate technology field and create spaces for African leadership."
+      },
+      "geoDialogue": {
+        "title": "Africa's First Geoengineering Dialogue Launched",
+        "description": "Launched the continent's first open virtual dialogue on geoengineering to discuss these technologies from distinctly African perspectives."
+      },
+      "srmSession": {
+        "title": "First Public SRM Session at UN Climate Conference",
+        "description": "Organized the first-ever public session on Solar Radiation Management at a UN Climate Conference, demonstrating Africa's readiness to engage on the global stage."
+      },
+      "baseline": {
+        "title": "Baseline Knowledge Assessment Published",
+        "description": "Published a comprehensive baseline knowledge assessment on climate interventions, highlighting gaps between the Global South and Global North."
+      },
+      "partnerships": {
+        "title": "Institutional Partnerships Established",
+        "description": "Partnered with CSIR in Ghana and South Africa, and Environmental Protection Agencies (EPA) to build capacity within national research and regulatory bodies."
+      },
+      "acifer": {
+        "title": "ACIFER Fellowship Launched",
+        "description": "Pioneered the African Climate Intervention Fellowship for Early-Career Researchers in partnership with the African Climate Intervention Research Hub."
+      },
+      "carbonAccounting": {
+        "title": "Carbon Accounting Training Program Delivered",
+        "description": "Trained 20 professionals in carbon accounting and decarbonization, with 10 strategically placed in industries and public institutions."
+      },
+      "shortCourses": {
+        "title": "University Short Courses Initiated",
+        "description": "Partnered with universities in Ghana, Kenya, and South Africa to launch dedicated short courses on climate interventions."
+      },
+      "transition": {
+        "title": "Transition to Independent Organization",
+        "description": "Began transitioning from GAYO to become Emerging Climate Frontiers (ECF), an independent organization ready to scale impact across the continent."
+      }
+    }
+  },
   "team": {
     "heading": "Meet Our Team",
     "description": "A dedicated team of African climate advocates, researchers, and organizers.",
@@ -41,6 +89,26 @@
       "programOfficer": "Program Officer",
       "researchScientificDirector": "Research & Scientific Director",
       "programAssistant": "Program Assistant"
+    },
+    "members": {
+      "ernest": {
+        "bio": "Member of the European Union Youth Sounding Board, former Regional Focal Point & Education and Capacity Building officer of the Youth Climate Councils. Co-author of the Ghana National Youth Climate Statement 2022 & 2023."
+      },
+      "vida": {
+        "bio": "Gender and climate science advocate. African Youth Negotiator Fellow and a sole female youth negotiator for the Africa Group of Negotiators at the first Global Stocktake (GST) at COP28, amplifying youth and gender perspectives in high-level climate diplomacy."
+      },
+      "elijah": {
+        "bio": "Former Head of Research at the Policy Action Initiative, with publications on food security and agro-ecological practices in Kenya. Currently exploring how Solar Radiation Modification (SRM) could impact agriculture and food systems in East Africa."
+      },
+      "taylen": {
+        "bio": "Grassroots organiser and environmental activist. Africa Focal Point for UNEP Major Group on Children and Youth. Founded Zero Waste Durban and led the bridging of grassroots climate and environmental solutions with national and international policy and law."
+      },
+      "kwesi": {
+        "bio": "A climate research scientist with experience in climate & solar geoengineering impact modeling to understand its potential benefits and broad risks. Kwesi has consulted for UNEP through the Ghana National Adaptation Project, World Meteorological Organization, The World Academy of Sciences, and ICLEI - Local Governments for Sustainability."
+      },
+      "siisi": {
+        "bio": "A core member of Ghana's first Climate Literacy Portal, expanding access to climate knowledge nationwide. With the Climate and Development Knowledge Network (CDKN), he has designed innovative climate literacy games that make complex issues engaging and accessible."
+      }
     }
   }
 }

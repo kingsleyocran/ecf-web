@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -11,6 +12,8 @@ const fadeUp = {
 };
 
 function DonateHeroSection() {
+  const { t } = useTranslation("donate");
+
   return (
     <section className="relative bg-[#034D6B]">
       {/* Sticky background */}
@@ -36,7 +39,7 @@ function DonateHeroSection() {
                 variants={fadeUp}
                 className="text-white/80 text-sm md:text-base font-medium tracking-widest uppercase mb-4"
               >
-                Support Our Mission
+                {t("hero.label")}
               </motion.p>
 
               <motion.h1
@@ -46,7 +49,7 @@ function DonateHeroSection() {
                 variants={fadeUp}
                 className="text-bold-2xl md:text-bold-3xl text-[#E0C759] max-w-[700px]"
               >
-                Fuel Africa&apos;s <br /> Climate Leadership
+                {t("hero.heading")}
               </motion.h1>
 
               <motion.p
@@ -56,9 +59,7 @@ function DonateHeroSection() {
                 variants={fadeUp}
                 className="text-white text-normal-base md:text-normal-lg max-w-[520px] mt-6 leading-relaxed"
               >
-                Your contribution directly powers research fellowships, policy
-                dialogues, and capacity-building programmes that put African
-                voices at the centre of global climate governance.
+                {t("hero.description")}
               </motion.p>
 
               <motion.div
@@ -78,7 +79,7 @@ function DonateHeroSection() {
                   className="inline-flex items-center gap-2 bg-[#0182B5] hover:bg-[#4BB0D9]/90 transition-colors duration-200
                     text-white primarybold rounded-full px-8 py-3 text-base md:text-lg"
                 >
-                  Donate Now
+                  {t("hero.cta")}
                 </button>
               </motion.div>
             </div>

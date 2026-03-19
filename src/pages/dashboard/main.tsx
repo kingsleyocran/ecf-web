@@ -5,6 +5,7 @@ import ProtectedRoute from "../../context/ProtectedRoute";
 import NavigationAnimation from "@/components/animation/navigationAnimation/Stairs";
 import Header from "../../components/layout/Header";
 import DashboardMain from "@/components/dashboard-components/components/sections/DashboardMain";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   metaDataTag: any;
@@ -12,9 +13,10 @@ interface Props {
 }
 
 export async function getServerSideProps(context: any) {
-
+  const { locale } = context;
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
       metaDataTag: null,
       jsonLd: null,
     },

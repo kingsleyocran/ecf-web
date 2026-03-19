@@ -1,32 +1,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "next-i18next";
 
-const impactItems = [
-  {
-    number: "$25",
-    label: "Funds Research Materials",
-    description:
-      "Provides essential research materials and access to academic databases for one early-career climate researcher.",
-  },
-  {
-    number: "$50",
-    label: "Supports Policy Dialogues",
-    description:
-      "Enables participation of one African policymaker in a regional climate technology governance dialogue.",
-  },
-  {
-    number: "$100",
-    label: "Powers a Fellowship Month",
-    description:
-      "Covers one month of support for an ACIEFR fellow conducting African-led climate intervention research.",
-  },
-  {
-    number: "$250",
-    label: "Builds Institutional Capacity",
-    description:
-      "Delivers a short-course workshop module at a partner university in Ghana, Kenya, or South Africa.",
-  },
-];
+const impactKeys = [
+  { key: "research", number: "$25" },
+  { key: "dialogues", number: "$50" },
+  { key: "fellowship", number: "$100" },
+  { key: "capacity", number: "$250" },
+] as const;
 
 function ImpactCard({
   number,
@@ -63,6 +44,7 @@ function ImpactCard({
 }
 
 function DonateImpactSection() {
+  const { t } = useTranslation("donate");
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
@@ -77,23 +59,24 @@ function DonateImpactSection() {
           className="mb-12 md:mb-16"
         >
           <p className="text-[#0182B5] text-sm md:text-base font-medium tracking-widest uppercase mb-3">
-            Your Impact
+            {t("impact.label")}
           </p>
           <h2 className="text-bold-2xl text-[#025C7F] max-w-[600px]">
-            Every Contribution Creates Change
+            {t("impact.heading")}
           </h2>
           <p className="text-normal-lg text-black/60 max-w-[560px] mt-4 leading-relaxed">
-            See exactly how your donation translates into real action across the
-            African climate technology landscape.
+            {t("impact.description")}
           </p>
         </motion.div>
 
         {/* Impact cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {impactItems.map((item, index) => (
+          {impactKeys.map(({ key, number }, index) => (
             <ImpactCard
-              key={index}
-              {...item}
+              key={key}
+              number={number}
+              label={t(`impact.items.${key}.label`)}
+              description={t(`impact.items.${key}.description`)}
               delay={0.1 * (index + 1)}
             />
           ))}

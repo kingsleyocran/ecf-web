@@ -20,14 +20,14 @@ function AboutHeroSection() {
           {/* Image container with padding and rounded corners */}
           <div className="relative w-full h-full rounded-2xl md:rounded-[20px] overflow-hidden">
             <Image
-              src="/assets/images/test-image.png"
+              src="/assets/images/about-banner.png"
               alt="About hero background"
               fill
               style={{ objectFit: "cover" }}
               priority
             />
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#034D6B]/95 via-[#034D6B]/50 to-[#034D6B]/30 " />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#034D6B]/95 via-[#034D6B]/60 to-[#034D6B]/70 " />
 
             {/* Left-side heading — inside the image container */}
             <div className="relative z-10 h-full flex flex-col justify-start px-4 md:px-8 lg:px-16 pt-16 md:pt-24">
@@ -43,7 +43,7 @@ function AboutHeroSection() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.35 }}
-                className="text-bold-2xl md:text-bold-3xl text-[#E0C759]"
+                className="text-bold-2xl md:text-bold-3xl text-[#E0C759] max-w-2xl"
               >
                 {t("hero.heading")}
               </motion.h1>

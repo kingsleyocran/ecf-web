@@ -4,7 +4,7 @@ import { navLinks } from "@/utils/content";
 import Link from "next/link";
 import ArrowRightIcon from "../../../../public/assets/icons/menu_arrow_right.svg";
 import CloseIcon from "../../../../public/assets/icons/close.svg";
-import PrimaryButton from "@/components/button/PrimaryButton";
+import MenuIcon from "../../../../public/assets/icons/menu.svg";
 import { useTranslation } from "next-i18next";
 
 export default function MobileMenu() {
@@ -20,7 +20,7 @@ export default function MobileMenu() {
   }
 
   const arrow = (
-    <ArrowRightIcon width="13" height="18" viewBox="0 0 13 25" fill="#D64D27" />
+    <ArrowRightIcon width="13" height="18" viewBox="0 0 13 25" fill="#024D6B" />
   );
 
   return (
@@ -28,9 +28,10 @@ export default function MobileMenu() {
       <button
         onClick={openModal}
         type="button"
-        className="md:hidden text-black text-base md:text-sm lg:text-base tracking-[0px] py-2 rounded-full"
+        aria-label="Open menu"
+        className="md:hidden flex items-center justify-center h-[40px] w-[40px] rounded-lg hover:bg-white/20 transition-all duration-200"
       >
-        <PrimaryButton title="Menu" />
+        <MenuIcon width="24" height="18" viewBox="0 0 26 20" fill="white" />
       </button>
 
       <Transition.Root show={isOpen} as={Fragment}>
@@ -49,7 +50,7 @@ export default function MobileMenu() {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex min-h-full items-start justify-center p-4 pt-12 text-center">
               {/* Dialog Panel */}
               <Transition.Child
                 as={Fragment}
@@ -60,50 +61,67 @@ export default function MobileMenu() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="secondarybold text-[#61270A] w-full max-w-md transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
                   <div className="grid grid-col-1">
-                    {/* Title */}
-                    <div className="flex flex-row items-center justify-end text-xl md:text-base lg:text-base tracking-[0px] pl-8 pr-5 py-4 font-bold">
+                    {/* Close Button */}
+                    <div className="flex flex-row items-center justify-between pl-6 pr-4 py-3 border-b border-gray-100">
+                      <span className="text-[#024D6B] font-bold text-lg">Menu</span>
                       <button
                         onClick={closeModal}
                         type="button"
-                        className="h-[40px] w-[40px] flex flex-col items-center justify-center bg-[#FFB12B] border-[#5C382B] rounded-full border-2 border-b-[6px]  active:border-b-2"
+                        aria-label="Close menu"
+                        className="h-[36px] w-[36px] flex flex-col items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full transition-colors duration-200"
                       >
                         <CloseIcon
-                          width="16"
-                          height="16"
+                          width="14"
+                          height="14"
                           viewBox="0 0 21 21"
-                          fill="#5C382B"
+                          fill="#024D6B"
                         />
                       </button>
                     </div>
 
-                    {/* For Home */}
-                    <button onClick={closeModal} type="button">
+                    {/* Home */}
+                    <button onClick={closeModal} type="button" className="w-full">
                       <Link
-                        className="flex flex-row items-center justify-between text-xl md:text-base
-                        lg:text-base tracking-[0px] px-8 py-5 active:scale-95"
+                        className="flex flex-row items-center justify-between text-[#024D6B] font-semibold
+                        text-base tracking-[0px] px-6 py-4 active:bg-[#024D6B]/5 transition-colors duration-150"
                         href={"/"}
                         passHref
                       >
-                        Home
+                        {t("nav.home", "Home")}
                         {arrow}
                       </Link>
                     </button>
 
                     {/* Navigation Links */}
-                    {navLinks.slice(0).map((navlink, idx) =>
+                    {navLinks.map((navlink, idx) =>
                       navlink.subPages ? (
-                        <div key={idx}>
-                          <div className="px-8 pt-5 pb-2 text-xs tracking-[4px] uppercase text-[#61270A]/40 font-semibold">
-                            {t(navlink.tKey)}
-                          </div>
+                        <div key={idx} className="border-t border-gray-100">
+                          {/* Parent link as section header - clickable if it has its own page */}
+                          {navlink.clickable ? (
+                            <button onClick={closeModal} type="button" className="w-full">
+                              <Link
+                                className="flex flex-row items-center justify-between px-6 pt-4 pb-2
+                                text-[#024D6B] font-bold text-xs tracking-[3px] uppercase"
+                                href={navlink.href}
+                                passHref
+                              >
+                                {t(navlink.tKey)}
+                                {arrow}
+                              </Link>
+                            </button>
+                          ) : (
+                            <div className="px-6 pt-4 pb-2 text-[#024D6B]/40 font-bold text-xs tracking-[3px] uppercase">
+                              {t(navlink.tKey)}
+                            </div>
+                          )}
+                          {/* Sub-pages */}
                           {navlink.subPages.map((subPage, subIdx) => (
                             <button key={subIdx} onClick={closeModal} type="button" className="w-full">
                               <Link
-                                className="flex flex-row items-center justify-between text-base
-                                tracking-[0px] pl-12 pr-8 py-4 active:scale-95
-                                active:bg-th-menu-highlight-secondary"
+                                className="flex flex-row items-center justify-between text-[#024D6B]/80 text-sm
+                                tracking-[0px] pl-10 pr-6 py-3 active:bg-[#024D6B]/5 transition-colors duration-150"
                                 href={subPage.href}
                                 passHref
                               >
@@ -114,11 +132,10 @@ export default function MobileMenu() {
                           ))}
                         </div>
                       ) : (
-                        <button key={idx} onClick={closeModal} type="button">
+                        <button key={idx} onClick={closeModal} type="button" className="w-full border-t border-gray-100">
                           <Link
-                            className="flex flex-row items-center justify-between text-xl
-                            md:text-base lg:text-base tracking-[0px] px-8 py-5 active:scale-95
-                            active:bg-th-menu-highlight-secondary  hover:border-th-stroke-primary"
+                            className="flex flex-row items-center justify-between text-[#024D6B] font-semibold
+                            text-base tracking-[0px] px-6 py-4 active:bg-[#024D6B]/5 transition-colors duration-150"
                             href={navlink.href}
                             passHref
                           >
@@ -129,15 +146,19 @@ export default function MobileMenu() {
                       )
                     )}
 
-                    {/* CTA Button */}
-                    {/* <Link
-                      href={"/get-involved"}
-                      passHref
-                      className="w-full flex flex-row items-center justify-between text-xl
-                      md:text-base lg:text-base tracking-[0px] px-8 py-5 active:scale-95"
-                    >
-                      <PrimaryButton isWide title="Donate" variant="yellow-brown"/>
-                    </Link> */}
+                    {/* Donate Button */}
+                    <div className="border-t border-gray-100 p-4">
+                      <button onClick={closeModal} type="button" className="w-full">
+                        <Link
+                          className="flex items-center justify-center w-full py-3 bg-[#0182B5] hover:bg-[#4BB0D9]/90
+                          text-white font-bold text-sm rounded-full transition-colors duration-200"
+                          href={"/donate"}
+                          passHref
+                        >
+                          {t("nav.donate")}
+                        </Link>
+                      </button>
+                    </div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

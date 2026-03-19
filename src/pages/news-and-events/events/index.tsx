@@ -5,7 +5,7 @@ import CustomHead from "@/components/layout/CustomHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import EventsPage from "@/components/sections/news-and-events/EventsPage";
-import { getEventsApi } from "@/backend/firebase/db/api/events_api";
+import { filterEventsApi } from "@/backend/firebase/db/api/events_api";
 import { EventSchema, ListResponseEventsSchema } from "@/backend/models/events";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -21,7 +21,7 @@ export async function getServerSideProps(context: any) {
   let events: EventSchema[] = [];
 
   try {
-    const [data, status] = await getEventsApi();
+    const [data, status] = await filterEventsApi({ orderBy: "createdAt", orderDirection: "desc" });
     if (status === ResponseIndicator.SUCCESS) {
       const result = data as ListResponseEventsSchema;
       events = result.data.map((e) => ({
@@ -78,7 +78,7 @@ export async function getServerSideProps(context: any) {
     },
   ];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), events, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"])), events, metaDataTag, jsonLd } };
 }
 
 const EventsIndexPage: NextPage<Props> = ({ events, metaDataTag, jsonLd }) => {

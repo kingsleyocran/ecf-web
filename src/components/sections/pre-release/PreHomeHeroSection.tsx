@@ -12,8 +12,10 @@ import { filterBlogsApi } from "@/backend/firebase/db/api/blogs_api";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import BlogCard from "@/components/cards/BlogCard";
 import HomeECFInfoSection from "./HomeECFInfoSection";
+import { useTranslation } from "next-i18next";
 
 function HomeHeroSection() {
+  const { t } = useTranslation("common");
   const [blogs, setBlogs] = useState<BlogSchema[]>([]);
 
   useEffect(() => {
@@ -73,34 +75,21 @@ function HomeHeroSection() {
           <div className="w-full flex md:flex-row flex-col items-center justify-center gap-12 md:gap-24">
             <div className="pt-24 md:mt-0 basis-1/2 gap-4 w-full h-full flex flex-col justify-center text-start max-w-[900px] mb-4">
               <div>
-                {/* <div>
-                  <LogoSvg
-                    width="315"
-                    height="159"
-                    viewBox="0 0 315 159"
-                    className="w-[220px]"
-                  />
-                </div> */}
-
                 <h1
                   style={{ lineHeight: "1.2", letterSpacing: "0.02em" }}
                   className="text-bold-xl md:text-bold-2xl text-white/90 mb-4"
                 >
-                  Empowering African Voices in Climate Technologies
+                  {t("preRelease.heading")}
                 </h1>
               </div>
               <p className="text-normal-base text-white/60 mb-4">
-                Empowering African institutions and policymakers to drive
-                Frontier Climate Technologies through inclusive, science-driven
-                approaches. Stay connected for updates on research, capacity
-                building, and opportunities to engage with FCTs including AI,
-                CDR, and SRM.
+                {t("preRelease.description")}
               </p>
 
               {/* Socials */}
               <div className="flex flex-col gap-2">
                 <p className="text-normal-base text-white/60">
-                  Connect with us:
+                  {t("preRelease.connectWithUs")}
                 </p>
 
                 <div className="flex flex-row lg:gap-2 gap-3">
@@ -168,10 +157,10 @@ function HomeHeroSection() {
             <div className="w-full max-w-[1300px] mx-auto px-4 md:px-8 lg:px-16">
               {/* Header */}
               <div className="mb-8 md:mb-12 flex flex-row items-center justify-between">
-                <h2 className="text-section-header text-white mb-4">BLOGS</h2>
+                <h2 className="text-section-header text-white mb-4">{t("preRelease.blogs")}</h2>
 
                 <Link href={"/blogs"} passHref>
-                  <PrimaryButton title={"See all"} />
+                  <PrimaryButton title={t("preRelease.seeAll")} />
                 </Link>
               </div>
 

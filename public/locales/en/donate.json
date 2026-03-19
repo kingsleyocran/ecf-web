@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "label": "Support Our Mission",
+    "heading": "Fuel Africa's Climate Leadership",
+    "description": "Your contribution directly powers research fellowships, policy dialogues, and capacity-building programmes that put African voices at the centre of global climate governance.",
+    "cta": "Donate Now"
+  },
+  "tiers": {
+    "label": "Make a Donation",
+    "heading": "Choose Your Level of Support",
+    "description": "Every dollar you give strengthens African capacity to lead on the technologies that will define our climate future.",
+    "benefits": [
+      "100% of donations fund programme delivery",
+      "Tax-deductible where applicable",
+      "Secure payment processing",
+      "Receive quarterly impact updates"
+    ],
+    "selectAmount": "Select Amount",
+    "customAmount": "Or Enter Custom Amount",
+    "donating": "You're donating",
+    "oneTimeGift": "as a one-time gift.",
+    "donateCta": "Donate ${{amount}}",
+    "selectAnAmount": "Select an amount",
+    "securePayment": "Secure payment · Questions?"
+  },
+  "impact": {
+    "label": "Your Impact",
+    "heading": "Every Contribution Creates Change",
+    "description": "See exactly how your donation translates into real action across the African climate technology landscape.",
+    "items": {
+      "research": {
+        "label": "Funds Research Materials",
+        "description": "Provides essential research materials and access to academic databases for one early-career climate researcher."
+      },
+      "dialogues": {
+        "label": "Supports Policy Dialogues",
+        "description": "Enables participation of one African policymaker in a regional climate technology governance dialogue."
+      },
+      "fellowship": {
+        "label": "Powers a Fellowship Month",
+        "description": "Covers one month of support for an ACIEFR fellow conducting African-led climate intervention research."
+      },
+      "capacity": {
+        "label": "Builds Institutional Capacity",
+        "description": "Delivers a short-course workshop module at a partner university in Ghana, Kenya, or South Africa."
+      }
+    }
+  }
+}

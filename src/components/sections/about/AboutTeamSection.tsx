@@ -1,105 +1,28 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-// motion is still needed for the hover overlay inside TeamCard
 import MaskText from "@/components/animation/OpacityMoveYInViewAnimation";
 import { useTranslation } from "next-i18next";
 
-const teamMembers = [
-  {
-    name: "Ernest Ofori",
-    role: "Co-Executive Director",
-    country: "gh",
-    image: "/assets/images/team/ernest.png",
-    bio: (
-      <>
-        Member of the European Union Youth Sounding Board, former Regional Focal
-        Point & Education and Capacity Building officer of the Youth Climate
-        Councils. Co-author of the Ghana National Youth Climate Statement 2022 &
-        2023.
-      </>
-    ),
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Vida Agyebeng Ayim",
-    role: "Co-Executive Director",
-    country: "gh",
-    image: "/assets/images/team/vida.png",
-    bio: (
-      <>
-        Gender and climate science advocate. African Youth Negotiator Fellow and
-        a sole female youth negotiator for the Africa Group of Negotiators at
-        the first Global Stocktake (GST) at COP28, amplifying youth and gender
-        perspectives in high-level climate diplomacy.
-      </>
-    ),
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Elijah Bakari",
-    role: "Program Director",
-    country: "ke",
-    image: "/assets/images/team/elijah.png",
-    bio: (
-      <>
-        Former Head of Research at the Policy Action Initiative, with
-        publications on food security and agro-ecological practices in Kenya.
-        Currently exploring how Solar Radiation Modification (SRM) could impact
-        agriculture and food systems in East Africa.
-      </>
-    ),
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Taylen Reddy",
-    role: "Program Officer",
-    country: "za",
-    image: "/assets/images/team/taylen.png",
-    bio: (
-      <>
-        Grassroots organiser and environmental activist. Africa Focal Point for
-        UNEP Major Group on Children and Youth. Founded Zero Waste Durban and
-        led the bridging of grassroots climate and environmental solutions with
-        national and international policy and law.
-      </>
-    ),
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Kwesi Quagraine",
-    role: "Research & Scientific Director",
-    country: "gh",
-    image: "/assets/images/team/kwesi.png",
-    bio: (
-      <>
-        A climate research scientist with experience in climate & solar
-        geoengineering impact modeling to understand its potential benefits and
-        broad risks. Kwesi has consulted for UNEP through the Ghana National
-        Adaptation Project, World Meteorological Organization, The World Academy
-        of Sciences, and ICLEI - Local Governments for Sustainability.
-      </>
-    ),
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Siisi Ansah",
-    role: "Program Assistant",
-    country: "gh",
-    image: "/assets/images/team/siisi.png",
-    bio: (
-      <>
-        A core member of Ghana’s first Climate Literacy Portal, expanding access
-        to climate knowledge nationwide. With the Climate and Development
-        Knowledge Network (CDKN), he has designed innovative climate literacy
-        games that make complex issues engaging and accessible.
-      </>
-    ),
-    linkedin: "https://linkedin.com",
-  },
+const teamMembersMeta = [
+  { key: "ernest", name: "Ernest Ofori", roleKey: "coExecutiveDirector", country: "gh", image: "/assets/images/team/ernest.png", linkedin: "https://www.linkedin.com/in/ernest-ofori-7568311b5" },
+  { key: "vida", name: "Vida Agyebeng Ayim", roleKey: "coExecutiveDirector", country: "gh", image: "/assets/images/team/vida.png", linkedin: "https://www.linkedin.com/in/vidaayim" },
+  { key: "elijah", name: "Elijah Bakari", roleKey: "programDirector", country: "ke", image: "/assets/images/team/elijah.png", linkedin: "https://www.linkedin.com/in/elijah-bakari-72a32b15b" },
+  { key: "taylen", name: "Taylen Reddy", roleKey: "programOfficer", country: "za", image: "/assets/images/team/taylen.png", linkedin: "https://www.linkedin.com/in/taylen-reddy-266316246" },
+  { key: "kwesi", name: "Kwesi Quagraine", roleKey: "researchScientificDirector", country: "gh", image: "/assets/images/team/kwesi.png", linkedin: "https://www.linkedin.com/in/kwesiquagraine/" },
+  { key: "siisi", name: "Siisi Ansah", roleKey: "programAssistant", country: "gh", image: "/assets/images/team/siisi.png", linkedin: "https://www.linkedin.com/in/siisi-ansah-4244082b8" },
 ];
 
-function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
+type TeamMember = {
+  name: string;
+  role: string;
+  country: string;
+  image: string;
+  bio: string;
+  linkedin: string;
+};
+
+function TeamCard({ member }: { member: TeamMember }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -198,6 +121,15 @@ function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
 
 function AboutTeamSection() {
   const { t } = useTranslation("about");
+
+  const teamMembers: TeamMember[] = teamMembersMeta.map((meta) => ({
+    name: meta.name,
+    role: t(`team.roles.${meta.roleKey}`),
+    country: meta.country,
+    image: meta.image,
+    bio: t(`team.members.${meta.key}.bio`),
+    linkedin: meta.linkedin,
+  }));
 
   return (
     <section id="our-team" className="w-full bg-white py-16 md:py-24">

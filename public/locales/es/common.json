@@ -59,5 +59,17 @@
     "findOutMore": "Más información",
     "readNewsletter": "LEER BOLETÍN →",
     "newsletter": "Boletín"
+  },
+  "notFound": {
+    "code": "404",
+    "message": "Esta página no existe",
+    "returnHome": "Volver al inicio"
+  },
+  "preRelease": {
+    "heading": "Empoderando las Voces Africanas en Tecnologías Climáticas",
+    "description": "Empoderando a las instituciones africanas y los responsables de políticas para impulsar las Tecnologías Climáticas de Frontera a través de enfoques inclusivos y basados en la ciencia. Manténgase conectado para actualizaciones sobre investigación, desarrollo de capacidades y oportunidades de participar con las TCF, incluyendo IA, EDC y GRS.",
+    "connectWithUs": "Conéctese con nosotros:",
+    "blogs": "BLOGS",
+    "seeAll": "Ver todo"
   }
 }

@@ -84,7 +84,7 @@ export async function getServerSideProps(context: any) {
     },
   };
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), event: eventData, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"])), event: eventData, metaDataTag, jsonLd } };
 }
 
 const EventDetailRoute: NextPage<Props> = ({ event, metaDataTag, jsonLd }) => {

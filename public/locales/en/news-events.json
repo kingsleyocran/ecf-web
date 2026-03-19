@@ -1,0 +1,27 @@
+{
+  "events": {
+    "label": "Events",
+    "heading": "On the Ground",
+    "description": "Forums, workshops, and convenings shaping Africa's engagement with frontier climate technologies.",
+    "calendar": "Calendar",
+    "upcomingEvents": "Upcoming Events",
+    "registerNow": "Register Now"
+  },
+  "latestNews": {
+    "label": "Latest News",
+    "heading": "Stay Informed",
+    "description": "The latest coverage on frontier climate technologies, African climate governance, and global policy developments."
+  },
+  "videosPodcasts": {
+    "label": "Videos & Podcasts",
+    "heading": "Watch & Listen",
+    "description": "Video discussions, lecture recordings, and podcast episodes on frontier climate technologies from an African lens."
+  },
+  "typeLabels": {
+    "virtual": "Virtual",
+    "in-person": "In Person",
+    "hybrid": "Hybrid",
+    "video": "VIDEO",
+    "podcast": "PODCAST"
+  }
+}

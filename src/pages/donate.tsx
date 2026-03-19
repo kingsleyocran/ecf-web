@@ -77,7 +77,7 @@ export async function getServerSideProps(context: any) {
     },
   ];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "donate"])), metaDataTag, jsonLd } };
 }
 
 const DonatePage: NextPage<Props> = ({ metaDataTag, jsonLd }) => {

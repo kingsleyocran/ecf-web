@@ -6,6 +6,7 @@ import React from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import LoginSection from "@/components/dashboard-components/components/sections/LoginSection";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
   metaDataTag: any;
@@ -13,9 +14,10 @@ interface Props {
 }
 
 export async function getServerSideProps(context: any) {
-
+  const { locale } = context;
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
       metaDataTag: null,
       jsonLd: null,
     },

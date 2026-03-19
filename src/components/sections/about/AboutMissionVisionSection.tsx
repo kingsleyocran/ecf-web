@@ -22,7 +22,7 @@ function AboutMissionVisionSection() {
           <ScaleInView div outerClassName="flex-1 flex justify-end" extraClassNames="w-full max-w-[520px]" triggerOnce={true} animationDelay={0.1}>
             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/assets/images/test-image.png"
+                src="/assets/images/about-mission.png"
                 alt="ECF team at conference"
                 fill
                 style={{ objectFit: "cover" }}
@@ -36,7 +36,7 @@ function AboutMissionVisionSection() {
           <ScaleInView div outerClassName="flex-1" extraClassNames="w-full max-w-[520px]" triggerOnce={true} animationDelay={0.1}>
             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/assets/images/test-image.png"
+                src="/assets/images/about-vision.png"
                 alt="ECF team members"
                 fill
                 style={{ objectFit: "cover" }}

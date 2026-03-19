@@ -1,54 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import { CareerSchema } from "@/backend/models/careers";
 
-const dummyCareers: CareerSchema[] = [
-  {
-    id: "1",
-    title: "Research Fellow — SRM",
-    description:
-      "Support ECF's Solar Radiation Modification research programme through literature reviews, data analysis, and policy briefs.",
-    location: "Remote",
-    type: "Fellowship",
-    content: "",
-    imgUrl: "/assets/images/test-image.png",
-    applyUrl: null,
-    isActive: true,
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    id: "2",
-    title: "Programme Coordinator",
-    description:
-      "Coordinate ECF's capacity-building programmes across Ghana, Kenya, and South Africa, managing logistics, communications, and stakeholder engagement.",
-    location: "Accra, Ghana",
-    type: "Full-time",
-    content: "",
-    imgUrl: "/assets/images/test-image.png",
-    applyUrl: null,
-    isActive: true,
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    id: "3",
-    title: "Communications & Digital Lead",
-    description:
-      "Lead ECF's external communications strategy including social media, newsletters, and multimedia content development.",
-    location: "Remote",
-    type: "Contract",
-    content: "",
-    imgUrl: "/assets/images/test-image.png",
-    applyUrl: null,
-    isActive: true,
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-];
-
 function AllCareersPage({ careers }: { careers: CareerSchema[] }) {
-  const displayCareers = careers.length > 0 ? careers : dummyCareers;
+  const { t } = useTranslation("careers");
 
   return (
     <section className="w-full bg-[#034D6B] pb-[100px] flex flex-col">
@@ -56,13 +12,13 @@ function AllCareersPage({ careers }: { careers: CareerSchema[] }) {
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[180px]">
         <div className="flex flex-col items-center text-center gap-4">
           <p className="text-[#E0C759]/60 text-xs primarybold tracking-[6px] uppercase">
-            Open Positions
+            {t("hero.label")}
           </p>
           <h1 className="text-bold-2xl md:text-bold-3xl text-[#E0C759]">
-            Join the Mission
+            {t("hero.heading")}
           </h1>
           <p className="text-normal-base text-white/70 max-w-lg">
-            Help shape Africa&apos;s role in frontier climate technologies.
+            {t("hero.description")}
           </p>
         </div>
       </div>
@@ -70,9 +26,17 @@ function AllCareersPage({ careers }: { careers: CareerSchema[] }) {
       {/* Career cards */}
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
         <div className="flex flex-col gap-10 max-w-[800px] mx-auto">
-          {displayCareers.map((career) => (
-            <CareerCard key={career.id} career={career} />
-          ))}
+          {careers.length > 0 ? (
+            careers.map((career) => (
+              <CareerCard key={career.id} career={career} />
+            ))
+          ) : (
+            <div className="flex flex-col items-center justify-center py-20 text-center">
+              <p className="text-white/70 text-lg">
+                No open positions at the moment. Check back later!
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>

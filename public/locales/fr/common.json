@@ -59,5 +59,17 @@
     "findOutMore": "En savoir plus",
     "readNewsletter": "LIRE LE BULLETIN →",
     "newsletter": "Bulletin"
+  },
+  "notFound": {
+    "code": "404",
+    "message": "Cette page n'existe pas",
+    "returnHome": "Retour à l'accueil"
+  },
+  "preRelease": {
+    "heading": "Autonomiser les Voix Africaines dans les Technologies Climatiques",
+    "description": "Autonomiser les institutions africaines et les décideurs politiques pour piloter les Technologies Climatiques de Frontière à travers des approches inclusives et fondées sur la science. Restez connecté pour les mises à jour sur la recherche, le renforcement des capacités et les opportunités de s'engager avec les TCF, y compris l'IA, l'EDC et la GRS.",
+    "connectWithUs": "Connectez-vous avec nous :",
+    "blogs": "BLOGS",
+    "seeAll": "Voir tout"
   }
 }

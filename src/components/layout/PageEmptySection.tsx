@@ -2,8 +2,10 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import PrimaryButton from "../button/PrimaryButton";
+import { useTranslation } from "next-i18next";
 
 function Section() {
+  const { t } = useTranslation("common");
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
   const isTablet = useMediaQuery({
     query: "(min-width: 640px) and (max-width: 1024px)",
@@ -23,17 +25,17 @@ function Section() {
             }}
             className="secondarybold text-[#E0C759] flex flex-col text-[50px] md:text-[80px] lg:text-[150px] uppercase"
           >
-            404
+            {t("notFound.code")}
           </h1>
 
           <p
             className={`text-black md:max-w-[1200px] w-full text-normal-base text-center`}
           >
-            This page does not exist
+            {t("notFound.message")}
           </p>
 
           <Link className="" href={"/"} passHref>
-            <PrimaryButton title="Return to home" />
+            <PrimaryButton title={t("notFound.returnHome")} />
           </Link>
         </div>
       </div>

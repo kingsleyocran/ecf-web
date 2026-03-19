@@ -5,7 +5,7 @@ import CustomHead from "@/components/layout/CustomHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import NewslettersPage from "@/components/sections/resources/NewslettersPage";
-import { getNewslettersApi } from "@/backend/firebase/db/api/newsletters_api";
+import { filterNewslettersApi } from "@/backend/firebase/db/api/newsletters_api";
 import { NewsletterSchema, ListResponseNewslettersSchema } from "@/backend/models/newsletters";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -16,7 +16,7 @@ export async function getServerSideProps(context: any) {
   const { locale } = context;
   let newsletters: NewsletterSchema[] = [];
   try {
-    const [data, status] = await getNewslettersApi();
+    const [data, status] = await filterNewslettersApi({ orderBy: "createdAt", orderDirection: "desc" });
     if (status === ResponseIndicator.SUCCESS)
       newsletters = (data as ListResponseNewslettersSchema).data.map((n) => ({ ...n, createdAt: n.createdAt instanceof Date ? n.createdAt.toISOString() : n.createdAt, updatedAt: n.updatedAt instanceof Date ? n.updatedAt.toISOString() : n.updatedAt })) as any;
   } catch (_) {}

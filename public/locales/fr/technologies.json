@@ -33,5 +33,103 @@
       "accounting": "Comptabilité carbone et MRV (Mesure, Rapport, Vérification)",
       "entrepreneurship": "Entrepreneuriat local en EDC et création d'emplois"
     }
+  },
+  "srmPage": {
+    "hero": {
+      "abbreviation": "GRS",
+      "fullName": "Gestion du Rayonnement Solaire"
+    },
+    "why": {
+      "heading": "Pourquoi la GRS ?",
+      "para1": "La Gestion du Rayonnement Solaire — l'intervention délibérée sur la lumière solaire terrestre pour refroidir la planète — n'est plus une expérience de pensée scientifique lointaine. Elle fait l'objet de recherches, de débats et est de plus en plus envisagée comme une réponse potentielle à l'accélération de la crise climatique. Et pourtant, les pays et les communautés les plus susceptibles d'être affectés par ses conséquences sont les moins représentés dans les discussions sur la question de savoir si, comment et par qui elle devrait être gouvernée.",
+      "para2": "Pour l'Afrique, les enjeux ne pourraient être plus élevés. Les interventions de GRS pourraient affecter les régimes de mousson, réduire les rendements agricoles et altérer les écosystèmes mêmes dont des millions de personnes dépendent pour leur survie. ECF estime que les institutions, les décideurs politiques et les communautés africaines ne doivent pas être des observateurs passifs de ces décisions — ils doivent en être les architectes. Nous développons les capacités de recherche, les cadres de gouvernance et les coalitions continentales nécessaires pour que l'Afrique s'engage dans la GRS selon ses propres termes, avec clarté, souveraineté et détermination."
+    },
+    "circles": {
+      "heading": "Pourquoi la Gestion du Rayonnement Solaire ?",
+      "items": [
+        "La GRS n'est plus une expérience de pensée lointaine — elle fait l'objet de recherches et de débats en tant que réponse réelle à la crise climatique.",
+        "Les nations les plus susceptibles d'être affectées sont les moins représentées dans les discussions sur comment et par qui la GRS devrait être gouvernée.",
+        "La GRS pourrait altérer les régimes de mousson en Afrique, réduire les rendements agricoles et perturber les écosystèmes mêmes dont des millions de personnes dépendent pour survivre.",
+        "Les communautés africaines doivent être des architectes — et non des observateurs passifs — de ces décisions.",
+        "ECF développe les capacités pour que l'Afrique s'engage dans la GRS selon ses propres termes, avec clarté, souveraineté et détermination."
+      ]
+    },
+    "programs": {
+      "sectionTitle": "Gestion du Rayonnement Solaire",
+      "sectionHeading": "Programmes de GRS",
+      "objectivesLabel": "Objectifs",
+      "impactsLabel": "Impacts",
+      "partnersLabel": "Universités Partenaires",
+      "items": {
+        "shortCourse": {
+          "title": "Programme de cours intensif sur la GRS",
+          "background": "L'Afrique contribue de manière minimale aux émissions mondiales de gaz à effet de serre, mais subit des impacts climatiques disproportionnés — sécheresses intensifiées, inondations, stress thermique, insécurité alimentaire et dégradation des écosystèmes. Alors que l'atténuation et l'adaptation restent essentielles, les conversations émergentes autour de la Modification du Rayonnement Solaire (GRS) s'accélèrent à l'échelle mondiale. Cependant, l'Afrique reste sous-représentée dans la production de recherche, les négociations de gouvernance et l'infrastructure technique façonnant ces Technologies Climatiques de Frontière (TCF). Ce cours intensif a été conçu comme une intervention stratégique pour combler le déficit de connaissances sur la GRS au sein des institutions africaines et équiper les décideurs politiques, les chercheurs et les acteurs de la société civile pour participer au dialogue mondial sur les interventions climatiques depuis une position d'action éclairée.",
+          "objectives": [
+            "Renforcer la compréhension académique de la GRS.",
+            "Créer un vivier de jeunes professionnels informés engagés dans les interventions climatiques.",
+            "Promouvoir des perspectives centrées sur la justice dans le dialogue sur les technologies climatiques.",
+            "Encourager l'engagement interdisciplinaire entre la science, la politique et la gouvernance.",
+            "Faire avancer l'agentivité africaine dans les discussions mondiales sur les interventions climatiques."
+          ],
+          "impacts": [
+            "Plus de 900 étudiants et jeunes professionnels touchés au Ghana, en Afrique du Sud et au Kenya.",
+            "Amélioration de la compréhension des concepts de GRS chez 85 % des participants grâce aux enquêtes post-formation.",
+            "Renforcement de l'intérêt pour les carrières science-politique et la recherche climatique dans les institutions académiques engagées.",
+            "Augmentation de la demande institutionnelle pour une éducation récurrente sur les interventions climatiques.",
+            "Renforcement du discours centré sur l'Afrique dans 10 universités."
+          ],
+          "stats": {
+            "studentsReached": { "label": "étudiants touchés" },
+            "improvedUnderstanding": { "label": "compréhension améliorée" },
+            "partnerUniversities": { "label": "universités partenaires" }
+          }
+        },
+        "briefingSeries": {
+          "title": "Série de briefings GRS (2025)",
+          "background": "À travers l'Afrique, des pays comme le Ghana, le Kenya et l'Afrique du Sud subissent des impacts climatiques de plus en plus intenses — hausse des températures, précipitations erratiques, sécheresses prolongées, inondations et vulnérabilité côtière. Pourtant, malgré ces réalités, les voix africaines restent sous-représentées dans les discussions mondiales sur la Modification du Rayonnement Solaire. Le manque de familiarité technique, une production de recherche insuffisante et une participation limitée aux plateformes internationales science-politique ont collectivement restreint la capacité des décideurs politiques, des chercheurs et des acteurs de la société civile à s'engager avec confiance dans le discours sur la GRS. La Série de briefings GRS a été convoquée au Ghana, au Kenya et en Afrique du Sud pour combler directement cette lacune en renforçant un engagement informé et centré sur la justice concernant la GRS dans divers contextes nationaux.",
+          "objectives": [
+            "Développer une littératie africaine partagée sur la science, les risques et les incertitudes de la GRS.",
+            "Examiner les implications éthiques, de gouvernance et communautaires.",
+            "Identifier les lacunes de recherche et les angles morts politiques.",
+            "Renforcer le dialogue intersectoriel entre la science, la politique et la société civile.",
+            "Soutenir la coordination précoce vers des positions nationales et régionales sur la GRS."
+          ],
+          "impacts": [
+            "Trois briefings régionaux organisés à Accra, Nairobi et Johannesburg.",
+            "105 participants engagés, dont des décideurs politiques, du personnel d'institutions mandatées et des organisations de recherche et de la société civile de plus de 35 institutions.",
+            "Renforcement de la capacité africaine à s'engager de manière critique dans le discours sur la GRS.",
+            "Clarification des priorités de gouvernance, notamment le consentement, la responsabilité et la justice.",
+            "Renforcement du leadership africain dans l'élaboration des agendas de recherche sur la GRS."
+          ],
+          "stats": {
+            "regionalBriefings": { "label": "briefings régionaux" },
+            "participantsEngaged": { "label": "participants engagés" },
+            "institutionsRepresented": { "label": "institutions représentées" }
+          }
+        },
+        "aciferFellowship": {
+          "title": "Bourse ACIFER GRS",
+          "background": "Le volet GRS de la Bourse Africaine d'Intervention Climatique pour les Chercheurs en Début de Carrière (ACIFER) est une initiative pionnière visant à renforcer la recherche dirigée par l'Afrique et la littératie en gouvernance de la Modification du Rayonnement Solaire. Alors que les dialogues mondiaux s'intensifient autour des interventions climatiques émergentes, il est essentiel que les chercheurs et décideurs politiques africains soient équipés pour évaluer de manière critique les implications scientifiques, éthiques et de gouvernance de la GRS dans les contextes environnementaux et sociopolitiques uniques du continent. Actuellement, la recherche sur la GRS est principalement concentrée dans des institutions hors d'Afrique, créant un déséquilibre des connaissances qui marginalise les perspectives africaines dans les discussions mondiales sur la gouvernance. ACIFER comble ces lacunes en renforçant les capacités de recherche, en favorisant la collaboration interdisciplinaire et en améliorant les mécanismes de traduction recherche-politique.",
+          "objectives": [
+            "Développer les capacités de recherche dirigée par l'Afrique dans le domaine de la GRS.",
+            "Équiper les boursiers de connaissances techniques, éthiques et de gouvernance.",
+            "Favoriser le mentorat et la collaboration interdisciplinaire.",
+            "Renforcer la contribution de l'Afrique à la recherche mondiale sur les interventions climatiques."
+          ],
+          "impacts": [
+            "30 boursiers formés, sélectionnés parmi plus de 45 pays africains.",
+            "3 propositions de recherche développées et présentées (en cours).",
+            "36 sessions de mentorat réalisées.",
+            "Boursiers engagés dans des collaborations de recherche inter-pays.",
+            "Création d'une communauté de recherche en début de carrière pour favoriser les collaborations interrégionales."
+          ],
+          "stats": {
+            "fellowsTrained": { "label": "boursiers formés" },
+            "africanCountries": { "label": "pays africains" },
+            "mentorshipSessions": { "label": "sessions de mentorat" }
+          }
+        }
+      }
+    }
   }
 }

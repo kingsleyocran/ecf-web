@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
+import { useTranslation } from "next-i18next";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -10,6 +11,7 @@ import TurndownService from "turndown";
 import { CareerSchema } from "@/backend/models/careers";
 
 function CareerPage({ career }: { career: CareerSchema }) {
+  const { t } = useTranslation("careers");
   const compRef = useRef<HTMLDivElement>(null);
 
   const turndownService = new TurndownService();
@@ -166,7 +168,7 @@ function CareerPage({ career }: { career: CareerSchema }) {
             className="px-8 py-4 rounded-full bg-[#034D6B] text-white primarybold text-normal-base
               hover:bg-[#023d57] transition-colors duration-200"
           >
-            Apply Now
+            {t("applyNow")}
           </Link>
         </div>
       </div>

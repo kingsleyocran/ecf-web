@@ -12,7 +12,7 @@ function HomeAboutSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/images/test-image.png"
+          src="/assets/images/home-about.png"
           alt="About background"
           fill
           style={{

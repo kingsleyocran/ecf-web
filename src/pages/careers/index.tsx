@@ -5,10 +5,9 @@ import CustomHead from "@/components/layout/CustomHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import AllCareersPage from "@/components/sections/careers/AllCareersPage";
-import { getCareersApi } from "@/backend/firebase/db/api/careers_api";
-import { CareerSchema } from "@/backend/models/careers";
+import { filterCareersApi } from "@/backend/firebase/db/api/careers_api";
+import { CareerSchema, ListResponseCareersSchema } from "@/backend/models/careers";
 import { ResponseIndicator } from "@/backend/models/_shared";
-import { ListResponseCareersSchema } from "@/backend/models/careers";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Props {
@@ -22,7 +21,10 @@ export async function getServerSideProps(context: any) {
   let careers: CareerSchema[] = [];
 
   try {
-    const [data, status] = await getCareersApi();
+    const [data, status] = await filterCareersApi({
+      orderBy: "createdAt",
+      orderDirection: "desc",
+    });
     if (status === ResponseIndicator.SUCCESS) {
       const result = data as ListResponseCareersSchema;
       careers = result.data.map((c) => ({
@@ -96,7 +98,7 @@ export async function getServerSideProps(context: any) {
     },
   ];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), careers, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "careers"])), careers, metaDataTag, jsonLd } };
 }
 
 const CareersPage: NextPage<Props> = ({ careers, metaDataTag, jsonLd }) => {

@@ -81,7 +81,7 @@ export async function getServerSideProps(context: any) {
     },
   };
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common"])), career: careerData, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "careers"])), career: careerData, metaDataTag, jsonLd } };
 }
 
 const CareerDetailPage: NextPage<Props> = ({ career, metaDataTag, jsonLd }) => {

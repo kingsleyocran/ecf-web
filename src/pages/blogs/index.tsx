@@ -124,7 +124,7 @@ export async function getServerSideProps(context: any) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "blogs"])),
       metaDataTag: metaDataTagRes,
       jsonLd: jsonLdRes,
     },

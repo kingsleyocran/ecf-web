@@ -29,14 +29,14 @@ export async function getServerSideProps(context: any) {
       ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
       article: articleData,
       metaDataTag: {
-        title: `${articleData.title} | ECF`,
+        title: `${articleData.name} | ECF`,
         description: articleData.description,
-        keywords: `${articleData.title}, ECF articles, climate Africa`,
+        keywords: `${articleData.name}, ECF articles, climate Africa`,
         alternates: { canonical: `https://www.emergingclimatefrontiers.org/resources/articles/${articleData.id}` },
-        openGraph: { type: "website", images: [{ url: articleData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: articleData.title, type: "image/png" }] },
+        openGraph: { type: "website", images: [{ url: articleData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: articleData.name, type: "image/png" }] },
         twitter: { images: [{ url: articleData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png" }] },
       },
-      jsonLd: [{ "@context": "https://schema.org", "@type": "Article", headline: articleData.title, description: articleData.description, author: { "@type": "Person", name: articleData.author }, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" }, url: `https://www.emergingclimatefrontiers.org/resources/articles/${articleData.id}` }],
+      jsonLd: [{ "@context": "https://schema.org", "@type": "Article", headline: articleData.name, description: articleData.description, author: { "@type": "Person", name: articleData.author }, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" }, url: `https://www.emergingclimatefrontiers.org/resources/articles/${articleData.id}` }],
     },
   };
 }
@@ -47,7 +47,7 @@ const ArticleDetailRoute: NextPage<Props> = ({ article, metaDataTag, jsonLd }) =
     <>
       <CustomHead jsonLd={jsonLd} metaDataTag={metaDataTag} />
       <Header />
-      <ContentDetailPage title={article.title} author={article.author} publishedDate={article.publishedDate} imgUrl={article.imgUrl} content={article.content} badge="Article" />
+      <ContentDetailPage title={article.name} author={article.author} publishedDate="" imgUrl={article.imgUrl} content={article.content} badge="Article" />
       <Footer />
     </>
   );
