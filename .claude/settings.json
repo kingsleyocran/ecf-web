@@ -5,7 +5,22 @@
       "Bash(xargs kill:*)",
       "Bash(find /Users/kocran/Documents/CODE_PROJECTS/REACT/ecf/ecf_web/src -type f \\\\\\(-name *newsletter* -o -name *event* -o -name *oped* \\\\\\) -not -path */node_modules/*)",
       "Bash(grep -r \"getNewslettersApi\\\\|getOpedsApi\\\\|getEventsApi\\\\|NewsletterSchema\\\\|OpEdSchema\\\\|EventSchema\" /Users/kocran/Documents/CODE_PROJECTS/REACT/ecf/ecf_web/src --include=*.ts --include=*.tsx --exclude-dir=node_modules -l)",
-      "Bash(grep -l \"buildFirestoreQuery\\\\|errorHandler\\\\|dbInfoAggregatorRef\" /Users/kocran/Documents/CODE_PROJECTS/REACT/ecf/ecf_web/src/backend/firebase/db/api/*.ts)"
+      "Bash(grep -l \"buildFirestoreQuery\\\\|errorHandler\\\\|dbInfoAggregatorRef\" /Users/kocran/Documents/CODE_PROJECTS/REACT/ecf/ecf_web/src/backend/firebase/db/api/*.ts)",
+      "Bash(npx next:*)",
+      "Bash(npx firebase:*)",
+      "Bash(gcloud functions:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://ecf-web--test-1-eq7zrvh1.web.app/)",
+      "Bash(curl -s https://ecf-web--test-1-eq7zrvh1.web.app/)",
+      "Bash(curl -s https://ecf-web--test-1-eq7zrvh1.web.app/about)",
+      "Bash(curl -s https://ecf-web--test-1-eq7zrvh1.web.app/privacy)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://ecf-web.web.app/)",
+      "Bash(ls /Users/kocran/Documents/CODE_PROJECTS/REACT/ecf/ecf_web/.env*)",
+      "Bash(python3 -c \"import sys,json; d=json.loads\\(sys.stdin.read\\(\\).split\\(''''__NEXT_DATA__\"\" type=\"\"application/json\"\">''''\\)[1].split\\(''''</script>''''\\)[0]\\); print\\(json.dumps\\(d, indent=2\\)\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://ecf-web--test-1-eq7zrvh1.web.app/_next/static/NyCUzOlO0OIHoVV17l4T_/_buildManifest.js\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git reset:*)",
+      "Bash(git rm:*)"
     ]
   }
 }

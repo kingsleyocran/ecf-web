@@ -82,7 +82,7 @@ function HomeThematicAreasSection() {
 }
 
 type CardProps = {
-  data: (typeof thematicAreas)[0];
+  data: { id: number; title: string; description: string; iconPath: string };
   i: number;
   total: number;
 };
