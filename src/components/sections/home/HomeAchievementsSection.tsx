@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from "react";
-import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 import { AnimatePresence, motion } from "framer-motion";
 import ParallaxMarquee from "@/components/animation/ParallaxMarquee";
@@ -14,6 +13,7 @@ const images = [
     alt: "Carbon accounting training",
     position: { x: 48, y: 2 },
     size: { width: 380, height: 320 },
+    mobileSize: { width: 171, height: 144 },
   },
   {
     id: 2,
@@ -21,6 +21,7 @@ const images = [
     alt: "University short courses",
     position: { x: 8, y: 23 },
     size: { width: 350, height: 320 },
+    mobileSize: { width: 158, height: 144 },
   },
   {
     id: 3,
@@ -28,6 +29,7 @@ const images = [
     alt: "Strategic placements",
     position: { x: 58, y: 50 },
     size: { width: 380, height: 320 },
+    mobileSize: { width: 171, height: 144 },
   },
   {
     id: 4,
@@ -35,6 +37,7 @@ const images = [
     alt: "ACIFER fellowship",
     position: { x: 22, y: 70 },
     size: { width: 280, height: 320 },
+    mobileSize: { width: 126, height: 144 },
   },
 ];
 
@@ -44,9 +47,6 @@ function HomeAchievementsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isInView, setIsInView] = useState(false);
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({
-    query: "(min-width: 768px) and (max-width: 1023px)",
-  });
 
   const title = t("achievements.heading");
   const subtitle = t("achievements.subtitle");
@@ -119,88 +119,51 @@ function HomeAchievementsSection() {
       </div>
 
       <div className="relative overflow-hidden">
-        {/* Draggable area with three layers */}
-        {isMobile ? (
-          // Mobile: Vertical stacking without drag
-          <div className="flex flex-col gap-8">
-            {/* Images */}
-            {images.map((image) => (
-              <div
-                key={image.id}
-                className="w-full h-[400px] rounded-2xl overflow-hidden shadow-xl relative"
+        {/* Draggable layout with sticky marquee — same for mobile and desktop */}
+        <div ref={constraintsRef} style={{ height: isMobile ? 870 : 1300 }} className="relative">
+          {/* Layer 1: Draggable Images - Bottom layer (z-5) */}
+          {images.map((image, index) => (
+            <DraggableImage
+              key={image.id}
+              {...image}
+              size={isMobile ? image.mobileSize : image.size}
+              delay={0.1 * (index + 1)}
+              constraintsRef={constraintsRef}
+              isDragEnabled={true}
+            />
+          ))}
+
+          {/* Layer 2: Marquee background - Middle layer, Sticky in viewport center (z-10) */}
+          <AnimatePresence>
+            {isInView && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="fixed top-[50vh] -translate-y-1/2 pointer-events-none z-10"
               >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-            ))}
+                <ParallaxMarquee baseVelocity={-50}>
+                  <span className="text-[10vw] md:text-[12vw] text-[#E0C759] secondarybold tracking-normal whitespace-nowrap">
+                    {marqueeText}
+                  </span>
+                </ParallaxMarquee>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-            {/* Achievement cards */}
-            {achievements.map((achievement) => (
-              <div
-                key={achievement.id}
-                className="bg-[#025C7F] rounded-3xl p-6 shadow-lg"
-              >
-                <div className="text-[#C7B14E] text-5xl font-bold mb-2">
-                  {achievement.number}
-                </div>
-                <div className="text-white text-lg font-semibold mb-2">
-                  {achievement.label}
-                </div>
-                <div className="text-white/80 text-sm">
-                  {achievement.description}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          // Desktop/Tablet: Draggable layout with sticky marquee
-          <div ref={constraintsRef} className="relative h-[1300px]">
-            {/* Layer 1: Draggable Images - Bottom layer (z-5) */}
-            {images.map((image, index) => (
-              <DraggableImage
-                key={image.id}
-                {...image}
-                delay={0.1 * (index + 1)}
-                constraintsRef={constraintsRef}
-                isDragEnabled={!isMobile}
-              />
-            ))}
-
-            {/* Layer 2: Marquee background - Middle layer, Sticky in viewport center (z-10) */}
-            <AnimatePresence>
-              {isInView && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="fixed top-[50vh] -translate-y-1/2 pointer-events-none z-10"
-                >
-                  <ParallaxMarquee baseVelocity={-50}>
-                    <span className="text-[10vw] md:text-[12vw] text-[#E0C759]  secondarybold tracking-normal whitespace-nowrap">
-                      {marqueeText}
-                    </span>
-                  </ParallaxMarquee>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Layer 3: Draggable Achievement Cards - Top layer (z-20) */}
-            {achievements.map((achievement, index) => (
-              <DraggableAchievementCard
-                key={achievement.id}
-                {...achievement}
-                delay={0.2 * (index + 1)}
-                constraintsRef={constraintsRef}
-                isDragEnabled={!isMobile}
-              />
-            ))}
-          </div>
-        )}
+          {/* Layer 3: Draggable Achievement Cards - Top layer (z-20) */}
+          {achievements.map((achievement, index) => (
+            <DraggableAchievementCard
+              key={achievement.id}
+              {...achievement}
+              delay={0.2 * (index + 1)}
+              constraintsRef={constraintsRef}
+              isDragEnabled={true}
+              compact={isMobile}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -150,7 +150,7 @@ function AboutTeamSection() {
         </div>
 
         {/* Team grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 max-w-[900px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 max-w-[300px] md:max-w-[900px] mx-auto">
           {teamMembers.map((member, index) => (
             <MaskText key={member.name} div positionFrom={32} triggerOnce={true} animationDelay={0.07 * index} extraClassNames="">
               <TeamCard member={member} />

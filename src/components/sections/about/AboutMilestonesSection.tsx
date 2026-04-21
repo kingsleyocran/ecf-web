@@ -11,62 +11,50 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
+import { useMediaQuery } from "react-responsive";
 
-// ─── Data (non-translatable parts) ──────────────────────────────────────────
+// ─── Data ────────────────────────────────────────────────────────────────────
 
 const milestoneMeta = [
   {
     year: "2023",
     items: [
-      { key: "founded", image: "/assets/images/milestones/milestone-1.png" },
+      { key: "founded",     image: "/assets/images/milestones/milestone-1.png" },
       { key: "geoDialogue", image: "/assets/images/milestones/milestone-2.png" },
     ],
   },
   {
     year: "2024",
     items: [
-      { key: "srmSession", image: "/assets/images/milestones/milestone-3.png" },
-      { key: "baseline", image: null },
+      { key: "srmSession",   image: "/assets/images/milestones/milestone-3.png" },
+      { key: "baseline",     image: null },
       { key: "partnerships", image: "/assets/images/milestones/milestone-5.png" },
     ],
   },
   {
     year: "2025",
     items: [
-      { key: "acifer", image: "/assets/images/milestones/milestone-6.png" },
-      { key: "carbonAccounting", image: "/assets/images/milestones/milestone-7.png" },
-      { key: "shortCourses", image: "/assets/images/milestones/milestone-8.png" },
-      { key: "transition", image: "/assets/images/milestones/milestone-9.png" },
+      { key: "acifer",          image: "/assets/images/milestones/milestone-6.png" },
+      { key: "carbonAccounting",image: "/assets/images/milestones/milestone-7.png" },
+      { key: "shortCourses",    image: "/assets/images/milestones/milestone-8.png" },
+      { key: "transition",      image: "/assets/images/milestones/milestone-9.png" },
     ],
   },
 ];
 
-// ─── Scroll items: intro → text, image, text, image, ... ─────────────────────
-
-type IntroItem = { type: "intro" };
-type TextItem = { type: "text"; year: string; key: string };
-type ImageItem = { type: "image"; src: string; alt: string; year: string };
-type OutroItem = { type: "outro" };
+type IntroItem  = { type: "intro" };
+type TextItem   = { type: "text";  year: string; key: string };
+type ImageItem  = { type: "image"; src: string; alt: string; year: string };
+type OutroItem  = { type: "outro" };
 type ScrollItem = IntroItem | TextItem | ImageItem | OutroItem;
 
 const scrollItems: ScrollItem[] = [
   { type: "intro" },
   ...milestoneMeta.flatMap((milestone) =>
     milestone.items.flatMap((item) => [
-      {
-        type: "text" as const,
-        year: milestone.year,
-        key: item.key,
-      },
+      { type: "text" as const, year: milestone.year, key: item.key },
       ...(item.image
-        ? [
-            {
-              type: "image" as const,
-              src: item.image,
-              alt: item.key,
-              year: milestone.year,
-            },
-          ]
+        ? [{ type: "image" as const, src: item.image, alt: item.key, year: milestone.year }]
         : []),
     ])
   ),
@@ -75,30 +63,53 @@ const scrollItems: ScrollItem[] = [
 
 const TOTAL_MILESTONES = milestoneMeta.reduce((n, m) => n + m.items.length, 0);
 
-// ─── Per-item canvas positions ────────────────────────────────────────────────
+// ─── Positions ───────────────────────────────────────────────────────────────
 
 type Pos = { left: string; top: string; rotate: number; w?: number; h?: number };
 
-const itemPositions: Pos[] = [
-  { left: "0", top: "0", rotate: 0 },         // 0: Intro
-  { left: "22%", top: "20%", rotate: -2 },     // 1: Text — Founded
-  { left: "49%", top: "14%", rotate: 3, w: 360, h: 430 },  // 2: Image — Founded
-  { left: "24%", top: "44%", rotate: 1.5 },    // 3: Text — Geoengineering
-  { left: "50%", top: "32%", rotate: -2.5, w: 345, h: 415 }, // 4: Image — Geoengineering
-  { left: "20%", top: "28%", rotate: -1 },     // 5: Text — SRM Session
-  { left: "47%", top: "18%", rotate: 2, w: 370, h: 440 },  // 6: Image — SRM Session
-  { left: "26%", top: "50%", rotate: 2 },      // 7: Text — Baseline (no image)
-  { left: "22%", top: "22%", rotate: -1.5 },   // 8: Text — Partnerships
-  { left: "48%", top: "42%", rotate: 1.5, w: 355, h: 420 }, // 9: Image — Partnerships
-  { left: "24%", top: "38%", rotate: 1 },      // 10: Text — ACIFER
-  { left: "47%", top: "16%", rotate: -2, w: 350, h: 420 },  // 11: Image — ACIFER
-  { left: "20%", top: "46%", rotate: 2.5 },    // 12: Text — Carbon Accounting
-  { left: "49%", top: "22%", rotate: -1.5, w: 360, h: 430 }, // 13: Image — Carbon Accounting
-  { left: "26%", top: "26%", rotate: -2 },     // 14: Text — Short Courses
-  { left: "50%", top: "44%", rotate: 3, w: 345, h: 415 },  // 15: Image — Short Courses
-  { left: "22%", top: "20%", rotate: 1 },      // 16: Text — Transition
-  { left: "48%", top: "36%", rotate: -2.5, w: 355, h: 425 }, // 17: Image — Transition
-  { left: "0", top: "0", rotate: 0 },          // 18: Outro
+const desktopPositions: Pos[] = [
+  { left: "0",   top: "0",   rotate: 0 },
+  { left: "22%", top: "20%", rotate: -2 },
+  { left: "49%", top: "14%", rotate: 3,    w: 360, h: 430 },
+  { left: "24%", top: "44%", rotate: 1.5 },
+  { left: "50%", top: "32%", rotate: -2.5, w: 345, h: 415 },
+  { left: "20%", top: "28%", rotate: -1 },
+  { left: "47%", top: "18%", rotate: 2,    w: 370, h: 440 },
+  { left: "26%", top: "50%", rotate: 2 },
+  { left: "22%", top: "22%", rotate: -1.5 },
+  { left: "48%", top: "42%", rotate: 1.5,  w: 355, h: 420 },
+  { left: "24%", top: "38%", rotate: 1 },
+  { left: "47%", top: "16%", rotate: -2,   w: 350, h: 420 },
+  { left: "20%", top: "46%", rotate: 2.5 },
+  { left: "49%", top: "22%", rotate: -1.5, w: 360, h: 430 },
+  { left: "26%", top: "26%", rotate: -2 },
+  { left: "50%", top: "44%", rotate: 3,    w: 345, h: 415 },
+  { left: "22%", top: "20%", rotate: 1 },
+  { left: "48%", top: "36%", rotate: -2.5, w: 355, h: 425 },
+  { left: "0",   top: "0",   rotate: 0 },
+];
+
+// Mobile: text on left ~4%, images on right ~52%, images ~40% of desktop size
+const mobilePositions: Pos[] = [
+  { left: "0",   top: "0",   rotate: 0 },
+  { left: "4%",  top: "20%", rotate: -1 },
+  { left: "52%", top: "14%", rotate: 2,    w: 144, h: 172 },
+  { left: "5%",  top: "44%", rotate: 1 },
+  { left: "53%", top: "32%", rotate: -2,   w: 138, h: 166 },
+  { left: "4%",  top: "28%", rotate: -1 },
+  { left: "52%", top: "18%", rotate: 1.5,  w: 148, h: 176 },
+  { left: "5%",  top: "50%", rotate: 1.5 },
+  { left: "4%",  top: "22%", rotate: -1 },
+  { left: "53%", top: "42%", rotate: 1,    w: 142, h: 168 },
+  { left: "4%",  top: "38%", rotate: 0.5 },
+  { left: "52%", top: "16%", rotate: -1.5, w: 140, h: 168 },
+  { left: "4%",  top: "46%", rotate: 1.5 },
+  { left: "53%", top: "22%", rotate: -1,   w: 144, h: 172 },
+  { left: "5%",  top: "26%", rotate: -1.5 },
+  { left: "52%", top: "44%", rotate: 2,    w: 138, h: 166 },
+  { left: "4%",  top: "20%", rotate: 0.5 },
+  { left: "53%", top: "36%", rotate: -2,   w: 142, h: 170 },
+  { left: "0",   top: "0",   rotate: 0 },
 ];
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -121,21 +132,16 @@ function getMilestoneNum(index: number): number {
   return Math.ceil(index / 2);
 }
 
-// ─── Intro wrapper ───────────────────────────────────────────────────────────
+// ─── Sub-components ──────────────────────────────────────────────────────────
 
 function IntroScrollItem({
-  total,
-  scrollYProgress,
-  children,
+  total, scrollYProgress, children,
 }: {
-  total: number;
-  scrollYProgress: MotionValue<number>;
-  children: React.ReactNode;
+  total: number; scrollYProgress: MotionValue<number>; children: React.ReactNode;
 }) {
   const fadeEnd = 0.7 / total;
   const opacity = useTransform(scrollYProgress, [0, fadeEnd], [1, 0]);
   const scale   = useTransform(scrollYProgress, [0, fadeEnd], [1, 0.92]);
-
   return (
     <motion.div
       className="absolute inset-0 flex flex-col items-center justify-center gap-6 pointer-events-none"
@@ -146,22 +152,11 @@ function IntroScrollItem({
   );
 }
 
-// ─── Scroll-driven item ─────────────────────────────────────────────────────
-
 function MilestoneScrollItem({
-  index,
-  total,
-  scrollYProgress,
-  children,
-  style,
-  className,
+  index, total, scrollYProgress, children, style, className,
 }: {
-  index: number;
-  total: number;
-  scrollYProgress: MotionValue<number>;
-  children: React.ReactNode;
-  style?: MotionStyle;
-  className?: string;
+  index: number; total: number; scrollYProgress: MotionValue<number>;
+  children: React.ReactNode; style?: MotionStyle; className?: string;
 }) {
   const N = total;
   const enterStart = Math.max(0, (index - 0.75) / N);
@@ -169,17 +164,12 @@ function MilestoneScrollItem({
   const peakEnd    = (index + 0.55) / N;
   const goneEnd    = Math.min(1, (index + 1.1) / N);
 
-  const opacity = useTransform(
-    scrollYProgress,
+  const opacity = useTransform(scrollYProgress,
     [enterStart, peakStart, peakEnd, goneEnd],
-    [0, 1, 0.14, 0]
-  );
-
-  const scale = useTransform(
-    scrollYProgress,
+    [0, 1, 0.14, 0]);
+  const scale = useTransform(scrollYProgress,
     [enterStart, peakStart, goneEnd],
-    [1.18, 1.0, 0.85]
-  );
+    [1.18, 1.0, 0.85]);
 
   return (
     <motion.div style={{ ...style, opacity, scale }} className={className}>
@@ -188,24 +178,15 @@ function MilestoneScrollItem({
   );
 }
 
-// ─── Outro ─────────────────────────────────────────────────────────────────
-
 function OutroScrollItem({
-  index,
-  total,
-  scrollYProgress,
-  children,
+  index, total, scrollYProgress, children,
 }: {
-  index: number;
-  total: number;
-  scrollYProgress: MotionValue<number>;
-  children: React.ReactNode;
+  index: number; total: number; scrollYProgress: MotionValue<number>; children: React.ReactNode;
 }) {
   const enterStart = Math.max(0, (index - 0.75) / total);
   const peakStart  = index / total;
   const opacity = useTransform(scrollYProgress, [enterStart, peakStart], [0, 1]);
   const scale   = useTransform(scrollYProgress, [enterStart, peakStart], [1.1, 1]);
-
   return (
     <motion.div
       className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
@@ -220,14 +201,16 @@ function OutroScrollItem({
 
 function AboutMilestonesSection() {
   const { t } = useTranslation("about");
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const sectionRef  = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [timelineH, setTimelineH] = useState(500);
+  const [timelineH, setTimelineH]     = useState(500);
 
   useEffect(() => {
     if (!timelineRef.current) return;
-    const ro = new ResizeObserver(([entry]) => setTimelineH(entry.contentRect.height));
+    const ro = new ResizeObserver(([e]) => setTimelineH(e.contentRect.height));
     ro.observe(timelineRef.current);
     return () => ro.disconnect();
   }, []);
@@ -237,11 +220,7 @@ function AboutMilestonesSection() {
     offset: ["start start", "end end"],
   });
 
-  const rawIndex = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, scrollItems.length - 1]
-  );
+  const rawIndex = useTransform(scrollYProgress, [0, 1], [0, scrollItems.length - 1]);
   useMotionValueEvent(rawIndex, "change", (v) => setActiveIndex(Math.round(v)));
 
   const isDraggingRef = useRef(false);
@@ -252,116 +231,51 @@ function AboutMilestonesSection() {
     if (!isDraggingRef.current) dotPos.set(v);
   });
 
-  const seekToFraction = (fraction: number, smooth = false) => {
+  const seekToFraction = (fraction: number) => {
     if (!sectionRef.current) return;
     const f = Math.max(0, Math.min(1, fraction));
     dotPos.set(f * (timelineH - 14));
-    const sectionTop = sectionRef.current.offsetTop;
-    const sectionHeight = sectionRef.current.offsetHeight;
-    window.scrollTo({
-      top: sectionTop + f * (sectionHeight - window.innerHeight),
-      behavior: smooth ? "smooth" : "instant" as ScrollBehavior,
-    });
+    const top = sectionRef.current.offsetTop;
+    const h   = sectionRef.current.offsetHeight;
+    window.scrollTo({ top: top + f * (h - window.innerHeight), behavior: "instant" as ScrollBehavior });
   };
 
-  const handleTimelinePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     isDraggingRef.current = true;
     e.currentTarget.setPointerCapture(e.pointerId);
     const rect = e.currentTarget.getBoundingClientRect();
     seekToFraction((e.clientY - rect.top) / rect.height);
   };
-
-  const handleTimelinePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!isDraggingRef.current) return;
     const rect = e.currentTarget.getBoundingClientRect();
     seekToFraction((e.clientY - rect.top) / rect.height);
   };
+  const handlePointerUp = () => { isDraggingRef.current = false; };
 
-  const handleTimelinePointerUp = () => {
-    isDraggingRef.current = false;
-  };
-
-  const activeYear = getYear(activeIndex);
+  const activeYear      = getYear(activeIndex);
   const activeYearIndex = years.indexOf(activeYear);
-  const milestoneNum = getMilestoneNum(activeIndex);
-
-  // Build translated milestone data for mobile view
-  const milestonesData = milestoneMeta.map((milestone) => ({
-    year: milestone.year,
-    items: milestone.items.map((item) => ({
-      title: t(`milestones.items.${item.key}.title`),
-      description: t(`milestones.items.${item.key}.description`),
-      image: item.image,
-    })),
-  }));
+  const milestoneNum    = getMilestoneNum(activeIndex);
+  const positions       = isMobile ? mobilePositions : desktopPositions;
 
   return (
     <section id="milestones" className="w-full bg-[#034D6B]">
-      {/* ── Mobile: simple vertical list ── */}
-      <div className="md:hidden py-16 px-4">
-        <p className="text-[#E0C759]/70 text-sm font-medium tracking-widest uppercase mb-3">
-          {t("milestones.label")}
-        </p>
-        <h2 className="text-bold-2xl text-white mb-12">
-          {t("milestones.heading")}
-        </h2>
-        {milestonesData.map((milestone) => (
-          <div key={milestone.year} className="mb-16">
-            <h3 className="text-[#E0C759] primarybold text-bold-2xl mb-8">
-              {milestone.year}
-            </h3>
-            <div className="flex flex-col gap-5">
-              {milestone.items.map((mi, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl overflow-hidden border border-white/10 bg-white/5"
-                >
-                  {mi.image && (
-                    <div className="relative h-[180px]">
-                      <Image
-                        src={mi.image}
-                        alt={mi.title}
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
-                    </div>
-                  )}
-                  <div className="p-5">
-                    <div className="w-8 h-[3px] bg-[#E0C759] rounded-full mb-3" />
-                    <h4 className="text-white primarybold text-normal-base mb-2">
-                      {mi.title}
-                    </h4>
-                    <p className="text-white/60 text-normal-base leading-relaxed">
-                      {mi.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Desktop: sticky canvas ── */}
       <div
         ref={sectionRef}
-        className="hidden md:block"
         style={{ height: `${scrollItems.length * STEP_VH}vh` }}
       >
         <div className="sticky top-0 h-screen overflow-hidden">
           {/* Top-left label */}
-          <div className="absolute top-8 left-8 z-50 pointer-events-none">
+          <div className="absolute top-6 left-4 md:top-8 md:left-8 z-50 pointer-events-none">
             <p className="text-[#E0C759]/60 text-xs font-medium tracking-[6px] uppercase">
               {t("milestones.sectionLabel")}
             </p>
           </div>
 
           {/* Progress counter */}
-          <div className="absolute bottom-8 left-8 z-50 pointer-events-none">
-            <p className="text-white/30 text-sm primarybold">
-              {milestoneNum === 0
-                ? "— "
-                : String(milestoneNum).padStart(2, "0")}{" "}
+          <div className="absolute bottom-6 left-4 md:bottom-8 md:left-8 z-50 pointer-events-none">
+            <p className="text-white/30 text-xs md:text-sm primarybold">
+              {milestoneNum === 0 ? "— " : String(milestoneNum).padStart(2, "0")}{" "}
               / {String(TOTAL_MILESTONES).padStart(2, "0")}
             </p>
           </div>
@@ -369,19 +283,14 @@ function AboutMilestonesSection() {
           {/* ── Scroll items ── */}
           {scrollItems.map((item, i) => {
             const isActive = i === activeIndex;
-            const pos = itemPositions[i];
+            const pos = positions[i];
 
-            // ── Intro ──
             if (item.type === "intro") {
               return (
-                <IntroScrollItem
-                  key="intro"
-                  total={scrollItems.length}
-                  scrollYProgress={scrollYProgress}
-                >
+                <IntroScrollItem key="intro" total={scrollItems.length} scrollYProgress={scrollYProgress}>
                   <div
                     className="relative rounded-full overflow-hidden shadow-2xl flex-shrink-0"
-                    style={{ width: 260, height: 260 }}
+                    style={{ width: isMobile ? 160 : 260, height: isMobile ? 160 : 260 }}
                   >
                     <Image
                       src="/assets/images/milestones/milestones-header.png"
@@ -390,11 +299,11 @@ function AboutMilestonesSection() {
                       style={{ objectFit: "cover" }}
                     />
                   </div>
-                  <div className="text-center">
+                  <div className="text-center px-4">
                     <p className="text-[#E0C759]/60 text-xs primarybold tracking-[6px] uppercase mb-3">
                       {t("milestones.label")}
                     </p>
-                    <h2 className="text-white primarybold text-bold-2xl max-w-[380px] leading-tight">
+                    <h2 className="text-white primarybold text-bold-xl md:text-bold-2xl max-w-[280px] md:max-w-[380px] leading-tight">
                       {t("milestones.heading")}
                     </h2>
                   </div>
@@ -402,35 +311,31 @@ function AboutMilestonesSection() {
               );
             }
 
-            // ── Text bubble ──
             if (item.type === "text") {
               return (
                 <MilestoneScrollItem
-                  key={i}
-                  index={i}
-                  total={scrollItems.length}
-                  scrollYProgress={scrollYProgress}
+                  key={i} index={i} total={scrollItems.length} scrollYProgress={scrollYProgress}
                   style={{
                     position: "absolute",
                     left: pos.left,
                     top: pos.top,
                     rotate: pos.rotate,
-                    maxWidth: "420px",
+                    maxWidth: isMobile ? "46vw" : "420px",
                     zIndex: isActive ? 30 : 10,
                     pointerEvents: isActive ? "auto" : "none",
                   }}
                 >
-                  <div className="bg-[#056F99] rounded-3xl p-8 md:p-10 shadow-xl">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="w-8 h-[3px] bg-[#E0C759] rounded-full" />
-                      <span className="text-[#E0C759]/70 text-xs primarybold tracking-[4px] uppercase">
+                  <div className="bg-[#056F99] rounded-2xl md:rounded-3xl p-4 md:p-10 shadow-xl">
+                    <div className="flex items-center gap-2 mb-2 md:mb-5">
+                      <div className="w-5 md:w-8 h-[2px] md:h-[3px] bg-[#E0C759] rounded-full" />
+                      <span className="text-[#E0C759]/70 text-[10px] md:text-xs primarybold tracking-[3px] md:tracking-[4px] uppercase">
                         {item.year}
                       </span>
                     </div>
-                    <h4 className="text-white primarybold text-bold-xl mb-4 leading-snug">
+                    <h4 className="text-white primarybold text-sm md:text-bold-xl mb-1 md:mb-4 leading-snug">
                       {t(`milestones.items.${item.key}.title`)}
                     </h4>
-                    <p className="text-white/60 text-normal-lg leading-relaxed">
+                    <p className="text-white/60 text-xs md:text-normal-lg leading-relaxed">
                       {t(`milestones.items.${item.key}.description`)}
                     </p>
                   </div>
@@ -438,14 +343,10 @@ function AboutMilestonesSection() {
               );
             }
 
-            // ── Image block ──
             if (item.type === "image") {
               return (
                 <MilestoneScrollItem
-                  key={i}
-                  index={i}
-                  total={scrollItems.length}
-                  scrollYProgress={scrollYProgress}
+                  key={i} index={i} total={scrollItems.length} scrollYProgress={scrollYProgress}
                   style={{
                     position: "absolute",
                     left: pos.left,
@@ -456,34 +357,23 @@ function AboutMilestonesSection() {
                     zIndex: isActive ? 25 : 8,
                     pointerEvents: "none",
                   }}
-                  className="rounded-2xl overflow-hidden shadow-2xl"
+                  className="rounded-xl md:rounded-2xl overflow-hidden shadow-2xl"
                 >
                   <div className="relative w-full h-full">
-                    <Image
-                      src={item.src}
-                      alt={item.alt}
-                      fill
-                      style={{ objectFit: "cover" }}
-                    />
+                    <Image src={item.src} alt={item.alt} fill style={{ objectFit: "cover" }} />
                   </div>
                 </MilestoneScrollItem>
               );
             }
 
-            // ── Outro ──
             if (item.type === "outro") {
               return (
-                <OutroScrollItem
-                  key="outro"
-                  index={i}
-                  total={scrollItems.length}
-                  scrollYProgress={scrollYProgress}
-                >
-                  <div className="w-8 h-[3px] bg-[#E0C759] rounded-full mb-6" />
-                  <h2 className="text-white primarybold text-bold-2xl text-center max-w-[480px] leading-tight">
+                <OutroScrollItem key="outro" index={i} total={scrollItems.length} scrollYProgress={scrollYProgress}>
+                  <div className="w-6 md:w-8 h-[2px] md:h-[3px] bg-[#E0C759] rounded-full mb-4 md:mb-6" />
+                  <h2 className="text-white primarybold text-bold-xl md:text-bold-2xl text-center max-w-[280px] md:max-w-[480px] leading-tight px-4">
                     {t("milestones.outro.heading")}
                   </h2>
-                  <p className="text-white/50 text-normal-lg text-center max-w-[360px] mt-4 leading-relaxed">
+                  <p className="text-white/50 text-sm md:text-normal-lg text-center max-w-[260px] md:max-w-[360px] mt-3 md:mt-4 leading-relaxed px-4">
                     {t("milestones.outro.description")}
                   </p>
                 </OutroScrollItem>
@@ -497,33 +387,25 @@ function AboutMilestonesSection() {
           <button
             onClick={() => {
               if (!sectionRef.current) return;
-              const sectionBottom =
-                sectionRef.current.offsetTop + sectionRef.current.offsetHeight;
-              window.scrollTo({ top: sectionBottom, behavior: "smooth" });
+              window.scrollTo({
+                top: sectionRef.current.offsetTop + sectionRef.current.offsetHeight,
+                behavior: "smooth",
+              });
             }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white/60 hover:text-white text-sm transition-all duration-300 cursor-pointer"
+            className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2
+              px-4 md:px-5 py-2 md:py-2.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm
+              border border-white/20 text-white/60 hover:text-white text-xs md:text-sm transition-all duration-300 cursor-pointer"
           >
             {t("milestones.skipSection")}
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 1.75V12.25M7 12.25L12.25 7M7 12.25L1.75 7"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+              <path d="M7 1.75V12.25M7 12.25L12.25 7M7 12.25L1.75 7"
+                stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
 
           {/* ── Right: timeline axis ── */}
-          <div className="absolute right-8 top-0 bottom-8 z-50 flex flex-col items-end">
-            <div className="pt-14 pb-6">
+          <div className="absolute right-3 md:right-8 top-0 bottom-6 md:bottom-8 z-50 flex flex-col items-end">
+            <div className="pt-10 md:pt-14 pb-4 md:pb-6">
               <AnimatePresence mode="wait">
                 <motion.p
                   key={activeYear}
@@ -532,7 +414,7 @@ function AboutMilestonesSection() {
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.28, ease: EASE_OUT }}
                   className="text-[#E0C759] primarybold leading-none text-right"
-                  style={{ fontSize: "clamp(3rem, 5vw, 5rem)" }}
+                  style={{ fontSize: isMobile ? "clamp(1.5rem, 7vw, 2.5rem)" : "clamp(3rem, 5vw, 5rem)" }}
                 >
                   {activeYear}
                 </motion.p>
@@ -542,11 +424,11 @@ function AboutMilestonesSection() {
             <div
               ref={timelineRef}
               className="relative flex-1 cursor-ns-resize select-none"
-              style={{ width: "88px" }}
-              onPointerDown={handleTimelinePointerDown}
-              onPointerMove={handleTimelinePointerMove}
-              onPointerUp={handleTimelinePointerUp}
-              onPointerCancel={handleTimelinePointerUp}
+              style={{ width: isMobile ? 56 : 88 }}
+              onPointerDown={handlePointerDown}
+              onPointerMove={handlePointerMove}
+              onPointerUp={handlePointerUp}
+              onPointerCancel={handlePointerUp}
             >
               <div
                 className="absolute right-[7px] top-0 bottom-0 w-px"
@@ -556,15 +438,12 @@ function AboutMilestonesSection() {
                 }}
               />
               <motion.div
-                style={{
-                  y: dotPos,
-                  boxShadow: "0 0 0 6px rgba(224,199,89,0.2)",
-                }}
+                style={{ y: dotPos, boxShadow: "0 0 0 6px rgba(224,199,89,0.2)" }}
                 className="absolute right-0 w-[14px] h-[14px] rounded-full bg-[#E0C759] z-10 pointer-events-none"
               />
               {years.map((year, idx) => {
                 const yearStartIdx = scrollItems.findIndex(
-                  (item) => item.type !== "intro" && item.type !== "outro" && item.year === year
+                  (si) => si.type !== "intro" && si.type !== "outro" && si.year === year
                 );
                 const fraction =
                   yearStartIdx === -1
@@ -574,27 +453,15 @@ function AboutMilestonesSection() {
                 const isYearActive = activeYear === year;
                 const isPast = idx <= activeYearIndex;
                 return (
-                  <div
-                    key={year}
-                    className="absolute right-0 flex items-center"
-                    style={{ top: `${top}px` }}
-                  >
+                  <div key={year} className="absolute right-0 flex items-center" style={{ top: `${top}px` }}>
                     <span
-                      className={`mr-2 text-xs primarybold whitespace-nowrap transition-colors duration-300 ${
-                        isYearActive
-                          ? "text-[#E0C759]"
-                          : isPast
-                            ? "text-white/50"
-                            : "text-white/20"
+                      className={`mr-1 md:mr-2 text-[10px] md:text-xs primarybold whitespace-nowrap transition-colors duration-300 ${
+                        isYearActive ? "text-[#E0C759]" : isPast ? "text-white/50" : "text-white/20"
                       }`}
                     >
                       {year}
                     </span>
-                    <div
-                      className={`w-3 h-px transition-colors duration-300 ${
-                        isPast ? "bg-[#E0C759]" : "bg-white/20"
-                      }`}
-                    />
+                    <div className={`w-2 md:w-3 h-px transition-colors duration-300 ${isPast ? "bg-[#E0C759]" : "bg-white/20"}`} />
                   </div>
                 );
               })}

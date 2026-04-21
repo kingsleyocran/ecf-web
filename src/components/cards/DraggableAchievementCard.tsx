@@ -10,6 +10,7 @@ interface DraggableAchievementCardProps {
   delay: number;
   constraintsRef: RefObject<HTMLElement>;
   isDragEnabled?: boolean;
+  compact?: boolean;
 }
 
 export default function DraggableAchievementCard({
@@ -20,6 +21,7 @@ export default function DraggableAchievementCard({
   delay,
   constraintsRef,
   isDragEnabled = true,
+  compact = false,
 }: DraggableAchievementCardProps) {
   return (
     <motion.div
@@ -49,14 +51,14 @@ export default function DraggableAchievementCard({
           : "cursor-default"
       } touch-none`}
     >
-      <div className="bg-[#056F99] rounded-3xl p-6 md:p-8 shadow-lg min-w-[280px] max-w-[320px]">
-        <div className="text-[#E0C759] text-5xl md:text-6xl font-bold mb-2">
+      <div className={`bg-[#056F99] rounded-3xl shadow-lg ${compact ? "p-5 min-w-[200px] max-w-[240px]" : "p-6 md:p-8 min-w-[280px] max-w-[320px]"}`}>
+        <div className={`text-[#E0C759] font-bold mb-2 ${compact ? "text-4xl" : "text-5xl md:text-6xl"}`}>
           {number}
         </div>
-        <div className="text-white text-lg md:text-xl font-semibold mb-2">
+        <div className={`text-white font-semibold mb-2 ${compact ? "text-base" : "text-lg md:text-xl"}`}>
           {label}
         </div>
-        <div className="text-white/80 text-sm md:text-base">
+        <div className={`text-white/80 ${compact ? "text-xs" : "text-sm md:text-base"}`}>
           {description}
         </div>
       </div>

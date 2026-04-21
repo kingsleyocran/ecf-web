@@ -8,7 +8,7 @@ function NewslettersPage({ newsletters }: { newsletters: NewsletterSchema[] }) {
 
   return (
     <section className="w-full bg-white pb-[100px] flex flex-col">
-      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[180px]">
+      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[100px] md:py-[170px]">
         <div className="flex flex-col items-center text-center gap-4">
           <p className="text-[#034D6B]/60 text-xs primarybold tracking-[6px] uppercase">{t("newsletters.label")}</p>
           <h1 className="text-bold-2xl md:text-bold-3xl text-[#034D6B]">{t("newsletters.heading")}</h1>

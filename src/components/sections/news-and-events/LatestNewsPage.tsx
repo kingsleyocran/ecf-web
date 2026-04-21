@@ -33,7 +33,7 @@ function LatestNewsPage() {
   return (
     <section className="w-full bg-[#034D6B] pb-[100px] flex flex-col">
       {/* Hero */}
-      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[180px]">
+      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[100px] md:py-[170px]">
         <div className="flex flex-col items-center text-center gap-4">
           <p className="text-[#E0C759]/60 text-xs primarybold tracking-[6px] uppercase">
             {t("latestNews.label")}
@@ -106,13 +106,13 @@ function NewsCard({ item }: { item: NewsArticleSchema }) {
       transition-colors duration-200 p-4 rounded-lg"
     >
       {/* Image */}
-      <div className="relative shrink-0 w-full md:w-[180px] aspect-square rounded-xl overflow-hidden bg-[#C7B14E]">
+      <div className="relative shrink-0 w-full md:w-[180px] md:aspect-square rounded-xl overflow-hidden bg-[#C7B14E]">
         {item.imageUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={item.imageUrl}
             alt={item.title}
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+            className="w-full md:h-full h-[200px] object-cover object-center group-hover:scale-105 transition-transform duration-300"
             onError={(e) => {
               // Replace broken image with placeholder
               (e.target as HTMLImageElement).style.display = "none";

@@ -174,7 +174,7 @@ function AllResourcesPage() {
   return (
     <section ref={targetDivRef} className="w-full bg-[#034D6B] pb-[100px] -mb-[20px] flex flex-col">
       {/* Hero Section */}
-      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[180px]">
+      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-[100px] md:py-[170px]">
         <div className="flex flex-col items-center text-center gap-4">
           <p className="text-white/80 text-sm md:text-base font-medium tracking-widest uppercase">
             {t("hero.label")}

@@ -40,7 +40,6 @@ function ResourcesPage({ compRef, blog }: { compRef: any; blog: BlogSchema }) {
     return turndownService.turndown(content);
   }
 
-  console.log(blog);
   return (
     <div ref={compRef} className="pt-10 transition-all duration-200 pb-[200px]">
       {/* Blog Title and Tags */}

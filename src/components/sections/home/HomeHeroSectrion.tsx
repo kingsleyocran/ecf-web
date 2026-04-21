@@ -60,7 +60,7 @@ function HomeHeroSectrion() {
               <div className="flex flex-row gap-4 items-center">
                 <span>{t("hero.line2")}</span>
 
-                <div className="h-[70px] w-[70px] relative">
+                <div className="md:h-[70px] md:w-[70px] w-[50px] h-[50px] relative">
                   <Image
                     src="/assets/images/globe.png"
                     alt="Globe icon"
@@ -79,7 +79,7 @@ function HomeHeroSectrion() {
               <span className="text-[#E0C759]">{t("hero.line4")}</span>
             </h1>
 
-            <p className="text-white max-w-[600px] text-normal-base text-center mt-6">
+            <p className="text-white max-w-[600px] text-normal-base text-center mt-6 px-4">
               {t("hero.subtitle")}
             </p>
 

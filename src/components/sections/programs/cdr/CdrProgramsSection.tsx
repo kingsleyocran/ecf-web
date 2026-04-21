@@ -186,7 +186,7 @@ function ProgramCard({
         </div>
 
         {/* Background */}
-        <div className="border-l-2 border-[#E0C759]/30 pl-6">
+        <div className="md:border-l-2 md:border-[#E0C759]/30 md:pl-6">
           <MaskText
             positionFrom={20}
             animationDelay={0.1}
