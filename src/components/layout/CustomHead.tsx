@@ -46,11 +46,16 @@ function CustomHead({ jsonLd, metaDataTag }: Props) {
       <meta name="description" content={metaDataTag.description} />
       <meta property="title" content={metaDataTag.title} />
       <meta name="keywords" content={metaDataTag.keywords} />
-      <meta name="robots" content="index, follow" />
+      {/* Robot & Crawler Tags */}
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-      {/* Robot Tags */}
-      <meta name="robots" content="index, follow" />
-      <meta name="googlebot" content="index, follow" />
+      {/* AI Crawler Tags */}
+      <meta name="GPTBot" content="index, follow" />
+      <meta name="ClaudeBot" content="index, follow" />
+      <meta name="Google-Extended" content="index, follow" />
+      <meta name="PerplexityBot" content="index, follow" />
+      <meta name="CCBot" content="index, follow" />
 
       {/* OpenGraph Tags */}
       <meta property="og:title" content={metaDataTag.title} />
@@ -58,7 +63,7 @@ function CustomHead({ jsonLd, metaDataTag }: Props) {
       <meta property="og:image" content={metaDataTag.openGraph.images[0].url} />
       <meta
         property="og:image:alt"
-        content={metaDataTag.openGraph.images[0].url}
+        content={metaDataTag.openGraph.images[0].alt}
       />
       <meta
         property="og:image:type"
@@ -75,7 +80,7 @@ function CustomHead({ jsonLd, metaDataTag }: Props) {
       <meta property="og:site_name" content={webName} />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content={metaDataTag.openGraph.type} />
-      <meta property="og:url" content={metaDataTag.alternates.canonical} />
+      <meta property="og:url" content={metaDataTag.openGraph.url} />
 
       {/* OpenGraph Article TAGS */}
       <meta property="article:author" content={websiteUrl} />
@@ -87,8 +92,9 @@ function CustomHead({ jsonLd, metaDataTag }: Props) {
       <meta name="twitter:title" content={metaDataTag.title} />
       <meta name="twitter:description" content={metaDataTag.description} />
       <meta name="twitter:image" content={metaDataTag.twitter.images[0].url} />
+      <meta name="twitter:image:alt" content={metaDataTag.twitter.images[0].alt} />
 
-      {/* Twitter Tags */}
+      {/* Other */}
       <meta name="google" content="notranslate" />
 
       {/* other parts */}

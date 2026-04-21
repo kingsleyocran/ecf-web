@@ -9,6 +9,7 @@ import { filterCareersApi } from "@/backend/firebase/db/api/careers_api";
 import { CareerSchema, ListResponseCareersSchema } from "@/backend/models/careers";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 interface Props {
   careers: CareerSchema[];
@@ -47,14 +48,14 @@ export async function getServerSideProps(context: any) {
       description:
         "Join ECF and help build Africa's capacity in frontier climate technologies. View open positions.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/careers",
+      url: "https://ecfrontiers.org/careers",
       publishedTime: "2025-01-23",
       modifiedTime: "2025-01-23",
       authors: ["Emerging Climate Frontiers (ECF)"],
       tags: "ECF, Careers, Climate Jobs, Frontier Climate Technologies, Africa",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Careers — Emerging Climate Frontiers",
@@ -71,7 +72,7 @@ export async function getServerSideProps(context: any) {
         "Join ECF and help shape Africa's role in frontier climate technologies.",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "ECF Careers",
@@ -79,7 +80,7 @@ export async function getServerSideProps(context: any) {
       ],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/careers",
+      canonical: "https://ecfrontiers.org/careers",
     },
   };
 
@@ -88,7 +89,7 @@ export async function getServerSideProps(context: any) {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Careers | Emerging Climate Frontiers",
-      url: "https://www.emergingclimatefrontiers.org/careers",
+      url: "https://ecfrontiers.org/careers",
       description:
         "Open positions and fellowships at Emerging Climate Frontiers.",
       publisher: {
@@ -98,7 +99,7 @@ export async function getServerSideProps(context: any) {
     },
   ];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "careers"])), careers, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "careers"], nextI18NextConfig)), careers, metaDataTag, jsonLd } };
 }
 
 const CareersPage: NextPage<Props> = ({ careers, metaDataTag, jsonLd }) => {

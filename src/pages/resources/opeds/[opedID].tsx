@@ -9,6 +9,7 @@ import { getOpedApi } from "@/backend/firebase/db/api/opeds_api";
 import { OpEdSchema, ResponseOpEdSchema } from "@/backend/models/opeds";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../../next-i18next.config";
 
 interface Props { oped: OpEdSchema; metaDataTag: any; jsonLd: any; }
 
@@ -26,17 +27,17 @@ export async function getServerSideProps(context: any) {
   if (!opedData) return { notFound: true };
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"], nextI18NextConfig)),
       oped: opedData,
       metaDataTag: {
         title: `${opedData.name} | ECF`,
         description: opedData.description,
         keywords: `${opedData.name}, ECF op-ed, climate opinion Africa`,
-        alternates: { canonical: `https://www.emergingclimatefrontiers.org/resources/opeds/${opedData.id}` },
-        openGraph: { type: "website", images: [{ url: opedData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: opedData.name, type: "image/png" }] },
-        twitter: { images: [{ url: opedData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png" }] },
+        alternates: { canonical: `https://ecfrontiers.org/resources/opeds/${opedData.id}` },
+        openGraph: { type: "website", images: [{ url: opedData.imgUrl || "https://ecfrontiers.org/hero-image.png", width: 1200, height: 630, alt: opedData.name, type: "image/png" }] },
+        twitter: { images: [{ url: opedData.imgUrl || "https://ecfrontiers.org/hero-image.png" }] },
       },
-      jsonLd: [{ "@context": "https://schema.org", "@type": "Article", headline: opedData.name, description: opedData.description, author: { "@type": "Person", name: opedData.author }, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" }, url: `https://www.emergingclimatefrontiers.org/resources/opeds/${opedData.id}` }],
+      jsonLd: [{ "@context": "https://schema.org", "@type": "Article", headline: opedData.name, description: opedData.description, author: { "@type": "Person", name: opedData.author }, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" }, url: `https://ecfrontiers.org/resources/opeds/${opedData.id}` }],
     },
   };
 }

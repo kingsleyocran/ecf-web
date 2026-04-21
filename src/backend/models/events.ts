@@ -18,11 +18,14 @@ export interface CreateEventSchema {
   titleSearch: string;
   description: string;
   location: string;
-  date: string;
+  date: string;                    // Display string: "April 12, 2026"
+  startDateTime?: string | null;   // UTC ISO: "2026-04-12T13:00:00.000Z"
+  timezone?: string | null;        // IANA name: "Africa/Lagos", "GMT", etc.
   type: string;
-  content: string;
+  content?: string | null;
   imgUrl?: string | null;
   registrationUrl?: string | null;
+  virtualLink?: string | null;     // Join link — shown when event has started
 }
 
 export interface CreateEventWithFileSchema {

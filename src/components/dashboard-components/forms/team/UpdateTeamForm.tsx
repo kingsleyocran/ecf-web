@@ -93,6 +93,7 @@ export default function UpdateTeamForm({
         name: formState.name,
         nameSearch: formState.name.toLowerCase(),
         portfolio: formState.portfolio,
+        linkedinUrl: formState.linkedinUrl || null,
         bio: formState.bio,
         imgUrl: formState.imgUrl,
       },
@@ -182,6 +183,15 @@ export default function UpdateTeamForm({
             value={formState.portfolio}
             placeholderText="Enter portfolio"
             labelText="Portfolio"
+          />
+
+          <TextInput
+            isRequired={false}
+            validationRegex={/^.{0,}$/}
+            onInputChange={(val: any) => onChangeHandler("linkedinUrl", val)}
+            value={formState.linkedinUrl}
+            placeholderText="https://linkedin.com/in/..."
+            labelText="LinkedIn URL (optional)"
           />
 
           <TextArea

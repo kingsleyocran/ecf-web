@@ -218,6 +218,7 @@ function ResourcesPage({ compRef, blog }: { compRef: any; blog: BlogSchema }) {
                     // Use Next.js Image for non-base64 images, fallback to img for base64
                     if (isBase64 || !src) {
                       return (
+                        // eslint-disable-next-line @next/next/no-img-element
                         <img
                           src={src}
                           alt={alt || "Blog"}

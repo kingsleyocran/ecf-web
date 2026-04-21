@@ -5,7 +5,9 @@ import { useTranslation } from "next-i18next";
 function SrmTechCirclesSection() {
   const { t } = useTranslation("programs");
 
-  const srmBubbles = t("srmPage.circles.items", { returnObjects: true }) as unknown as string[];
+  const srmBubbles = t("srmPage.circles.items", {
+    returnObjects: true,
+  }) as unknown as string[];
 
   return (
     <section className="w-full bg-[#025C7F] py-16 md:py-24 overflow-hidden">
@@ -14,10 +16,30 @@ function SrmTechCirclesSection() {
           background: linear-gradient(to bottom, #D0B954, transparent);
         }
       `}</style>
-      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-12 flex justify-center">
+      <div className="w-full max-w-[1920px] flex flex-col 2xl:mx-auto px-4 md:px-8 lg:px-16 py-12  items-center gap-36">
+        {/* Header */}
+        <div className="text-center mt-16">
+          <MaskText
+            positionFrom={40}
+            triggerOnce={true}
+            animationDelay={0}
+            extraClassNames="text-center text-bold-2xl md:text-bold-3xl text-white pb-4"
+          >
+            {t("srmPage.hero.abbreviation")}
+          </MaskText>
+          <MaskText
+            positionFrom={20}
+            triggerOnce={true}
+            animationDelay={0.15}
+            extraClassNames="text-center text-[#E0C759]/70 text-sm md:text-base font-medium tracking-[6px] uppercase"
+          >
+            {t("srmPage.hero.fullName")}
+          </MaskText>
+        </div>
+
+        {/* Circle + stem on left, heading + narrative bubbles on right — zigzag pattern for bubbles, content from "Why SRM?" */}
         <div className="relative max-w-[700px] w-full">
           <div className="relative z-10 flex flex-col items-center md:items-stretch md:flex-row gap-10">
-
             {/* Circle + stem */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -38,7 +60,12 @@ function SrmTechCirclesSection() {
             <div className="flex flex-col items-center md:items-start">
               {/* Heading */}
               <div className="max-w-[580px] text-center md:text-left flex flex-col gap-3">
-                <MaskText positionFrom={30} triggerOnce={true} animationDelay={0.1} extraClassNames="text-center md:text-left text-bold-xl md:text-bold-2xl text-[#D8C572]">
+                <MaskText
+                  positionFrom={30}
+                  triggerOnce={true}
+                  animationDelay={0.1}
+                  extraClassNames="text-center md:text-left text-bold-xl md:text-bold-2xl text-[#D8C572]"
+                >
                   {t("srmPage.circles.heading")}
                 </MaskText>
               </div>
@@ -69,7 +96,6 @@ function SrmTechCirclesSection() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

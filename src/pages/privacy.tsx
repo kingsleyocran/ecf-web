@@ -1,4 +1,5 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../next-i18next.config";
 import { useTranslation } from "next-i18next";
 import CustomHead from "@/components/layout/CustomHead";
 import Footer from "@/components/layout/Footer";
@@ -7,21 +8,52 @@ import { NextPage } from "next";
 import React from "react";
 
 export async function getServerSideProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "privacy"])),
-    },
-  };
-}
-
-const PrivacyPolicyPage: NextPage = () => {
-  const { t } = useTranslation("privacy");
-
   const metaDataTag = {
     title: "Privacy Policy | Emerging Climate Frontiers",
+    authors: [{ name: "Emerging Climate Frontiers (ECF)" }],
     description:
-      "Privacy Policy for Emerging Climate Frontiers. Learn how we collect, use, and protect your personal information.",
-    keywords: "privacy policy, data protection, personal information, ECF",
+      "Read ECF's Privacy Policy to understand how we collect, use, and protect your personal information when you use our website and services.",
+    keywords:
+      "privacy policy, data protection, personal information, ECF, Emerging Climate Frontiers, GDPR, data privacy",
+    openGraph: {
+      title: "Privacy Policy | Emerging Climate Frontiers",
+      description:
+        "Understand how Emerging Climate Frontiers collects, uses, and protects your personal data.",
+      type: "website",
+      url: "https://ecfrontiers.org/privacy",
+      publishedTime: "2025-01-23",
+      modifiedTime: "2025-01-23",
+      authors: ["Emerging Climate Frontiers (ECF)"],
+      tags: "Privacy Policy, Data Protection, ECF",
+      images: [
+        {
+          url: "https://ecfrontiers.org/hero-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Emerging Climate Frontiers Privacy Policy",
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@ECF_Climate",
+      creator: "@ECF_Climate",
+      title: "Privacy Policy | Emerging Climate Frontiers",
+      description:
+        "Read how Emerging Climate Frontiers collects, uses, and protects your personal information.",
+      images: [
+        {
+          url: "https://ecfrontiers.org/hero-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Emerging Climate Frontiers Privacy Policy",
+        },
+      ],
+    },
+    alternates: {
+      canonical: "https://ecfrontiers.org/privacy",
+    },
   };
 
   const jsonLd = [
@@ -29,10 +61,32 @@ const PrivacyPolicyPage: NextPage = () => {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Privacy Policy | Emerging Climate Frontiers",
+      url: "https://ecfrontiers.org/privacy",
       description:
         "Privacy Policy for Emerging Climate Frontiers outlining how we collect, use, and protect personal information.",
+      publisher: {
+        "@type": "Organization",
+        name: "Emerging Climate Frontiers",
+      },
     },
   ];
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common", "privacy"], nextI18NextConfig)),
+      metaDataTag,
+      jsonLd,
+    },
+  };
+}
+
+interface Props {
+  metaDataTag: any;
+  jsonLd: any;
+}
+
+const PrivacyPolicyPage: NextPage<Props> = ({ metaDataTag, jsonLd }) => {
+  const { t } = useTranslation("privacy");
 
   const personalItems = t("sections.infoCollect.personalItems", { returnObjects: true }) as string[];
   const howWeUseItems = t("sections.howWeUse.items", { returnObjects: true }) as string[];
@@ -41,7 +95,7 @@ const PrivacyPolicyPage: NextPage = () => {
 
   return (
     <>
-      {/* <CustomHead jsonLd={jsonLd} metaDataTag={metaDataTag} /> */}
+      <CustomHead jsonLd={jsonLd} metaDataTag={metaDataTag} />
       <Header />
 
       <main className="w-full bg-white min-h-screen">

@@ -1,4 +1,5 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../next-i18next.config";
 import CustomHead from "@/components/layout/CustomHead";
 import { useEffect } from "react";
 import Lenis from "lenis";
@@ -38,14 +39,14 @@ export async function getServerSideProps(context: any) {
       description:
         "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies through inclusive, science-driven, and contextually relevant approaches.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/",
+      url: "https://ecfrontiers.org/",
       publishedTime: "2025-01-23",
       modifiedTime: "2025-01-23",
       authors: ["Emerging Climate Frontiers (ECF)"],
       tags: "Climate Technology, African Leadership, Frontier Climate Technologies, CDR, SRM, AI Governance, Climate Justice, African Research, Climate Policy, Decolonial Climate Science",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Emerging Climate Frontiers - Empowering African leadership in climate technologies",
@@ -63,7 +64,7 @@ export async function getServerSideProps(context: any) {
         "Join ECF in building African capacity and leadership in Frontier Climate Technologies (FCTs) to shape equitable global climate governance.",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Emerging Climate Frontiers - Twitter preview image",
@@ -71,7 +72,7 @@ export async function getServerSideProps(context: any) {
       ],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/",
+      canonical: "https://ecfrontiers.org/",
     },
   };
 
@@ -81,10 +82,10 @@ export async function getServerSideProps(context: any) {
       "@type": "Organization",
       name: "Emerging Climate Frontiers",
       alternateName: "ECF",
-      url: "https://www.emergingclimatefrontiers.org/",
+      url: "https://ecfrontiers.org/",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.emergingclimatefrontiers.org/logo.png",
+        url: "https://ecfrontiers.org/logo.png",
       },
       description:
         "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies (FCTs) through inclusive, science-driven, and contextually relevant approaches.",
@@ -103,12 +104,12 @@ export async function getServerSideProps(context: any) {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Emerging Climate Frontiers | ECF",
-      url: "https://www.emergingclimatefrontiers.org/",
+      url: "https://ecfrontiers.org/",
       description:
         "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies through capacity building, collaboration, and equitable governance frameworks.",
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": "https://www.emergingclimatefrontiers.org/",
+        "@id": "https://ecfrontiers.org/",
       },
       publisher: {
         "@type": "Organization",
@@ -160,14 +161,14 @@ export async function getServerSideProps(context: any) {
       "@type": "CreativeWork",
       name: "African Climate Intervention Fellowship for Early-Career Researchers",
       alternateName: "ACIEFR",
-      url: "https://www.emergingclimatefrontiers.org/#aciefr",
+      url: "https://ecfrontiers.org/#aciefr",
       description:
         "A fellowship program that supports early-career researchers in Frontier Climate Technologies, fostering African-led research and building capacity across the continent.",
     },
   ];
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "home", "resources"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "home", "resources"], nextI18NextConfig)),
       metaDataTag: metaDataTagRes,
       jsonLd: jsonLdRes,
     },

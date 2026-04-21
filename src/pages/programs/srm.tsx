@@ -5,10 +5,10 @@ import CustomHead from "@/components/layout/CustomHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import NewsletterSection from "@/components/sections/NewsletterSection";
-import SrmHeroSection from "@/components/sections/programs/srm/SrmHeroSection";
 import SrmTechCirclesSection from "@/components/sections/programs/srm/SrmTechCirclesSection";
 import SrmProgramsSection from "@/components/sections/programs/srm/SrmProgramsSection";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 interface Props {
   metaDataTag: any;
@@ -29,14 +29,14 @@ export async function getServerSideProps(context: any) {
       description:
         "ECF ensures African institutions are architects — not passive observers — of global Solar Radiation Management decisions.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/technologies/srm",
+      url: "https://ecfrontiers.org/programs/srm",
       publishedTime: "2025-01-23",
       modifiedTime: "2025-01-23",
       authors: ["Emerging Climate Frontiers (ECF)"],
       tags: "SRM, Solar Radiation Management, Climate Governance, Africa, ECF",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Solar Radiation Management — Emerging Climate Frontiers",
@@ -53,7 +53,7 @@ export async function getServerSideProps(context: any) {
         "ECF builds the capacity for Africa to engage with Solar Radiation Management on its own terms.",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Emerging Climate Frontiers SRM",
@@ -61,7 +61,7 @@ export async function getServerSideProps(context: any) {
       ],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/technologies/srm",
+      canonical: "https://ecfrontiers.org/programs/srm",
     },
   };
 
@@ -70,7 +70,7 @@ export async function getServerSideProps(context: any) {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Solar Radiation Management (SRM) | Emerging Climate Frontiers",
-      url: "https://www.emergingclimatefrontiers.org/technologies/srm",
+      url: "https://ecfrontiers.org/programs/srm",
       description:
         "ECF's Solar Radiation Management programs build African research capacity and governance literacy to ensure Africa shapes the future of SRM on its own terms.",
       publisher: {
@@ -85,7 +85,7 @@ export async function getServerSideProps(context: any) {
       ...(await serverSideTranslations(locale ?? "en", [
         "common",
         "programs",
-      ])),
+      ], nextI18NextConfig)),
       metaDataTag,
       jsonLd,
     },
@@ -106,7 +106,6 @@ const SrmPage: NextPage<Props> = ({ metaDataTag, jsonLd }) => {
     <>
       <CustomHead jsonLd={jsonLd} metaDataTag={metaDataTag} />
       <Header />
-      <SrmHeroSection />
       <SrmTechCirclesSection />
       <SrmProgramsSection />
       <NewsletterSection />

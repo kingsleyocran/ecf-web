@@ -252,8 +252,14 @@
     },
     "why": {
       "heading": "Pourquoi l'IA ?",
-      "para1": "L'intelligence artificielle transforme la science du climat, permettant une modélisation plus rapide, des stratégies d'adaptation plus intelligentes et des réponses en temps réel aux crises environnementales. Mais l'IA n'est aussi bonne que les données dont elle apprend, l'infrastructure sur laquelle elle fonctionne et les cadres de gouvernance qui façonnent son utilisation. Et en ce moment, ces trois éléments sont massivement contrôlés en dehors de l'Afrique.",
-      "para2": "Le continent fait face à un paradoxe dangereux : il est parmi les plus vulnérables au changement climatique, mais il a le moins d'influence sur les outils d'IA développés pour y répondre. Sans centres de données locaux, sans jeux de données générés par l'Afrique, ni cadres de gouvernance dirigés par le continent, même les outils d'IA climatiques bien intentionnés risquent de renforcer la dépendance et de marginaliser les réalités africaines. ECF comble cette lacune en formant la prochaine génération d'experts africains en IA et climat, en intégrant l'IA dans la recherche localement pertinente et en plaidant pour des structures de gouvernance qui placent l'agentivité africaine au centre de la conversation mondiale sur l'IA pour le climat."
+      "items": [
+        "L'Afrique n'est pas en marge de la révolution de l'IA. Elle en est façonnée — dans ses prévisions climatiques, sa planification de l'adaptation, ses décisions sur les ressources.",
+        "Cela se produit souvent sans la connaissance de l'Afrique, et presque jamais avec son consentement.",
+        "Les modèles faisant des prédictions sur les sécheresses, les inondations et les systèmes alimentaires africains ont été largement construits sans données africaines, sans chercheurs africains, et sans voix africaines dans la salle où les règles ont été écrites.",
+        "Ce n'est pas un problème technique. C'est un problème de gouvernance. Et c'est l'un que l'ECF est positionnée pour résoudre.",
+        "L'ECF ne construit pas d'outils d'IA. Nous défendons, convoquons et renforçons les capacités.",
+        "Notre rôle est de s'assurer que l'Afrique passe du statut de sujet passif des décisions climatiques pilotées par l'IA à celui de façonneur actif — en tant que producteur de connaissances, participant à la gouvernance, et bénéficiaire informé et souverain."
+      ]
     },
     "objectives": {
       "heading": "Pourquoi l'Intelligence Artificielle ?",
@@ -268,13 +274,12 @@
     "programObjectives": {
       "sectionTitle": "Intelligence Artificielle",
       "sectionHeading": "Objectifs",
-      "objectivesLabel": "Objectifs",
+      "objectivesLabel": "Ce Vers Quoi Nous Travaillons",
       "items": [
-        "Renforcer la littératie en IA et climat parmi les décideurs politiques africains, les chercheurs en début de carrière et les équipes techniques.",
-        "Développer des ressources accessibles IA & Climat 101 adaptées aux contextes africains, comblant les lacunes de connaissances et promouvant une compréhension éthique.",
-        "Soutenir les institutions publiques dans l'intégration de l'IA dans les systèmes de données climatiques, la modélisation et les processus de prise de décision.",
-        "Convoquer des dialogues continentaux sur la souveraineté des données, l'utilisation éthique de l'IA et les cadres de gouvernance qui priorisent l'agentivité africaine.",
-        "Intégrer des modules axés sur l'IA dans ACIFER et d'autres programmes de bourses pour jeunes chercheurs afin de cultiver la prochaine génération de leaders africains en IA et climat."
+        "Garantir à l'Afrique une place authentique dans les conversations mondiales sur la gouvernance de l'IA appliquée au climat : qui contrôle les modèles, dont les données sont utilisées, et qui en supporte les conséquences.",
+        "Développer la littératie critique en IA dont les décideurs climatiques africains ont besoin pour interroger les résultats générés par l'IA, remettre en question leurs hypothèses et faire des choix souverains sur les outils dont ils dépendent.",
+        "Plaider pour que les données climatiques africaines soient traitées comme une exigence scientifique et éthique dans les modèles d'IA mondiaux, et non comme une réflexion après coup, car un modèle qui ne connaît pas l'Afrique ne peut pas parler pour l'Afrique.",
+        "Former la prochaine génération de chercheurs et penseurs africains en IA et climat à travers des programmes de bourses et des travaux de curriculum universitaire, afin que cette capacité ne soit pas empruntée mais construite et possédée."
       ]
     }
   }

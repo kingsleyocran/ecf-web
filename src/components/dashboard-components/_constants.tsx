@@ -10,6 +10,7 @@ import DashboardViewOpeds from "./views/DashboardViewOpeds";
 import DashboardViewEvents from "./views/DashboardViewEvents";
 import DashboardViewNewsletters from "./views/DashboardViewNewsletters";
 import DashboardViewCareers from "./views/DashboardViewCareers";
+import DashboardViewNews from "./views/DashboardViewNews";
 
 export const dashboardViews = [
   {
@@ -55,5 +56,9 @@ export const dashboardViews = [
   {
     pageName: "Careers",
     view: <DashboardViewCareers />,
+  },
+  {
+    pageName: "News",
+    view: <DashboardViewNews />,
   },
 ];

@@ -9,6 +9,7 @@ import { getReportApi } from "@/backend/firebase/db/api/reports_api";
 import { ReportSchema, ResponseReportSchema } from "@/backend/models/reports";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../../next-i18next.config";
 
 interface Props { report: ReportSchema; metaDataTag: any; jsonLd: any; }
 
@@ -30,22 +31,22 @@ export async function getServerSideProps(context: any) {
   if (!reportData) return { notFound: true };
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"], nextI18NextConfig)),
       report: reportData,
       metaDataTag: {
         title: `${reportData.title} | ECF Reports`,
         description: reportData.description,
         keywords: `${reportData.title}, ECF reports, climate research Africa`,
-        alternates: { canonical: `https://www.emergingclimatefrontiers.org/resources/reports/${reportData.id}` },
+        alternates: { canonical: `https://ecfrontiers.org/resources/reports/${reportData.id}` },
         openGraph: {
           type: "website",
-          images: [{ url: reportData.coverImgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: reportData.title, type: "image/png" }],
+          images: [{ url: reportData.coverImgUrl || "https://ecfrontiers.org/hero-image.png", width: 1200, height: 630, alt: reportData.title, type: "image/png" }],
         },
         twitter: {
-          images: [{ url: reportData.coverImgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png" }],
+          images: [{ url: reportData.coverImgUrl || "https://ecfrontiers.org/hero-image.png" }],
         },
       },
-      jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: `${reportData.title} | ECF Reports`, url: `https://www.emergingclimatefrontiers.org/resources/reports/${reportData.id}`, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" } }],
+      jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: `${reportData.title} | ECF Reports`, url: `https://ecfrontiers.org/resources/reports/${reportData.id}`, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" } }],
     },
   };
 }

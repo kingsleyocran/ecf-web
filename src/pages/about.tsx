@@ -1,4 +1,5 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../next-i18next.config";
 import CustomHead from "@/components/layout/CustomHead";
 import { useEffect } from "react";
 import Lenis from "lenis";
@@ -26,34 +27,28 @@ interface Props {
 export async function getServerSideProps(context: any) {
   const { locale } = context;
   const metaDataTagRes = {
-    title:
-      "Emerging Climate Frontiers | Empowering African Leadership in Frontier Climate Technologies",
-    authors: [
-      {
-        name: "Emerging Climate Frontiers (ECF)",
-      },
-    ],
+    title: "About Emerging Climate Frontiers | Our Mission, Team & Story",
+    authors: [{ name: "Emerging Climate Frontiers (ECF)" }],
     description:
-      "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies (FCTs) through inclusive, science-driven approaches. We build capacity, foster collaboration, and advance equitable governance for AI, CDR, and SRM in Africa.",
+      "ECF is Africa's leading organization for Frontier Climate Technologies governance. Learn about our mission, team, milestones, and work in AI, CDR, and SRM for African-led climate action.",
     keywords:
-      "Emerging Climate Frontiers, ECF, Frontier Climate Technologies, Carbon Dioxide Removal, CDR, Solar Radiation Management, SRM, AI Climate Governance, African Climate Innovation, Climate Technology Africa, Climate Justice, African Research Capacity, Climate Policy Africa, GAYO",
+      "About ECF, Emerging Climate Frontiers team, ECF mission, African climate organization, GAYO, climate governance Africa, frontier climate technologies, ECF history, climate equity Africa",
     openGraph: {
-      title:
-        "Emerging Climate Frontiers | Empowering African Leadership in Frontier Climate Technologies",
+      title: "About Emerging Climate Frontiers | Our Mission, Team & Story",
       description:
-        "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies through inclusive, science-driven, and contextually relevant approaches.",
+        "Learn who we are, what drives us, and how ECF is building African leadership in AI, Carbon Dioxide Removal, and Solar Radiation Management.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/",
+      url: "https://ecfrontiers.org/about",
       publishedTime: "2025-01-23",
       modifiedTime: "2025-01-23",
       authors: ["Emerging Climate Frontiers (ECF)"],
-      tags: "Climate Technology, African Leadership, Frontier Climate Technologies, CDR, SRM, AI Governance, Climate Justice, African Research, Climate Policy, Decolonial Climate Science",
+      tags: "About ECF, ECF Team, African Climate Leadership, Climate Justice, Frontier Climate Technologies, ECF Mission",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
-          alt: "Emerging Climate Frontiers - Empowering African leadership in climate technologies",
+          alt: "About Emerging Climate Frontiers — Our mission and team",
           type: "image/png",
         },
       ],
@@ -62,37 +57,48 @@ export async function getServerSideProps(context: any) {
       card: "summary_large_image",
       site: "@ECF_Climate",
       creator: "@ECF_Climate",
-      title:
-        "Emerging Climate Frontiers | Empowering African Leadership in Frontier Climate Technologies",
+      title: "About Emerging Climate Frontiers | Our Mission, Team & Story",
       description:
-        "Join ECF in building African capacity and leadership in Frontier Climate Technologies (FCTs) to shape equitable global climate governance.",
+        "Meet the team and mission behind ECF — building African agency in Frontier Climate Technologies governance.",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
-          alt: "Emerging Climate Frontiers - Twitter preview image",
+          alt: "About Emerging Climate Frontiers",
         },
       ],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/",
+      canonical: "https://ecfrontiers.org/about",
     },
   };
 
   const jsonLdRes = [
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "AboutPage",
+      name: "About Emerging Climate Frontiers",
+      url: "https://ecfrontiers.org/about",
+      description:
+        "Learn about ECF's mission to empower African institutions in Frontier Climate Technologies — AI, CDR, and SRM — through research capacity, governance frameworks, and continental coalitions.",
+      publisher: {
+        "@type": "Organization",
+        name: "Emerging Climate Frontiers",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
       name: "Emerging Climate Frontiers",
       alternateName: "ECF",
-      url: "https://www.emergingclimatefrontiers.org/",
+      url: "https://ecfrontiers.org/",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.emergingclimatefrontiers.org/logo.png",
+        url: "https://ecfrontiers.org/logo.png",
       },
       description:
-        "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies (FCTs) through inclusive, science-driven, and contextually relevant approaches.",
+        "ECF trains and equips African researchers, policymakers, and civil society to lead on Frontier Climate Technologies including AI, Carbon Dioxide Removal, and Solar Radiation Management.",
       foundingDate: "2022",
       parentOrganization: {
         "@type": "Organization",
@@ -104,75 +110,10 @@ export async function getServerSideProps(context: any) {
         "https://www.linkedin.com/company/emerging-climate-frontiers",
       ],
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Emerging Climate Frontiers | ECF",
-      url: "https://www.emergingclimatefrontiers.org/",
-      description:
-        "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies through capacity building, collaboration, and equitable governance frameworks.",
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": "https://www.emergingclimatefrontiers.org/",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Emerging Climate Frontiers",
-      },
-      datePublished: "2025-01-23",
-      dateModified: "2025-01-23",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What is Emerging Climate Frontiers (ECF)?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ECF is an organization dedicated to empowering African institutions and policymakers to drive Frontier Climate Technologies (FCTs) including AI, Carbon Dioxide Removal (CDR), and Solar Radiation Management (SRM) through inclusive, science-driven approaches.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What are Frontier Climate Technologies (FCTs)?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "FCTs include Artificial Intelligence (AI) for climate action, Carbon Dioxide Removal (CDR), and Solar Radiation Management (SRM). These technologies hold transformative potential but require African leadership and context-specific applications.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is the African Climate Intervention Fellowship for Early-Career Researchers?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ACIEFR is ECF's flagship program that grows the ecosystem of researchers with both physical and social science backgrounds, increasing African-led research that informs local and regional decisions on FCT governance.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How does ECF work with African institutions?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ECF partners with universities, government agencies, research institutions, and civil society organizations to build capacity, strengthen technical expertise, and foster collaborative networks for equitable FCT governance.",
-          },
-        },
-      ],
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "CreativeWork",
-      name: "African Climate Intervention Fellowship for Early-Career Researchers",
-      alternateName: "ACIEFR",
-      url: "https://www.emergingclimatefrontiers.org/#aciefr",
-      description:
-        "A fellowship program that supports early-career researchers in Frontier Climate Technologies, fostering African-led research and building capacity across the continent.",
-    },
   ];
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "about", "resources"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "about", "resources"], nextI18NextConfig)),
       metaDataTag: metaDataTagRes,
       jsonLd: jsonLdRes,
     },

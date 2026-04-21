@@ -41,6 +41,7 @@ export default function CreateTeamForm({ data, dashboardModalRef }: Props) {
   const initialFormState = {
     name: null,
     portfolio: null,
+    linkedinUrl: null,
     bio: null,
   };
 
@@ -79,6 +80,7 @@ export default function CreateTeamForm({ data, dashboardModalRef }: Props) {
         nameSearch: formState.name.toLowerCase(),
         bio: formState.bio,
         portfolio: formState.portfolio,
+        linkedinUrl: formState.linkedinUrl || null,
         imgUrl: null,
       },
       file: selectedFile!,
@@ -158,6 +160,15 @@ export default function CreateTeamForm({ data, dashboardModalRef }: Props) {
             value={formState.portfolio}
             placeholderText="Enter portfolio"
             labelText="Portfolio"
+          />
+
+          <TextInput
+            isRequired={false}
+            validationRegex={/^.{0,}$/}
+            onInputChange={(val: any) => onChangeHandler("linkedinUrl", val)}
+            value={formState.linkedinUrl}
+            placeholderText="https://linkedin.com/in/..."
+            labelText="LinkedIn URL (optional)"
           />
 
           <TextArea

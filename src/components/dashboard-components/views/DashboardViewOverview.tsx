@@ -40,6 +40,13 @@ export default function DashboardView({}: Props) {
     { accessor: "blogs", header: "Blogs" },
     { accessor: "team", header: "Team" },
     { accessor: "advisoryCircle", header: "Advisory Circle" },
+    { accessor: "reports", header: "Reports" },
+    { accessor: "newsletters", header: "Newsletters" },
+    { accessor: "articles", header: "Articles" },
+    { accessor: "opeds", header: "Op-eds" },
+    { accessor: "videos", header: "Videos" },
+    { accessor: "events", header: "Events" },
+    { accessor: "careers", header: "Careers" },
   ];
 
   useEffect(() => {

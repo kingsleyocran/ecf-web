@@ -1,89 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-
-type NewsItem = {
-  title: string;
-  source: string;
-  description: string;
-  url: string;
-  imgUrl: string;
-  date: string;
-  tag: string;
-};
-
-const dummyNews: NewsItem[] = [
-  {
-    title: "Africa's Role in Shaping Solar Geoengineering Governance",
-    source: "Carbon Brief",
-    description:
-      "As solar radiation modification moves from theory to research agenda, African scientists and policymakers are pushing for a seat at the table in global governance discussions.",
-    url: "https://www.carbonbrief.org",
-    imgUrl: "/assets/images/test-image.png",
-    date: "March 2, 2025",
-    tag: "SRM",
-  },
-  {
-    title: "New UN Report Flags Risks of Unilateral Geoengineering Deployment",
-    source: "The Guardian",
-    description:
-      "A landmark United Nations assessment warns that unilateral deployment of solar geoengineering technologies could have severe and unequal consequences for developing nations.",
-    url: "https://www.theguardian.com/environment/climate-crisis",
-    imgUrl: "/assets/images/test-image.png",
-    date: "February 18, 2025",
-    tag: "Policy",
-  },
-  {
-    title: "AI Tools Are Transforming Climate Modelling in Sub-Saharan Africa",
-    source: "Nature",
-    description:
-      "Researchers across Ghana, Kenya, and South Africa are leveraging artificial intelligence to improve regional climate projections and inform adaptation strategies.",
-    url: "https://www.nature.com/nclimate",
-    imgUrl: "/assets/images/test-image.png",
-    date: "February 5, 2025",
-    tag: "AI",
-  },
-  {
-    title: "Carbon Dioxide Removal Investments Hit Record High in 2024",
-    source: "Reuters",
-    description:
-      "Global investment in carbon removal technologies surpassed $5 billion in 2024, with growing calls to direct a share of funding toward African-led projects.",
-    url: "https://www.reuters.com/business/environment",
-    imgUrl: "/assets/images/test-image.png",
-    date: "January 28, 2025",
-    tag: "CDR",
-  },
-  {
-    title: "COP30 Negotiators Debate Inclusion of SRM in Climate Frameworks",
-    source: "E&E News",
-    description:
-      "Ahead of COP30, climate negotiators are grappling with whether solar radiation modification should be formally acknowledged within UNFCCC frameworks, amid sharp disagreement.",
-    url: "https://www.eenews.net",
-    imgUrl: "/assets/images/test-image.png",
-    date: "January 14, 2025",
-    tag: "Policy",
-  },
-  {
-    title: "Kenyan Scientists Lead Groundbreaking Study on Stratospheric Aerosols",
-    source: "Science",
-    description:
-      "A team from the University of Nairobi has published new findings on how stratospheric aerosol injection could affect East Africa's rainfall patterns — with implications for food security.",
-    url: "https://www.science.org/journal/science",
-    imgUrl: "/assets/images/test-image.png",
-    date: "December 20, 2024",
-    tag: "SRM",
-  },
-];
-
-const tagColors: Record<string, string> = {
-  SRM: "bg-[#034D6B] text-white",
-  CDR: "bg-[#1a6b3c] text-white",
-  AI: "bg-[#5b3d8a] text-white",
-  Policy: "bg-[#8a5b00] text-white",
-};
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@/redux/app/hooks";
+import * as newsRedux from "@/redux/features/news";
+import { NewsArticleSchema } from "@/backend/models/news";
+import { NEWS_SOURCES_MAP } from "@/utils/newsSources";
 
 function LatestNewsPage() {
   const { t } = useTranslation("news-events");
+  const dispatch = useAppDispatch();
+
+  const pageListData = useAppSelector(newsRedux.reducers.selectPageTableListData);
+  const pageLoadingState = useAppSelector(
+    newsRedux.reducers.selectPageTableLoadingState
+  );
+
+  const articles = pageListData?.data ?? [];
+  const isLoading = pageLoadingState === "loading";
+
+  useEffect(() => {
+    console.log("[LatestNewsPage] Mounted — fetching news articles from Firestore");
+    dispatch(newsRedux.actions.fetchPageNewsWithFilters());
+  }, [dispatch]);
+
+  useEffect(() => {
+    console.log(
+      `[LatestNewsPage] Articles updated — count: ${pageListData?.data?.length ?? 0}, loadingState: ${pageLoadingState}`
+    );
+  }, [pageListData, pageLoadingState]);
 
   return (
     <section className="w-full bg-[#034D6B] pb-[100px] flex flex-col">
@@ -105,19 +50,56 @@ function LatestNewsPage() {
       {/* News list */}
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
         <div className="flex flex-col gap-10 max-w-[800px] mx-auto">
-          {dummyNews.map((item, i) => (
-            <NewsCard key={i} item={item} />
-          ))}
+          {/* Loading state */}
+          {isLoading && (
+            <div className="flex items-center justify-center py-16">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-8 h-8 border-2 border-[#E0C759]/40 border-t-[#E0C759] rounded-full animate-spin" />
+                <p className="text-white/60 text-sm">Loading latest news...</p>
+              </div>
+            </div>
+          )}
+
+          {/* Empty state */}
+          {!isLoading && articles.length === 0 && (
+            <div className="flex flex-col items-center gap-4 py-16 text-center">
+              <p className="text-white/60 text-sm">
+                No news articles yet. Check back soon.
+              </p>
+            </div>
+          )}
+
+          {/* Article cards */}
+          {!isLoading &&
+            articles.map((item, i) => (
+              <NewsCard key={item.id ?? i} item={item} />
+            ))}
         </div>
       </div>
     </section>
   );
 }
 
-function NewsCard({ item }: { item: NewsItem }) {
+function NewsCard({ item }: { item: NewsArticleSchema }) {
+  const sourceName =
+    NEWS_SOURCES_MAP[item.source]?.displayName ?? item.source;
+
+  // Format the crawledAt date for display
+  let dateStr = "";
+  try {
+    const d = item.crawledAt instanceof Date ? item.crawledAt : new Date(item.crawledAt);
+    dateStr = d.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  } catch {
+    dateStr = "";
+  }
+
   return (
     <Link
-      href={item.url}
+      href={item.link}
       target="_blank"
       rel="noopener noreferrer"
       className="group flex flex-col md:flex-row gap-6 items-center bg-transparent hover:bg-white/10
@@ -125,30 +107,43 @@ function NewsCard({ item }: { item: NewsItem }) {
     >
       {/* Image */}
       <div className="relative shrink-0 w-full md:w-[180px] aspect-square rounded-xl overflow-hidden bg-[#C7B14E]">
-        <Image
-          src={item.imgUrl}
-          alt={item.title}
-          fill
-          style={{ objectFit: "cover", objectPosition: "center" }}
-          className="group-hover:scale-105 transition-transform duration-300"
-        />
+        {item.imageUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={item.imageUrl}
+            alt={item.title}
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+            onError={(e) => {
+              // Replace broken image with placeholder
+              (e.target as HTMLImageElement).style.display = "none";
+            }}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-[#023b53]">
+            <span className="text-[#E0C759]/40 text-4xl">📰</span>
+          </div>
+        )}
       </div>
 
       {/* Text */}
       <div className="flex flex-col gap-3 pt-1">
         <div className="flex flex-wrap gap-2 items-center">
-          <span className={`px-3 py-1 rounded-full text-xs primarybold tracking-wide ${tagColors[item.tag] ?? "bg-white/20 text-white"}`}>
-            {item.tag}
+          <span className="px-3 py-1 rounded-full text-xs primarybold tracking-wide bg-[#034D6B] text-white border border-white/20">
+            {sourceName}
           </span>
-          <span className="text-white/50 text-xs">{item.source}</span>
-          <span className="text-white/40 text-xs">· {item.date}</span>
+          
         </div>
-        <h3 className="text-bold-xl text-[#E0C759] group-hover:text-[#E0C759]/80 transition-colors duration-200">
+        <h3 className="text-bold-xl text-white group-hover:text-[#E0C759]/80 transition-colors duration-200">
           {item.title}
         </h3>
-        <p className="text-normal-base text-white/70 line-clamp-3">
-          {item.description}
-        </p>
+        {/* {item.description && (
+          <p className="text-normal-base text-white/70 line-clamp-3">
+            {item.description}
+          </p>
+        )} */}
+        {dateStr && (
+            <span className="text-white/40 text-xs">· {dateStr}</span>
+          )}
       </div>
     </Link>
   );

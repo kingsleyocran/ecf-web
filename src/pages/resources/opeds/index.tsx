@@ -9,6 +9,7 @@ import { filterOpedsApi } from "@/backend/firebase/db/api/opeds_api";
 import { OpEdSchema, ListResponseOpedsSchema } from "@/backend/models/opeds";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../../next-i18next.config";
 
 interface Props { opeds: OpEdSchema[]; metaDataTag: any; jsonLd: any; }
 
@@ -22,17 +23,17 @@ export async function getServerSideProps(context: any) {
   } catch (_) {}
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"], nextI18NextConfig)),
       opeds,
       metaDataTag: {
         title: "Op-Eds | ECF",
         description: "Opinion and editorial pieces from ECF contributors.",
         keywords: "ECF op-ed, climate opinion Africa, SRM opinion, CDR editorial",
-        alternates: { canonical: "https://www.emergingclimatefrontiers.org/resources/opeds" },
-        openGraph: { type: "website", images: [{ url: "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: "ECF Op-Eds", type: "image/png" }] },
-        twitter: { images: [{ url: "https://www.emergingclimatefrontiers.org/hero-image.png" }] },
+        alternates: { canonical: "https://ecfrontiers.org/resources/opeds" },
+        openGraph: { type: "website", images: [{ url: "https://ecfrontiers.org/hero-image.png", width: 1200, height: 630, alt: "ECF Op-Eds", type: "image/png" }] },
+        twitter: { images: [{ url: "https://ecfrontiers.org/hero-image.png" }] },
       },
-      jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Op-Eds | ECF", url: "https://www.emergingclimatefrontiers.org/resources/opeds", publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" } }],
+      jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Op-Eds | ECF", url: "https://ecfrontiers.org/resources/opeds", publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" } }],
     },
   };
 }

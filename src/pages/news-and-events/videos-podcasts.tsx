@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import VideosPodcastsPage from "@/components/sections/news-and-events/VideosPodcastsPage";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 interface Props {
   metaDataTag: any;
@@ -26,10 +27,10 @@ export async function getServerSideProps(context: any) {
       description:
         "Video discussions and podcast episodes on frontier climate technologies from an African lens.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/news-and-events/videos-podcasts",
+      url: "https://ecfrontiers.org/news-and-events/videos-podcasts",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "ECF Videos & Podcasts",
@@ -43,10 +44,10 @@ export async function getServerSideProps(context: any) {
       creator: "@ecfrontiers",
       title: "Videos & Podcasts | Emerging Climate Frontiers",
       description: "Watch and listen to ECF's frontier climate technology media.",
-      images: [{ url: "https://www.emergingclimatefrontiers.org/hero-image.png" }],
+      images: [{ url: "https://ecfrontiers.org/hero-image.png" }],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/news-and-events/videos-podcasts",
+      canonical: "https://ecfrontiers.org/news-and-events/videos-podcasts",
     },
   };
 
@@ -55,12 +56,12 @@ export async function getServerSideProps(context: any) {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Videos & Podcasts | Emerging Climate Frontiers",
-      url: "https://www.emergingclimatefrontiers.org/news-and-events/videos-podcasts",
+      url: "https://ecfrontiers.org/news-and-events/videos-podcasts",
       publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" },
     },
   ];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"])), metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"], nextI18NextConfig)), metaDataTag, jsonLd } };
 }
 
 const VideosPodcastsPageRoute: NextPage<Props> = ({ metaDataTag, jsonLd }) => {

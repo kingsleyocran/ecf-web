@@ -252,8 +252,14 @@
     },
     "why": {
       "heading": "¿Por qué la IA?",
-      "para1": "La inteligencia artificial está transformando la ciencia del clima, permitiendo un modelado más rápido, estrategias de adaptación más inteligentes y respuestas en tiempo real a las crisis ambientales. Pero la IA es tan buena como los datos de los que aprende, la infraestructura en la que funciona y los marcos de gobernanza que dan forma a su uso. Y ahora mismo, los tres están abrumadoramente controlados fuera de África.",
-      "para2": "El continente enfrenta una paradoja peligrosa: está entre los más vulnerables al cambio climático, pero tiene la menor influencia sobre las herramientas de IA que se están construyendo para abordarlo. Sin centros de datos locales, conjuntos de datos generados por África ni marcos de gobernanza liderados por el continente, incluso las herramientas de IA climáticas bien intencionadas corren el riesgo de reforzar la dependencia y marginar las realidades africanas. ECF está cerrando esta brecha, formando a la próxima generación de expertos africanos en IA y clima, integrando la IA en investigación localmente relevante y abogando por estructuras de gobernanza que centren la agencia africana en la conversación global sobre IA para el clima."
+      "items": [
+        "África no está al margen de la revolución de la IA. Está siendo moldeada por ella — en sus pronósticos climáticos, su planificación de adaptación, sus decisiones sobre recursos.",
+        "Esto ocurre a menudo sin el conocimiento de África, y casi nunca con su consentimiento.",
+        "Los modelos que hacen predicciones sobre las sequías, inundaciones y sistemas alimentarios africanos fueron construidos en gran medida sin datos africanos, sin investigadores africanos, y sin voces africanas en la sala donde se escribieron las reglas.",
+        "Ese no es un problema técnico. Es un problema de gobernanza. Y es uno que ECF está posicionada para abordar.",
+        "ECF no construye herramientas de IA. Defendemos, convocamos y construimos capacidades.",
+        "Nuestro rol es garantizar que África pase de ser un sujeto pasivo de las decisiones climáticas impulsadas por IA a ser un configurador activo de ellas — como productor de conocimiento, participante en la gobernanza y beneficiario informado y soberano."
+      ]
     },
     "objectives": {
       "heading": "¿Por qué la Inteligencia Artificial?",
@@ -268,13 +274,12 @@
     "programObjectives": {
       "sectionTitle": "Inteligencia Artificial",
       "sectionHeading": "Objetivos",
-      "objectivesLabel": "Objetivos",
+      "objectivesLabel": "Hacia Dónde Trabajamos",
       "items": [
-        "Fortalecer la alfabetización en IA y clima entre los responsables políticos africanos, investigadores en inicio de carrera y equipos técnicos.",
-        "Desarrollar recursos accesibles de IA & Clima 101 adaptados a los contextos africanos, cerrando brechas de conocimiento y promoviendo una comprensión ética.",
-        "Apoyar a las instituciones públicas en la integración de la IA en los sistemas de datos climáticos, el modelado y los procesos de toma de decisiones.",
-        "Convocar diálogos continentales sobre soberanía de datos, uso ético de la IA y marcos de gobernanza que prioricen la agencia africana.",
-        "Integrar módulos enfocados en IA dentro de ACIFER y otros programas de becas para investigadores en inicio de carrera para cultivar la próxima generación de líderes africanos en IA y clima."
+        "Garantizar a África un lugar genuino en las conversaciones globales sobre cómo debe gobernarse la IA cuando se aplica al clima: quién controla los modelos, de quién son los datos utilizados y quién asume las consecuencias.",
+        "Construir la alfabetización crítica en IA que los tomadores de decisiones climáticas africanos necesitan para cuestionar los resultados generados por la IA, interrogar sus supuestos y tomar decisiones soberanas sobre las herramientas en las que confían.",
+        "Abogar por que los datos climáticos africanos sean tratados como un requisito científico y ético en los modelos globales de IA, no como una ocurrencia tardía, porque un modelo que no conoce África no puede hablar por África.",
+        "Desarrollar la próxima generación de investigadores y pensadores africanos en IA y clima a través de becas y trabajo en planes de estudio universitarios, para que esta capacidad no sea prestada sino construida y propia."
       ]
     }
   }

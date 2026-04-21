@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import LatestNewsPage from "@/components/sections/news-and-events/LatestNewsPage";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 interface Props {
   metaDataTag: any;
@@ -26,10 +27,10 @@ export async function getServerSideProps(context: any) {
       description:
         "The latest coverage on frontier climate technologies and African climate governance.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/news-and-events/latest-news",
+      url: "https://ecfrontiers.org/news-and-events/latest-news",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "ECF Latest News",
@@ -43,10 +44,10 @@ export async function getServerSideProps(context: any) {
       creator: "@ecfrontiers",
       title: "Latest News | Emerging Climate Frontiers",
       description: "Stay informed on frontier climate technologies in Africa.",
-      images: [{ url: "https://www.emergingclimatefrontiers.org/hero-image.png" }],
+      images: [{ url: "https://ecfrontiers.org/hero-image.png", alt: "ECF Latest News" }],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/news-and-events/latest-news",
+      canonical: "https://ecfrontiers.org/news-and-events/latest-news",
     },
   };
 
@@ -55,12 +56,12 @@ export async function getServerSideProps(context: any) {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Latest News | Emerging Climate Frontiers",
-      url: "https://www.emergingclimatefrontiers.org/news-and-events/latest-news",
+      url: "https://ecfrontiers.org/news-and-events/latest-news",
       publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" },
     },
   ];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"])), metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"], nextI18NextConfig)), metaDataTag, jsonLd } };
 }
 
 const LatestNewsPageRoute: NextPage<Props> = ({ metaDataTag, jsonLd }) => {

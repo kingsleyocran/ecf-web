@@ -9,6 +9,7 @@ import { getCareerApi } from "@/backend/firebase/db/api/careers_api";
 import { CareerSchema, ResponseCareerSchema } from "@/backend/models/careers";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 interface Props {
   career: CareerSchema;
@@ -51,8 +52,8 @@ export async function getServerSideProps(context: any) {
       title: `${careerData.title} | ECF Careers`,
       description: careerData.description,
       type: "website",
-      url: `https://www.emergingclimatefrontiers.org/careers/${careerData.id}`,
-      images: [{ url: careerData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: careerData.title, type: "image/png" }],
+      url: `https://ecfrontiers.org/careers/${careerData.id}`,
+      images: [{ url: careerData.imgUrl || "https://ecfrontiers.org/hero-image.png", width: 1200, height: 630, alt: careerData.title, type: "image/png" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -60,10 +61,10 @@ export async function getServerSideProps(context: any) {
       creator: "@ecfrontiers",
       title: `${careerData.title} | ECF Careers`,
       description: careerData.description,
-      images: [{ url: careerData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png" }],
+      images: [{ url: careerData.imgUrl || "https://ecfrontiers.org/hero-image.png" }],
     },
     alternates: {
-      canonical: `https://www.emergingclimatefrontiers.org/careers/${careerData.id}`,
+      canonical: `https://ecfrontiers.org/careers/${careerData.id}`,
     },
   };
 
@@ -77,11 +78,11 @@ export async function getServerSideProps(context: any) {
     hiringOrganization: {
       "@type": "Organization",
       name: "Emerging Climate Frontiers",
-      sameAs: "https://www.emergingclimatefrontiers.org",
+      sameAs: "https://ecfrontiers.org",
     },
   };
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "careers"])), career: careerData, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "careers"], nextI18NextConfig)), career: careerData, metaDataTag, jsonLd } };
 }
 
 const CareerDetailPage: NextPage<Props> = ({ career, metaDataTag, jsonLd }) => {

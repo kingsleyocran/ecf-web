@@ -4,11 +4,12 @@ import React from "react";
 import Header from "@/components/layout/Header";
 import PageEmptySection from "@/components/layout/PageEmptySection";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../next-i18next.config";
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common"], nextI18NextConfig)),
     },
   };
 }

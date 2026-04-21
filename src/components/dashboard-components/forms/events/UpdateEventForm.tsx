@@ -17,6 +17,7 @@ import ImageUploadComponent, {
 import TextInput from "../../components/input/TextInput";
 import TextArea from "../../components/input/TextArea";
 import TagSingleSelect from "../../components/input/TagSingleSelect";
+import EventDateTimeInput, { EventDateTimeValue } from "../../components/input/EventDateTimeInput";
 import {
   processContentImages,
   cleanupRemovedImages,
@@ -54,7 +55,7 @@ export default function UpdateEventForm({
   };
 
   const isFormFilled = () => {
-    const { id, imgUrl, registrationUrl, isActive, createdAt, updatedAt, ...rest } = formState;
+    const { id, imgUrl, registrationUrl, virtualLink, startDateTime, timezone, content, isActive, createdAt, updatedAt, ...rest } = formState;
     return Object.values(rest).every((value) => value !== null);
   };
 
@@ -63,8 +64,8 @@ export default function UpdateEventForm({
     setEditIsLoading(true);
 
     try {
-      const originalContent = data.content;
-      const processedContent = await processContentImages(formState.content);
+      const originalContent = data.content ?? "";
+      const processedContent = await processContentImages(formState.content ?? "");
       await cleanupRemovedImages(originalContent, processedContent);
 
       const request: UpdateEventWithFileSchema = {
@@ -75,9 +76,12 @@ export default function UpdateEventForm({
           description: formState.description,
           location: formState.location,
           date: formState.date,
+          startDateTime: formState.startDateTime || null,
+          timezone: formState.timezone || null,
           type: formState.type,
           content: processedContent,
           registrationUrl: formState.registrationUrl || null,
+          virtualLink: formState.virtualLink || null,
           imgUrl: formState.imgUrl,
         },
         file: selectedFile,
@@ -162,12 +166,13 @@ export default function UpdateEventForm({
               labelText="Location"
             />
 
-            <TextInput
-              validationRegex={/^.{2,}$/}
-              onInputChange={(val: any) => onChangeHandler("date", val)}
-              value={formState.date}
-              placeholderText="e.g. April 10, 2025"
-              labelText="Date"
+            <EventDateTimeInput
+              labelText="Event Date & Time"
+              onInputChange={(val: EventDateTimeValue | null) => {
+                onChangeHandler("date", val?.displayDate ?? formState.date);
+                onChangeHandler("startDateTime", val?.isoString ?? formState.startDateTime);
+                onChangeHandler("timezone", val?.timezone ?? formState.timezone);
+              }}
             />
 
             <TagSingleSelect
@@ -184,6 +189,14 @@ export default function UpdateEventForm({
               value={formState.registrationUrl}
               placeholderText="https://..."
               labelText="Registration URL (optional)"
+            />
+
+            <TextInput
+              validationRegex={/^.{0,}$/}
+              onInputChange={(val: any) => onChangeHandler("virtualLink", val)}
+              value={formState.virtualLink}
+              placeholderText="https://meet.google.com/..."
+              labelText="Virtual Join Link (optional)"
             />
           </form>
         </div>

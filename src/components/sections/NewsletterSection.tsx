@@ -94,7 +94,7 @@ function NewsletterSection() {
         <div className="flex flex-col md:flex-row w-full bg-[#025C7F] overflow-hidden rounded-2xl md:rounded-[40px]">
           <div className="basis-1/2 relative  rounded-2xl md:rounded-[40px] w-full h-full flex flex-col items-center justify-center">
             <Image
-              src="/assets/images/test-image.png"
+              src="/assets/images/newsletter-image.png"
               alt="Newsletter"
               fill
               style={{ objectFit: "cover" }}

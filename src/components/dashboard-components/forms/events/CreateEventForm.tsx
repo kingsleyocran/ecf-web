@@ -22,6 +22,7 @@ import ImageUploadComponent, {
 import TextInput from "../../components/input/TextInput";
 import TextArea from "../../components/input/TextArea";
 import TagSingleSelect from "../../components/input/TagSingleSelect";
+import EventDateTimeInput, { EventDateTimeValue } from "../../components/input/EventDateTimeInput";
 import { processContentImages } from "@/backend/firebase/storage/storage_func";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
@@ -51,9 +52,12 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
     description: null,
     location: null,
     date: null,
+    startDateTime: null,
+    timezone: null,
     type: null,
     content: null,
     registrationUrl: null,
+    virtualLink: null,
   };
 
   const dispatch = useAppDispatch();
@@ -74,7 +78,7 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
   };
 
   const isFormFilled = useCallback(() => {
-    const { registrationUrl, ...rest } = formState;
+    const { registrationUrl, virtualLink, startDateTime, timezone, content, ...rest } = formState;
     return Object.values(rest).every((value) => value !== null) && selectedFile;
   }, [formState, selectedFile]);
 
@@ -92,9 +96,12 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
           description: formState.description,
           location: formState.location,
           date: formState.date,
+          startDateTime: formState.startDateTime || null,
+          timezone: formState.timezone || null,
           type: formState.type,
           content: processedContent,
           registrationUrl: formState.registrationUrl || null,
+          virtualLink: formState.virtualLink || null,
           imgUrl: null,
         },
         file: selectedFile!,
@@ -184,12 +191,13 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
               labelText="Location"
             />
 
-            <TextInput
-              validationRegex={/^.{2,}$/}
-              onInputChange={(val: any) => onChangeHandler("date", val)}
-              value={formState.date}
-              placeholderText="e.g. April 10, 2025"
-              labelText="Date"
+            <EventDateTimeInput
+              labelText="Event Date & Time"
+              onInputChange={(val: EventDateTimeValue | null) => {
+                onChangeHandler("date", val?.displayDate ?? null);
+                onChangeHandler("startDateTime", val?.isoString ?? null);
+                onChangeHandler("timezone", val?.timezone ?? null);
+              }}
             />
 
             <TagSingleSelect
@@ -206,6 +214,14 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
               value={formState.registrationUrl}
               placeholderText="https://..."
               labelText="Registration URL (optional)"
+            />
+
+            <TextInput
+              validationRegex={/^.{0,}$/}
+              onInputChange={(val: any) => onChangeHandler("virtualLink", val)}
+              value={formState.virtualLink}
+              placeholderText="https://meet.google.com/..."
+              labelText="Virtual Join Link (optional)"
             />
           </form>
         </div>

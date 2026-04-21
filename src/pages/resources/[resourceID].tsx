@@ -8,6 +8,7 @@ import { getBlogApi } from "@/backend/firebase/db/api/blogs_api";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import BlogArea from "@/components/sections/blogs/BlogArea";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 interface Props {
   blog: BlogSchema;
@@ -39,10 +40,10 @@ export async function getServerSideProps(context: any) {
           title: `${blog.name} | ECF`,
           description: blog.description,
           type: "article",
-          url: `https://www.ecfrontiers.org/blogs/${blog.id}`,
+          url: `https://ecfrontiers.org/blogs/${blog.id}`,
           publishedTime: blog.createdAt.toISOString(),
           modifiedTime: blog.updatedAt.toISOString(),
-          authors: `https://www.ecfrontiers.org`,
+          authors: `https://ecfrontiers.org`,
           tags: blog.type,
           images: [
             {
@@ -70,7 +71,7 @@ export async function getServerSideProps(context: any) {
           ],
         },
         alternates: {
-          canonical: `https://www.ecfrontiers.org/blogs/${blog.id}`,
+          canonical: `https://ecfrontiers.org/blogs/${blog.id}`,
         },
       };
     }
@@ -85,7 +86,7 @@ export async function getServerSideProps(context: any) {
         "@type": "BlogPosting",
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `https://www.ecfrontiers.org/blogs/${blog.id}`,
+          "@id": `https://ecfrontiers.org/blogs/${blog.id}`,
         },
         headline: blog.name,
         description: blog.description,
@@ -96,14 +97,14 @@ export async function getServerSideProps(context: any) {
         author: {
           "@type": "Organization",
           name: "ECF",
-          url: `https://www.ecfrontiers.org`,
+          url: `https://ecfrontiers.org`,
         },
         publisher: {
           "@type": "Organization",
           name: "ECF",
           logo: {
             "@type": "ImageObject",
-            url: `https://www.ecfrontiers.org`,
+            url: `https://ecfrontiers.org`,
           },
         },
         inLanguage: "en-US",
@@ -115,7 +116,7 @@ export async function getServerSideProps(context: any) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common"], nextI18NextConfig)),
       blog: {
         ...blogPageContent,
         createdAt: blogPageContent?.createdAt.toISOString() ?? "",

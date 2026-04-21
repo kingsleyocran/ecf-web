@@ -1,4 +1,5 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 import CustomHead from "@/components/layout/CustomHead";
 import { useEffect } from "react";
 import Lenis from "lenis";
@@ -24,33 +25,29 @@ export async function getServerSideProps(context: any) {
   const { locale } = context;
   const metaDataTagRes = {
     title:
-      "Emerging Climate Frontiers | Empowering African Leadership in Frontier Climate Technologies",
-    authors: [
-      {
-        name: "Emerging Climate Frontiers (ECF)",
-      },
-    ],
+      "Programs | Frontier Climate Technologies for Africa | Emerging Climate Frontiers",
+    authors: [{ name: "Emerging Climate Frontiers (ECF)" }],
     description:
-      "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies (FCTs) through inclusive, science-driven approaches. We build capacity, foster collaboration, and advance equitable governance for AI, CDR, and SRM in Africa.",
+      "Explore ECF's programs in AI for Climate, Carbon Dioxide Removal, and Solar Radiation Management — building African expertise, research capacity, and governance in Frontier Climate Technologies.",
     keywords:
-      "Emerging Climate Frontiers, ECF, Frontier Climate Technologies, Carbon Dioxide Removal, CDR, Solar Radiation Management, SRM, AI Climate Governance, African Climate Innovation, Climate Technology Africa, Climate Justice, African Research Capacity, Climate Policy Africa, GAYO",
+      "ECF programs, AI for climate Africa, Carbon Dioxide Removal Africa, Solar Radiation Management Africa, ACIFER Fellowship, SRM short course, CDR training, African climate programs, frontier climate technologies programs",
     openGraph: {
       title:
-        "Emerging Climate Frontiers | Empowering African Leadership in Frontier Climate Technologies",
+        "Programs | Frontier Climate Technologies for Africa | Emerging Climate Frontiers",
       description:
-        "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies through inclusive, science-driven, and contextually relevant approaches.",
+        "ECF's programs in AI, CDR, and SRM build the next generation of African climate leaders, researchers, and governance advocates.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/",
+      url: "https://ecfrontiers.org/programs",
       publishedTime: "2025-01-23",
       modifiedTime: "2025-01-23",
       authors: ["Emerging Climate Frontiers (ECF)"],
-      tags: "Climate Technology, African Leadership, Frontier Climate Technologies, CDR, SRM, AI Governance, Climate Justice, African Research, Climate Policy, Decolonial Climate Science",
+      tags: "ECF Programs, AI Climate, CDR Africa, SRM Africa, ACIFER, Frontier Climate Technologies, African Climate Research",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
-          alt: "Emerging Climate Frontiers - Empowering African leadership in climate technologies",
+          alt: "Emerging Climate Frontiers Programs — AI, CDR, and SRM for Africa",
           type: "image/png",
         },
       ],
@@ -60,111 +57,67 @@ export async function getServerSideProps(context: any) {
       site: "@ECF_Climate",
       creator: "@ECF_Climate",
       title:
-        "Emerging Climate Frontiers | Empowering African Leadership in Frontier Climate Technologies",
+        "Programs | Frontier Climate Technologies for Africa | Emerging Climate Frontiers",
       description:
-        "Join ECF in building African capacity and leadership in Frontier Climate Technologies (FCTs) to shape equitable global climate governance.",
+        "ECF's programs in AI, CDR, and SRM are building the next generation of African climate leaders and governance experts.",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
-          alt: "Emerging Climate Frontiers - Twitter preview image",
+          alt: "ECF Programs — Frontier Climate Technologies for Africa",
         },
       ],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/",
+      canonical: "https://ecfrontiers.org/programs",
     },
   };
 
   const jsonLdRes = [
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Emerging Climate Frontiers",
-      alternateName: "ECF",
-      url: "https://www.emergingclimatefrontiers.org/",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.emergingclimatefrontiers.org/logo.png",
-      },
-      description:
-        "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies (FCTs) through inclusive, science-driven, and contextually relevant approaches.",
-      foundingDate: "2022",
-      parentOrganization: {
-        "@type": "Organization",
-        name: "Green Africa Youth Organization",
-        alternateName: "GAYO",
-      },
-      sameAs: [
-        "https://twitter.com/ECF_Climate",
-        "https://www.linkedin.com/company/emerging-climate-frontiers",
-      ],
-    },
-    {
-      "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "Emerging Climate Frontiers | ECF",
-      url: "https://www.emergingclimatefrontiers.org/",
+      name: "Programs | Frontier Climate Technologies for Africa | Emerging Climate Frontiers",
+      url: "https://ecfrontiers.org/programs",
       description:
-        "ECF empowers African institutions and policymakers to drive Frontier Climate Technologies through capacity building, collaboration, and equitable governance frameworks.",
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": "https://www.emergingclimatefrontiers.org/",
-      },
+        "ECF's programs equip African researchers, policymakers, and civil society to lead on AI for Climate, Carbon Dioxide Removal, and Solar Radiation Management.",
       publisher: {
         "@type": "Organization",
         name: "Emerging Climate Frontiers",
       },
-      datePublished: "2025-01-23",
-      dateModified: "2025-01-23",
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
+      "@type": "ItemList",
+      name: "ECF Frontier Climate Technology Programs",
+      url: "https://ecfrontiers.org/programs",
+      itemListElement: [
         {
-          "@type": "Question",
-          name: "What is Emerging Climate Frontiers (ECF)?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ECF is an organization dedicated to empowering African institutions and policymakers to drive Frontier Climate Technologies (FCTs) including AI, Carbon Dioxide Removal (CDR), and Solar Radiation Management (SRM) through inclusive, science-driven approaches.",
-          },
+          "@type": "ListItem",
+          position: 1,
+          name: "Artificial Intelligence for Climate Adaptation",
+          url: "https://ecfrontiers.org/programs/ai",
+          description:
+            "Building African AI literacy, research capacity, and governance frameworks for AI-driven climate adaptation.",
         },
         {
-          "@type": "Question",
-          name: "What are Frontier Climate Technologies (FCTs)?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "FCTs include Artificial Intelligence (AI) for climate action, Carbon Dioxide Removal (CDR), and Solar Radiation Management (SRM). These technologies hold transformative potential but require African leadership and context-specific applications.",
-          },
+          "@type": "ListItem",
+          position: 2,
+          name: "Carbon Dioxide Removal (CDR)",
+          url: "https://ecfrontiers.org/programs/cdr",
+          description:
+            "Strengthening African-led research, carbon accounting training, and governance in Carbon Dioxide Removal.",
         },
         {
-          "@type": "Question",
-          name: "What is the African Climate Intervention Fellowship for Early-Career Researchers?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ACIEFR is ECF's flagship program that grows the ecosystem of researchers with both physical and social science backgrounds, increasing African-led research that informs local and regional decisions on FCT governance.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How does ECF work with African institutions?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ECF partners with universities, government agencies, research institutions, and civil society organizations to build capacity, strengthen technical expertise, and foster collaborative networks for equitable FCT governance.",
-          },
+          "@type": "ListItem",
+          position: 3,
+          name: "Solar Radiation Management (SRM)",
+          url: "https://ecfrontiers.org/programs/srm",
+          description:
+            "Building African research capacity and governance literacy to ensure Africa shapes SRM on its own terms.",
         },
       ],
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "CreativeWork",
-      name: "African Climate Intervention Fellowship for Early-Career Researchers",
-      alternateName: "ACIEFR",
-      url: "https://www.emergingclimatefrontiers.org/#aciefr",
-      description:
-        "A fellowship program that supports early-career researchers in Frontier Climate Technologies, fostering African-led research and building capacity across the continent.",
     },
   ];
   return {
@@ -173,7 +126,7 @@ export async function getServerSideProps(context: any) {
         "common",
         "programs",
         "resources",
-      ])),
+      ], nextI18NextConfig)),
       metaDataTag: metaDataTagRes,
       jsonLd: jsonLdRes,
     },

@@ -36,7 +36,7 @@ export default function DashboardEventSeeDetails({
           </div>
 
           <Link
-            href={`/news-and-events/events/${data.id}`}
+            href={`/events/${data.id}`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -59,6 +59,13 @@ export default function DashboardEventSeeDetails({
           />
         </div>
 
+        {data.startDateTime && (
+          <div className="gap-x-4 grid grid-cols-2">
+            <DashboardDetailsCard title="Start (UTC)" value={new Date(data.startDateTime).toLocaleString()} />
+            <DashboardDetailsCard title="Timezone" value={data.timezone ?? "—"} />
+          </div>
+        )}
+
         <div className="gap-x-4 grid grid-cols-2">
           <DashboardDetailsCard title="Location" value={data.location} />
           <DashboardDetailsCard title="Date Created" value={convertDateTime(data.createdAt)} />
@@ -68,6 +75,10 @@ export default function DashboardEventSeeDetails({
 
         {data.registrationUrl && (
           <DashboardDetailsCard title="Registration URL" value={data.registrationUrl} />
+        )}
+
+        {data.virtualLink && (
+          <DashboardDetailsCard title="Virtual Join Link" value={data.virtualLink} />
         )}
       </div>
     </div>

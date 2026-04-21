@@ -9,6 +9,7 @@ import { getReportsApi } from "@/backend/firebase/db/api/reports_api";
 import { ReportSchema, ListResponseReportsSchema } from "@/backend/models/reports";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../../next-i18next.config";
 
 interface Props { reports: ReportSchema[]; metaDataTag: any; jsonLd: any; }
 
@@ -28,22 +29,22 @@ export async function getServerSideProps(context: any) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"], nextI18NextConfig)),
       reports,
       metaDataTag: {
         title: "Reports | ECF",
         description: "Published reports from Emerging Climate Frontiers on SRM, CDR, and AI.",
         keywords: "ECF reports, SRM report, CDR report, climate AI Africa, geoengineering report",
-        alternates: { canonical: "https://www.emergingclimatefrontiers.org/resources/reports" },
+        alternates: { canonical: "https://ecfrontiers.org/resources/reports" },
         openGraph: {
           type: "website",
-          images: [{ url: "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: "ECF Reports", type: "image/png" }],
+          images: [{ url: "https://ecfrontiers.org/hero-image.png", width: 1200, height: 630, alt: "ECF Reports", type: "image/png" }],
         },
         twitter: {
-          images: [{ url: "https://www.emergingclimatefrontiers.org/hero-image.png" }],
+          images: [{ url: "https://ecfrontiers.org/hero-image.png" }],
         },
       },
-      jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Reports | ECF", url: "https://www.emergingclimatefrontiers.org/resources/reports", publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" } }],
+      jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Reports | ECF", url: "https://ecfrontiers.org/resources/reports", publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" } }],
     },
   };
 }

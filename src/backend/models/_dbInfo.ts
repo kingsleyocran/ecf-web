@@ -4,6 +4,13 @@ export interface DBInfoAggregatorSchema {
   blogs: number;
   team: number;
   advisoryCircle: number;
+  reports: number;
+  newsletters: number;
+  articles: number;
+  opeds: number;
+  videos: number;
+  events: number;
+  careers: number;
 }
 
 export interface ResponseDBInfoAggregatorSchema extends SuccessMessageResponse {

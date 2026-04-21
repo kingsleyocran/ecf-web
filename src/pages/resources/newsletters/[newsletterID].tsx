@@ -8,6 +8,7 @@ import { getNewsletterApi } from "@/backend/firebase/db/api/newsletters_api";
 import { NewsletterSchema, ResponseNewsletterSchema } from "@/backend/models/newsletters";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../../next-i18next.config";
 
 interface Props { newsletter: NewsletterSchema; metaDataTag: any; jsonLd: any; }
 
@@ -25,17 +26,17 @@ export async function getServerSideProps(context: any) {
   if (!newsletterData) return { notFound: true };
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"], nextI18NextConfig)),
       newsletter: newsletterData,
       metaDataTag: {
         title: `${newsletterData.title} | ECF`,
         description: newsletterData.description,
         keywords: `${newsletterData.title}, ECF newsletter, climate newsletter Africa`,
-        alternates: { canonical: `https://www.emergingclimatefrontiers.org/resources/newsletters/${newsletterData.id}` },
-        openGraph: { type: "website", images: [{ url: newsletterData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: newsletterData.title, type: "image/png" }] },
-        twitter: { images: [{ url: newsletterData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png" }] },
+        alternates: { canonical: `https://ecfrontiers.org/resources/newsletters/${newsletterData.id}` },
+        openGraph: { type: "website", images: [{ url: newsletterData.imgUrl || "https://ecfrontiers.org/hero-image.png", width: 1200, height: 630, alt: newsletterData.title, type: "image/png" }] },
+        twitter: { images: [{ url: newsletterData.imgUrl || "https://ecfrontiers.org/hero-image.png" }] },
       },
-      jsonLd: [{ "@context": "https://schema.org", "@type": "Article", headline: newsletterData.title, description: newsletterData.description, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" }, url: `https://www.emergingclimatefrontiers.org/resources/newsletters/${newsletterData.id}` }],
+      jsonLd: [{ "@context": "https://schema.org", "@type": "Article", headline: newsletterData.title, description: newsletterData.description, publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" }, url: `https://ecfrontiers.org/resources/newsletters/${newsletterData.id}` }],
     },
   };
 }

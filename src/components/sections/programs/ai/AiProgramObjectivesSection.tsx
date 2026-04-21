@@ -45,7 +45,7 @@ function AiProgramObjectivesSection() {
             animationDelay={0.1}
             extraClassNames="text-white primarybold text-bold-2xl"
           >
-            {t("aiPage.programObjectives.sectionHeading")}
+            {t("aiPage.programObjectives.objectivesLabel")}
           </MaskText>
         </div>
 
@@ -60,13 +60,7 @@ function AiProgramObjectivesSection() {
               style={{ originX: 0 }}
               className="w-6 h-[2px] bg-[#E0C759] rounded-full mb-3"
             />
-            <MaskText
-              positionFrom={14}
-              animationDelay={0.05}
-              extraClassNames="text-[#E0C759]/80 text-xs primarybold tracking-[4px] uppercase"
-            >
-              {t("aiPage.programObjectives.objectivesLabel")}
-            </MaskText>
+      
           </div>
           <BulletList items={objectives} />
         </div>

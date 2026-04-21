@@ -6,6 +6,7 @@ import NavigationAnimation from "@/components/animation/navigationAnimation/Stai
 import Header from "../../components/layout/Header";
 import DashboardMain from "@/components/dashboard-components/components/sections/DashboardMain";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 interface Props {
   metaDataTag: any;
@@ -16,7 +17,7 @@ export async function getServerSideProps(context: any) {
   const { locale } = context;
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common"], nextI18NextConfig)),
       metaDataTag: null,
       jsonLd: null,
     },

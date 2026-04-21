@@ -69,11 +69,11 @@ const ImageUploadComponent = forwardRef<
       img.onload = () => {
         const canvas = document.createElement("canvas");
 
-        // Check if resizing is needed (file size > 800KB)
-        const resizeThreshold = 800 * 1024; // 800KB in bytes
+        // Check if resizing is needed (file size > 2MB)
+        const resizeThreshold = 2 * 1024 * 1024; // 2MB in bytes
         if (file.size <= resizeThreshold) {
           const ctx = canvas.getContext("2d");
-          const maxWidth = 900; // Resize width
+          const maxWidth = 1200; // Resize width
           const scaleSize = maxWidth / img.width;
           const width = maxWidth;
           const height = img.height * scaleSize;
@@ -90,7 +90,7 @@ const ImageUploadComponent = forwardRef<
         }
 
         const ctx = canvas.getContext("2d");
-        const maxWidth = 300; // Resize width
+        const maxWidth = 1200; // Resize width
         const scaleSize = maxWidth / img.width;
         const width = maxWidth;
         const height = img.height * scaleSize;

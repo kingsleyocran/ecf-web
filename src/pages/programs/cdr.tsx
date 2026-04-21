@@ -5,10 +5,10 @@ import CustomHead from "@/components/layout/CustomHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import NewsletterSection from "@/components/sections/NewsletterSection";
-import CdrHeroSection from "@/components/sections/programs/cdr/CdrHeroSection";
 import CdrCirclesSection from "@/components/sections/programs/cdr/CdrCirclesSection";
 import CdrProgramsSection from "@/components/sections/programs/cdr/CdrProgramsSection";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 interface Props {
   metaDataTag: any;
@@ -29,14 +29,14 @@ export async function getServerSideProps(context: any) {
       description:
         "ECF builds African capacity in Carbon Dioxide Removal through training, research fellowships, and carbon accounting programs.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/programs/cdr",
+      url: "https://ecfrontiers.org/programs/cdr",
       publishedTime: "2025-01-23",
       modifiedTime: "2025-01-23",
       authors: ["Emerging Climate Frontiers (ECF)"],
       tags: "CDR, Carbon Dioxide Removal, Climate Governance, Africa, ECF",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Carbon Dioxide Removal — Emerging Climate Frontiers",
@@ -53,7 +53,7 @@ export async function getServerSideProps(context: any) {
         "ECF strengthens African capacity in Carbon Dioxide Removal through research, training, and governance frameworks.",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Emerging Climate Frontiers CDR",
@@ -61,7 +61,7 @@ export async function getServerSideProps(context: any) {
       ],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/programs/cdr",
+      canonical: "https://ecfrontiers.org/programs/cdr",
     },
   };
 
@@ -70,7 +70,7 @@ export async function getServerSideProps(context: any) {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Carbon Dioxide Removal (CDR) | Emerging Climate Frontiers",
-      url: "https://www.emergingclimatefrontiers.org/programs/cdr",
+      url: "https://ecfrontiers.org/programs/cdr",
       description:
         "ECF's Carbon Dioxide Removal programs build African research capacity and governance literacy to ensure Africa leads CDR efforts on its own terms.",
       publisher: {
@@ -85,7 +85,7 @@ export async function getServerSideProps(context: any) {
       ...(await serverSideTranslations(locale ?? "en", [
         "common",
         "programs",
-      ])),
+      ], nextI18NextConfig)),
       metaDataTag,
       jsonLd,
     },
@@ -106,7 +106,6 @@ const CdrPage: NextPage<Props> = ({ metaDataTag, jsonLd }) => {
     <>
       <CustomHead jsonLd={jsonLd} metaDataTag={metaDataTag} />
       <Header />
-      <CdrHeroSection />
       <CdrCirclesSection />
       <CdrProgramsSection />
       <NewsletterSection />

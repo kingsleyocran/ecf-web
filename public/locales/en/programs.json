@@ -252,8 +252,14 @@
     },
     "why": {
       "heading": "Why AI?",
-      "para1": "Artificial Intelligence is transforming climate science, enabling faster modeling, smarter adaptation strategies, and real-time responses to environmental crises. But AI is only as good as the data it learns from, the infrastructure it runs on, and the governance frameworks that shape its use. And right now, all three are overwhelmingly controlled outside of Africa.",
-      "para2": "The continent faces a dangerous paradox: it is among the most vulnerable to climate change, yet it has the least influence over the AI tools being built to address it. Without local data centers, African-generated datasets, or continent-led governance frameworks, even well-intentioned AI climate tools risk reinforcing dependency and sidelining African realities. ECF is closing this gap, by training the next generation of African AI and climate experts, embedding AI into locally relevant research, and advocating for governance structures that center African agency in the global AI-for-climate conversation."
+      "items": [
+        "Africa is not on the sidelines of the AI revolution. It is being shaped by it — in its climate forecasts, its adaptation planning, its resource decisions.",
+        "This is happening often without Africa's knowledge, and almost never with its consent.",
+        "The models making predictions about African droughts, floods, and food systems were largely built without African data, without African researchers, and without African voices in the room where the rules were written.",
+        "That is not a technical problem. It is a governance problem. And it is one ECF is positioned to address.",
+        "ECF does not build AI tools. We champion, convene, and build capacity.",
+        "Our role is to ensure Africa moves from being a passive subject of AI-driven climate decisions to an active shaper of them — as a knowledge producer, a governance participant, and an informed, sovereign beneficiary."
+      ]
     },
     "objectives": {
       "heading": "Why Artificial Intelligence?",
@@ -268,13 +274,12 @@
     "programObjectives": {
       "sectionTitle": "Artificial Intelligence",
       "sectionHeading": "Objectives",
-      "objectivesLabel": "Objectives",
+      "objectivesLabel": "What We Are Working Toward",
       "items": [
-        "Strengthen AI and climate literacy among African policymakers, early-career researchers, and technical teams.",
-        "Develop accessible AI & Climate 101 resources tailored for African contexts, bridging knowledge gaps and promoting ethical understanding.",
-        "Support public institutions in integrating AI into climate data systems, modeling, and decision-making processes.",
-        "Convene continental dialogues on data sovereignty, ethical AI use, and governance frameworks that prioritize African agency.",
-        "Embed AI-focused modules within ACIFER and other early-career fellowship programs to cultivate the next generation of African AI climate leaders."
+        "Securing Africa a genuine seat in global conversations about how AI should be governed when applied to climate: who controls the models, whose data is used, and who bears the consequences.",
+        "Building the critical AI literacy that African climate decision-makers need to interrogate AI-generated outputs, question their assumptions, and make sovereign choices about the tools they rely on.",
+        "Advocating for African climate data to be treated as a scientific and ethical requirement in global AI models, not an afterthought, because a model that does not know Africa cannot speak for Africa.",
+        "Developing the next generation of African AI-climate researchers and thinkers through fellowship and university curriculum work, so that this capacity is not borrowed but built and owned."
       ]
     }
   }

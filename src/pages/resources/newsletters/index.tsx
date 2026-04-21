@@ -9,6 +9,7 @@ import { filterNewslettersApi } from "@/backend/firebase/db/api/newsletters_api"
 import { NewsletterSchema, ListResponseNewslettersSchema } from "@/backend/models/newsletters";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../../next-i18next.config";
 
 interface Props { newsletters: NewsletterSchema[]; metaDataTag: any; jsonLd: any; }
 
@@ -22,17 +23,17 @@ export async function getServerSideProps(context: any) {
   } catch (_) {}
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "resources"], nextI18NextConfig)),
       newsletters,
       metaDataTag: {
         title: "Newsletters | ECF",
         description: "Monthly dispatches from Emerging Climate Frontiers.",
         keywords: "ECF newsletter, climate newsletter Africa, SRM newsletter, CDR digest",
-        alternates: { canonical: "https://www.emergingclimatefrontiers.org/resources/newsletters" },
-        openGraph: { type: "website", images: [{ url: "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: "ECF Newsletters", type: "image/png" }] },
-        twitter: { images: [{ url: "https://www.emergingclimatefrontiers.org/hero-image.png" }] },
+        alternates: { canonical: "https://ecfrontiers.org/resources/newsletters" },
+        openGraph: { type: "website", images: [{ url: "https://ecfrontiers.org/hero-image.png", width: 1200, height: 630, alt: "ECF Newsletters", type: "image/png" }] },
+        twitter: { images: [{ url: "https://ecfrontiers.org/hero-image.png" }] },
       },
-      jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Newsletters | ECF", url: "https://www.emergingclimatefrontiers.org/resources/newsletters", publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" } }],
+      jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Newsletters | ECF", url: "https://ecfrontiers.org/resources/newsletters", publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" } }],
     },
   };
 }

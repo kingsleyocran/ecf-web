@@ -10,6 +10,7 @@ import * as opeds from "../features/opeds";
 import * as events from "../features/events";
 import * as newsletters from "../features/newsletters";
 import * as careers from "../features/careers";
+import * as news from "../features/news";
 
 export const store = configureStore({
   reducer: {
@@ -24,6 +25,7 @@ export const store = configureStore({
     events: events.reducers.default,
     newsletters: newsletters.reducers.default,
     careers: careers.reducers.default,
+    news: news.reducers.default,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

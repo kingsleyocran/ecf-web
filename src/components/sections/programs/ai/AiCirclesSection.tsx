@@ -5,7 +5,9 @@ import { useTranslation } from "next-i18next";
 function AiObjectivesSection() {
   const { t } = useTranslation("programs");
 
-  const objectives = t("aiPage.objectives.items", { returnObjects: true }) as unknown as string[];
+  const objectives = t("aiPage.objectives.items", {
+    returnObjects: true,
+  }) as unknown as string[];
 
   return (
     <section className="w-full bg-[#025C7F] py-16 md:py-24 overflow-hidden">
@@ -14,10 +16,29 @@ function AiObjectivesSection() {
           background: linear-gradient(to bottom, #0098D4, transparent);
         }
       `}</style>
-      <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16 py-12 flex justify-center">
+      <div className="w-full max-w-[1920px] flex flex-col 2xl:mx-auto px-4 md:px-8 lg:px-16 py-12  items-center gap-36">
+        {/* Header */}
+        <div className="text-center mt-16">
+          <MaskText
+            positionFrom={40}
+            triggerOnce={true}
+            animationDelay={0}
+            extraClassNames="text-center text-bold-2xl md:text-bold-3xl text-white pb-4"
+          >
+            {t("aiPage.hero.abbreviation")}
+          </MaskText>
+          <MaskText
+            positionFrom={20}
+            triggerOnce={true}
+            animationDelay={0.15}
+            extraClassNames="text-center text-[#E0C759]/70 text-sm md:text-base font-medium tracking-[6px] uppercase"
+          >
+            {t("aiPage.hero.fullName")}
+          </MaskText>
+        </div>
+
         <div className="relative max-w-[700px] w-full">
           <div className="relative z-10 flex flex-col items-center md:items-stretch md:flex-row gap-10">
-
             {/* Circle + stem */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -38,7 +59,12 @@ function AiObjectivesSection() {
             <div className="flex flex-col items-center md:items-start">
               {/* Heading */}
               <div className="max-w-[580px] text-center md:text-left flex flex-col gap-3">
-                <MaskText positionFrom={30} triggerOnce={true} animationDelay={0.1} extraClassNames="text-center md:text-left text-bold-xl md:text-bold-2xl text-[#92E0FF]">
+                <MaskText
+                  positionFrom={30}
+                  triggerOnce={true}
+                  animationDelay={0.1}
+                  extraClassNames="text-center md:text-left text-bold-xl md:text-bold-2xl text-[#92E0FF]"
+                >
                   {t("aiPage.objectives.heading")}
                 </MaskText>
               </div>
@@ -69,7 +95,6 @@ function AiObjectivesSection() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

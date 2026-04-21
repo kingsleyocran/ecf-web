@@ -69,6 +69,18 @@ function VideosPodcastsPage() {
   );
 }
 
+function toEmbedUrl(url: string): string {
+  // YouTube: convert watch?v= and youtu.be/ to embed format
+  const ytWatch = url.match(/youtube\.com\/watch\?v=([^&]+)/);
+  if (ytWatch) return `https://www.youtube.com/embed/${ytWatch[1]}`;
+  const ytShort = url.match(/youtu\.be\/([^?]+)/);
+  if (ytShort) return `https://www.youtube.com/embed/${ytShort[1]}`;
+  // Spotify: convert open.spotify.com to embed format
+  const spotifyMatch = url.match(/open\.spotify\.com\/(episode|show)\/([^?]+)/);
+  if (spotifyMatch) return `https://open.spotify.com/embed/${spotifyMatch[1]}/${spotifyMatch[2]}`;
+  return url;
+}
+
 function MediaCard({ item }: { item: VideoSchema }) {
   const { t } = useTranslation("news-events");
   const typeLabel = item.type.split("-").pop() ?? item.type;
@@ -78,7 +90,7 @@ function MediaCard({ item }: { item: VideoSchema }) {
       {/* Embed */}
       <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/30">
         <iframe
-          src={item.link}
+          src={toEmbedUrl(item.link)}
           title={item.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
           allowFullScreen

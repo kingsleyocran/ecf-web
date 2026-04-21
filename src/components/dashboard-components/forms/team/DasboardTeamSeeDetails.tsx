@@ -37,9 +37,10 @@ export default function DasboardBlogSeeDetails({
 
         <div className="grid grid-cols-2 gap-4">
           <DashboardDetailsCard title="Name" value={data.name} />
-
-        <DashboardDetailsCard title="Porfolio" value={data.portfolio} />
+          <DashboardDetailsCard title="Portfolio" value={data.portfolio} />
         </div>
+
+        <DashboardDetailsCard title="LinkedIn" value={data.linkedinUrl} />
 
         <DashboardDetailsCard title="Bio" value={data.bio} />
       </div>

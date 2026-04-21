@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 import { AnimatePresence, motion } from "framer-motion";
 import ParallaxMarquee from "@/components/animation/ParallaxMarquee";
@@ -93,13 +94,14 @@ function HomeAchievementsSection() {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const el = sectionRef.current;
+    if (el) {
+      observer.observe(el);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (el) {
+        observer.unobserve(el);
       }
     };
   }, []);
@@ -125,12 +127,13 @@ function HomeAchievementsSection() {
             {images.map((image) => (
               <div
                 key={image.id}
-                className="w-full h-[400px] rounded-2xl overflow-hidden shadow-xl"
+                className="w-full h-[400px] rounded-2xl overflow-hidden shadow-xl relative"
               >
-                <img
+                <Image
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover"
+                  fill
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             ))}

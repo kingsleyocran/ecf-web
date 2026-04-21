@@ -9,6 +9,7 @@ import { filterEventsApi } from "@/backend/firebase/db/api/events_api";
 import { EventSchema, ListResponseEventsSchema } from "@/backend/models/events";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../../next-i18next.config";
 
 interface Props {
   events: EventSchema[];
@@ -44,10 +45,10 @@ export async function getServerSideProps(context: any) {
       description:
         "Forums, workshops, and convenings shaping Africa's engagement with frontier climate technologies.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/news-and-events/events",
+      url: "https://ecfrontiers.org/news-and-events/events",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "ECF Events",
@@ -61,10 +62,10 @@ export async function getServerSideProps(context: any) {
       creator: "@ecfrontiers",
       title: "Events | Emerging Climate Frontiers",
       description: "ECF events on frontier climate technologies across Africa.",
-      images: [{ url: "https://www.emergingclimatefrontiers.org/hero-image.png" }],
+      images: [{ url: "https://ecfrontiers.org/hero-image.png" }],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/news-and-events/events",
+      canonical: "https://ecfrontiers.org/news-and-events/events",
     },
   };
 
@@ -73,12 +74,12 @@ export async function getServerSideProps(context: any) {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Events | Emerging Climate Frontiers",
-      url: "https://www.emergingclimatefrontiers.org/news-and-events/events",
+      url: "https://ecfrontiers.org/news-and-events/events",
       publisher: { "@type": "Organization", name: "Emerging Climate Frontiers" },
     },
   ];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"])), events, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"], nextI18NextConfig)), events, metaDataTag, jsonLd } };
 }
 
 const EventsIndexPage: NextPage<Props> = ({ events, metaDataTag, jsonLd }) => {

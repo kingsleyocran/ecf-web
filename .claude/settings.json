@@ -20,7 +20,9 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git reset:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(grep -r \"NEXT_PUBLIC_FIREBASE_PROJECT_ID\\\\|ecf-web\" /Users/kocran/Documents/CODE_PROJECTS/REACT/ecf/ecf_web/.firebase/ecf-web/hosting/_next/static/chunks/pages/_app*.js)",
+      "Bash(git checkout:*)"
     ]
   }
 }

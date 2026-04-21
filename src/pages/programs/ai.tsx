@@ -5,10 +5,11 @@ import CustomHead from "@/components/layout/CustomHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import NewsletterSection from "@/components/sections/NewsletterSection";
-import AiHeroSection from "@/components/sections/programs/ai/AiHeroSection";
-import AiObjectivesSection from "@/components/sections/programs/ai/AiObjectivesSection";
+import AiCirclesSection from "@/components/sections/programs/ai/AiCirclesSection";
+import AiWhySection from "@/components/sections/programs/ai/AiWhySection";
 import AiProgramObjectivesSection from "@/components/sections/programs/ai/AiProgramObjectivesSection";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 interface Props {
   metaDataTag: any;
@@ -31,14 +32,14 @@ export async function getServerSideProps(context: any) {
       description:
         "ECF closes the AI-climate gap by building African expertise, infrastructure, and governance frameworks for AI-driven climate adaptation.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/programs/ai",
+      url: "https://ecfrontiers.org/programs/ai",
       publishedTime: "2025-01-23",
       modifiedTime: "2025-01-23",
       authors: ["Emerging Climate Frontiers (ECF)"],
       tags: "AI, Artificial Intelligence, Climate Adaptation, Africa, ECF, Data Sovereignty",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Artificial Intelligence for Climate Adaptation — Emerging Climate Frontiers",
@@ -56,7 +57,7 @@ export async function getServerSideProps(context: any) {
         "ECF builds African AI capacity and governance for climate adaptation on the continent's own terms.",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Emerging Climate Frontiers AI",
@@ -64,7 +65,7 @@ export async function getServerSideProps(context: any) {
       ],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/programs/ai",
+      canonical: "https://ecfrontiers.org/programs/ai",
     },
   };
 
@@ -73,7 +74,7 @@ export async function getServerSideProps(context: any) {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Artificial Intelligence for Climate Adaptation | Emerging Climate Frontiers",
-      url: "https://www.emergingclimatefrontiers.org/programs/ai",
+      url: "https://ecfrontiers.org/programs/ai",
       description:
         "ECF's AI programs build African expertise and governance frameworks for AI-driven climate adaptation, ensuring the continent leads with agency and sovereignty.",
       publisher: {
@@ -88,7 +89,7 @@ export async function getServerSideProps(context: any) {
       ...(await serverSideTranslations(locale ?? "en", [
         "common",
         "programs",
-      ])),
+      ], nextI18NextConfig)),
       metaDataTag,
       jsonLd,
     },
@@ -109,8 +110,7 @@ const AiPage: NextPage<Props> = ({ metaDataTag, jsonLd }) => {
     <>
       <CustomHead jsonLd={jsonLd} metaDataTag={metaDataTag} />
       <Header />
-      <AiHeroSection />
-      <AiObjectivesSection />
+      <AiCirclesSection />
       <AiProgramObjectivesSection />
       <NewsletterSection />
       <Footer />

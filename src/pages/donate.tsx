@@ -9,6 +9,7 @@ import PartnersSection from "@/components/sections/PartnersSection";
 import DonateHeroSection from "@/components/sections/donate/DonateHeroSection";
 import DonateTiersSection from "@/components/sections/donate/DonateTiersSection";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../next-i18next.config";
 
 interface Props {
   metaDataTag: any;
@@ -29,10 +30,10 @@ export async function getServerSideProps(context: any) {
       description:
         "Your donation directly powers African leadership in Frontier Climate Technologies — from research fellowships to policy dialogues.",
       type: "website",
-      url: "https://www.emergingclimatefrontiers.org/donate",
+      url: "https://ecfrontiers.org/donate",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Donate to Emerging Climate Frontiers",
@@ -49,7 +50,7 @@ export async function getServerSideProps(context: any) {
         "Support African climate leadership. Donate to ECF and help build the research and policy capacity Africa needs.",
       images: [
         {
-          url: "https://www.emergingclimatefrontiers.org/hero-image.png",
+          url: "https://ecfrontiers.org/hero-image.png",
           width: 1200,
           height: 630,
           alt: "Donate to Emerging Climate Frontiers",
@@ -57,7 +58,7 @@ export async function getServerSideProps(context: any) {
       ],
     },
     alternates: {
-      canonical: "https://www.emergingclimatefrontiers.org/donate",
+      canonical: "https://ecfrontiers.org/donate",
     },
   };
 
@@ -68,16 +69,16 @@ export async function getServerSideProps(context: any) {
       name: "Donate to Emerging Climate Frontiers",
       description:
         "Support African leadership in Frontier Climate Technologies through a donation to ECF.",
-      url: "https://www.emergingclimatefrontiers.org/donate",
+      url: "https://ecfrontiers.org/donate",
       recipient: {
         "@type": "Organization",
         name: "Emerging Climate Frontiers",
-        url: "https://www.emergingclimatefrontiers.org",
+        url: "https://ecfrontiers.org",
       },
     },
   ];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "donate"])), metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "donate"], nextI18NextConfig)), metaDataTag, jsonLd } };
 }
 
 const DonatePage: NextPage<Props> = ({ metaDataTag, jsonLd }) => {

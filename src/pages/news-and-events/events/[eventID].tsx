@@ -9,6 +9,7 @@ import { getEventApi } from "@/backend/firebase/db/api/events_api";
 import { EventSchema, ResponseEventSchema } from "@/backend/models/events";
 import { ResponseIndicator } from "@/backend/models/_shared";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../../next-i18next.config";
 
 interface Props {
   event: EventSchema;
@@ -51,8 +52,8 @@ export async function getServerSideProps(context: any) {
       title: `${eventData.title} | ECF Events`,
       description: eventData.description,
       type: "website",
-      url: `https://www.emergingclimatefrontiers.org/news-and-events/events/${eventData.id}`,
-      images: [{ url: eventData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png", width: 1200, height: 630, alt: eventData.title, type: "image/png" }],
+      url: `https://ecfrontiers.org/news-and-events/events/${eventData.id}`,
+      images: [{ url: eventData.imgUrl || "https://ecfrontiers.org/hero-image.png", width: 1200, height: 630, alt: eventData.title, type: "image/png" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -60,14 +61,14 @@ export async function getServerSideProps(context: any) {
       creator: "@ecfrontiers",
       title: `${eventData.title} | ECF Events`,
       description: eventData.description,
-      images: [{ url: eventData.imgUrl || "https://www.emergingclimatefrontiers.org/hero-image.png" }],
+      images: [{ url: eventData.imgUrl || "https://ecfrontiers.org/hero-image.png", alt: eventData.title }],
     },
     alternates: {
-      canonical: `https://www.emergingclimatefrontiers.org/news-and-events/events/${eventData.id}`,
+      canonical: `https://ecfrontiers.org/news-and-events/events/${eventData.id}`,
     },
   };
 
-  const jsonLd = {
+  const jsonLd = [{
     "@context": "https://schema.org",
     "@type": "Event",
     name: eventData.title,
@@ -80,11 +81,11 @@ export async function getServerSideProps(context: any) {
     organizer: {
       "@type": "Organization",
       name: "Emerging Climate Frontiers",
-      url: "https://www.emergingclimatefrontiers.org",
+      url: "https://ecfrontiers.org",
     },
-  };
+  }];
 
-  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"])), event: eventData, metaDataTag, jsonLd } };
+  return { props: { ...(await serverSideTranslations(locale ?? "en", ["common", "news-events"], nextI18NextConfig)), event: eventData, metaDataTag, jsonLd } };
 }
 
 const EventDetailRoute: NextPage<Props> = ({ event, metaDataTag, jsonLd }) => {

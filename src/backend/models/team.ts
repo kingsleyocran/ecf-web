@@ -11,6 +11,7 @@ export interface CreateTeamMemberSchema {
   nameSearch: string;
   bio: string | null;
   portfolio: string | null;
+  linkedinUrl?: string | null;
   imgUrl?: string | null;
 }
 

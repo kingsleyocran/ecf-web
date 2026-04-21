@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   const blogSitemapFields: ISitemapField[] = dbInfoSitemap!.blogIDs.map(
     (b: string) => ({
-      loc: `https://www.ecfrontiers.org/blogs/${b}`,
+      loc: `https://ecfrontiers.org/blogs/${b}`,
       lastmod: new Date().toISOString(),
       changefreq: "daily",
       priority: 0.7,

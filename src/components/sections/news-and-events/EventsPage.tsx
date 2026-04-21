@@ -78,7 +78,7 @@ function EventsPage({ events }: { events: EventSchema[] }) {
 function EventCard({ event, typeLabels }: { event: EventSchema; typeLabels: Record<string, string> }) {
   return (
     <Link
-      href={`/news-and-events/events/${event.id}`}
+      href={`/events/${event.id}`}
       className="group flex flex-col md:flex-row gap-6 items-center bg-transparent hover:bg-white/10
       transition-colors duration-200 p-4 rounded-lg"
     >
