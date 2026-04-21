@@ -1,0 +1,83 @@
+{
+  "title": "Privacy Policy",
+  "lastUpdated": "Last Updated:",
+  "sections": {
+    "intro": {
+      "heading": "1. Introduction",
+      "body1": "Emerging Climate Frontiers (\"ECF,\" \"we,\" \"us,\" or \"our\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.",
+      "body2": "By using our website, you consent to the data practices described in this policy. If you do not agree with the practices described in this policy, please do not use our website."
+    },
+    "infoCollect": {
+      "heading": "2. Information We Collect",
+      "personalHeading": "2.1 Personal Information",
+      "personalBody": "We may collect personal information that you voluntarily provide to us when you:",
+      "personalItems": [
+        "Subscribe to our newsletter",
+        "Contact us through our website",
+        "Apply for funding or programs",
+        "Participate in surveys or research"
+      ],
+      "personalBody2": "This information may include your name, email address, phone number, organization affiliation, and other details you choose to provide.",
+      "autoHeading": "2.2 Automatically Collected Information",
+      "autoBody": "When you visit our website, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. We also collect information about how you interact with our website."
+    },
+    "howWeUse": {
+      "heading": "3. How We Use Your Information",
+      "body": "We use the information we collect to:",
+      "items": [
+        "Provide, operate, and maintain our website",
+        "Send you newsletters and updates about our work",
+        "Respond to your inquiries and provide support",
+        "Process applications for funding and programs",
+        "Improve our website and user experience",
+        "Comply with legal obligations"
+      ]
+    },
+    "sharing": {
+      "heading": "4. Information Sharing and Disclosure",
+      "body": "We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:",
+      "items": [
+        "With service providers who assist us in operating our website and conducting our activities",
+        "When required by law or to protect our rights and safety",
+        "With your explicit consent for specific purposes"
+      ]
+    },
+    "security": {
+      "heading": "5. Data Security",
+      "body": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security."
+    },
+    "rights": {
+      "heading": "6. Your Rights",
+      "body": "You have the right to:",
+      "items": [
+        "Access and receive a copy of your personal information",
+        "Request correction of inaccurate or incomplete data",
+        "Request deletion of your personal information",
+        "Object to processing of your personal information",
+        "Withdraw consent at any time"
+      ],
+      "body2": "To exercise these rights, please contact us using the information provided in the Contact section below."
+    },
+    "cookies": {
+      "heading": "7. Cookies and Tracking Technologies",
+      "body": "We use cookies and similar tracking technologies to track activity on our website and store certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website."
+    },
+    "thirdPartyLinks": {
+      "heading": "8. Third-Party Links",
+      "body": "Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit."
+    },
+    "children": {
+      "heading": "9. Children's Privacy",
+      "body": "Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately."
+    },
+    "changes": {
+      "heading": "10. Changes to This Privacy Policy",
+      "body": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the \"Last Updated\" date. You are advised to review this Privacy Policy periodically for any changes."
+    },
+    "contact": {
+      "heading": "11. Contact Us",
+      "body": "If you have any questions about this Privacy Policy or our data practices, please contact us at:",
+      "orgName": "Emerging Climate Frontiers"
+    }
+  }
+}

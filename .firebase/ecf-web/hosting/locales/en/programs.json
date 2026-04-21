@@ -1,0 +1,286 @@
+{
+  "hero": {
+    "heading": "Our Programs",
+    "description": "See how ECF's work is transforming climate technology capacity across Africa"
+  },
+  "filters": {
+    "all": "All",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "programs": {
+    "aciefr": {
+      "title": "ACIEFR Fellowship",
+      "description": "The African Climate Intervention Fellowship for Early-Career Researchers (ACIEFR) grows the ecosystem of researchers with both physical and social science backgrounds, increasing African-led research that informs local and regional decisions on FCT governance."
+    },
+    "policyLab": {
+      "title": "Climate Technology Policy Lab",
+      "description": "A collaborative space for African policymakers, researchers, and civil society to co-develop governance frameworks for frontier climate technologies that center equity and local context."
+    },
+    "cdrHub": {
+      "title": "CDR Innovation Hub",
+      "description": "Supporting African entrepreneurs and researchers in developing and scaling nature-based and technological carbon dioxide removal solutions tailored to the continent's diverse ecosystems."
+    },
+    "srmDialogue": {
+      "title": "SRM Governance Dialogue Series",
+      "description": "A series of multi-stakeholder dialogues bringing together African scientists, policymakers, and communities to shape informed positions on Solar Radiation Management research and governance."
+    }
+  },
+  "techHero": {
+    "label": "About Us",
+    "heading": "Frontier Climate Technologies",
+    "description": "AI, Carbon Dioxide Removal, and Solar Radiation Management; explored through an African lens."
+  },
+  "srm": {
+    "title": "Solar Radiation Management",
+    "description": "Solar Radiation Management refers to proposed technologies that would reflect a small amount of sunlight back into space to reduce global warming. These technologies are highly contested and carry significant risks and uncertainties—particularly for African climate systems, agriculture, and water resources.",
+    "features": {
+      "modeling": "Regional climate modeling for SRM impacts",
+      "governance": "Governance framework development",
+      "risk": "Risk assessment for African agriculture and water systems",
+      "engagement": "Public engagement and informed dialogue"
+    }
+  },
+  "ai": {
+    "title": "Artificial Intelligence for Climate Adaptation",
+    "description": "The absence of Africa-centered governance frameworks and reliance on foreign data centres risks perpetuating inequities in global climate decision-making, delaying real-time AI-supported responses. ECF advocates for local AI infrastructure and expertise to ensure context-specific climate responses that serve African communities first.",
+    "features": {
+      "data": "Developing AI for high-quality climate data in water-scarce regions",
+      "centres": "Building local data centres and processing capacity",
+      "warning": "Early warning systems for agriculture, water, and disaster response",
+      "governance": "Ethical AI governance frameworks for climate action"
+    }
+  },
+  "cdr": {
+    "title": "Carbon Dioxide Removal",
+    "description": "CDR encompasses both nature-based solutions and technological approaches to removing carbon dioxide from the atmosphere. Africa's diverse ecosystems—from forests to coastlines—offer significant potential for CDR, but solutions must be tailored to local contexts.",
+    "features": {
+      "natureBased": "Nature-based CDR solutions (biochar, afforestation, soil carbon)",
+      "ocean": "Ocean-based CDR (seaweed cultivation, mangrove restoration)",
+      "accounting": "Carbon accounting and MRV (Monitoring, Reporting, Verification)",
+      "entrepreneurship": "Local CDR entrepreneurship and job creation"
+    }
+  },
+  "srmPage": {
+    "hero": {
+      "abbreviation": "SRM",
+      "fullName": "Solar Radiation Management"
+    },
+    "why": {
+      "heading": "Why SRM?",
+      "para1": "Solar Radiation Management — the deliberate intervention in Earth's sunlight to cool the planet — is no longer a distant scientific thought experiment. It is being researched, debated, and increasingly considered as a potential response to accelerating climate breakdown. And yet the countries and communities most likely to be affected by its consequences are the least represented in the conversations about whether, how, and by whom it should be governed.",
+      "para2": "For Africa, the stakes could not be higher. SRM interventions could affect monsoon patterns, reduce crop yields, and alter the very ecosystems millions depend on for survival. ECF believes that African institutions, policymakers, and communities must not be passive observers of these decisions — they must be architects of them. We build the research capacity, governance frameworks, and continental coalitions needed for Africa to engage with SRM on its own terms, with clarity, sovereignty, and purpose."
+    },
+    "circles": {
+      "heading": "Why Solar Radiation Management?",
+      "items": [
+        "SRM is no longer a distant thought experiment — it is being researched and debated as a real response to climate breakdown.",
+        "The nations most likely to be affected are the least represented in conversations about how and by whom SRM should be governed.",
+        "SRM could alter Africa's monsoon patterns, reduce crop yields, and disrupt the very ecosystems millions depend on for survival.",
+        "African communities must be architects — not passive observers — of these decisions.",
+        "ECF builds the capacity for Africa to engage with SRM on its own terms, with clarity, sovereignty, and purpose."
+      ]
+    },
+    "programs": {
+      "sectionTitle": "Solar Radiation Management",
+      "sectionHeading": "SRM Programs",
+      "objectivesLabel": "Objectives",
+      "impactsLabel": "Impacts",
+      "partnersLabel": "Partner Universities",
+      "items": {
+        "shortCourse": {
+          "title": "SRM Short Course Programme",
+          "background": "Africa contributes minimally to global greenhouse gas emissions, yet bears disproportionate climate impacts — intensified droughts, flooding, heat stress, food insecurity, and ecosystem degradation. While mitigation and adaptation remain essential, emerging conversations around Solar Radiation Modification (SRM) are accelerating globally. However, Africa remains underrepresented in research production, governance negotiations, and technical infrastructure shaping these Frontier Climate Technologies (FCTs). This short course was designed as a strategic intervention to close the knowledge gap on SRM within African institutions and equip policymakers, researchers, and civil society actors to engage in global climate intervention dialogue from a position of informed agency.",
+          "objectives": [
+            "Strengthen academic understanding of SRM.",
+            "Build a pipeline of informed early-career professionals engaging with climate interventions.",
+            "Promote justice-centred perspectives in climate technology dialogue.",
+            "Encourage interdisciplinary engagement across science, policy, and governance.",
+            "Advance African agency in global climate intervention discussions."
+          ],
+          "impacts": [
+            "Reached over 900 students and early-career professionals across Ghana, South Africa, and Kenya.",
+            "Improved 85% of participants' understanding of SRM concepts through post-training surveys.",
+            "Strengthened interest in science-policy careers and climate research across engaged academic institutions.",
+            "Enhanced institutional demand for recurring climate intervention education.",
+            "Reinforced Africa-focused discourse within 10 universities."
+          ],
+          "stats": {
+            "studentsReached": { "label": "students reached" },
+            "improvedUnderstanding": { "label": "improved understanding" },
+            "partnerUniversities": { "label": "partner universities" }
+          }
+        },
+        "briefingSeries": {
+          "title": "SRM Briefing Series",
+          "background": "Across Africa, countries such as Ghana, Kenya, and South Africa are experiencing intensifying climate impacts — rising temperatures, erratic rainfall, prolonged droughts, flooding, and coastal vulnerability. Yet despite these realities, African voices remain underrepresented in global discussions on Solar Radiation Modification. Limited technical familiarity, insufficient research output, and constrained participation in international science-policy platforms have collectively restricted the ability of policymakers, researchers, and civil society actors to engage confidently in SRM discourse. The SRM Briefing Series was convened in Ghana, Kenya, and South Africa to directly address this gap by strengthening informed, justice-centered engagement on SRM across diverse national contexts.",
+          "objectives": [
+            "Build shared African literacy on SRM science, risks, and uncertainties.",
+            "Examine ethical, governance, and community implications.",
+            "Surface research gaps and policy blind spots.",
+            "Strengthen cross-sector dialogue between science, policy, and civil society.",
+            "Support early coordination toward national and regional SRM positions."
+          ],
+          "impacts": [
+            "Three regional briefings delivered in Accra, Nairobi, and Johannesburg.",
+            "105 participants engaged including policymakers, staff from mandated institutions, and research and civil society organizations from over 35 institutions.",
+            "Strengthened African capacity to engage critically with SRM discourse.",
+            "Clarified governance priorities including consent, accountability, and justice.",
+            "Reinforced African leadership in shaping SRM research agendas."
+          ],
+          "stats": {
+            "regionalBriefings": { "label": "regional briefings" },
+            "participantsEngaged": { "label": "participants engaged" },
+            "institutionsRepresented": { "label": "institutions represented" }
+          }
+        },
+        "aciferFellowship": {
+          "title": "ACIFER SRM Fellowship",
+          "background": "The African Climate Intervention Fellowship for Early-Career Researchers (ACIFER) SRM Track is a pioneering initiative aimed at strengthening African-led research and governance literacy in Solar Radiation Modification. As global dialogues intensify around emerging climate interventions, it is essential that African researchers and policymakers are equipped to critically assess the scientific, ethical, and governance implications of SRM within the continent's unique environmental and socio-political contexts. At present, SRM research is predominantly concentrated in institutions outside Africa, creating a knowledge imbalance that marginalizes African perspectives in global governance discussions. ACIFER addresses these gaps by strengthening research capacity, fostering interdisciplinary collaboration, and enhancing research-to-policy translation mechanisms.",
+          "objectives": [
+            "Build African-led research capacity in SRM.",
+            "Equip fellows with technical, ethical, and governance knowledge.",
+            "Foster mentorship and interdisciplinary collaboration.",
+            "Strengthen Africa's contribution to global climate intervention research."
+          ],
+          "impacts": [
+            "Trained 30 fellows selected from 45+ African countries.",
+            "3 research proposals developed and presented (currently underway).",
+            "36 mentorship sessions conducted.",
+            "Fellows engaged in cross-country research collaborations.",
+            "Established an early-career research community to foster cross-regional collaborations."
+          ],
+          "stats": {
+            "fellowsTrained": { "label": "fellows trained" },
+            "africanCountries": { "label": "African countries" },
+            "mentorshipSessions": { "label": "mentorship sessions" }
+          }
+        }
+      }
+    }
+  },
+  "cdrPage": {
+    "hero": {
+      "abbreviation": "CDR",
+      "fullName": "Carbon Dioxide Removal"
+    },
+    "circles": {
+      "heading": "Why Carbon Dioxide Removal?",
+      "items": [
+        "The carbon already in our atmosphere will outlast any promise made at a climate summit. Reducing emissions alone is no longer enough — the world must also remove what has already been released.",
+        "Carbon Dioxide Removal is one of the most consequential climate frontiers of our time, yet African voices, institutions, and ecosystems remain largely absent from the decisions being made about it.",
+        "Africa holds some of the world's most significant natural carbon sinks — from forests to oceans to soils.",
+        "The science, the standards, and the systems governing CDR are being designed elsewhere — not by or for the communities most affected.",
+        "ECF builds the knowledge, capacity, and coalitions needed for Africa to lead CDR on its own terms — not as a resource to be extracted, but as a continent with the agency to shape its climate future."
+      ]
+    },
+    "programs": {
+      "sectionTitle": "Carbon Dioxide Removal",
+      "sectionHeading": "CDR Programs",
+      "objectivesLabel": "Objectives",
+      "impactsLabel": "Impacts",
+      "partnersLabel": "Partner Universities",
+      "items": {
+        "shortCourse": {
+          "title": "CDR Short Course Programme",
+          "background": "Africa contributes minimally to global greenhouse gas emissions, yet bears disproportionate climate impacts; intensified droughts, flooding, heat stress, food insecurity, and ecosystem degradation. Emerging conversations around Carbon Dioxide Removal (CDR) are accelerating globally, as we learn that our mitigation and adaptation efforts may not be enough to avoid climate collapse. Africa remains underrepresented in research production, governance negotiations, and technical infrastructure shaping these Frontier Climate Technologies (FCTs). This short course is designed as a strategic intervention to bridge the knowledge gap on CDR within African institutions, strengthen Africa's scientific and governance capacity to assess these technologies independently, equip policymakers, researchers, and civil society actors to engage in global climate intervention dialogue from a position of informed agency, and lay the foundations for developing a coordinated, justice-centered African position on climate intervention research and governance.",
+          "objectives": [
+            "Strengthen academic understanding of CDR.",
+            "Build a pipeline of informed early-career professionals engaging with climate interventions.",
+            "Promote justice-centred perspectives in climate technology dialogue.",
+            "Encourage interdisciplinary engagement across science, policy, and governance.",
+            "Advance African agency in global climate intervention discussions."
+          ],
+          "impacts": [
+            "Reached over 900 students and early-career professionals across Ghana, South Africa, and Kenya.",
+            "Improved 85% of participants' understanding of CDR concepts through post-training surveys.",
+            "Resuscitated interest in science-policy research across engaged academic institutions.",
+            "Enhanced institutional demand for recurring climate intervention education."
+          ],
+          "stats": {
+            "studentsReached": { "label": "students reached" },
+            "improvedUnderstanding": { "label": "improved understanding" },
+            "partnerUniversities": { "label": "partner universities" }
+          }
+        },
+        "carbonAccounting": {
+          "title": "Carbon Accounting and Decarbonization Training",
+          "background": "Africa's carbon market is expanding rapidly, yet a critical gap persists: while young Africans are eager to drive the continent's carbon accounting and decarbonization efforts, only a small fraction have access to structured training. At the same time, industries face mounting pressure to measure and reduce emissions but struggle to find local expertise, creating a reliance on foreign consultants that undermines Africa's climate agency. To address this, Emerging Climate Frontiers (ECF) launched a hands-on initiative that equips youth with both technical knowledge and practical experience in carbon accounting and decarbonization. By providing training, mentorship, and placement opportunities, the program empowers the next generation of professionals to meet industry demand, advance Africa-led climate solutions, and strengthen the continent's ability to lead in carbon governance while creating sustainable youth employment pathways.",
+          "objectives": [
+            "Deliver practical training in carbon accounting and decarbonisation.",
+            "Provide structured internship pathways with corporate and institutional partners.",
+            "Develop a skilled cohort of African carbon management professionals.",
+            "Establish youth employment pathways in green economy roles.",
+            "Lay foundations for carbon auditing and MRV consultancy."
+          ],
+          "impacts": [
+            "20 youth professionals trained.",
+            "7 participants completed internship placements."
+          ],
+          "stats": {
+            "youthTrained": { "label": "youth professionals trained" },
+            "internshipPlacements": { "label": "internship placements" }
+          }
+        },
+        "aciferFellowship": {
+          "title": "ACIFER CDR Fellowship",
+          "background": "The African Climate Intervention Fellowship for Early-Career Researchers (ACIFER) CDR Track is designed to strengthen African leadership in Carbon Dioxide Removal (CDR) research by equipping early-career scholars with the knowledge, mentorship, and collaborative networks needed to generate locally grounded evidence on emerging climate mitigation approaches. As climate impacts intensify across Africa despite the continent contributing minimally to global emissions, the need for African researchers to shape how CDR technologies are studied, governed, and applied has become urgent. Yet much of the current research, modeling, and policy discourse on CDR originates outside the continent, leaving significant gaps in context-specific data and limiting Africa's influence in global climate governance. Through structured training, interdisciplinary collaboration, and policy engagement, ACIFER builds a new generation of African researchers capable of informing climate policy, strengthening research sovereignty, and ensuring that CDR pathways reflect African realities, development priorities, and global climate commitments.",
+          "objectives": [
+            "Build African-led research capacity in CDR.",
+            "Equip fellows with technical, ethical, and governance knowledge.",
+            "Foster mentorship and interdisciplinary collaboration.",
+            "Strengthen Africa's contribution to global climate intervention research."
+          ],
+          "impacts": [
+            "Trained 30 fellows across 45+ African countries.",
+            "Funded 2 local research projects (currently underway).",
+            "Established an early-career research community to foster cross-regional collaborations."
+          ],
+          "stats": {
+            "fellowsTrained": { "label": "fellows trained" },
+            "africanCountries": { "label": "African countries" },
+            "fundedResearch": { "label": "funded research" }
+          }
+        }
+      }
+    }
+  },
+  "aiPage": {
+    "hero": {
+      "abbreviation": "AI",
+      "fullName": "Artificial Intelligence for Climate Adaptation"
+    },
+    "why": {
+      "heading": "Why AI?",
+      "items": [
+        "Africa is not on the sidelines of the AI revolution. It is being shaped by it — in its climate forecasts, its adaptation planning, its resource decisions.",
+        "This is happening often without Africa's knowledge, and almost never with its consent.",
+        "The models making predictions about African droughts, floods, and food systems were largely built without African data, without African researchers, and without African voices in the room where the rules were written.",
+        "That is not a technical problem. It is a governance problem. And it is one ECF is positioned to address.",
+        "ECF does not build AI tools. We champion, convene, and build capacity.",
+        "Our role is to ensure Africa moves from being a passive subject of AI-driven climate decisions to an active shaper of them — as a knowledge producer, a governance participant, and an informed, sovereign beneficiary."
+      ]
+    },
+    "objectives": {
+      "heading": "Why Artificial Intelligence?",
+      "items": [
+        "AI is transforming climate science — enabling faster modeling, smarter adaptation, and real-time crisis response. But AI is only as good as the data, infrastructure, and governance behind it.",
+        "The data AI learns from, the infrastructure it runs on, and the governance frameworks shaping its use are overwhelmingly controlled outside of Africa.",
+        "Africa faces a dangerous paradox: most vulnerable to climate change, yet least influential over the AI tools being built to address it.",
+        "Without local data centers, African-generated datasets, or continent-led governance, even well-intentioned AI climate tools risk reinforcing dependency and sidelining African realities.",
+        "ECF is closing this gap — training the next generation of African AI and climate experts, embedding AI into locally relevant research, and advocating for governance that centers African agency."
+      ]
+    },
+    "programObjectives": {
+      "sectionTitle": "Artificial Intelligence",
+      "sectionHeading": "Objectives",
+      "objectivesLabel": "What We Are Working Toward",
+      "items": [
+        "Securing Africa a genuine seat in global conversations about how AI should be governed when applied to climate: who controls the models, whose data is used, and who bears the consequences.",
+        "Building the critical AI literacy that African climate decision-makers need to interrogate AI-generated outputs, question their assumptions, and make sovereign choices about the tools they rely on.",
+        "Advocating for African climate data to be treated as a scientific and ethical requirement in global AI models, not an afterthought, because a model that does not know Africa cannot speak for Africa.",
+        "Developing the next generation of African AI-climate researchers and thinkers through fellowship and university curriculum work, so that this capacity is not borrowed but built and owned."
+      ]
+    }
+  }
+}

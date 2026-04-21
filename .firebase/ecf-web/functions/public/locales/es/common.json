@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "whoWeAre": "Quiénes Somos",
+    "programs": "Programas",
+    "resources": "Recursos",
+    "newsEvents": "Noticias & Eventos",
+    "donate": "Donar",
+    "blogs": "Blogs",
+    "careers": "Carreras",
+    "subWhoWeAre": {
+      "missionVision": "Misión & Visión",
+      "howWeWork": "Cómo Trabajamos",
+      "milestones": "Hitos",
+      "ourTeam": "Nuestro Equipo"
+    },
+    "subPrograms": {
+      "srm": "Gestión de la Radiación Solar",
+      "ai": "Inteligencia Artificial",
+      "cdr": "Eliminación de Dióxido de Carbono"
+    },
+    "subResources": {
+      "reports": "Informes",
+      "articles": "Artículos",
+      "newsletters": "Boletines",
+      "opeds": "Artículos de Opinión"
+    },
+    "subNewsEvents": {
+      "latestNews": "Últimas Noticias",
+      "videosPodcasts": "Videos & Podcasts",
+      "events": "Eventos"
+    }
+  },
+  "footer": {
+    "quickLinks": "Enlaces Rápidos",
+    "contactUs": "Contáctenos",
+    "copyright": "© {{year}} Emerging Climate Frontiers. Todos los derechos reservados.",
+    "terms": "Términos",
+    "privacy": "Privacidad"
+  },
+  "newsletter": {
+    "heading": "Manténgase Conectado",
+    "description": "Reciba actualizaciones mensuales sobre los desarrollos de tecnología climática africana, oportunidades de investigación, eventos y recursos en su bandeja de entrada.",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Su correo electrónico",
+    "subscribe": "Suscribirse",
+    "successMessage": "¡Se ha suscrito exitosamente!",
+    "errorMessage": "Algo salió mal. Por favor, inténtelo de nuevo."
+  },
+  "partners": {
+    "heading": "Nuestros Socios",
+    "description": "Durante los últimos 3 años con nuestro trabajo en EDC y GRS, hemos colaborado con una red diversa de organizaciones, instituciones académicas e iniciativas para impulsar estrategias de intervención climática lideradas por africanos."
+  },
+  "shared": {
+    "readMore": "Leer más",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "aboutUs": "Sobre Nosotros",
+    "findOutMore": "Más información",
+    "readNewsletter": "LEER BOLETÍN →",
+    "newsletter": "Boletín"
+  },
+  "notFound": {
+    "code": "404",
+    "message": "Esta página no existe",
+    "returnHome": "Volver al inicio"
+  },
+  "preRelease": {
+    "heading": "Empoderando las Voces Africanas en Tecnologías Climáticas",
+    "description": "Empoderando a las instituciones africanas y los responsables de políticas para impulsar las Tecnologías Climáticas de Frontera a través de enfoques inclusivos y basados en la ciencia. Manténgase conectado para actualizaciones sobre investigación, desarrollo de capacidades y oportunidades de participar con las TCF, incluyendo IA, EDC y GRS.",
+    "connectWithUs": "Conéctese con nosotros:",
+    "blogs": "BLOGS",
+    "seeAll": "Ver todo"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "whoWeAre": "Who We Are",
+    "programs": "Programs",
+    "resources": "Resources",
+    "newsEvents": "News & Events",
+    "donate": "Donate",
+    "blogs": "Blogs",
+    "careers": "Careers",
+    "subWhoWeAre": {
+      "missionVision": "Mission & Vision",
+      "howWeWork": "How We Work",
+      "milestones": "Milestones",
+      "ourTeam": "Our Team"
+    },
+    "subPrograms": {
+      "srm": "Solar Radiation Management",
+      "ai": "Artificial Intelligence",
+      "cdr": "Carbon Dioxide Removal"
+    },
+    "subResources": {
+      "reports": "Reports",
+      "articles": "Articles",
+      "newsletters": "Newsletters",
+      "opeds": "Op-eds"
+    },
+    "subNewsEvents": {
+      "latestNews": "Latest News",
+      "videosPodcasts": "Videos & Podcasts",
+      "events": "Events"
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "copyright": "© {{year}} Emerging Climate Frontiers. All Rights Reserved.",
+    "terms": "Terms",
+    "privacy": "Privacy"
+  },
+  "newsletter": {
+    "heading": "Stay Connected",
+    "description": "Get monthly updates on African climate technology developments, research opportunities, events, and resources delivered to your inbox.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "What's your email",
+    "subscribe": "Subscribe",
+    "successMessage": "You've been subscribed successfully!",
+    "errorMessage": "Something went wrong. Please try again."
+  },
+  "partners": {
+    "heading": "Our Partners",
+    "description": "Over the past 3 years with our work on CDR and SRM, we have collaborated with a diverse network of organizations, academic institutions, and initiatives to drive African-led climate intervention strategies."
+  },
+  "shared": {
+    "readMore": "Read more",
+    "previous": "Previous",
+    "next": "Next",
+    "aboutUs": "About Us",
+    "findOutMore": "Find out more",
+    "readNewsletter": "READ NEWSLETTER →",
+    "newsletter": "Newsletter"
+  },
+  "notFound": {
+    "code": "404",
+    "message": "This page does not exist",
+    "returnHome": "Return to home"
+  },
+  "preRelease": {
+    "heading": "Empowering African Voices in Climate Technologies",
+    "description": "Empowering African institutions and policymakers to drive Frontier Climate Technologies through inclusive, science-driven approaches. Stay connected for updates on research, capacity building, and opportunities to engage with FCTs including AI, CDR, and SRM.",
+    "connectWithUs": "Connect with us:",
+    "blogs": "BLOGS",
+    "seeAll": "See all"
+  }
+}

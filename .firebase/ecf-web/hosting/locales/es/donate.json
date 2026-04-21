@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "label": "Apoya Nuestra Misión",
+    "heading": "Impulsa el Liderazgo Climático de África",
+    "description": "Su contribución impulsa directamente becas de investigación, diálogos políticos y programas de desarrollo de capacidades que sitúan las voces africanas en el centro de la gobernanza climática global.",
+    "cta": "Donar Ahora"
+  },
+  "tiers": {
+    "label": "Hacer una Donación",
+    "heading": "Elija Su Nivel de Apoyo",
+    "description": "Cada dólar que dona fortalece la capacidad africana para liderar las tecnologías que definirán nuestro futuro climático.",
+    "benefits": [
+      "El 100% de las donaciones financian la ejecución de programas",
+      "Deducible de impuestos según la legislación aplicable",
+      "Procesamiento seguro de pagos",
+      "Reciba informes trimestrales de impacto"
+    ],
+    "selectAmount": "Seleccionar Monto",
+    "customAmount": "O Ingrese un Monto Personalizado",
+    "donating": "Está donando",
+    "oneTimeGift": "como donación única.",
+    "donateCta": "Donar ${{amount}}",
+    "selectAnAmount": "Seleccione un monto",
+    "securePayment": "Pago seguro · ¿Preguntas?"
+  },
+  "impact": {
+    "label": "Su Impacto",
+    "heading": "Cada Contribución Crea Cambio",
+    "description": "Vea exactamente cómo su donación se traduce en acciones reales en todo el panorama de tecnología climática africana.",
+    "items": {
+      "research": {
+        "label": "Financia Materiales de Investigación",
+        "description": "Proporciona materiales de investigación esenciales y acceso a bases de datos académicas para un investigador climático en etapas tempranas."
+      },
+      "dialogues": {
+        "label": "Apoya Diálogos Políticos",
+        "description": "Permite la participación de un responsable de políticas africano en un diálogo regional de gobernanza de tecnología climática."
+      },
+      "fellowship": {
+        "label": "Impulsa un Mes de Beca",
+        "description": "Cubre un mes de apoyo para un becario ACIEFR que realiza investigación africana sobre intervenciones climáticas."
+      },
+      "capacity": {
+        "label": "Fortalece la Capacidad Institucional",
+        "description": "Imparte un módulo de taller de curso corto en una universidad asociada en Ghana, Kenia o Sudáfrica."
+      }
+    }
+  }
+}

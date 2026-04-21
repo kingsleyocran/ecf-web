@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "label": "Resources",
+    "heading": "ECF Knowledge Hub",
+    "description": "AI, Carbon Dioxide Removal, and Solar Radiation Management; explored through an African lens."
+  },
+  "latest": {
+    "heading": "Latest Resources & Knowledge",
+    "description": "Explore cutting-edge research, training materials, and insights from Africa's growing FCT community",
+    "readMore": "Read more"
+  },
+  "newsletters": {
+    "label": "Newsletters",
+    "heading": "Stay in the Loop",
+    "description": "Monthly dispatches with programme updates, research highlights, and frontier climate news.",
+    "readCta": "READ NEWSLETTER →",
+    "badge": "Newsletter",
+    "readNewsletter": "READ NEWSLETTER →"
+  },
+  "types": {
+    "reports": "Reports",
+    "articles": "Articles",
+    "newsletters": "Newsletters",
+    "opeds": "Op-eds"
+  },
+  "articles": {
+    "label": "Articles",
+    "heading": "Insights & Analysis",
+    "description": "Research insights, policy analysis, and commentary on frontier climate technologies."
+  },
+  "opeds": {
+    "label": "Op-Eds",
+    "heading": "Voices & Perspectives",
+    "description": "Opinion and editorial pieces from ECF contributors and African climate voices.",
+    "badge": "Opinion"
+  },
+  "reports": {
+    "label": "Reports",
+    "heading": "Our Publications",
+    "description": "Research reports, governance frameworks, and programme evaluations from ECF.",
+    "viewReport": "VIEW REPORT →"
+  },
+  "contentDetail": {
+    "pdfFallback": "Unable to display PDF.",
+    "openPdf": "Open PDF directly"
+  },
+  "reportViewer": {
+    "label": "Report",
+    "downloadPdf": "Download PDF",
+    "pdfFallback": "Unable to display PDF.",
+    "openPdf": "Open PDF directly"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "label": "À Propos de Nous",
+    "heading": "Façonner l'Avenir Climatique de l'Afrique",
+    "para1": "En 2022, notre équipe climatique chez GAYO a pris une décision audacieuse : nous avons nommé et défié les inégalités flagrantes dans le domaine en rapide évolution des technologies climatiques. Nous avons vu de première main comment les voix africaines étaient marginalisées dans les dialogues mondiaux critiques ; non pas par manque de volonté, mais en raison de barrières structurelles et de lacunes persistantes en matière de connaissances.",
+    "para2": "En réponse, nous avons entrepris de construire quelque chose de fondamentalement différent : des espaces sûrs et accessibles où les voix africaines peuvent mener les discussions sur le climat, permettant aux parties prenantes locales de façonner leurs propres positions sur les Technologies Climatiques de Frontière.",
+    "para3": "Maintenant, après trois ans de travail dévoué, nous passons de GAYO pour devenir Emerging Climate Frontiers (ECF) — une organisation indépendante prête à développer notre impact, approfondir notre recherche et répondre à la demande croissante à travers le continent."
+  },
+  "mission": {
+    "title": "Notre Mission",
+    "body": "ECF est dédié à autonomiser les institutions africaines et les décideurs politiques pour piloter les TCF à travers des approches inclusives, fondées sur la science et contextuellement pertinentes. Nous favorisons la capacité, la collaboration et la construction de mouvements pour garantir que les institutions et communautés africaines dirigent les efforts TCF, façonnant une gouvernance climatique mondiale équitable avec dignité et agentivité."
+  },
+  "northStar": {
+    "title": "Notre Étoile du Nord",
+    "body": "ECF envisage une Afrique où les chercheurs en début de carrière, les étudiants, les décideurs politiques et les institutions mandatées ont une capacité renforcée pour diriger des TCF localement pertinentes, y compris l'IA pour l'adaptation climatique, contribuant à une gouvernance mondiale inclusive et à la résilience locale."
+  },
+  "howWeWork": {
+    "heading": "Comment Nous Travaillons",
+    "description": "Notre approche pour construire le leadership africain en matière de technologies climatiques.",
+    "pillars": {
+      "capacity": {
+        "title": "Renforcement des Capacités",
+        "description": "Nous développons des programmes de formation durables pour les chercheurs en début de carrière, les étudiants et les décideurs politiques afin de renforcer l'expertise en matière d'EDC, de GRS et de gouvernance de l'IA, adaptés aux défis climatiques uniques de l'Afrique."
+      },
+      "network": {
+        "title": "Construction d'un Réseau Collaboratif",
+        "description": "Nous établissons une coalition continentale de parties prenantes issues du monde académique, du gouvernement, de la société civile et des communautés pour façonner la position collective de l'Afrique sur les TCF."
+      },
+      "movement": {
+        "title": "Construction d'un Mouvement pour la Justice Climatique",
+        "description": "Nous alimentons et soutenons un mouvement africain dynamique pour faire progresser des TCF équitables et contextuellement pertinentes, unissant des voix diverses de la jeunesse, des communautés marginalisées et des décideurs politiques."
+      }
+    }
+  },
+  "milestones": {
+    "label": "Notre Parcours",
+    "heading": "Construire l'Avenir Climatique de l'Afrique",
+    "sectionLabel": "Notre Parcours — Étapes Clés",
+    "skipSection": "Passer la section",
+    "outro": {
+      "heading": "Le Parcours Continue",
+      "description": "Construire un avenir où l'Afrique dirige la technologie climatique."
+    },
+    "items": {
+      "founded": {
+        "title": "ECF Fondé au Sein de GAYO",
+        "description": "Notre équipe climatique chez GAYO a pris une décision audacieuse pour défier les inégalités dans le domaine des technologies climatiques et créer des espaces pour le leadership africain."
+      },
+      "geoDialogue": {
+        "title": "Premier Dialogue sur la Géo-ingénierie en Afrique Lancé",
+        "description": "Lancement du premier dialogue virtuel ouvert du continent sur la géo-ingénierie pour discuter de ces technologies sous des perspectives distinctement africaines."
+      },
+      "srmSession": {
+        "title": "Première Session Publique sur la GRS à une Conférence Climatique de l'ONU",
+        "description": "Organisation de la toute première session publique sur la Gestion du Rayonnement Solaire lors d'une Conférence Climatique de l'ONU, démontrant la volonté de l'Afrique de s'engager sur la scène mondiale."
+      },
+      "baseline": {
+        "title": "Évaluation de Base des Connaissances Publiée",
+        "description": "Publication d'une évaluation de base complète des connaissances sur les interventions climatiques, mettant en évidence les écarts entre le Sud et le Nord mondial."
+      },
+      "partnerships": {
+        "title": "Partenariats Institutionnels Établis",
+        "description": "Partenariat avec le CSIR au Ghana et en Afrique du Sud, et les Agences de Protection de l'Environnement (APE) pour renforcer les capacités des organismes nationaux de recherche et de réglementation."
+      },
+      "acifer": {
+        "title": "Fellowship ACIFER Lancé",
+        "description": "Pionnier du Fellowship Africain d'Intervention Climatique pour les Chercheurs en Début de Carrière en partenariat avec le Hub de Recherche sur les Interventions Climatiques Africaines."
+      },
+      "carbonAccounting": {
+        "title": "Programme de Formation en Comptabilité Carbone Dispensé",
+        "description": "Formation de 20 professionnels en comptabilité carbone et décarbonisation, avec 10 stratégiquement placés dans des industries et des institutions publiques."
+      },
+      "shortCourses": {
+        "title": "Cours Universitaires Courts Initiés",
+        "description": "Partenariat avec des universités au Ghana, au Kenya et en Afrique du Sud pour lancer des cours courts dédiés sur les interventions climatiques."
+      },
+      "transition": {
+        "title": "Transition vers une Organisation Indépendante",
+        "description": "Début de la transition de GAYO pour devenir Emerging Climate Frontiers (ECF), une organisation indépendante prête à développer son impact à travers le continent."
+      }
+    }
+  },
+  "team": {
+    "heading": "Rencontrez Notre Équipe",
+    "description": "Une équipe dévouée de défenseurs africains du climat, de chercheurs et d'organisateurs.",
+    "roles": {
+      "coExecutiveDirector": "Co-Directeur Exécutif",
+      "programDirector": "Directeur de Programme",
+      "programOfficer": "Chargé de Programme",
+      "researchScientificDirector": "Directeur de la Recherche et des Sciences",
+      "programAssistant": "Assistant de Programme"
+    },
+    "members": {
+      "ernest": {
+        "bio": "Membre du Conseil Consultatif de la Jeunesse de l'Union Européenne, ancien Point Focal Régional et responsable de l'Éducation et du Renforcement des Capacités des Conseils de la Jeunesse pour le Climat. Co-auteur de la Déclaration Nationale de la Jeunesse du Ghana sur le Climat 2022 et 2023."
+      },
+      "vida": {
+        "bio": "Défenseuse du genre et de la science climatique. Boursière des Négociateurs Jeunes Africains et seule jeune négociatrice féminine pour le Groupe de Négociateurs Africains lors du premier Bilan Mondial (GST) à la COP28, amplifiant les perspectives de genre et de la jeunesse dans la diplomatie climatique de haut niveau."
+      },
+      "elijah": {
+        "bio": "Ancien Responsable de la Recherche à la Policy Action Initiative, avec des publications sur la sécurité alimentaire et les pratiques agro-écologiques au Kenya. Explore actuellement comment la Modification du Rayonnement Solaire (GRS) pourrait impacter l'agriculture et les systèmes alimentaires en Afrique de l'Est."
+      },
+      "taylen": {
+        "bio": "Organisateur de base et activiste environnemental. Point Focal Afrique pour le Groupe Majeur de l'UNEP sur les Enfants et la Jeunesse. Fondateur de Zero Waste Durban et leader dans le rapprochement des solutions climatiques et environnementales de base avec les politiques et lois nationales et internationales."
+      },
+      "kwesi": {
+        "bio": "Chercheur scientifique en climatologie avec une expérience en modélisation de l'impact climatique et de la géo-ingénierie solaire pour comprendre ses avantages potentiels et ses risques. Kwesi a consulté pour l'UNEP via le Projet National d'Adaptation du Ghana, l'Organisation Météorologique Mondiale, l'Académie Mondiale des Sciences et ICLEI - Gouvernements Locaux pour la Durabilité."
+      },
+      "siisi": {
+        "bio": "Membre essentiel du premier Portail d'Alphabétisation Climatique du Ghana, élargissant l'accès aux connaissances climatiques à l'échelle nationale. Avec le Réseau de Connaissances sur le Climat et le Développement (CDKN), il a conçu des jeux innovants d'alphabétisation climatique qui rendent les questions complexes engageantes et accessibles."
+      }
+    }
+  }
+}

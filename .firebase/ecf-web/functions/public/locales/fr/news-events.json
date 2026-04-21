@@ -1,0 +1,27 @@
+{
+  "events": {
+    "label": "Événements",
+    "heading": "Sur le Terrain",
+    "description": "Forums, ateliers et réunions qui façonnent l'engagement de l'Afrique avec les technologies climatiques de frontière.",
+    "calendar": "Calendrier",
+    "upcomingEvents": "Événements à Venir",
+    "registerNow": "S'inscrire Maintenant"
+  },
+  "latestNews": {
+    "label": "Dernières Nouvelles",
+    "heading": "Restez Informé",
+    "description": "La dernière couverture sur les technologies climatiques de frontière, la gouvernance climatique africaine et les développements politiques mondiaux."
+  },
+  "videosPodcasts": {
+    "label": "Vidéos & Podcasts",
+    "heading": "Regarder & Écouter",
+    "description": "Discussions vidéo, enregistrements de conférences et épisodes de podcasts sur les technologies climatiques de frontière du point de vue africain."
+  },
+  "typeLabels": {
+    "virtual": "Virtuel",
+    "in-person": "En Personne",
+    "hybrid": "Hybride",
+    "video": "VIDÉO",
+    "podcast": "PODCAST"
+  }
+}

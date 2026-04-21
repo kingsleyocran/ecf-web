@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "label": "Soutenez Notre Mission",
+    "heading": "Alimentez le Leadership Climatique de l'Afrique",
+    "description": "Votre contribution alimente directement les bourses de recherche, les dialogues politiques et les programmes de renforcement des capacités qui placent les voix africaines au centre de la gouvernance climatique mondiale.",
+    "cta": "Faire un Don"
+  },
+  "tiers": {
+    "label": "Faire un Don",
+    "heading": "Choisissez Votre Niveau de Soutien",
+    "description": "Chaque dollar que vous donnez renforce la capacité africaine à diriger les technologies qui définiront notre avenir climatique.",
+    "benefits": [
+      "100% des dons financent la mise en œuvre des programmes",
+      "Déductible des impôts selon la législation applicable",
+      "Traitement sécurisé des paiements",
+      "Recevez des mises à jour trimestrielles sur l'impact"
+    ],
+    "selectAmount": "Sélectionner un Montant",
+    "customAmount": "Ou Entrez un Montant Personnalisé",
+    "donating": "Vous faites un don de",
+    "oneTimeGift": "en don unique.",
+    "donateCta": "Donner ${{amount}}",
+    "selectAnAmount": "Sélectionnez un montant",
+    "securePayment": "Paiement sécurisé · Questions ?"
+  },
+  "impact": {
+    "label": "Votre Impact",
+    "heading": "Chaque Contribution Crée le Changement",
+    "description": "Découvrez exactement comment votre don se traduit en actions concrètes à travers le paysage des technologies climatiques africaines.",
+    "items": {
+      "research": {
+        "label": "Finance du Matériel de Recherche",
+        "description": "Fournit du matériel de recherche essentiel et l'accès à des bases de données académiques pour un jeune chercheur en climatologie."
+      },
+      "dialogues": {
+        "label": "Soutient les Dialogues Politiques",
+        "description": "Permet la participation d'un décideur politique africain à un dialogue régional sur la gouvernance des technologies climatiques."
+      },
+      "fellowship": {
+        "label": "Alimente un Mois de Bourse",
+        "description": "Couvre un mois de soutien pour un boursier ACIEFR menant des recherches africaines sur les interventions climatiques."
+      },
+      "capacity": {
+        "label": "Renforce les Capacités Institutionnelles",
+        "description": "Dispense un module d'atelier de cours court dans une université partenaire au Ghana, au Kenya ou en Afrique du Sud."
+      }
+    }
+  }
+}

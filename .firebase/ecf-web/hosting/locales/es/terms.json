@@ -1,0 +1,66 @@
+{
+  "title": "T\u00e9rminos de uso",
+  "lastUpdated": "\u00daltima actualizaci\u00f3n:",
+  "sections": {
+    "acceptance": {
+      "heading": "1. Aceptaci\u00f3n de los t\u00e9rminos",
+      "body": "Al acceder y utilizar el sitio web de Emerging Climate Frontiers (\"ECF\", \"nosotros\", \"nos\" o \"nuestro\"), usted acepta y acuerda estar sujeto a los t\u00e9rminos y disposiciones de este acuerdo. Si no est\u00e1 de acuerdo en cumplir con lo anterior, por favor no utilice este servicio."
+    },
+    "useLicense": {
+      "heading": "2. Licencia de uso",
+      "body": "Se otorga permiso para acceder temporalmente a los materiales en el sitio web de ECF solo para visualizaci\u00f3n personal, no comercial y transitoria. Este es el otorgamiento de una licencia, no una transferencia de t\u00edtulo, y bajo esta licencia usted no puede:",
+      "items": [
+        "Modificar o copiar los materiales",
+        "Utilizar los materiales con fines comerciales o para cualquier exhibici\u00f3n p\u00fablica",
+        "Intentar descompilar o aplicar ingenier\u00eda inversa a cualquier software contenido en el sitio web de ECF",
+        "Eliminar cualquier derecho de autor u otras anotaciones de propiedad de los materiales",
+        "Transferir los materiales a otra persona o \"duplicar\" los materiales en cualquier otro servidor"
+      ],
+      "body2": "Esta licencia se cancelar\u00e1 autom\u00e1ticamente si viola alguna de estas restricciones y puede ser cancelada por ECF en cualquier momento."
+    },
+    "disclaimer": {
+      "heading": "3. Descargo de responsabilidad",
+      "body": "Los materiales en el sitio web de ECF se proporcionan \"tal cual\". ECF no ofrece garant\u00edas, expresas o impl\u00edcitas, y por la presente renuncia y niega todas las dem\u00e1s garant\u00edas, incluyendo, sin limitaci\u00f3n, garant\u00edas impl\u00edcitas o condiciones de comerciabilidad, idoneidad para un prop\u00f3sito particular o no infracci\u00f3n de propiedad intelectual u otra violaci\u00f3n de derechos."
+    },
+    "limitations": {
+      "heading": "4. Limitaciones",
+      "body": "En ning\u00fan caso ECF o sus proveedores ser\u00e1n responsables de ning\u00fan da\u00f1o (incluyendo, sin limitaci\u00f3n, da\u00f1os por p\u00e9rdida de datos o beneficios, o debido a la interrupci\u00f3n del negocio) que surja del uso o la imposibilidad de usar los materiales en el sitio web de ECF, incluso si ECF o un representante autorizado ha sido notificado verbalmente o por escrito de la posibilidad de dicho da\u00f1o."
+    },
+    "accuracy": {
+      "heading": "5. Exactitud de los materiales",
+      "body": "Los materiales que aparecen en el sitio web de ECF podr\u00edan incluir errores t\u00e9cnicos, tipogr\u00e1ficos o fotogr\u00e1ficos. ECF no garantiza que ninguno de los materiales en su sitio web sea preciso, completo o actual. ECF puede realizar cambios en los materiales contenidos en su sitio web en cualquier momento sin previo aviso. Sin embargo, ECF no se compromete a actualizar los materiales."
+    },
+    "thirdPartyLinks": {
+      "heading": "6. Enlaces a sitios web de terceros",
+      "body": "ECF no ha revisado todos los sitios vinculados a su sitio web y no es responsable del contenido de dichos sitios vinculados. La inclusi\u00f3n de cualquier enlace no implica el respaldo de ECF al sitio. El uso de cualquier sitio web vinculado es bajo el propio riesgo del usuario."
+    },
+    "intellectualProperty": {
+      "heading": "7. Derechos de propiedad intelectual",
+      "body": "Todo el contenido de este sitio web, incluyendo pero no limit\u00e1ndose a texto, gr\u00e1ficos, logotipos, im\u00e1genes y software, es propiedad de ECF o de sus proveedores de contenido y est\u00e1 protegido por las leyes internacionales de derechos de autor y marcas registradas. Usted no puede reproducir, distribuir, modificar, crear obras derivadas, exhibir p\u00fablicamente, ejecutar p\u00fablicamente, republicar, descargar, almacenar o transmitir cualquier material de nuestro sitio web sin nuestro consentimiento previo por escrito."
+    },
+    "userConduct": {
+      "heading": "8. Conducta del usuario",
+      "body": "Usted acepta no:",
+      "items": [
+        "Utilizar el sitio web de cualquier manera que viole cualquier ley o regulaci\u00f3n aplicable",
+        "Transmitir cualquier c\u00f3digo malicioso, virus o datos da\u00f1inos",
+        "Intentar obtener acceso no autorizado a cualquier parte del sitio web",
+        "Interferir con o interrumpir el sitio web o los servidores conectados al sitio web",
+        "Recopilar o almacenar datos personales sobre otros usuarios sin su consentimiento"
+      ]
+    },
+    "modifications": {
+      "heading": "9. Modificaciones de los t\u00e9rminos",
+      "body": "ECF puede revisar estos t\u00e9rminos de uso en cualquier momento sin previo aviso. Al utilizar este sitio web, usted acepta estar sujeto a la versi\u00f3n vigente de estos t\u00e9rminos de uso. Le recomendamos que revise estos t\u00e9rminos peri\u00f3dicamente."
+    },
+    "governingLaw": {
+      "heading": "10. Ley aplicable",
+      "body": "Estos t\u00e9rminos y condiciones se rigen e interpretan de acuerdo con las leyes aplicables. Cualquier disputa relacionada con estos t\u00e9rminos estar\u00e1 sujeta a la jurisdicci\u00f3n exclusiva de los tribunales en la jurisdicci\u00f3n correspondiente."
+    },
+    "contact": {
+      "heading": "11. Informaci\u00f3n de contacto",
+      "body": "Si tiene alguna pregunta sobre estos T\u00e9rminos de Uso, cont\u00e1ctenos en:",
+      "orgName": "Emerging Climate Frontiers"
+    }
+  }
+}

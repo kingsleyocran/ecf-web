@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "label": "Ressources",
+    "heading": "Centre de Connaissances ECF",
+    "description": "L'IA, l'élimination du dioxyde de carbone et la gestion du rayonnement solaire ; explorés à travers un prisme africain."
+  },
+  "latest": {
+    "heading": "Dernières Ressources & Connaissances",
+    "description": "Explorez les recherches de pointe, les matériaux de formation et les perspectives de la communauté TCF croissante d'Afrique",
+    "readMore": "Lire la suite"
+  },
+  "newsletters": {
+    "label": "Bulletins",
+    "heading": "Restez dans la Boucle",
+    "description": "Dépêches mensuelles avec mises à jour des programmes, points forts de la recherche et actualités climatiques de frontière.",
+    "readCta": "LIRE LE BULLETIN →",
+    "badge": "Bulletin",
+    "readNewsletter": "LIRE LE BULLETIN →"
+  },
+  "types": {
+    "reports": "Rapports",
+    "articles": "Articles",
+    "newsletters": "Bulletins",
+    "opeds": "Tribunes"
+  },
+  "articles": {
+    "label": "Articles",
+    "heading": "Perspectives & Analyses",
+    "description": "Perspectives de recherche, analyses politiques et commentaires sur les technologies climatiques de frontière."
+  },
+  "opeds": {
+    "label": "Tribunes",
+    "heading": "Voix & Perspectives",
+    "description": "Articles d'opinion et éditoriaux de contributeurs ECF et de voix climatiques africaines.",
+    "badge": "Opinion"
+  },
+  "reports": {
+    "label": "Rapports",
+    "heading": "Nos Publications",
+    "description": "Rapports de recherche, cadres de gouvernance et évaluations de programmes d'ECF.",
+    "viewReport": "VOIR LE RAPPORT →"
+  },
+  "contentDetail": {
+    "pdfFallback": "Impossible d'afficher le PDF.",
+    "openPdf": "Ouvrir le PDF directement"
+  },
+  "reportViewer": {
+    "label": "Rapport",
+    "downloadPdf": "Télécharger le PDF",
+    "pdfFallback": "Impossible d'afficher le PDF.",
+    "openPdf": "Ouvrir le PDF directement"
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant"
+  }
+}
