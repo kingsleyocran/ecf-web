@@ -38,7 +38,7 @@ function ArticlesPage({ articles }: { articles: ArticleSchema[] }) {
 function ArticleCard({ article }: { article: ArticleSchema }) {
   return (
     <Link
-      href={`/resources/articles/${article.id}`}
+      href={`/resources/hub/${article.id}`}
       className="group flex flex-col md:flex-row gap-6 items-center bg-transparent hover:bg-white/10 transition-colors duration-200 p-4 rounded-lg"
     >
       <div className="relative shrink-0 w-full md:w-[180px] aspect-square rounded-xl overflow-hidden bg-[#C7B14E]">

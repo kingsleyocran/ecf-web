@@ -26,6 +26,7 @@ export interface CreateEventSchema {
   imgUrl?: string | null;
   registrationUrl?: string | null;
   virtualLink?: string | null;     // Join link — shown when event has started
+  shortLink?: string | null;       // e.g. "cop30" → ecfrontiers.org/e/cop30
 }
 
 export interface CreateEventWithFileSchema {

@@ -5,8 +5,11 @@ import {
   doc,
   getDoc,
   getDocs,
+  limit,
+  query,
   runTransaction,
   Timestamp,
+  where,
 } from "firebase/firestore";
 import { db } from "../../../../../firebaseClient";
 import * as schemas from "../../../models/events";
@@ -251,6 +254,41 @@ export async function deleteEventApi(
       {
         data: response,
         message: "Event deleted successfully.",
+      } as schemas.ResponseEventSchema,
+      ResponseIndicator.SUCCESS,
+    ];
+  } catch (error: any) {
+    return errorHandler(error);
+  }
+}
+
+export async function getEventByShortLinkApi(
+  code: string
+): Promise<
+  [Error | schemas.ResponseEventSchema | string, ResponseIndicatorValues]
+> {
+  try {
+    const q = query(dbCollection, where("shortLink", "==", code), limit(1));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.empty) {
+      return errorHandler({ message: "No event found for this short link." });
+    }
+    const docSnap = querySnapshot.docs[0];
+    return [
+      {
+        data: {
+          id: docSnap.id,
+          ...docSnap.data(),
+          updatedAt:
+            docSnap.data().updatedAt instanceof Timestamp
+              ? docSnap.data().updatedAt.toDate()
+              : docSnap.data().updatedAt,
+          createdAt:
+            docSnap.data().createdAt instanceof Timestamp
+              ? docSnap.data().createdAt.toDate()
+              : docSnap.data().createdAt,
+        },
+        message: "Event fetched by short link",
       } as schemas.ResponseEventSchema,
       ResponseIndicator.SUCCESS,
     ];

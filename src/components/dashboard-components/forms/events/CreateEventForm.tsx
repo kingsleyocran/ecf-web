@@ -58,6 +58,7 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
     content: null,
     registrationUrl: null,
     virtualLink: null,
+    shortLink: null,
   };
 
   const dispatch = useAppDispatch();
@@ -78,7 +79,7 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
   };
 
   const isFormFilled = useCallback(() => {
-    const { registrationUrl, virtualLink, startDateTime, timezone, content, ...rest } = formState;
+    const { registrationUrl, virtualLink, shortLink, startDateTime, timezone, content, ...rest } = formState;
     return Object.values(rest).every((value) => value !== null) && selectedFile;
   }, [formState, selectedFile]);
 
@@ -102,6 +103,7 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
           content: processedContent,
           registrationUrl: formState.registrationUrl || null,
           virtualLink: formState.virtualLink || null,
+          shortLink: formState.shortLink || null,
           imgUrl: null,
         },
         file: selectedFile!,
@@ -194,9 +196,12 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
             <EventDateTimeInput
               labelText="Event Date & Time"
               onInputChange={(val: EventDateTimeValue | null) => {
-                onChangeHandler("date", val?.displayDate ?? null);
-                onChangeHandler("startDateTime", val?.isoString ?? null);
-                onChangeHandler("timezone", val?.timezone ?? null);
+                setFormState((prev: any) => ({
+                  ...prev,
+                  date: val?.displayDate ?? null,
+                  startDateTime: val?.isoString ?? null,
+                  timezone: val?.timezone ?? null,
+                }));
               }}
             />
 
@@ -222,6 +227,14 @@ export default function CreateEventForm({ dashboardModalRef }: Props) {
               value={formState.virtualLink}
               placeholderText="https://meet.google.com/..."
               labelText="Virtual Join Link (optional)"
+            />
+
+            <TextInput
+              validationRegex={/^[a-z0-9-]*$/}
+              onInputChange={(val: any) => onChangeHandler("shortLink", val)}
+              value={formState.shortLink}
+              placeholderText="e.g. cop30-nairobi"
+              labelText="Short Link (optional) — ecfrontiers.org/e/..."
             />
           </form>
         </div>

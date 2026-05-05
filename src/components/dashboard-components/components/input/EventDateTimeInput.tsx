@@ -4,8 +4,10 @@ import "react-day-picker/style.css";
 import {
   TIMEZONE_OPTIONS,
   toUtcIso,
+  fromUtcIso,
   formatEventDate,
   formatEventTime,
+  getBrowserDefaultTimezone,
 } from "@/utils/eventTimezones";
 import CheckIcon from "../../../../../public/assets/dashboard_assets/check_input.svg";
 import ErrorIcon from "../../../../../public/assets/dashboard_assets/error_input.svg";
@@ -24,6 +26,20 @@ type Props = {
   initialValue?: EventDateTimeValue | null;
 };
 
+function initFromValue(initialValue: EventDateTimeValue | null | undefined) {
+  if (!initialValue?.isoString || !initialValue?.timezone) {
+    return { day: undefined as Date | undefined, time: "09:00", tz: getBrowserDefaultTimezone(), valid: false };
+  }
+  const { year, month, day, hours, minutes } = fromUtcIso(initialValue.isoString, initialValue.timezone);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return {
+    day: new Date(year, month, day) as Date | undefined,
+    time: `${pad(hours)}:${pad(minutes)}`,
+    tz: initialValue.timezone,
+    valid: true,
+  };
+}
+
 function EventDateTimeInput({
   isRequired = true,
   onInputChange,
@@ -32,10 +48,11 @@ function EventDateTimeInput({
 }: Props) {
   const defaultClassNames = getDefaultClassNames();
 
-  const [selectedDay, setSelectedDay] = useState<Date | undefined>(undefined);
-  const [timeValue, setTimeValue] = useState<string>("09:00");
-  const [timezone, setTimezone] = useState<string>(TIMEZONE_OPTIONS[0].iana);
-  const [isValid, setIsValid] = useState<"valid" | "invalid" | "empty">("empty");
+  const init = initFromValue(initialValue);
+  const [selectedDay, setSelectedDay] = useState<Date | undefined>(init.day);
+  const [timeValue, setTimeValue] = useState<string>(init.time);
+  const [timezone, setTimezone] = useState<string>(init.tz);
+  const [isValid, setIsValid] = useState<"valid" | "invalid" | "empty">(init.valid ? "valid" : "empty");
 
   function buildAndEmit(day: Date, time: string, tz: string) {
     const parts = time.split(":");

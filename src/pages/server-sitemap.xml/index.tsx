@@ -18,18 +18,25 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     }
   }
 
-  const blogSitemapFields: ISitemapField[] = dbInfoSitemap!.blogIDs.map(
-    (b: string) => ({
-      loc: `https://ecfrontiers.org/blogs/${b}`,
-      lastmod: new Date().toISOString(),
-      changefreq: "daily",
+  const lastmod = new Date().toISOString();
+
+  const makeFields = (ids: string[] | undefined, path: string): ISitemapField[] =>
+    (ids ?? []).map((id) => ({
+      loc: `https://ecfrontiers.org/${path}/${id}`,
+      lastmod,
+      changefreq: "daily" as const,
       priority: 0.7,
-    })
-  );
-  
-  return getServerSideSitemapLegacy(ctx, [
-    ...blogSitemapFields,
-  ]);
+    }));
+
+  const fields: ISitemapField[] = [
+    ...makeFields(dbInfoSitemap?.eventIDs,      "events"),
+    ...makeFields(dbInfoSitemap?.reportIDs,     "resources/reports"),
+    ...makeFields(dbInfoSitemap?.opedIDs,       "resources/opeds"),
+    ...makeFields(dbInfoSitemap?.articleIDs,    "resources/hub"),
+    ...makeFields(dbInfoSitemap?.newsletterIDs, "resources/newsletters"),
+  ];
+
+  return getServerSideSitemapLegacy(ctx, fields);
 };
 
 // Default export to prevent next.js errors

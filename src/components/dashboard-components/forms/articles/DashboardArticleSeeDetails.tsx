@@ -37,7 +37,7 @@ export default function DashboardArticleSeeDetails({
           </div>
 
           <Link
-            href={`/resources/articles/${data.id}`}
+            href={`/resources/hub/${data.id}`}
             target="_blank"
             rel="noopener noreferrer"
           >

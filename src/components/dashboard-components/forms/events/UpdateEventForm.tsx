@@ -55,7 +55,7 @@ export default function UpdateEventForm({
   };
 
   const isFormFilled = () => {
-    const { id, imgUrl, registrationUrl, virtualLink, startDateTime, timezone, content, isActive, createdAt, updatedAt, ...rest } = formState;
+    const { id, imgUrl, registrationUrl, virtualLink, shortLink, startDateTime, timezone, content, isActive, createdAt, updatedAt, ...rest } = formState;
     return Object.values(rest).every((value) => value !== null);
   };
 
@@ -82,6 +82,7 @@ export default function UpdateEventForm({
           content: processedContent,
           registrationUrl: formState.registrationUrl || null,
           virtualLink: formState.virtualLink || null,
+          shortLink: formState.shortLink || null,
           imgUrl: formState.imgUrl,
         },
         file: selectedFile,
@@ -168,10 +169,19 @@ export default function UpdateEventForm({
 
             <EventDateTimeInput
               labelText="Event Date & Time"
+              initialValue={
+                data.startDateTime && data.timezone
+                  ? { isoString: data.startDateTime, timezone: data.timezone, displayDate: data.date, displayTime: "" }
+                  : null
+              }
               onInputChange={(val: EventDateTimeValue | null) => {
-                onChangeHandler("date", val?.displayDate ?? formState.date);
-                onChangeHandler("startDateTime", val?.isoString ?? formState.startDateTime);
-                onChangeHandler("timezone", val?.timezone ?? formState.timezone);
+                if (!val) return;
+                setFormState((prev: any) => ({
+                  ...prev,
+                  date: val.displayDate,
+                  startDateTime: val.isoString,
+                  timezone: val.timezone,
+                }));
               }}
             />
 
@@ -197,6 +207,14 @@ export default function UpdateEventForm({
               value={formState.virtualLink}
               placeholderText="https://meet.google.com/..."
               labelText="Virtual Join Link (optional)"
+            />
+
+            <TextInput
+              validationRegex={/^[a-z0-9-]*$/}
+              onInputChange={(val: any) => onChangeHandler("shortLink", val)}
+              value={formState.shortLink}
+              placeholderText="e.g. cop30-nairobi"
+              labelText="Short Link (optional) — ecfrontiers.org/e/..."
             />
           </form>
         </div>

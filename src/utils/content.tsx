@@ -41,7 +41,7 @@ export const navLinks: NavLink[] = [
     href: "/resources",
     subPages: [
       { title: "Reports", tKey: "nav.subResources.reports", href: "/resources/reports" },
-      { title: "Articles", tKey: "nav.subResources.articles", href: "/resources/articles" },
+      { title: "Knowledge Hub", tKey: "nav.subResources.articles", href: "/resources/hub" },
       { title: "Newsletters", tKey: "nav.subResources.newsletters", href: "/resources/newsletters" },
       { title: "Op-eds", tKey: "nav.subResources.opeds", href: "/resources/opeds" },
     ],

@@ -21,6 +21,12 @@ export interface ResponseDBInfoAggregatorSchema extends SuccessMessageResponse {
 export interface DBInfoSiteMapSchema {
   blogIDs: string[];
   seriesIDs: string[];
+  eventIDs: string[];
+  reportIDs: string[];
+  opedIDs: string[];
+  articleIDs: string[];
+  newsletterIDs: string[];
+  videoIDs: string[];
 }
 
 export interface ResponseDBInfoSiteMapSchema extends SuccessMessageResponse {
