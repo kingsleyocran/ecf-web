@@ -43,22 +43,35 @@ export async function getServerSideProps(context: any) {
 
 const NewsletterDetailRoute: NextPage<Props> = ({ newsletter, metaDataTag, jsonLd }) => {
   useEffect(() => { const lenis = new Lenis(); function raf(t: number) { lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf); });
+
+  const handleIframeLoad = (e: React.SyntheticEvent<HTMLIFrameElement>) => {
+    const iframe = e.currentTarget;
+    const height = iframe.contentDocument?.documentElement.scrollHeight;
+    if (height) iframe.style.height = `${height}px`;
+  };
+
   return (
     <>
       <CustomHead jsonLd={jsonLd} metaDataTag={metaDataTag} />
       <Header />
-      <div className="pt-10 pb-[200px] bg-white min-h-screen">
-        <div className="w-full max-w-[1000px] mx-auto px-6 md:px-12 lg:px-16 pt-14 md:py-14 flex flex-col gap-8">
-          <div className="flex flex-col items-center text-center gap-4">
+      <div className="pt-10 pb-24 bg-neutral-100 min-h-screen">
+        <div className="w-full max-w-[700px] mx-auto px-4 pt-14 flex flex-col gap-8">
+          <div className="flex flex-col items-center text-center gap-3">
+            <p className="text-xs font-semibold tracking-[5px] uppercase text-[#034D6B]/60">Newsletter</p>
             <h1 className="text-bold-2xl text-[#034D6B] secondarybold">{newsletter.title}</h1>
-            <p className="text-normal-base text-black/60 max-w-xl">{newsletter.description}</p>
           </div>
 
           {newsletter.content && (
-            <div
-              className="w-full newsletter-content"
-              dangerouslySetInnerHTML={{ __html: newsletter.content }}
-            />
+            <div className="rounded-2xl overflow-hidden shadow-md bg-white">
+              <iframe
+                srcDoc={newsletter.content}
+                className="w-full border-0 block"
+                style={{ minHeight: 600 }}
+                scrolling="no"
+                onLoad={handleIframeLoad}
+                title={newsletter.title}
+              />
+            </div>
           )}
         </div>
       </div>

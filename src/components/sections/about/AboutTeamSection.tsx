@@ -11,6 +11,7 @@ const teamMembersMeta = [
   { key: "taylen", name: "Taylen Reddy", roleKey: "programOfficer", country: "za", image: "/assets/images/team/taylen.png", linkedin: "https://www.linkedin.com/in/taylen-reddy-266316246" },
   { key: "kwesi", name: "Kwesi Quagraine", roleKey: "researchScientificDirector", country: "gh", image: "/assets/images/team/kwesi.png", linkedin: "https://www.linkedin.com/in/kwesiquagraine/" },
   { key: "siisi", name: "Siisi Ansah", roleKey: "programAssistant", country: "gh", image: "/assets/images/team/siisi.png", linkedin: "https://www.linkedin.com/in/siisi-ansah-4244082b8" },
+  { key: "prisca", name: "Prisca Esi Kuworde", roleKey: "strategicCoordinator", country: "gh", image: "/assets/images/team/prisca.png", linkedin: "https://www.linkedin.com/in/prisca-kuworde-91688a284/" },
 ];
 
 type TeamMember = {
@@ -151,11 +152,19 @@ function AboutTeamSection() {
 
         {/* Team grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 max-w-[300px] md:max-w-[900px] mx-auto">
-          {teamMembers.map((member, index) => (
-            <MaskText key={member.name} div positionFrom={32} triggerOnce={true} animationDelay={0.07 * index} extraClassNames="">
-              <TeamCard member={member} />
-            </MaskText>
-          ))}
+          {teamMembers.map((member, index) => {
+            const isLast = index === teamMembers.length - 1;
+            const spanSm = isLast && teamMembers.length % 2 === 1 ? "sm:col-span-2" : "";
+            const spanMd = isLast && teamMembers.length % 3 === 1 ? "md:col-span-3" : "";
+            const needsCenter = isLast && (teamMembers.length % 2 === 1 || teamMembers.length % 3 === 1);
+            return (
+              <div key={member.name} className={[spanSm, spanMd, needsCenter ? "flex justify-center" : ""].filter(Boolean).join(" ")}>
+                <MaskText div positionFrom={32} triggerOnce={true} animationDelay={0.07 * index} extraClassNames={needsCenter ? "w-[280px]" : ""}>
+                  <TeamCard member={member} />
+                </MaskText>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

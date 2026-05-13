@@ -48,7 +48,10 @@ function AboutMissionVisionSection() {
               {t("northStar.title")}
             </OpacityInView>
             <OpacityInView triggerOnce={true} animationDelay={0.15} extraClassNames="text-normal-base text-black/80 max-w-[480px]">
-              {t("northStar.body")}
+              {t("northStar.para1")}
+            </OpacityInView>
+            <OpacityInView triggerOnce={true} animationDelay={0.25} extraClassNames="text-normal-base text-black/80 max-w-[480px] mt-4">
+              {t("northStar.para2")}
             </OpacityInView>
           </div>
         </div>

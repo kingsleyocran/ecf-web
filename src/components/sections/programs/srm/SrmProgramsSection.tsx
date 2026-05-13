@@ -17,8 +17,30 @@ interface ProgramMeta {
 
 const programMeta: ProgramMeta[] = [
   {
-    key: "shortCourse",
+    key: "aciferFellowship",
     id: "01",
+    image: "/assets/images/programs/srm-acifer-fellowship.png",
+    stats: [
+      { key: "fellowsTrained", value: "30" },
+      { key: "africanCountries", value: "45+" },
+      { key: "mentorshipSessions", value: "36" },
+    ],
+    partners: null,
+  },
+  {
+    key: "briefingSeries",
+    id: "02",
+    image: "/assets/images/programs/srm-briefing-series.png",
+    stats: [
+      { key: "regionalBriefings", value: "3" },
+      { key: "participantsEngaged", value: "105" },
+      { key: "institutionsRepresented", value: "35+" },
+    ],
+    partners: null,
+  },
+  {
+    key: "shortCourse",
+    id: "03",
     image: "/assets/images/programs/srm-short-courses.png",
     stats: [
       { key: "studentsReached", value: "900+" },
@@ -40,28 +62,6 @@ const programMeta: ProgramMeta[] = [
       ],
       "South Africa": ["Durban University of Technology"],
     },
-  },
-  {
-    key: "briefingSeries",
-    id: "02",
-    image: "/assets/images/programs/srm-briefing-series.png",
-    stats: [
-      { key: "regionalBriefings", value: "3" },
-      { key: "participantsEngaged", value: "105" },
-      { key: "institutionsRepresented", value: "35+" },
-    ],
-    partners: null,
-  },
-  {
-    key: "aciferFellowship",
-    id: "03",
-    image: "/assets/images/programs/srm-acifer-fellowship.png",
-    stats: [
-      { key: "fellowsTrained", value: "30" },
-      { key: "africanCountries", value: "45+" },
-      { key: "mentorshipSessions", value: "36" },
-    ],
-    partners: null,
   },
 ];
 

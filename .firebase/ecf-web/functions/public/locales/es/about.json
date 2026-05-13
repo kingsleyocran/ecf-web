@@ -7,28 +7,34 @@
     "para3": "Ahora, después de tres años de trabajo dedicado, estamos haciendo la transición de GAYO para convertirnos en Emerging Climate Frontiers (ECF), una organización independiente lista para escalar nuestro impacto, profundizar nuestra investigación y satisfacer la creciente demanda en todo el continente."
   },
   "mission": {
-    "title": "Nuestra Misión",
-    "body": "ECF está dedicado a empoderar a las instituciones africanas y a los responsables de políticas para impulsar las TCF a través de enfoques inclusivos, basados en la ciencia y contextualmente relevantes. Fomentamos la capacidad, la colaboración y la construcción de movimientos para garantizar que las instituciones y comunidades africanas lideren los esfuerzos de TCF, moldeando una gobernanza climática global equitativa con dignidad y agencia."
+    "title": "Our Mission",
+    "body": "ECF Africa creates the conditions for African countries to build their own understanding of Frontier Climate Technologies (FCTs), specifically Solar Radiation Management, Carbon Dioxide Removal, and AI for climate governance, and to develop the structures that strengthen continental research capacity and enable confident engagement in global governance processes. We work with early-career researchers, established scientists, policymakers, academic institutions, and civil society organizations rooted in Africa's diverse climate geographies, ensuring that frontier climate technology science reflects the realities of the communities most exposed to its consequences, not just the interests of those who currently have the resources to dictate the science or governance."
   },
   "northStar": {
-    "title": "Nuestra Estrella del Norte",
-    "body": "ECF visualiza un África donde los investigadores en etapas tempranas de carrera, los estudiantes, los responsables de políticas y las instituciones con mandato tienen una capacidad fortalecida para liderar TCF localmente relevantes, incluida la IA para la adaptación climática, contribuyendo a la gobernanza global inclusiva y la resiliencia local."
+    "title": "Our Vision",
+    "body": "ECF Africa envisions a continental research and governance landscape for frontier climate technologies where African institutions are active contributors to the science, and where African policymakers can engage substantively in global governance decisions rather than ratifying choices made elsewhere.",
+    "para1": "ECF Africa envisions a continental research and governance landscape for frontier climate technologies where African institutions are active contributors to the science, and where African policymakers can engage substantively in global governance decisions rather than ratifying choices made elsewhere.",
+    "para2": "Africa is not a single climate. From the Sahel to the Congo Basin, the Horn to the southern African plateau, and the Indian Ocean small island states, every region faces distinct realities — and the consequences of any FCT deployment, whether to radiative balance, carbon sequestration, or AI-driven climate modelling, will land differently in each. That makes a place-based approach essential: African scientists who understand local climate dynamics, policymakers who can engage seriously with governance proposals on terms grounded in regional realities, and institutions with the capacity to sustain this work over decades. ECF exists to build that capacity where it is missing across the continent and connect African researchers and institutions to global networks where it exists."
   },
   "howWeWork": {
     "heading": "Cómo Trabajamos",
     "description": "Nuestro enfoque para construir el liderazgo africano en tecnología climática.",
     "pillars": {
       "capacity": {
-        "title": "Fortalecimiento de Capacidades",
-        "description": "Desarrollamos programas de capacitación sostenibles para investigadores en etapas tempranas, estudiantes y responsables de políticas para desarrollar experiencia en EDC, GRS y gobernanza de IA, adaptados a los desafíos climáticos únicos de África."
+        "title": "Research Capacity Building",
+        "description": "ECF designs and facilitates place-based training programs, fellowships, and research partnerships that build scientific expertise in SRM, CDR, and AI for climate governance in regions where such capacity is currently limited. We work with institutions over multi-year periods. The measure of success is whether, two years after a program ends, the institution is still doing the work."
+      },
+      "policy": {
+        "title": "Policy Engagement",
+        "description": "ECF translates FCT science into forms that policymakers can use: policy briefs, governance simulation exercises, and direct engagement with government ministries and science advisory bodies. We also train researchers to communicate their work to non-specialist audiences, because the gap between the science and the policy conversation is often more about communication than content."
       },
       "network": {
-        "title": "Construcción de Redes Colaborativas",
-        "description": "Establecemos una coalición continental de partes interesadas de la academia, el gobierno, la sociedad civil y las comunidades para dar forma a la postura colectiva de África sobre las TCF."
+        "title": "Network Building",
+        "description": "ECF connects researchers, institutions, and policymakers across regions working on SRM, CDR, and AI. FCT governance is a global problem that requires a global conversation. We host convenings, maintain collaborative platforms, and facilitate ongoing exchange between partner institutions so that relationships formed through ECF programs continue beyond the programs themselves."
       },
       "movement": {
-        "title": "Construcción de Movimiento para la Justicia Climática",
-        "description": "Encendemos y sostenemos un movimiento africano vibrante para avanzar en TCF equitativas y contextualmente relevantes, uniendo voces diversas de jóvenes, comunidades marginadas y responsables de políticas."
+        "title": "Movement Building for Climate Justice",
+        "description": "We ignite and sustain a vibrant, globally-rooted movement to advance equitable and contextually relevant FCTs, uniting diverse voices from youth, marginalized communities, and policymakers. By organizing public dialogues and advocacy initiatives, we empower communities to influence local and global climate governance. Our efforts cultivate a shared vision for climate justice across SRM, CDR, and AI, driving transformative change and ensuring these technologies serve the ecological and social realities of the communities most at stake."
       }
     }
   },

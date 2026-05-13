@@ -40,9 +40,9 @@ function NewsletterCard({ newsletter }: { newsletter: NewsletterSchema }) {
   return (
     <Link
       href={`/resources/newsletters/${newsletter.id}`}
-      className="group flex flex-col md:flex-row gap-6 items-center bg-[#034D6B] hover:bg-[#034D6B]/80 transition-colors duration-200 p-6 rounded-2xl"
+      className="group flex flex-col md:flex-row gap-6 items-center bg-white hover:bg-neutral-50 transition-colors duration-200 p-6 rounded-2xl"
     >
-      <div className="relative shrink-0 w-full md:w-[180px] aspect-square rounded-xl overflow-hidden bg-[#023d56]">
+      <div className="relative shrink-0 w-full md:w-[180px] aspect-square rounded-xl overflow-hidden bg-neutral-100">
         {newsletter.imgUrl && (
           <Image src={newsletter.imgUrl} alt={newsletter.title} fill style={{ objectFit: "cover" }}
             className="group-hover:scale-105 transition-transform duration-300" />
@@ -50,13 +50,13 @@ function NewsletterCard({ newsletter }: { newsletter: NewsletterSchema }) {
       </div>
       <div className="flex flex-col gap-3 pt-1">
         <div className="flex flex-wrap gap-2 items-center">
-          <span className="px-3 py-1 rounded-full bg-[#E0C759]/20 text-[#E0C759] text-xs primarybold">{t("newsletters.badge")}</span>
+          <span className="px-3 py-1 rounded-full bg-[#C7B14E] text-white text-xs primarybold">{t("newsletters.badge")}</span>
         </div>
-        <h3 className="text-bold-xl text-[#E0C759] group-hover:text-[#E0C759]/80 transition-colors duration-200">
+        <h3 className="text-bold-xl text-[#034D6B] group-hover:text-[#034D6B]/80 transition-colors duration-200">
           {newsletter.title}
         </h3>
-        <p className="text-normal-base text-white/70 line-clamp-3">{newsletter.description}</p>
-        <p className="text-[#E0C759] text-xs primarybold tracking-wide">{t("newsletters.readNewsletter")}</p>
+        <p className="text-normal-base text-black/60 line-clamp-3">{newsletter.description}</p>
+        <p className="text-[#C7B14E] text-xs primarybold tracking-wide">{t("newsletters.readNewsletter")}</p>
       </div>
     </Link>
   );

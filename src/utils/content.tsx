@@ -31,8 +31,8 @@ export const navLinks: NavLink[] = [
     href: "/programs",
     subPages: [
       { title: "Solar Radiation Management", tKey: "nav.subPrograms.srm", href: "/programs/srm" },
-      { title: "Artificial Intelligence", tKey: "nav.subPrograms.ai", href: "/programs/ai" },
       { title: "Carbon Dioxide Removal", tKey: "nav.subPrograms.cdr", href: "/programs/cdr" },
+      { title: "Artificial Intelligence", tKey: "nav.subPrograms.ai", href: "/programs/ai" },
     ],
   },
   {

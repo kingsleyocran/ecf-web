@@ -66,19 +66,15 @@
       "abbreviation": "GRS",
       "fullName": "Gestion du Rayonnement Solaire"
     },
-    "why": {
-      "heading": "Pourquoi la GRS ?",
-      "para1": "La Gestion du Rayonnement Solaire — l'intervention délibérée sur la lumière solaire terrestre pour refroidir la planète — n'est plus une expérience de pensée scientifique lointaine. Elle fait l'objet de recherches, de débats et est de plus en plus envisagée comme une réponse potentielle à l'accélération de la crise climatique. Et pourtant, les pays et les communautés les plus susceptibles d'être affectés par ses conséquences sont les moins représentés dans les discussions sur la question de savoir si, comment et par qui elle devrait être gouvernée.",
-      "para2": "Pour l'Afrique, les enjeux ne pourraient être plus élevés. Les interventions de GRS pourraient affecter les régimes de mousson, réduire les rendements agricoles et altérer les écosystèmes mêmes dont des millions de personnes dépendent pour leur survie. ECF estime que les institutions, les décideurs politiques et les communautés africaines ne doivent pas être des observateurs passifs de ces décisions — ils doivent en être les architectes. Nous développons les capacités de recherche, les cadres de gouvernance et les coalitions continentales nécessaires pour que l'Afrique s'engage dans la GRS selon ses propres termes, avec clarté, souveraineté et détermination."
-    },
     "circles": {
       "heading": "Pourquoi la Gestion du Rayonnement Solaire ?",
       "items": [
-        "La GRS n'est plus une expérience de pensée lointaine — elle fait l'objet de recherches et de débats en tant que réponse réelle à la crise climatique.",
-        "Les nations les plus susceptibles d'être affectées sont les moins représentées dans les discussions sur comment et par qui la GRS devrait être gouvernée.",
-        "La GRS pourrait altérer les régimes de mousson en Afrique, réduire les rendements agricoles et perturber les écosystèmes mêmes dont des millions de personnes dépendent pour survivre.",
-        "Les communautés africaines doivent être des architectes — et non des observateurs passifs — de ces décisions.",
-        "ECF développe les capacités pour que l'Afrique s'engage dans la GRS selon ses propres termes, avec clarté, souveraineté et détermination."
+        "Solar Radiation Management, the deliberate intervention in Earth's atmosphere to reflect sunlight away and cool the planet, is no longer a distant thought experiment.",
+        "It is being researched, debated, and quietly considered as a possible response to a warming the world has failed to slow.",
+        "The decisions about whether, how, and by whom SRM should be governed are being shaped now, largely in capitals far from the regions whose monsoons, harvests, and ecosystems would absorb the first consequences.",
+        "A few degrees of cooling engineered into the stratosphere does not land evenly across the planet, and Africa and the wider Global South stand to feel the impact most sharply.",
+        "ECF builds the research capacity, governance frameworks, and cross-regional coalitions for African and Global South institutions to engage with SRM with clarity, sovereignty, and purpose.",
+        "Not as observers waiting to be informed, but as co-architects of the rules that will shape an atmosphere everyone shares."
       ]
     },
     "programs": {
@@ -106,9 +102,15 @@
             "Renforcement du discours centré sur l'Afrique dans 10 universités."
           ],
           "stats": {
-            "studentsReached": { "label": "étudiants touchés" },
-            "improvedUnderstanding": { "label": "compréhension améliorée" },
-            "partnerUniversities": { "label": "universités partenaires" }
+            "studentsReached": {
+              "label": "étudiants touchés"
+            },
+            "improvedUnderstanding": {
+              "label": "compréhension améliorée"
+            },
+            "partnerUniversities": {
+              "label": "universités partenaires"
+            }
           }
         },
         "briefingSeries": {
@@ -129,9 +131,15 @@
             "Renforcement du leadership africain dans l'élaboration des agendas de recherche sur la GRS."
           ],
           "stats": {
-            "regionalBriefings": { "label": "briefings régionaux" },
-            "participantsEngaged": { "label": "participants engagés" },
-            "institutionsRepresented": { "label": "institutions représentées" }
+            "regionalBriefings": {
+              "label": "briefings régionaux"
+            },
+            "participantsEngaged": {
+              "label": "participants engagés"
+            },
+            "institutionsRepresented": {
+              "label": "institutions représentées"
+            }
           }
         },
         "aciferFellowship": {
@@ -151,9 +159,15 @@
             "Création d'une communauté de recherche en début de carrière pour favoriser les collaborations interrégionales."
           ],
           "stats": {
-            "fellowsTrained": { "label": "boursiers formés" },
-            "africanCountries": { "label": "pays africains" },
-            "mentorshipSessions": { "label": "sessions de mentorat" }
+            "fellowsTrained": {
+              "label": "boursiers formés"
+            },
+            "africanCountries": {
+              "label": "pays africains"
+            },
+            "mentorshipSessions": {
+              "label": "sessions de mentorat"
+            }
           }
         }
       }
@@ -167,11 +181,12 @@
     "circles": {
       "heading": "Pourquoi l'Élimination du Dioxyde de Carbone ?",
       "items": [
-        "Le carbone déjà présent dans notre atmosphère survivra à toute promesse faite lors d'un sommet climatique. Réduire les émissions ne suffit plus — le monde doit aussi éliminer ce qui a déjà été libéré.",
-        "L'Élimination du Dioxyde de Carbone est l'une des frontières climatiques les plus déterminantes de notre époque, et pourtant les voix, institutions et écosystèmes africains restent largement absents des décisions prises à ce sujet.",
-        "L'Afrique abrite certains des puits de carbone naturels les plus importants au monde — des forêts aux océans en passant par les sols.",
-        "La science, les normes et les systèmes régissant l'EDC sont conçus ailleurs — pas par ni pour les communautés les plus touchées.",
-        "ECF développe les connaissances, les capacités et les coalitions nécessaires pour que l'Afrique dirige l'EDC selon ses propres termes — non pas comme une ressource à extraire, mais comme un continent ayant la capacité de façonner son avenir climatique."
+        "The carbon already in our atmosphere will outlast any promise made at a climate summit.",
+        "Reducing emissions is no longer enough. The world must also remove what has already been released, and Carbon Dioxide Removal (CDR) is now one of the most consequential frontiers in that effort.",
+        "The science, standards, and systems being built to govern CDR are taking shape in a handful of institutions far from the forests, oceans, soils, and coastlines that hold the world's largest natural carbon sinks.",
+        "Africa and the wider Global South have the most at stake when CDR is designed elsewhere, and the most to contribute when it is shaped from within.",
+        "ECF builds the knowledge, capacity, and coalitions for African and Global South institutions to shape CDR on their own terms.",
+        "Not as suppliers of land for someone else's removal target, but as researchers, regulators, and stewards of their own coasts and communities."
       ]
     },
     "programs": {
@@ -198,9 +213,15 @@
             "Augmentation de la demande institutionnelle pour une éducation récurrente sur les interventions climatiques."
           ],
           "stats": {
-            "studentsReached": { "label": "étudiants touchés" },
-            "improvedUnderstanding": { "label": "compréhension améliorée" },
-            "partnerUniversities": { "label": "universités partenaires" }
+            "studentsReached": {
+              "label": "étudiants touchés"
+            },
+            "improvedUnderstanding": {
+              "label": "compréhension améliorée"
+            },
+            "partnerUniversities": {
+              "label": "universités partenaires"
+            }
           }
         },
         "carbonAccounting": {
@@ -218,8 +239,12 @@
             "7 participants ont effectué des placements en stage."
           ],
           "stats": {
-            "youthTrained": { "label": "jeunes professionnels formés" },
-            "internshipPlacements": { "label": "placements en stage" }
+            "youthTrained": {
+              "label": "jeunes professionnels formés"
+            },
+            "internshipPlacements": {
+              "label": "placements en stage"
+            }
           }
         },
         "aciferFellowship": {
@@ -237,9 +262,15 @@
             "Création d'une communauté de recherche en début de carrière pour favoriser les collaborations interrégionales."
           ],
           "stats": {
-            "fellowsTrained": { "label": "boursiers formés" },
-            "africanCountries": { "label": "pays africains" },
-            "fundedResearch": { "label": "recherches financées" }
+            "fellowsTrained": {
+              "label": "boursiers formés"
+            },
+            "africanCountries": {
+              "label": "pays africains"
+            },
+            "fundedResearch": {
+              "label": "recherches financées"
+            }
           }
         }
       }
@@ -250,25 +281,15 @@
       "abbreviation": "IA",
       "fullName": "Intelligence Artificielle pour l'Adaptation Climatique"
     },
-    "why": {
-      "heading": "Pourquoi l'IA ?",
-      "items": [
-        "L'Afrique n'est pas en marge de la révolution de l'IA. Elle en est façonnée — dans ses prévisions climatiques, sa planification de l'adaptation, ses décisions sur les ressources.",
-        "Cela se produit souvent sans la connaissance de l'Afrique, et presque jamais avec son consentement.",
-        "Les modèles faisant des prédictions sur les sécheresses, les inondations et les systèmes alimentaires africains ont été largement construits sans données africaines, sans chercheurs africains, et sans voix africaines dans la salle où les règles ont été écrites.",
-        "Ce n'est pas un problème technique. C'est un problème de gouvernance. Et c'est l'un que l'ECF est positionnée pour résoudre.",
-        "L'ECF ne construit pas d'outils d'IA. Nous défendons, convoquons et renforçons les capacités.",
-        "Notre rôle est de s'assurer que l'Afrique passe du statut de sujet passif des décisions climatiques pilotées par l'IA à celui de façonneur actif — en tant que producteur de connaissances, participant à la gouvernance, et bénéficiaire informé et souverain."
-      ]
-    },
     "objectives": {
       "heading": "Pourquoi l'Intelligence Artificielle ?",
       "items": [
-        "L'IA transforme la science climatique — permettant une modélisation plus rapide, des stratégies d'adaptation plus intelligentes et des réponses en temps réel aux crises. Mais l'IA n'est efficace que si les données, l'infrastructure et la gouvernance qui la soutiennent le sont aussi.",
-        "Les données sur lesquelles l'IA apprend, l'infrastructure sur laquelle elle fonctionne et les cadres de gouvernance qui façonnent son utilisation sont massivement contrôlés en dehors de l'Afrique.",
-        "L'Afrique fait face à un paradoxe dangereux : le continent le plus vulnérable au changement climatique, mais le moins influent sur les outils d'IA construits pour y répondre.",
-        "Sans centres de données locaux, sans ensembles de données générés par l'Afrique, ni cadres de gouvernance continentaux, même les outils d'IA climatiques bien intentionnés risquent de renforcer la dépendance et de marginaliser les réalités africaines.",
-        "ECF comble cette lacune — en formant la prochaine génération d'experts africains en IA et climat, en intégrant l'IA dans la recherche localement pertinente et en plaidant pour une gouvernance qui place l'agentivité africaine au centre."
+        "Artificial Intelligence is rewriting how the world models climate risk, plans adaptation, allocates finance, and responds to disasters. It is fast becoming the layer through which climate policy is interpreted and enforced.",
+        "AI is only as good as the data it learns from, the infrastructure it runs on, and the rules that govern it, and all three sit overwhelmingly outside Africa and the wider Global South.",
+        "Regulation is written by and for a handful of jurisdictions, leaving our regions either inheriting rules that do not fit, or operating in vacuums that international developers can quietly exploit.",
+        "The systems themselves are physical, consuming electricity, water, land, and critical minerals at a scale that strains the same ecosystems and communities they often fail to serve.",
+        "ECF works to ensure that Africa and the Global South do not enter this moment as a market for finished tools, a source of extracted resources, or a testing ground for rules made elsewhere.",
+        "We train the next generation of climate-AI experts, ground AI in local realities, and advocate for governance, data sovereignty, and resource and labour standards that centre the people most affected."
       ]
     },
     "programObjectives": {
@@ -280,6 +301,27 @@
         "Développer la littératie critique en IA dont les décideurs climatiques africains ont besoin pour interroger les résultats générés par l'IA, remettre en question leurs hypothèses et faire des choix souverains sur les outils dont ils dépendent.",
         "Plaider pour que les données climatiques africaines soient traitées comme une exigence scientifique et éthique dans les modèles d'IA mondiaux, et non comme une réflexion après coup, car un modèle qui ne connaît pas l'Afrique ne peut pas parler pour l'Afrique.",
         "Former la prochaine génération de chercheurs et penseurs africains en IA et climat à travers des programmes de bourses et des travaux de curriculum universitaire, afin que cette capacité ne soit pas empruntée mais construite et possédée."
+      ]
+    },
+    "focusAreas": {
+      "heading": "Our Focus Areas",
+      "items": [
+        {
+          "title": "Governance and Regulation",
+          "description": "The rules for how AI is used in climate decisions are being written in a small number of jurisdictions, and Africa is rarely in the room. We work to change that, through direct engagement with global AI governance processes and by supporting the development of regulatory frameworks across the continent that protect people and nature from AI systems whose footprint, biases, and uses too often run ahead of any rules."
+        },
+        {
+          "title": "Ethics",
+          "description": "AI applied to climate decisions is never neutral. It carries the values, blind spots, and priorities of the people who built it and the data it was trained on. We push for AI use in African climate decision-making that is transparent, accountable, and rights-respecting, with clear lines on consent, bias, and the protection of communities whose data and lands the technology touches."
+        },
+        {
+          "title": "Capacity Building",
+          "description": "The most consequential climate decisions of the next decade will be filtered through AI tools, and the people making those decisions cannot afford to take the outputs at face value. We build the critical AI literacy that African climate decision-makers need to interrogate what these tools tell them, and we grow the next generation of African AI-climate researchers through fellowships and curriculum work, so that this capacity is built and owned on the continent."
+        },
+        {
+          "title": "Climate Data Sovereignty",
+          "description": "A model that does not know Africa cannot speak for Africa. Yet the data sets that train global AI climate systems are drawn overwhelmingly from elsewhere, leaving African ecosystems, weather patterns, and communities under-represented or misrepresented in the very tools shaping climate response. We advocate for African climate data to be treated as a scientific and ethical requirement in global AI models, on terms set by the institutions and communities the data comes from."
+        }
       ]
     }
   }

@@ -6,7 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 import AiCirclesSection from "@/components/sections/programs/ai/AiCirclesSection";
-import AiWhySection from "@/components/sections/programs/ai/AiWhySection";
+import AiFocusAreasSection from "@/components/sections/programs/ai/AiFocusAreasSection";
 import AiProgramObjectivesSection from "@/components/sections/programs/ai/AiProgramObjectivesSection";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import nextI18NextConfig from "../../../next-i18next.config";
@@ -111,6 +111,7 @@ const AiPage: NextPage<Props> = ({ metaDataTag, jsonLd }) => {
       <CustomHead jsonLd={jsonLd} metaDataTag={metaDataTag} />
       <Header />
       <AiCirclesSection />
+      <AiFocusAreasSection />
       <AiProgramObjectivesSection />
       <NewsletterSection />
       <Footer />

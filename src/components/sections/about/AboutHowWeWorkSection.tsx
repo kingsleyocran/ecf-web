@@ -10,6 +10,10 @@ function AboutHowWeWorkSection() {
       description: t("howWeWork.pillars.capacity.description"),
     },
     {
+      title: t("howWeWork.pillars.policy.title"),
+      description: t("howWeWork.pillars.policy.description"),
+    },
+    {
       title: t("howWeWork.pillars.network.title"),
       description: t("howWeWork.pillars.network.description"),
     },
@@ -33,7 +37,7 @@ function AboutHowWeWorkSection() {
 
       {/* Cards */}
       <div className="w-full max-w-[1920px] 2xl:mx-auto px-4 md:px-8 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {pillars.map((pillar, index) => (
             <MaskText key={index} div positionFrom={32} animationDelay={0.1 * index} extraClassNames="rounded-2xl bg-white/10 p-8 md:p-10 h-full">
               <MaskText positionFrom={16} animationDelay={0.10 + 0.1 * index} extraClassNames="text-bold-lg text-white mb-4">

@@ -17,8 +17,29 @@ interface ProgramMeta {
 
 const programMeta: ProgramMeta[] = [
   {
-    key: "shortCourse",
+    key: "carbonAccounting",
     id: "01",
+    image: "/assets/images/programs/cdr-carbon-accounting.png",
+    stats: [
+      { key: "youthTrained", value: "20" },
+      { key: "internshipPlacements", value: "7" },
+    ],
+    partners: null,
+  },
+  {
+    key: "aciferFellowship",
+    id: "02",
+    image: "/assets/images/programs/cdr-acifer-fellowship.png",
+    stats: [
+      { key: "fellowsTrained", value: "30" },
+      { key: "africanCountries", value: "45+" },
+      { key: "fundedResearch", value: "2" },
+    ],
+    partners: null,
+  },
+  {
+    key: "shortCourse",
+    id: "03",
     image: "/assets/images/programs/cdr-short-courses.png",
     stats: [
       { key: "studentsReached", value: "900+" },
@@ -40,27 +61,6 @@ const programMeta: ProgramMeta[] = [
       ],
       "South Africa": ["Durban University of Technology"],
     },
-  },
-  {
-    key: "carbonAccounting",
-    id: "02",
-    image: "/assets/images/programs/cdr-carbon-accounting.png",
-    stats: [
-      { key: "youthTrained", value: "20" },
-      { key: "internshipPlacements", value: "7" },
-    ],
-    partners: null,
-  },
-  {
-    key: "aciferFellowship",
-    id: "03",
-    image: "/assets/images/programs/cdr-acifer-fellowship.png",
-    stats: [
-      { key: "fellowsTrained", value: "30" },
-      { key: "africanCountries", value: "45+" },
-      { key: "fundedResearch", value: "2" },
-    ],
-    partners: null,
   },
 ];
 
