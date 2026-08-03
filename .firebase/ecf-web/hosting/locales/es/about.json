@@ -14,7 +14,7 @@
     "title": "Our Vision",
     "body": "ECF Africa envisions a continental research and governance landscape for frontier climate technologies where African institutions are active contributors to the science, and where African policymakers can engage substantively in global governance decisions rather than ratifying choices made elsewhere.",
     "para1": "ECF Africa envisions a continental research and governance landscape for frontier climate technologies where African institutions are active contributors to the science, and where African policymakers can engage substantively in global governance decisions rather than ratifying choices made elsewhere.",
-    "para2": "Africa is not a single climate. From the Sahel to the Congo Basin, the Horn to the southern African plateau, and the Indian Ocean small island states, every region faces distinct realities — and the consequences of any FCT deployment, whether to radiative balance, carbon sequestration, or AI-driven climate modelling, will land differently in each. That makes a place-based approach essential: African scientists who understand local climate dynamics, policymakers who can engage seriously with governance proposals on terms grounded in regional realities, and institutions with the capacity to sustain this work over decades. ECF exists to build that capacity where it is missing across the continent and connect African researchers and institutions to global networks where it exists."
+    "para2": "Africa is not a single climate. From the Sahel to the Congo Basin, the Horn to the southern African plateau, and the Indian Ocean small island states, every region faces distinct realities, and the consequences of any FCT deployment, whether to radiative balance, carbon sequestration, or AI-driven climate modelling, will land differently in each. That makes a place-based approach essential: African scientists who understand local climate dynamics, policymakers who can engage seriously with governance proposals on terms grounded in regional realities, and institutions with the capacity to sustain this work over decades. ECF exists to build that capacity where it is missing across the continent and connect African researchers and institutions to global networks where it exists."
   },
   "howWeWork": {
     "heading": "Cómo Trabajamos",
@@ -94,7 +94,8 @@
       "programDirector": "Director de Programa",
       "programOfficer": "Oficial de Programa",
       "researchScientificDirector": "Director de Investigación y Ciencia",
-      "programAssistant": "Asistente de Programa"
+      "programAssistant": "Asistente de Programa",
+      "strategicCoordinator": "Coordinadora Estratégica"
     },
     "members": {
       "ernest": {
@@ -114,6 +115,9 @@
       },
       "siisi": {
         "bio": "Miembro central del primer Portal de Alfabetización Climática de Ghana, ampliando el acceso al conocimiento climático a nivel nacional. Con la Red de Conocimiento sobre Clima y Desarrollo (CDKN), ha diseñado juegos innovadores de alfabetización climática que hacen que temas complejos sean atractivos y accesibles."
+      },
+      "prisca": {
+        "bio": ""
       }
     }
   }

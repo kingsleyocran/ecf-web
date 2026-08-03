@@ -22,7 +22,7 @@ const programMeta: ProgramMeta[] = [
     image: "/assets/images/programs/srm-acifer-fellowship.png",
     stats: [
       { key: "fellowsTrained", value: "30" },
-      { key: "africanCountries", value: "45+" },
+      { key: "africanCountries", value: "15+" },
       { key: "mentorshipSessions", value: "36" },
     ],
     partners: null,

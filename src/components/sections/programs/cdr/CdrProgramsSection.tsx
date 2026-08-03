@@ -32,7 +32,7 @@ const programMeta: ProgramMeta[] = [
     image: "/assets/images/programs/cdr-acifer-fellowship.png",
     stats: [
       { key: "fellowsTrained", value: "30" },
-      { key: "africanCountries", value: "45+" },
+      { key: "africanCountries", value: "25+" },
       { key: "fundedResearch", value: "2" },
     ],
     partners: null,

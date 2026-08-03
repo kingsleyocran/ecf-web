@@ -31,6 +31,7 @@ function BlogArea({ compRef, blog }: { compRef: any; blog: BlogSchema }) {
       return `\n\`\`\`\n${content}\n\`\`\`\n`;
     },
   });
+  
   function convertToMD(content: string) {
     if (!content || typeof content !== "string") {
       console.log("Invalid content provided to convertToMD:", content);
@@ -40,7 +41,7 @@ function BlogArea({ compRef, blog }: { compRef: any; blog: BlogSchema }) {
     return turndownService.turndown(content);
   }
 
-  console.log(blog);
+  // console.log(blog);
   return (
     <div ref={compRef} className="pt-10 transition-all duration-200 pb-[200px]">
       {/* Blog Title and Tags */}
