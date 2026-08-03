@@ -29,6 +29,9 @@ function ContentDetailPage({ title, author, publishedDate, imgUrl, content, badg
     return turndownService.turndown(html);
   }
 
+  console.log("ContentDetailPage content:", content);
+  console.log("ContentDetailPage converted content:", convertToMD(content));
+
   return (
     <div className="pt-10 pb-[200px] bg-white min-h-screen">
       <div className="w-full max-w-[1000px] mx-auto px-6 md:px-12 lg:px-16 pt-14 md:py-14 flex flex-col gap-8">
@@ -55,13 +58,13 @@ function ContentDetailPage({ title, author, publishedDate, imgUrl, content, badg
 
         {/* Body */}
         {content && (
-          <div className="markdown-content w-full secondarynormal break-words text-normal-base text-black/80 pb-12">
+          <div className="markdown-content w-full primarynormal break-words text-normal-base text-black/80 pb-12">
             <Markdown
               components={{
-                h3: ({ node, ...props }) => <h3 className="text-3xl md:text-4xl secondarybold mb-4 mt-20 text-[#024D6B]" {...props} />,
-                h4: ({ node, ...props }) => <h4 className="text-2xl md:text-3xl secondarybold mb-2 mt-8 text-[#4BB0D9]" {...props} />,
+                h3: ({ node, ...props }) => <h3 style={{ fontWeight: "normal" }} className="text-3xl md:text-4xl secondarybold mb-4 mt-20 text-[#024D6B] [&_strong]:font-normal" {...props} />,
+                h4: ({ node, ...props }) => <h4 style={{ fontWeight: "normal" }} className="text-2xl md:text-3xl secondarybold mb-2 mt-8 text-[#4BB0D9] [&_strong]:font-normal" {...props} />,
                 p: ({ node, ...props }) => <p className="mb-6 break-words" {...props} />,
-                strong: ({ node, ...props }) => <strong style={{ fontWeight: "bold" }} {...props} />,
+                strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
                 ul: ({ children }) => <ul className="list-disc pl-12 max-w-full">{children}</ul>,
                 ol: ({ children }) => <ol className="list-decimal pl-12 max-w-full">{children}</ol>,
                 li: ({ children }) => <li className="mb-2">{children}</li>,

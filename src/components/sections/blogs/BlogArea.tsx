@@ -31,7 +31,7 @@ function BlogArea({ compRef, blog }: { compRef: any; blog: BlogSchema }) {
       return `\n\`\`\`\n${content}\n\`\`\`\n`;
     },
   });
-  
+
   function convertToMD(content: string) {
     if (!content || typeof content !== "string") {
       console.log("Invalid content provided to convertToMD:", content);
@@ -100,25 +100,25 @@ function BlogArea({ compRef, blog }: { compRef: any; blog: BlogSchema }) {
                 components={{
                   h3: ({ node, ...props }) => (
                     <h3
-                      className="text-3xl md:text-4xl secondarybold mb-4 mt-20 text-[#024D6B]"
+                      className="text-3xl md:text-4xl secondarynormal mb-4 mt-20 text-[#024D6B]"
                       {...props}
                     />
                   ),
                   h4: ({ node, ...props }) => (
                     <h4
-                      className="text-2xl md:text-3xl secondarybold mb-2 mt-8 text-[#4BB0D9]"
+                      className="text-2xl md:text-3xl secondarynormal mb-2 mt-8 text-[#4BB0D9]"
                       {...props}
                     />
                   ),
                   h5: ({ node, ...props }) => (
                     <h5
-                      className="text-xl md:text-2xl secondarybold mb-2 mt-5 text-[#E0C759]"
+                      className="text-xl md:text-2xl secondarynormal mb-2 mt-5 text-[#E0C759]"
                       {...props}
                     />
                   ),
                   h6: ({ node, ...props }) => (
                     <h5
-                      className="text-lg md:text-xl secondarybold mb-2 mt-5 text-[#666666]"
+                      className="text-lg md:text-xl secondarynormal mb-2 mt-5 text-[#666666]"
                       {...props}
                     />
                   ),
